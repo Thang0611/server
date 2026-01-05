@@ -1,0 +1,53 @@
+<div class="nht-hero-form">
+    <div class="nht-form-header">
+        <h3>🚀 Get Khóa Học TẠI ĐÂY !!!</h3>
+        
+    </div>
+
+    <div class="nht-input-group">
+        <label class="nht-label">Địa chỉ Gmail nhận khóa học</label>
+        <div class="nht-input-wrapper">
+            
+            [email* your-email class:nht-input default:user_email placeholder "Ví dụ: abc@gmail.com"]
+        </div>
+    </div>
+
+    <div class="nht-input-group">
+        <label class="nht-label">Link khoá học cần mua</label>
+        <div class="nht-input-wrapper">
+           
+            [textarea* course-urls class:nht-input x4 placeholder "https://www.udemy.com/course/react-js/...
+https://www.udemy.com/course/nodejs-master/..."]
+        </div>
+        <small class="nht-hint">* Hỗ trợ nhiều link. Nhấn Enter để xuống dòng nhập link tiếp theo.</small>
+    </div>
+
+
+    <div class="nht-submit-group">
+        [submit class:nht-btn-submit class:widget-button normal "Check & Tải Khóa Học Ngay"]
+    </div>
+    
+    <div class="nht-security-note">
+        🔒 Hỗ trợ Udemy, Coursera, LinkedIn Learning...
+    </div>
+</div>
+
+
+
+
+
+<div id="nht-course-modal" class="nht-modal">
+    <div class="nht-modal-content">
+        <div class="nht-modal-header">
+            <h3>Check khóa học</h3>
+            <span class="nht-close-btn">&times;</span>
+        </div>
+
+        <div class="nht-modal-body" id="nht-course-list">
+            </div>
+
+        <div class="nht-modal-footer">
+            <button id="nht-payment-btn" class="nht-pay-btn">Thanh toán</button>
+        </div>
+    </div>
+</div>
