@@ -13,15 +13,10 @@ exports.processTask = async (task) => {
     try {
         // --- BƯỚC 1: ENROLL ---
         if (task.course_url.includes('udemy.com')) {
-            
-            // ⚠️ SỬA: Cập nhật trạng thái bằng cú pháp Sequelize
-            // Đổi status thành 'processing' hoặc 'enrolling' để biết worker đang chạy
-            // await DownloadTask.update(
-            //     { status: 'processing' }, 
-            //     { where: { id: task.id } }
-            // );
 
-            const enrollResults = await enrollService.enrollCourses([task.course_url]);
+            // const enrollResults = await enrollService.enrollCourses([task.course_url],email);
+            const enrollResults = await enrollService.enrollCourses([task.course_url],task.email);
+
             const result = enrollResults[0];
 
             if (!result || !result.success) {

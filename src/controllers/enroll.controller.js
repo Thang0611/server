@@ -20,7 +20,7 @@ const getCookieFromFile = () => {
 
 // ================= CORE LOGIC (ĐÃ SỬA) =================
 
-const getCourseId = async (rawUrl, cookieString) => {
+const getCourseInfo = async (rawUrl, cookieString) => {
     console.log(`🔍 Quét ID tại: ${targetUrl}`);
     // Import động
     const { gotScraping } = await import('got-scraping');
@@ -139,7 +139,7 @@ const enrollController = async (req, res) => {
         for (const rawUrl of urls) {
             try {
                 // B1: Lấy ID
-                const courseId = await getCourseId(rawUrl, cookieString);
+                const courseId = await getCourseInfo(rawUrl, cookieString);
                 
                 // B2: Enroll
                 console.log(`✅ ID: ${courseId} | Đang thực thi...`);

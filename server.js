@@ -1,18 +1,20 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const sequelize = require('./src/config/database');
+const { sequelize } = require('./src/models');
 const downloadRoutes = require('./src/routes/download.routes');
+
 const DownloadTask = require('./src/models/downloadTask.model');
+const Order = require('./src/models/order.model');
 const transporter = require('./src/config/email'); // Nhớ file config email của bạn
 const webhookRoutes = require('./src/routes/webhook.routes');
 const grantAccess = require('./src/routes/grantAccess.routes');
 const infoCourse =require('./src/routes/infoCourse.routes')
 const enroll =require('./src/routes/enroll.routes')
 const cors = require('cors'); // Import thư viện
-
+const paymentRoutes =require('./src/routes/payment.routes')
 const corsOptions = {
-    origin: 'https://khoahocgiare.info', // Thay bằng domain WordPress của bạn (không có dấu / ở cuối)
+    origin: '*', // Thay bằng domain WordPress của bạn (không có dấu / ở cuối)
     optionsSuccessStatus: 200, // Một số trình duyệt cũ cần cái này
     methods: "GET, POST", // Các phương thức cho phép
 };
@@ -31,7 +33,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/v1', infoCourse);
 app.use('/api/v1', enroll);
-
+app.use('/api/payment', paymentRoutes);
 
 // ---> THÊM DÒNG NÀY
 
