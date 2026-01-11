@@ -51,3 +51,103 @@ https://www.udemy.com/course/nodejs-master/..."]
         </div>
     </div>
 </div>
+
+
+
+
+
+		
+A
+khoahocgiare.info
+202.92.5.48
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+CNAME
+api
+6a9ccef0-a816-4305-9d18-478295a12729.cfargotunnel.com
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+CNAME
+brevo1._domainkey
+b1.khoahocgiare-info.dkim.brevo.com
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+CNAME
+brevo2._domainkey
+b2.khoahocgiare-info.dkim.brevo.com
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+CNAME
+www
+khoahocgiare.info
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+NS
+khoahocgiare.info
+salvador.ns.porkbun.com
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+NS
+khoahocgiare.info
+maceio.ns.porkbun.com
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+NS
+khoahocgiare.info
+fortaleza.ns.porkbun.com
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+NS
+khoahocgiare.info
+curitiba.ns.porkbun.com
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+TXT
+_dmarc
+"v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com"
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+TXT
+khoahocgiare.info
+"brevo-code:c0c52f7294f2d4b899b35165988d412d"
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
