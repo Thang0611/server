@@ -1,70 +1,75 @@
 
+/**
+ * Hash utility for signature verification
+ * @module utils/hash
+ */
 
-
-/* src/utils/hash.util.js */
 const crypto = require('crypto');
-require('dotenv').config();
-
-// Lấy Secret Key (Đảm bảo giống hệt bên plugin WordPress)
-const SECRET_KEY = process.env.SECRET_KEY;
-// const SECRET_KEY = process.env.SECRET_KEY || 'KEY_BAO_MAT_CUA_BAN_2025';
-
-
-if (!SECRET_KEY) {
-    console.error("⚠️ CẢNH BÁO: Chưa cấu hình SECRET_KEY trong .env");
-}
+const Logger = require('./logger.util');
 
 /**
- * Hàm xác thực chữ ký (Signature) từ WordPress
- * Logic: HMAC_SHA256( order_id + email + timestamp )
- * * @param {string|number} orderId - ID đơn hàng
- * @param {string} email - Email khách hàng
- * @param {string|number} timestamp - Thời gian gửi (Unix timestamp)
- * @param {string} clientSignature - Chữ ký nhận được từ Header (X-Signature)
- * @returns {boolean} - True nếu hợp lệ, False nếu sai
+ * Gets the secret key from environment variables
+ * @returns {string} - Secret key
+ * @throws {Error} - If secret key is not configured
+ */
+const getSecretKey = () => {
+  const secretKey = process.env.SECRET_KEY;
+  if (!secretKey) {
+    Logger.error('SECRET_KEY not configured in environment variables');
+    throw new Error('SECRET_KEY not configured');
+  }
+  return secretKey;
+};
+
+/**
+ * Verifies request signature using HMAC SHA256
+ * Logic: HMAC_SHA256(order_id + email + timestamp)
+ * @param {string|number} orderId - Order ID
+ * @param {string} email - Customer email
+ * @param {string|number} timestamp - Request timestamp (Unix timestamp)
+ * @param {string} clientSignature - Signature received from header (X-Signature)
+ * @returns {boolean} - True if valid, False if invalid
  */
 const verifyRequestSignature = (orderId, email, timestamp, clientSignature) => {
-
-    // 1. Kiểm tra dữ liệu đầu vào
-    if (!clientSignature || !SECRET_KEY || !orderId || !email || !timestamp) {
-        return false;
+  try {
+    // Validate input
+    if (!clientSignature || !orderId || !email || !timestamp) {
+      return false;
     }
 
-    // 2. Tạo chuỗi dữ liệu để hash
-    // QUAN TRỌNG: Phải ép kiểu String() cho từng biến.
-    // Lý do: Bên PHP dùng toán tử nối chuỗi (.) -> "123" . "email" . "time"
-    // Bên JS nếu orderId là số (Int) mà dùng dấu (+) có thể gây lỗi hoặc ra kết quả khác.
+    const SECRET_KEY = getSecretKey();
+
+    // Create payload string (must match PHP concatenation logic)
+    // Important: Must use String() for each variable to match PHP string concatenation
     const payload = String(orderId) + String(email) + String(timestamp);
 
-    // 3. Server tự tính toán lại Hash (Expected Signature)
+    // Calculate expected signature
     const expectedSignature = crypto
-        .createHmac('sha256', SECRET_KEY)
-        .update(payload)
-        .digest('hex');
-    console.log("--- DEBUG SIGNATURE ---");
-    console.log("📥 Client gửi: ", clientSignature);
-    console.log("🧮 Server tính: ", expectedSignature); // Thay biến này bằng biến chứa hash server tính
-    console.log("🔑 Secret Key: ", process.env.SECRET_KEY); // Kiểm tra xem có nhận được key không
-    console.log("📄 Chuỗi gốc: ", /* Biến chứa chuỗi order_id+email+timestamp */);
-    console.log("-----------------------");
-    try {
-        const bufferExpected = Buffer.from(expectedSignature);
-        const bufferClient = Buffer.from(clientSignature);
+      .createHmac('sha256', SECRET_KEY)
+      .update(payload)
+      .digest('hex');
 
-        // Nếu độ dài hash không bằng nhau thì return false ngay
-        // (Hàm timingSafeEqual sẽ lỗi nếu độ dài 2 buffer khác nhau)
-        if (bufferExpected.length !== bufferClient.length) {
-            return false;
-        }
+    // Use timing-safe comparison to prevent timing attacks
+    const bufferExpected = Buffer.from(expectedSignature);
+    const bufferClient = Buffer.from(clientSignature);
 
-        return crypto.timingSafeEqual(bufferExpected, bufferClient);
-    } catch (error) {
-        // Phòng trường hợp clientSignature gửi lên chuỗi không phải hex hợp lệ
-        console.error('Lỗi so sánh chữ ký:', error.message);
-        return false;
+    // If lengths differ, return false immediately
+    if (bufferExpected.length !== bufferClient.length) {
+      return false;
     }
+
+    return crypto.timingSafeEqual(bufferExpected, bufferClient);
+  } catch (error) {
+    Logger.error('Error verifying signature', error, {
+      orderId,
+      email,
+      hasTimestamp: !!timestamp,
+      hasSignature: !!clientSignature
+    });
+    return false;
+  }
 };
 
 module.exports = {
-    verifyRequestSignature
+  verifyRequestSignature
 };

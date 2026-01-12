@@ -1,7 +1,13 @@
+/**
+ * Google Drive utility functions
+ * @module utils/drive
+ */
+
 const { google } = require('googleapis');
 const path = require('path');
+const Logger = require('./logger.util');
 
-// Load file json service account bạn vừa tải
+// Load service account key file
 const KEY_FILE_PATH = path.join(__dirname, '../../service-account.json');
 
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
@@ -14,9 +20,11 @@ const auth = new google.auth.GoogleAuth({
 const drive = google.drive({ version: 'v3', auth });
 
 
-// --- HÀM MỚI: Tách ID từ Link Drive ---
 /**
- * Hàm tách ID thông minh (Hỗ trợ cả URL và Raw ID)
+ * Extracts Google Drive file/folder ID from URL or raw ID
+ * Supports multiple URL formats and raw IDs
+ * @param {string} input - URL or raw ID
+ * @returns {string|null} - Extracted ID or null if not found
  */
 const extractIdFromUrl = (input) => {
     try {
@@ -53,43 +61,48 @@ const extractIdFromUrl = (input) => {
 };
 
 /**
- * Tìm ID của folder dựa trên tên (Vì Rclone chỉ biết tên)
+ * Finds a folder by name on Google Drive
+ * @param {string} folderName - Name of the folder to find
+ * @returns {Promise<Object|null>} - Folder object with id, name, webViewLink or null if not found
  */
 const findFolderByName = async (folderName) => {
     try {
-        // Tìm folder, đảm bảo không nằm trong thùng rác
+        // Find folder, ensure it's not in trash
         const res = await drive.files.list({
             q: `mimeType='application/vnd.google-apps.folder' and name='${folderName}' and trashed=false`,
             fields: 'files(id, name, webViewLink)',
         });
         
         if (res.data.files.length > 0) {
-            return res.data.files[0]; // Trả về folder tìm thấy đầu tiên
+            return res.data.files[0];
         }
         return null;
     } catch (error) {
-        console.error('Lỗi tìm folder Drive:', error.message);
+        Logger.error('Error finding Drive folder', error, { folderName });
         return null;
     }
 };
 
 /**
- * Cấp quyền đọc (Viewer) cho email
+ * Grants read (Viewer) access to email
+ * @param {string} fileId - Google Drive file/folder ID
+ * @param {string} userEmail - Email to grant access to
+ * @returns {Promise<boolean>} - True if successful
  */
 const grantReadAccess = async (fileId, userEmail) => {
     try {
         await drive.permissions.create({
             fileId: fileId,
             requestBody: {
-                role: 'reader', // Hoặc 'writer' nếu muốn cho sửa
+                role: 'reader',
                 type: 'user',
                 emailAddress: userEmail,
             },
         });
-        console.log(`[Drive] Đã cấp quyền cho ${userEmail}`);
+        Logger.info('Granted Drive access', { fileId, userEmail });
         return true;
     } catch (error) {
-        console.error('Lỗi cấp quyền Drive:', error.message);
+        Logger.error('Error granting Drive access', error, { fileId, userEmail });
         return false;
     }
 };

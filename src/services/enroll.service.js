@@ -1,387 +1,14 @@
-// // src/services/enroll.service.js
-// const cheerio = require('cheerio');
-// const fs = require('fs');
-// const path = require('path');
-// const { URL } = require('url');
-// const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
+/**
+ * Enroll service for handling course enrollment business logic
+ * @module services/enroll
+ */
 
-// // Cấu hình đường dẫn
-// const SUBDOMAIN = 'udemy.com';
-// const ssSUBDOMAIN = 'samsungu.udemy.com';
-// // Lưu ý: Kiểm tra lại đường dẫn file cookie cho đúng cấu trúc thư mục của bạn
-// const COOKIE_FILE_PATH = path.join(__dirname, '../../cookies.txt');
-
-// // --- Helper Functions ---
-// const getCookieFromFile = () => {
-//     try {
-//         if (!fs.existsSync(COOKIE_FILE_PATH)) throw new Error("⚠️ Chưa tạo file cookie.txt");
-//         return fs.readFileSync(COOKIE_FILE_PATH, 'utf8').replace(/(\r\n|\n|\r)/gm, "").trim();
-//     } catch (err) {
-//         throw new Error(err.message);
-//     }
-// };
-
-// // Hàm lấy Course ID (Internal)
-// const getCourseInfo = async (rawUrl, cookieString) => {
-//     const { gotScraping } = await import('got-scraping'); // Dynamic Import
-
-//     let formattedUrl = rawUrl.trim();
-//     console.log(rawUrl)
-
-//     const targetUrl = transformToNormalizeUdemyCourseUrl(formattedUrl);
-//     console.log(targetUrl)
-//     console.log("👉 Lấy Course ID từ URL:", targetUrl);
-//     const response = await gotScraping({
-//         url: targetUrl,
-//         method: 'GET',
-//         http2: false,
-//         headerGeneratorOptions: {
-//             browsers: [{ name: 'firefox', minVersion: 100 }],
-//             devices: ['desktop'],
-//             operatingSystems: ['windows'],
-//         },
-//         headers: {
-//             'Cookie': cookieString,
-//             'Referer': formattedUrl,
-//             'Upgrade-Insecure-Requests': '1',
-//             'Sec-Fetch-Dest': 'document',
-//             'Sec-Fetch-Mode': 'navigate',
-//             'Sec-Fetch-Site': 'same-origin',
-//         },
-//         https: { rejectUnauthorized: false },
-//         retry: { limit: 2 }
-//     });
-
-//     const html = response.body;
-//     const $ = cheerio.load(html);
-    
-//     let courseId = $("body").attr("data-clp-course-id") || $("body").attr("data-course-id");
-//     if (!courseId) {
-//         const matchId = html.match(/"courseId"\s*:\s*(\d+)/);
-//         if (matchId) courseId = matchId[1];
-//     }
-//     if (!courseId) {
-//         const matchOld = html.match(/data-course-id="(\d+)"/);
-//         if (matchOld) courseId = matchOld[1];
-//     }
-
-//     if (!courseId) {
-//         if (html.includes('Login') || response.url.includes('login')) {
-//             throw new Error("Bị redirect về Login (Cookie lỗi).");
-//         }
-//         throw new Error("Không lấy được Course ID.");
-//     }
-//     return parseInt(courseId);
-// };
-
-// // Hàm Enroll (Internal)
-// const enrollByGet = async (courseId, cookieString, refererUrl) => {
-//     const { gotScraping } = await import('got-scraping');
-//     const subscribeUrl = `https://${ssSUBDOMAIN}/course/subscribe/?courseId=${courseId}`;
-    
-//     const response = await gotScraping({
-//         url: subscribeUrl,
-//         method: 'GET',
-//         http2: false,
-//         followRedirect: true,
-//         headerGeneratorOptions: {
-//             browsers: [{ name: 'firefox', minVersion: 100 }],
-//             devices: ['desktop'],
-//             operatingSystems: ['windows'],
-//         },
-//         headers: {
-//             'Host': ssSUBDOMAIN,
-//             'Cookie': cookieString,
-//             'Referer': refererUrl || `https://${ssSUBDOMAIN}/`,
-//             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-//             'Upgrade-Insecure-Requests': '1',
-//         },
-//         https: { rejectUnauthorized: false }
-//     });
-
-//     return { statusCode: response.statusCode, finalUrl: response.url };
-// };
-
-// // --- MAIN SERVICE FUNCTION ---
-// /**
-//  * Nhận vào mảng URLs, thực hiện enroll và trả về kết quả
-//  * @param {Array<string>} urls - Danh sách link Udemy
-//  * @returns {Promise<Array>} - Kết quả từng link
-//  */
-// const enrollCourses = async (urls) => {
-//     const cookieString = getCookieFromFile();
-//     const results = [];
-
-//     console.log(`\n🔄 [Service] Bắt đầu Enroll ${urls.length} khóa học...`);
-
-//     for (const rawUrl of urls) {
-//         try {
-//             // B1: Lấy ID
-//             const courseId = await getCourseInfo(rawUrl, cookieString);
-            
-//             // B2: Enroll
-//             console.log(`⏳ ID: ${courseId} | Đang enroll...`);
-//             const enrollResult = await enrollByGet(courseId, cookieString, rawUrl);
-
-//             const isSuccess = !enrollResult.finalUrl.includes("login") && !enrollResult.finalUrl.includes("sso");
-            
-//             results.push({
-//                 success: isSuccess,
-//                 url: rawUrl,
-//                 courseId: courseId,
-//                 status: isSuccess ? 'enrolled' : 'failed'
-//             });
-
-//         } catch (err) {
-//             console.error(`❌ [Enroll Error] ${rawUrl}: ${err.message}`);
-//             // Mặc định trả về success=false để controller biết xử lý
-//             results.push({
-//                 success: false,
-//                 url: rawUrl,
-//                 status: 'error',
-//                 message: err.message
-//             });
-//         }
-//         // Delay 2s tránh spam
-//         await new Promise(r => setTimeout(r, 2000));
-//     }
-
-//     return results;
-// };
-
-// module.exports = {
-//     enrollCourses
-// };
-
-
-
-// src/services/enroll.service.js
-// const cheerio = require('cheerio');
-// const fs = require('fs');
-// const path = require('path');
-// const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
-// const DownloadTask = require('../models/downloadTask.model'); // Đảm bảo đường dẫn trỏ đúng Model Sequelize của bạn
-
-// // --- CẤU HÌNH ---
-// const SUBDOMAIN = 'udemy.com';
-// const ssSUBDOMAIN = 'samsungu.udemy.com';
-// const COOKIE_FILE_PATH = path.join(__dirname, '../../cookies.txt');
-
-// // --- HELPER FUNCTIONS ---
-
-// /**
-//  * Đọc cookie từ file text
-//  */
-// const getCookieFromFile = () => {
-//     try {
-//         if (!fs.existsSync(COOKIE_FILE_PATH)) throw new Error("⚠️ Không tìm thấy file cookies.txt");
-//         return fs.readFileSync(COOKIE_FILE_PATH, 'utf8').replace(/(\r\n|\n|\r)/gm, "").trim();
-//     } catch (err) {
-//         throw new Error(err.message);
-//     }
-// };
-
-// /**
-//  * Lấy ID và Title của khóa học từ Udemy
-//  */
-// const getCourseInfo = async (rawUrl, cookieString) => {
-//     // Dynamic import vì got-scraping là ESM
-//     const { gotScraping } = await import('got-scraping');
-
-//     let formattedUrl = rawUrl.trim();
-//     const targetUrl = transformToNormalizeUdemyCourseUrl(formattedUrl);
-    
-//     console.log("👉 [Scraping] Lấy info từ:", targetUrl);
-    
-//     const response = await gotScraping({
-//         url: targetUrl,
-//         method: 'GET',
-//         http2: false,
-//         headerGeneratorOptions: {
-//             browsers: [{ name: 'firefox', minVersion: 100 }],
-//             devices: ['desktop'],
-//             operatingSystems: ['windows'],
-//         },
-//         headers: {
-//             'Cookie': cookieString,
-//             'Referer': formattedUrl,
-//             'Upgrade-Insecure-Requests': '1',
-//         },
-//         https: { rejectUnauthorized: false },
-//         retry: { limit: 2 }
-//     });
-
-//     const html = response.body;
-//     const $ = cheerio.load(html);
-    
-//     // 1. Logic lấy Course ID
-//     let courseId = $("body").attr("data-clp-course-id") || $("body").attr("data-course-id");
-//     if (!courseId) {
-//         const matchId = html.match(/"courseId"\s*:\s*(\d+)/);
-//         if (matchId) courseId = matchId[1];
-//     }
-    
-//     // 2. Logic lấy Title (Tiêu đề khóa học)
-//     let title = $('h1.ud-heading-xl').text().trim();
-//     if (!title) {
-//         title = $('meta[property="og:title"]').attr('content');
-//     }
-
-//     // Kiểm tra lỗi
-//     if (!courseId) {
-//         if (html.includes('Login') || response.url.includes('login')) {
-//             throw new Error("Cookie hết hạn hoặc bị redirect về Login.");
-//         }
-//         throw new Error("Không tìm thấy Course ID trên trang này.");
-//     }
-
-//     return { 
-//         courseId: parseInt(courseId),
-//         title: title || "Unknown Course Title"
-//     };
-// };
-
-// /**
-//  * Gửi request Enroll khóa học
-//  */
-// const enrollByGet = async (courseId, cookieString, refererUrl) => {
-//     const { gotScraping } = await import('got-scraping');
-//     const subscribeUrl = `https://${ssSUBDOMAIN}/course/subscribe/?courseId=${courseId}`;
-    
-//     const response = await gotScraping({
-//         url: subscribeUrl,
-//         method: 'GET',
-//         http2: false,
-//         followRedirect: true,
-//         headerGeneratorOptions: {
-//             browsers: [{ name: 'firefox', minVersion: 100 }],
-//             devices: ['desktop'],
-//             operatingSystems: ['windows'],
-//         },
-//         headers: {
-//             'Host': ssSUBDOMAIN,
-//             'Cookie': cookieString,
-//             'Referer': refererUrl,
-//             'Upgrade-Insecure-Requests': '1',
-//         },
-//         https: { rejectUnauthorized: false }
-//     });
-
-//     return { statusCode: response.statusCode, finalUrl: response.url };
-// };
-
-// // --- MAIN SERVICE ---
-
-// /**
-//  * Xử lý danh sách URLs:
-//  * 1. Tìm task trong DB theo Email + URL
-//  * 2. Lấy Info & Enroll
-//  * 3. Update DB (Title, Status)
-//  * * @param {Array<string>} urls - Mảng link khóa học
-//  * @param {string} email - Email người dùng (để tìm record trong DB)
-//  */
-// const enrollCourses = async (urls, email) => {
-//     if (!email) throw new Error("Yêu cầu Email để cập nhật Database.");
-
-//     const cookieString = getCookieFromFile();
-//     const results = [];
-
-//     console.log(`\n🔄 [Enroll Service] Bắt đầu xử lý ${urls.length} link cho: ${email}`);
-
-//     for (const rawUrl of urls) {
-//         try {
-//             // BƯỚC 1: Tìm bản ghi có sẵn trong DB (được tạo lúc user submit form)
-//             // Trạng thái thường là 'pending' hoặc 'failed' (nếu thử lại)
-//             const task = await DownloadTask.findOne({
-//                 where: { 
-//                     email: email, 
-//                     course_url: rawUrl 
-//                 }
-//             });
-
-//             if (!task) {
-//                 console.log(`⚠️ [Skip] Không tìm thấy đơn hàng trong DB cho: ${rawUrl}`);
-//                 results.push({ 
-//                     success: false, 
-//                     url: rawUrl, 
-//                     message: 'Record not found in Database' 
-//                 });
-//                 continue; // Bỏ qua URL này
-//             }
-
-//             console.log(`🔹 [Task ID: ${task.id}] Đang xử lý...`);
-
-//             // BƯỚC 2: Lấy thông tin (ID + Title)
-//             const { courseId, title } = await getCourseInfo(rawUrl, cookieString);
-            
-//             // BƯỚC 3: Enroll
-//             console.log(`⏳ Enroll ID: ${courseId} | Title: "${title}"`);
-//             const enrollResult = await enrollByGet(courseId, cookieString, rawUrl);
-
-//             // Kiểm tra kết quả: Nếu bị đẩy về login/sso là thất bại
-//             const isSuccess = !enrollResult.finalUrl.includes("login") && !enrollResult.finalUrl.includes("sso");
-//             const finalStatus = isSuccess ? 'enrolled' : 'failed';
-
-//             // BƯỚC 4: Cập nhật Database
-//             task.title = title;        // Lưu tên khóa học cho đẹp
-//             task.status = finalStatus; // Chuyển sang enrolled để Python quét
-//             // task.retry_count = 0;   // (Tùy chọn) Reset retry nếu muốn thử lại từ đầu
-            
-//             await task.save(); // Lưu thay đổi
-
-//             console.log(`✅ [DB Updated] Task ${task.id} -> Status: ${finalStatus}`);
-
-//             results.push({
-//                 success: isSuccess,
-//                 url: rawUrl,
-//                 courseId: courseId,
-//                 title: title,
-//                 db_id: task.id,
-//                 status: finalStatus
-//             });
-
-//         } catch (err) {
-//             console.error(`❌ [Error] ${rawUrl}: ${err.message}`);
-
-//             // Nếu có lỗi (ví dụ cookie chết, mạng lỗi), update DB thành failed
-//             try {
-//                 const task = await DownloadTask.findOne({ where: { email: email, course_url: rawUrl } });
-//                 if (task) {
-//                     task.status = 'failed';
-//                     await task.save();
-//                     console.log(`🔻 [DB Updated] Task ${task.id} -> Status: failed`);
-//                 }
-//             } catch (dbErr) {
-//                 console.error("Lỗi khi update status failed:", dbErr.message);
-//             }
-
-//             results.push({
-//                 success: false,
-//                 url: rawUrl,
-//                 status: 'error',
-//                 message: err.message
-//             });
-//         }
-
-//         // Delay 2 giây giữa các request để tránh bị chặn
-//         await new Promise(r => setTimeout(r, 2000));
-//     }
-
-//     return results;
-// };
-
-// module.exports = {
-//     enrollCourses
-// };
-
-
-
-// src/services/enroll.service.js
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
-const DownloadTask = require('../models/downloadTask.model'); // Đảm bảo đường dẫn đúng
+const DownloadTask = require('../models/downloadTask.model');
+const Logger = require('../utils/logger.util');
 
 // --- CẤU HÌNH ---
 const ssSUBDOMAIN = 'samsungu.udemy.com';
@@ -414,14 +41,14 @@ const getCourseInfo = async (rawUrl, cookieString) => {
          targetUrl = transformToNormalizeUdemyCourseUrl(targetUrl);
     }
 
-    console.log(`👉 [Scraping] Target: ${targetUrl}`);
+    Logger.debug('Scraping course info', { targetUrl });
 
     // 2. Vòng lặp Retry (Thử lại tối đa 3 lần)
     let lastError = null;
     for (let attempt = 1; attempt <= 3; attempt++) {
         try {
             if (attempt > 1) {
-                console.log(`   ⚠️ Lần ${attempt}: Đang thử lại do lỗi trước đó...`);
+                Logger.debug('Retrying course info fetch', { attempt, targetUrl });
                 await wait(2000 * attempt); // Đợi 2s, 4s...
             }
 
@@ -505,7 +132,7 @@ const getCourseInfo = async (rawUrl, cookieString) => {
             if (e.message.includes("Cookie") || e.message.includes("Login")) {
                 throw e;
             }
-            console.log(`   ❌ Lần ${attempt} thất bại: ${e.message}`);
+            Logger.warn('Course info fetch attempt failed', { attempt, error: e.message, targetUrl });
         }
     }
 
@@ -551,39 +178,44 @@ const enrollCourses = async (urls, email) => {
     const cookieString = getCookieFromFile();
     const results = [];
 
-    console.log(`\n🔄 [Enroll Service] Xử lý ${urls.length} link cho: ${email}`);
+    Logger.info('Starting enrollment', { email, count: urls.length });
 
     for (const rawUrl of urls) {
         try {
-            // 1. Tìm Task trong DB
+            // 1. Tìm Task trong DB (chỉ lấy các trường cần thiết)
             const task = await DownloadTask.findOne({
-                where: { email: email, course_url: rawUrl }
+                where: { email: email, course_url: rawUrl },
+                attributes: ['id', 'email', 'course_url', 'title', 'status']
             });
 
             if (!task) {
-                console.log(`⚠️ Skip: Không tìm thấy DB cho ${rawUrl}`);
+                Logger.warn('Task not found in database', { email, url: rawUrl });
                 results.push({ success: false, url: rawUrl, message: 'Not found in DB' });
                 continue;
             }
 
-            console.log(`🔹 [Task ${task.id}] Đang xử lý...`);
+            Logger.debug('Processing enrollment task', { taskId: task.id, url: rawUrl });
 
             // 2. Lấy Info (Retry & Regex)
             const { courseId, title } = await getCourseInfo(rawUrl, cookieString);
             
             // 3. Enroll
-            console.log(`⏳ Enroll ID: ${courseId} | Title: "${title}"`);
+            Logger.debug('Enrolling course', { courseId, title, taskId: task.id });
             const enrollResult = await enrollByGet(courseId, cookieString, rawUrl);
 
             const isSuccess = !enrollResult.finalUrl.includes("login") && !enrollResult.finalUrl.includes("sso");
             const finalStatus = isSuccess ? 'enrolled' : 'failed';
 
-            // 4. Update DB
-            task.title = title;
-            task.status = finalStatus;
-            await task.save();
+            // 4. Update DB (chỉ cập nhật các trường cần thiết)
+            await DownloadTask.update(
+                { title, status: finalStatus },
+                {
+                    where: { id: task.id },
+                    fields: ['title', 'status']
+                }
+            );
 
-            console.log(`✅ [OK] Task ${task.id} -> ${finalStatus}`);
+            Logger.success('Enrollment completed', { taskId: task.id, status: finalStatus });
 
             results.push({
                 success: isSuccess,
@@ -595,16 +227,20 @@ const enrollCourses = async (urls, email) => {
             });
 
         } catch (err) {
-            console.error(`❌ [Failed] ${rawUrl}: ${err.message}`);
+            Logger.error('Enrollment failed', err, { url: rawUrl, email, taskId: task?.id });
 
             // Cập nhật trạng thái failed vào DB để không bị treo pending
             try {
-                const task = await DownloadTask.findOne({ where: { email, course_url: rawUrl } });
-                if (task) { 
-                    task.status = 'failed'; 
-                    await task.save(); 
-                }
-            } catch (e) {}
+                await DownloadTask.update(
+                    { status: 'failed' },
+                    {
+                        where: { email, course_url: rawUrl },
+                        fields: ['status']
+                    }
+                );
+            } catch (e) {
+                Logger.error('Failed to update task status to failed', e, { email, url: rawUrl });
+            }
 
             results.push({
                 success: false,

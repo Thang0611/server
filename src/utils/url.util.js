@@ -10,7 +10,7 @@ function transformToNormalizeUdemyCourseUrl(rawUrl) {
       /^https?:\/\//i.test(rawUrl) ? rawUrl.trim() : `https://${rawUrl.trim()}`
     );
 
-    // Chỉ chấp nhận udemy.com
+    // Chỉ chấp nhận udemy.com (bao gồm cả samsungu.udemy.com)
     if (!/(^|\.)udemy\.com$/.test(url.hostname)) {
       return null;
     }
@@ -19,8 +19,13 @@ function transformToNormalizeUdemyCourseUrl(rawUrl) {
     url.hostname = 'udemy.com';
     url.protocol = 'https:';
 
-    // Validate path
-    const match = url.pathname.match(/^\/course\/([a-zA-Z0-9-_]+)\/?/);
+    // Validate và extract course slug từ nhiều format:
+    // - /course/<slug>/
+    // - /course/<slug>/learn/lecture/...
+    // - /course/<slug>/learn/quiz/...
+    // - /course/<slug>/learn/practice/...
+    // - Các path khác sau course slug
+    const match = url.pathname.match(/^\/course\/([a-zA-Z0-9-_]+)(?:\/.*)?$/);
     if (!match) return null;
 
     const slug = match[1];
@@ -43,7 +48,7 @@ function transformToSamsungUdemy(rawUrl) {
       /^https?:\/\//i.test(rawUrl) ? rawUrl.trim() : `https://${rawUrl.trim()}`
     );
 
-    // Chỉ xử lý udemy.com
+    // Chỉ xử lý udemy.com (bao gồm cả samsungu.udemy.com)
     if (!/(^|\.)udemy\.com$/.test(url.hostname)) {
       return null;
     }
@@ -52,13 +57,18 @@ function transformToSamsungUdemy(rawUrl) {
     url.hostname = 'samsungu.udemy.com';
     url.protocol = 'https:';
 
-    // Validate /course/<slug>/
-    const match = url.pathname.match(/^\/course\/([a-zA-Z0-9-_]+)\/?/);
+    // Validate và extract course slug từ nhiều format:
+    // - /course/<slug>/
+    // - /course/<slug>/learn/lecture/...
+    // - /course/<slug>/learn/quiz/...
+    // - /course/<slug>/learn/practice/...
+    // - Các path khác sau course slug
+    const match = url.pathname.match(/^\/course\/([a-zA-Z0-9-_]+)(?:\/.*)?$/);
     if (!match) return null;
 
     const slug = match[1];
 
-    // Chuẩn hoá path
+    // Chuẩn hoá path về course URL (bỏ phần /learn/lecture/...)
     url.pathname = `/course/${slug}/`;
     url.search = '';
     url.hash = '';
