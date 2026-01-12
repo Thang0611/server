@@ -1,0 +1,171 @@
+2026-01-12 16:23:48 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-12 16:23:48 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-12 16:23:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-12 16:23:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-12 16:23:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-12 16:23:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-12 16:23:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-12 16:23:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-12 16:23:52 +07:00: [32m[1m[INFO][0m  [90m16:23:52[0m Redis Client Connected
+2026-01-12 16:23:52 +07:00: [32m[1m[INFO][0m  [90m16:23:52[0m Redis Client Connected
+2026-01-12 16:23:52 +07:00: [32m[1m[INFO][0m  [90m16:23:52[0m Database connection established successfully
+2026-01-12 16:23:52 +07:00: [32m[1m[INFO][0m  [90m16:23:52[0m Database connection established successfully
+2026-01-12 16:23:52 +07:00: [32m[1m[INFO][0m  [90m16:23:52[0m Database models synchronized
+2026-01-12 16:23:52 +07:00: [32m[1m[INFO][0m  [90m16:23:52[0m Server is running on port 3000
+2026-01-12 16:23:53 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-12 16:23:53 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 16:23:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-12 16:23:56 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-12 16:23:56 +07:00: [32m[1m[INFO][0m  [90m16:23:56[0m Redis Client Connected
+2026-01-12 16:23:56 +07:00: [32m[1m[INFO][0m  [90m16:23:56[0m Database connection established successfully
+2026-01-12 16:23:56 +07:00: [32m[1m[INFO][0m  [90m16:23:56[0m Database models synchronized
+2026-01-12 16:23:56 +07:00: [32m[1m[INFO][0m  [90m16:23:56[0m Server is running on port 3000
+2026-01-12 16:24:35 +07:00: [32m[1m[INFO][0m  [90m16:24:35[0m SIGINT received, closing Redis client...
+2026-01-12 16:24:35 +07:00: [32m[1m[INFO][0m  [90m16:24:35[0m Redis client closed
+2026-01-12 16:24:40 +07:00: [32m[1m[INFO][0m  [90m16:24:40[0m SIGINT received, closing Redis client...
+2026-01-12 16:24:40 +07:00: [32m[1m[INFO][0m  [90m16:24:40[0m Redis client closed
+2026-01-12 16:24:41 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-12 16:24:41 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-12 16:24:42 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-12 16:24:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-12 16:24:44 +07:00: [32m[1m[INFO][0m  [90m16:24:44[0m Redis Client Connected
+2026-01-12 16:24:44 +07:00: [32m[1m[INFO][0m  [90m16:24:44[0m Database connection established successfully
+2026-01-12 16:24:44 +07:00: [32m[1m[INFO][0m  [90m16:24:44[0m Database models synchronized
+2026-01-12 16:24:44 +07:00: [32m[1m[INFO][0m  [90m16:24:44[0m Server is running on port 3000
+2026-01-12 16:24:46 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-12 16:24:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-12 16:24:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-12 16:24:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-12 16:24:48 +07:00: [32m[1m[INFO][0m  [90m16:24:48[0m Redis Client Connected
+2026-01-12 16:24:48 +07:00: [32m[1m[INFO][0m  [90m16:24:48[0m Database connection established successfully
+2026-01-12 16:24:48 +07:00: [32m[1m[INFO][0m  [90m16:24:48[0m Database models synchronized
+2026-01-12 16:24:48 +07:00: [32m[1m[INFO][0m  [90m16:24:48[0m Server is running on port 3000
+2026-01-12 16:25:04 +07:00: [32m[1m[INFO][0m  [90m16:25:04[0m SIGINT received, closing Redis client...
+2026-01-12 16:25:04 +07:00: [32m[1m[INFO][0m  [90m16:25:04[0m Redis client closed
+2026-01-12 16:25:09 +07:00: [32m[1m[INFO][0m  [90m16:25:09[0m SIGINT received, closing Redis client...
+2026-01-12 16:25:09 +07:00: [32m[1m[INFO][0m  [90m16:25:09[0m Redis client closed
+2026-01-12 16:25:09 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-12 16:25:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-12 16:25:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-12 16:25:12 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-12 16:25:12 +07:00: [32m[1m[INFO][0m  [90m16:25:12[0m Redis Client Connected
+2026-01-12 16:25:12 +07:00: [32m[1m[INFO][0m  [90m16:25:12[0m Database connection established successfully
+2026-01-12 16:25:13 +07:00: [32m[1m[INFO][0m  [90m16:25:13[0m Database models synchronized
+2026-01-12 16:25:13 +07:00: [32m[1m[INFO][0m  [90m16:25:13[0m Server is running on port 3000
+2026-01-12 16:25:15 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-12 16:25:15 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 16:25:16 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-12 16:25:17 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 16:25:18 +07:00: [32m[1m[INFO][0m  [90m16:25:18[0m Redis Client Connected
+2026-01-12 16:25:18 +07:00: [32m[1m[INFO][0m  [90m16:25:18[0m Database connection established successfully
+2026-01-12 16:25:18 +07:00: [32m[1m[INFO][0m  [90m16:25:18[0m Database models synchronized
+2026-01-12 16:25:18 +07:00: [32m[1m[INFO][0m  [90m16:25:18[0m Server is running on port 3000
+2026-01-12 16:28:44 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:28:44[0m Course info retrieved [count=1]
+2026-01-12 16:28:46 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:28:46[0m Order created [orderId=19, orderCode=DH126600, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:28:46 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:28:46[0m Download tasks created [orderId=19, email=nguyenhuuthanga3@gmail.com, count=1]
+2026-01-12 16:28:46 +07:00: [32m[1m[INFO][0m  [90m16:28:46[0m Download tasks created with status paid, waiting for payment confirmation [orderId=19, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:28:46 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:28:46[0m Download tasks created for order [orderId=19]
+2026-01-12 16:28:47 +07:00: [32m[1m[INFO][0m  [90m16:28:47[0m Check order status request [orderCode=DH126600]
+2026-01-12 16:28:47 +07:00: [32m[1m[INFO][0m  [90m16:28:47[0m Order status retrieved successfully [orderCode=DH126600, status=pending]
+2026-01-12 16:28:50 +07:00: [32m[1m[INFO][0m  [90m16:28:50[0m Check order status request [orderCode=DH126600]
+2026-01-12 16:28:50 +07:00: [32m[1m[INFO][0m  [90m16:28:50[0m Order status retrieved successfully [orderCode=DH126600, status=pending]
+2026-01-12 16:28:54 +07:00: [32m[1m[INFO][0m  [90m16:28:54[0m Check order status request [orderCode=DH126600]
+2026-01-12 16:28:54 +07:00: [32m[1m[INFO][0m  [90m16:28:54[0m Order status retrieved successfully [orderCode=DH126600, status=pending]
+2026-01-12 16:29:13 +07:00: [32m[1m[INFO][0m  [90m16:29:13[0m Check order status request [orderCode=DH126600]
+2026-01-12 16:29:13 +07:00: [32m[1m[INFO][0m  [90m16:29:13[0m Order status retrieved successfully [orderCode=DH126600, status=pending]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Check order status request [orderCode=DH126600]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Order status retrieved successfully [orderCode=DH126600, status=pending]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m SePay webhook received
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Order code extracted from req.body.code [orderCode=DH126600]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Processing SePay webhook [orderCode=DH126600]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Order found [orderId=19, orderCode=DH126600]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Amount validated
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Transaction updates
+2026-01-12 16:29:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:29:14[0m Order payment processed successfully [orderId=19, orderCode=DH126600]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Pushing tasks to Redis queue [orderId=19]
+2026-01-12 16:29:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:29:14[0m Download job added to queue [taskId=19, email=nguyenhuuthanga3@gmail.com, courseUrl=https://samsungu.udemy.com/course/ky-thuat-am-p...]
+2026-01-12 16:29:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:29:14[0m Task pushed to Redis queue [taskId=19, orderId=19, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Queue push summary [orderId=19]
+2026-01-12 16:29:14 +07:00: [32m[1m[INFO][0m  [90m16:29:14[0m Webhook processing result [orderId=19, orderCode=DH126600]
+2026-01-12 16:29:17 +07:00: [32m[1m[INFO][0m  [90m16:29:17[0m Check order status request [orderCode=DH126600]
+2026-01-12 16:29:17 +07:00: [32m[1m[INFO][0m  [90m16:29:17[0m Order status retrieved successfully [orderCode=DH126600, status=paid]
+2026-01-12 16:30:04 +07:00: [32m[1m[INFO][0m  [90m16:30:04[0m Webhook authenticated successfully [taskId=19]
+2026-01-12 16:35:00 +07:00: [32m[1m[INFO][0m  [90m16:35:00[0m SIGINT received, closing Redis client...
+2026-01-12 16:35:00 +07:00: [32m[1m[INFO][0m  [90m16:35:00[0m Redis client closed
+2026-01-12 16:35:05 +07:00: [32m[1m[INFO][0m  [90m16:35:05[0m SIGINT received, closing Redis client...
+2026-01-12 16:35:05 +07:00: [32m[1m[INFO][0m  [90m16:35:05[0m Redis client closed
+2026-01-12 16:35:05 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-12 16:35:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-12 16:35:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 16:35:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-12 16:35:09 +07:00: [32m[1m[INFO][0m  [90m16:35:09[0m Redis Client Connected
+2026-01-12 16:35:09 +07:00: [32m[1m[INFO][0m  [90m16:35:09[0m Database connection established successfully
+2026-01-12 16:35:09 +07:00: [32m[1m[INFO][0m  [90m16:35:09[0m Database models synchronized
+2026-01-12 16:35:09 +07:00: [32m[1m[INFO][0m  [90m16:35:09[0m Server is running on port 3000
+2026-01-12 16:35:11 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-12 16:35:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-12 16:35:12 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 16:35:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-12 16:35:14 +07:00: [32m[1m[INFO][0m  [90m16:35:14[0m Redis Client Connected
+2026-01-12 16:35:14 +07:00: [32m[1m[INFO][0m  [90m16:35:14[0m Database connection established successfully
+2026-01-12 16:35:14 +07:00: [32m[1m[INFO][0m  [90m16:35:14[0m Database models synchronized
+2026-01-12 16:35:14 +07:00: [32m[1m[INFO][0m  [90m16:35:14[0m Server is running on port 3000
+2026-01-12 16:38:48 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:38:48[0m Course info retrieved [count=1]
+2026-01-12 16:38:50 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:38:50[0m Order created [orderId=20, orderCode=DH730061, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:38:50 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:38:50[0m Download tasks created [orderId=20, email=nguyenhuuthanga3@gmail.com, count=1]
+2026-01-12 16:38:50 +07:00: [32m[1m[INFO][0m  [90m16:38:50[0m Download tasks created with status paid, waiting for payment confirmation [orderId=20, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:38:50 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:38:50[0m Download tasks created for order [orderId=20]
+2026-01-12 16:38:51 +07:00: [32m[1m[INFO][0m  [90m16:38:51[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:38:52 +07:00: [32m[1m[INFO][0m  [90m16:38:52[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:38:55 +07:00: [32m[1m[INFO][0m  [90m16:38:55[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:38:55 +07:00: [32m[1m[INFO][0m  [90m16:38:55[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:38:59 +07:00: [32m[1m[INFO][0m  [90m16:38:59[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:38:59 +07:00: [32m[1m[INFO][0m  [90m16:38:59[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:39:13 +07:00: [32m[1m[INFO][0m  [90m16:39:13[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:39:13 +07:00: [32m[1m[INFO][0m  [90m16:39:13[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:39:13 +07:00: [32m[1m[INFO][0m  [90m16:39:13[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:39:13 +07:00: [32m[1m[INFO][0m  [90m16:39:13[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Order status retrieved successfully [orderCode=DH730061, status=pending]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m SePay webhook received
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Order code extracted from req.body.code [orderCode=DH730061]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Processing SePay webhook [orderCode=DH730061]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Order found [orderId=20, orderCode=DH730061]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Amount validated
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Transaction updates
+2026-01-12 16:39:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:39:14[0m Order payment processed successfully [orderId=20, orderCode=DH730061]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Pushing tasks to Redis queue [orderId=20]
+2026-01-12 16:39:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:39:14[0m Download job added to queue [taskId=20, email=nguyenhuuthanga3@gmail.com, courseUrl=https://samsungu.udemy.com/course/ky-thuat-am-p...]
+2026-01-12 16:39:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:39:14[0m Task pushed to Redis queue [taskId=20, orderId=20, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Queue push summary [orderId=20]
+2026-01-12 16:39:14 +07:00: [32m[1m[INFO][0m  [90m16:39:14[0m Webhook processing result [orderId=20, orderCode=DH730061]
+2026-01-12 16:39:16 +07:00: [32m[1m[INFO][0m  [90m16:39:16[0m Check order status request [orderCode=DH730061]
+2026-01-12 16:39:16 +07:00: [32m[1m[INFO][0m  [90m16:39:16[0m Order status retrieved successfully [orderCode=DH730061, status=paid]
+2026-01-12 16:40:02 +07:00: [32m[1m[INFO][0m  [90m16:40:02[0m Webhook authenticated successfully [taskId=20]
+2026-01-12 16:40:02 +07:00: [32m[1m[INFO][0m  [90m16:40:02[0m Finalizing download [taskId=20]
+2026-01-12 16:40:03 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:40:03[0m Drive folder found
+2026-01-12 16:40:05 +07:00: [32m[1m[INFO][0m  [90m16:40:05[0m Granted Drive access
+2026-01-12 16:40:05 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:40:05[0m Folder access granted [email=nguyenhuuthanga3@gmail.com]
+2026-01-12 16:40:08 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m16:40:08[0m Completion email sent [taskId=20, email=nguyenhuuthanga3@gmail.com]
+2026-01-12 18:52:52 +07:00: [32m[1m[INFO][0m  [90m18:52:52[0m SIGINT received, closing Redis client...
+2026-01-12 18:52:52 +07:00: [32m[1m[INFO][0m  [90m18:52:52[0m SIGINT received, closing Redis client...
+2026-01-12 18:52:52 +07:00: [32m[1m[INFO][0m  [90m18:52:52[0m Redis client closed
+2026-01-12 18:52:52 +07:00: [32m[1m[INFO][0m  [90m18:52:52[0m Redis client closed
+2026-01-12 18:52:57 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 18:52:57 +07:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-12 18:52:58 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-12 18:52:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-12 18:53:03 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-12 18:52:58 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-12 18:52:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-12 18:53:03 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-12 18:53:04 +07:00: [32m[1m[INFO][0m  [90m18:53:04[0m Redis Client Connected
+2026-01-12 18:53:04 +07:00: [32m[1m[INFO][0m  [90m18:53:04[0m Redis Client Connected
+2026-01-12 18:53:04 +07:00: [32m[1m[INFO][0m  [90m18:53:04[0m Database connection established successfully
+2026-01-12 18:53:04 +07:00: [32m[1m[INFO][0m  [90m18:53:04[0m Database connection established successfully
+2026-01-12 18:53:05 +07:00: [32m[1m[INFO][0m  [90m18:53:05[0m Database models synchronized
+2026-01-12 18:53:05 +07:00: [32m[1m[INFO][0m  [90m18:53:05[0m Database models synchronized
+2026-01-12 18:53:05 +07:00: [32m[1m[INFO][0m  [90m18:53:05[0m Server is running on port 3000
+2026-01-12 18:53:05 +07:00: [32m[1m[INFO][0m  [90m18:53:05[0m Server is running on port 3000

@@ -873,10 +873,19 @@ class Udemy:
         """
         page = 1
         try:
-            data = self.session._get(initial_url, initial_params).json()
+            # ✅ FIX: Check if response is None before calling .json()
+            response = self.session._get(initial_url, initial_params)
+            if response is None:
+                logger.fatal(f"Failed to get response from {initial_url}")
+                sys.exit(1)
+            data = response.json()
         except conn_error as error:
             logger.fatal(f"Connection error: {error}")
             time.sleep(0.8)
+            sys.exit(1)
+        except AttributeError as error:
+            logger.fatal(f"Response is None or invalid: {error}")
+            logger.fatal(f"URL: {initial_url}")
             sys.exit(1)
         else:
             _next = data.get("next")
@@ -887,6 +896,10 @@ class Udemy:
                 logger.info(f"> Downloading data page {page + 1}/{est_page_count}")
                 try:
                     resp = self.session._get(_next)
+                    # ✅ FIX: Check if response is None
+                    if resp is None:
+                        logger.error(f"Failed to fetch page {page + 1}, response is None")
+                        continue
                     if not resp.ok:
                         logger.error(f"Failed to fetch page {page + 1}, retrying...")
                         continue
@@ -895,6 +908,9 @@ class Udemy:
                     logger.fatal(f"Connection error: {error}")
                     time.sleep(0.8)
                     sys.exit(1)
+                except AttributeError as error:
+                    logger.error(f"Response is None on page {page + 1}: {error}")
+                    continue
                 else:
                     _next = resp.get("next")
                     results = resp.get("results")
@@ -1177,13 +1193,21 @@ class Session(object):
 
     def _get(self, url, params=None):
         for i in range(10):
-            req = self._session.get(url, cookies=cj, params=params)
-            if req.ok or req.status_code in [502, 503]:
-                return req
-            if not req.ok:
-                logger.error("Failed request " + url)
-                logger.error(f"{req.status_code} {req.reason}, retrying (attempt {i} )...")
-                time.sleep(0.8)
+            try:
+                req = self._session.get(url, cookies=cj, params=params)
+                if req.ok or req.status_code in [502, 503]:
+                    return req
+                if not req.ok:
+                    logger.error("Failed request " + url)
+                    logger.error(f"{req.status_code} {req.reason}, retrying (attempt {i} )...")
+                    time.sleep(0.8)
+            except Exception as e:
+                logger.error(f"Exception during request to {url}: {e}")
+                if i < 9:  # Don't sleep on last attempt
+                    time.sleep(0.8)
+        # ✅ FIX: Return None if all retries failed
+        logger.error(f"All retries failed for {url}")
+        return None
 
     def _post(self, url, data, redirect=True):
         req = self._session.post(url, data, allow_redirects=redirect, cookies=cj)
@@ -1951,10 +1975,12 @@ def main():
         logger.info("> 'save_to_file' was specified, data will be saved to json files")
 
     load_dotenv()
+    # ✅ SECURITY FIX: Đọc token từ environment variable thay vì CLI argument
     if bearer_token:
         bearer_token = bearer_token
     else:
-        bearer_token = os.getenv("UDEMY_BEARER")
+        # Thử đọc từ UDEMY_TOKEN trước (nhất quán với worker.py), fallback sang UDEMY_BEARER
+        bearer_token = os.getenv("UDEMY_TOKEN") or os.getenv("UDEMY_BEARER")
 
     udemy = Udemy(bearer_token)
     portal_name = udemy.extract_portal_name(course_url)

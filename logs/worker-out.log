@@ -1,0 +1,455 @@
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [PM2] Using INSTANCE_ID=0 -> Worker #1
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] >>> REDIS WORKER #1 STARTED <<<
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] Listening to queue: rq:queue:downloads
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [REDIS] Connected to localhost:6379
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [PM2] Using INSTANCE_ID=2 -> Worker #3
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] >>> REDIS WORKER #3 STARTED <<<
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] Listening to queue: rq:queue:downloads
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [PM2] Using INSTANCE_ID=1 -> Worker #2
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] >>> REDIS WORKER #2 STARTED <<<
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] Listening to queue: rq:queue:downloads
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [REDIS] Connected to localhost:6379
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [PM2] Using INSTANCE_ID=4 -> Worker #5
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [PM2] Using INSTANCE_ID=3 -> Worker #4
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] >>> REDIS WORKER #4 STARTED <<<
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] Listening to queue: rq:queue:downloads
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [REDIS] Connected to localhost:6379
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [REDIS] Connected to localhost:6379
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] >>> REDIS WORKER #5 STARTED <<<
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] Listening to queue: rq:queue:downloads
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:25:15 +07:00: [2026-01-12 16:25:15] [REDIS] Connected to localhost:6379
+2026-01-12 16:25:15 +07:00: 
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [WORKER #2] Received job from rq:queue:downloads
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [WORKER #2] Job data: {'taskId': 99999, 'email': 'test@example.com', 'courseUrl': 'https://www.udemy.com/course/test-course-invalid/'}
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] ============================================================
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [RQ JOB] Processing download job
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [*] Task ID: 99999
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [*] Email: test@example.com
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [*] URL: https://www.udemy.com/course/test-course-invalid/
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] ============================================================
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [SANDBOX] Task directory: Staging_Download/Task_99999
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [ATTEMPT 1/3] Downloading course...
+2026-01-12 16:26:44 +07:00: [2026-01-12 16:26:44] [DOWNLOAD] Command: /usr/bin/python3 main.py -c https://www.udemy.com/course/test-course-invalid/ -o Staging_Download/Task_99999 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+2026-01-12 16:26:48 +07:00: [2026-01-12 16:26:48] [ERROR] main.py failed with exit code 1
+2026-01-12 16:26:48 +07:00: [2026-01-12 16:26:48] [RESUME] Keeping downloaded files for resume on next attempt...
+2026-01-12 16:26:48 +07:00: [2026-01-12 16:26:48] [INFO] Retrying in 20 seconds...
+2026-01-12 16:27:08 +07:00: [2026-01-12 16:27:08] [ATTEMPT 2/3] Downloading course...
+2026-01-12 16:27:08 +07:00: [2026-01-12 16:27:08] [DOWNLOAD] Command: /usr/bin/python3 main.py -c https://www.udemy.com/course/test-course-invalid/ -o Staging_Download/Task_99999 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+2026-01-12 16:27:10 +07:00: [2026-01-12 16:27:10] [ERROR] main.py failed with exit code 1
+2026-01-12 16:27:10 +07:00: [2026-01-12 16:27:10] [RESUME] Keeping downloaded files for resume on next attempt...
+2026-01-12 16:27:10 +07:00: [2026-01-12 16:27:10] [INFO] Retrying in 20 seconds...
+2026-01-12 16:27:30 +07:00: [2026-01-12 16:27:30] [ATTEMPT 3/3] Downloading course...
+2026-01-12 16:27:30 +07:00: [2026-01-12 16:27:30] [DOWNLOAD] Command: /usr/bin/python3 main.py -c https://www.udemy.com/course/test-course-invalid/ -o Staging_Download/Task_99999 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+2026-01-12 16:27:32 +07:00: [2026-01-12 16:27:32] [ERROR] main.py failed with exit code 1
+2026-01-12 16:27:33 +07:00: [2026-01-12 16:27:33] [DB] Task 99999 status -> failed
+2026-01-12 16:27:33 +07:00: 
+2026-01-12 16:27:33 +07:00: [2026-01-12 16:27:33] [FAILED] Task failed after 3 retries
+2026-01-12 16:27:33 +07:00: 
+2026-01-12 16:27:33 +07:00: [2026-01-12 16:27:33] [DEBUG] Failed files kept at: Staging_Download/Task_99999
+2026-01-12 16:27:33 +07:00: 
+2026-01-12 16:27:33 +07:00: [2026-01-12 16:27:33] [DEBUG] You can manually inspect or retry this task
+2026-01-12 16:27:33 +07:00: 
+2026-01-12 16:27:33 +07:00: [2026-01-12 16:27:33] [FAILED] Task failed after retries
+2026-01-12 16:27:33 +07:00: 
+2026-01-12 16:27:33 +07:00: [2026-01-12 16:27:33] [WORKER #2] ❌ Job failed: Task 99999
+2026-01-12 16:27:33 +07:00: 
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [WORKER #5] Received job from rq:queue:downloads
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [WORKER #5] Job data: {'taskId': 19, 'email': 'nguyenhuuthanga3@gmail.com', 'courseUrl': 'https://samsungu.udemy.com/course/ky-thuat-am-phan-trong-moi-tinh-huong/', 'timestamp': '2026-01-12T09:29:14.787Z', 'jobId': 'task-19'}
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] ============================================================
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [RQ JOB] Processing download job
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [*] Task ID: 19
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [*] Email: nguyenhuuthanga3@gmail.com
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [*] URL: https://samsungu.udemy.com/course/ky-thuat-am-phan-trong-moi-tinh-huong/
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] ============================================================
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [SANDBOX] Task directory: Staging_Download/Task_19
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [ATTEMPT 1/3] Downloading course...
+2026-01-12 16:29:14 +07:00: [2026-01-12 16:29:14] [DOWNLOAD] Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/ky-thuat-am-phan-trong-moi-tinh-huong/ -o Staging_Download/Task_19 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+2026-01-12 16:29:22 +07:00: 
+2026-01-12 16:29:22 +07:00: 01/12 16:29:22 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:24 +07:00: [#5994ac 54MiB/154MiB(35%) CN:4 DL:105MiB]
+2026-01-12 16:29:24 +07:00: [#5994ac 153MiB/154MiB(99%) CN:1 DL:101MiB]
+2026-01-12 16:29:24 +07:00: 
+2026-01-12 16:29:24 +07:00: 01/12 16:29:24 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/001 Giới thiệu chung về đàm phán.mp4
+2026-01-12 16:29:24 +07:00: 
+2026-01-12 16:29:24 +07:00: Download Results:
+2026-01-12 16:29:24 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:24 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:24 +07:00: 5994ac|OK  |    90MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/001 Giới thiệu chung về đàm phán.mp4
+2026-01-12 16:29:24 +07:00: 
+2026-01-12 16:29:24 +07:00: Status Legend:
+2026-01-12 16:29:24 +07:00: (OK):download completed.
+2026-01-12 16:29:29 +07:00: 
+2026-01-12 16:29:29 +07:00: 01/12 16:29:29 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:30 +07:00: [#1a2aae 83MiB/90MiB(92%) CN:1 DL:101MiB]
+2026-01-12 16:29:30 +07:00: 
+2026-01-12 16:29:30 +07:00: 01/12 16:29:30 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/002 Kỹ năng giao tiếp trong đàm phán.mp4
+2026-01-12 16:29:30 +07:00: 
+2026-01-12 16:29:30 +07:00: Download Results:
+2026-01-12 16:29:30 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:30 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:30 +07:00: 1a2aae|OK  |    85MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/002 Kỹ năng giao tiếp trong đàm phán.mp4
+2026-01-12 16:29:30 +07:00: 
+2026-01-12 16:29:30 +07:00: Status Legend:
+2026-01-12 16:29:30 +07:00: (OK):download completed.
+2026-01-12 16:29:34 +07:00: 
+2026-01-12 16:29:34 +07:00: 01/12 16:29:34 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:36 +07:00: [#cb2957 104MiB/124MiB(84%) CN:1 DL:163MiB]
+2026-01-12 16:29:36 +07:00: 
+2026-01-12 16:29:36 +07:00: 01/12 16:29:36 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/003 Các phong cách đàm phán.mp4
+2026-01-12 16:29:36 +07:00: 
+2026-01-12 16:29:36 +07:00: Download Results:
+2026-01-12 16:29:36 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:36 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:36 +07:00: cb2957|OK  |    94MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/003 Các phong cách đàm phán.mp4
+2026-01-12 16:29:36 +07:00: 
+2026-01-12 16:29:36 +07:00: Status Legend:
+2026-01-12 16:29:36 +07:00: (OK):download completed.
+2026-01-12 16:29:39 +07:00: 
+2026-01-12 16:29:39 +07:00: 01/12 16:29:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:41 +07:00: [#225d4d 153MiB/223MiB(68%) CN:5 DL:358MiB]
+2026-01-12 16:29:41 +07:00: 
+2026-01-12 16:29:41 +07:00: 01/12 16:29:41 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/004 Đàm phán trong các tình huống khác nhau.mp4
+2026-01-12 16:29:41 +07:00: 
+2026-01-12 16:29:41 +07:00: Download Results:
+2026-01-12 16:29:41 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:41 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:41 +07:00: 225d4d|OK  |   171MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/004 Đàm phán trong các tình huống khác nhau.mp4
+2026-01-12 16:29:41 +07:00: 
+2026-01-12 16:29:41 +07:00: Status Legend:
+2026-01-12 16:29:41 +07:00: (OK):download completed.
+2026-01-12 16:29:45 +07:00: 
+2026-01-12 16:29:45 +07:00: 01/12 16:29:45 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:47 +07:00: [#209012 97MiB/115MiB(83%) CN:1 DL:207MiB]
+2026-01-12 16:29:47 +07:00: 
+2026-01-12 16:29:47 +07:00: 01/12 16:29:47 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/005 Ba biến số quyết định trong đàm phán.mp4
+2026-01-12 16:29:47 +07:00: 
+2026-01-12 16:29:47 +07:00: Download Results:
+2026-01-12 16:29:47 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:47 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:47 +07:00: 209012|OK  |    87MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/005 Ba biến số quyết định trong đàm phán.mp4
+2026-01-12 16:29:47 +07:00: 
+2026-01-12 16:29:47 +07:00: Status Legend:
+2026-01-12 16:29:47 +07:00: (OK):download completed.
+2026-01-12 16:29:50 +07:00: 
+2026-01-12 16:29:50 +07:00: 01/12 16:29:50 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:52 +07:00: [#bc2004 104MiB/124MiB(84%) CN:1 DL:168MiB]
+2026-01-12 16:29:52 +07:00: 
+2026-01-12 16:29:52 +07:00: 01/12 16:29:52 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/006 Chốt thỏa thuận.mp4
+2026-01-12 16:29:52 +07:00: 
+2026-01-12 16:29:52 +07:00: Download Results:
+2026-01-12 16:29:52 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:52 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:52 +07:00: bc2004|OK  |    97MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/006 Chốt thỏa thuận.mp4
+2026-01-12 16:29:52 +07:00: 
+2026-01-12 16:29:52 +07:00: Status Legend:
+2026-01-12 16:29:52 +07:00: (OK):download completed.
+2026-01-12 16:29:55 +07:00: 
+2026-01-12 16:29:55 +07:00: 01/12 16:29:55 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:29:57 +07:00: [#4d2921 46MiB/61MiB(75%) CN:1 DL:55MiB]
+2026-01-12 16:29:57 +07:00: 
+2026-01-12 16:29:57 +07:00: 01/12 16:29:57 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/007 Tổng kết.mp4
+2026-01-12 16:29:57 +07:00: 
+2026-01-12 16:29:57 +07:00: Download Results:
+2026-01-12 16:29:57 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:29:57 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:29:57 +07:00: 4d2921|OK  |    41MiB/s|/root/server/udemy_dl/Staging_Download/Task_19/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/007 Tổng kết.mp4
+2026-01-12 16:29:57 +07:00: 
+2026-01-12 16:29:57 +07:00: Status Legend:
+2026-01-12 16:29:57 +07:00: (OK):download completed.
+2026-01-12 16:29:57 +07:00: [2026-01-12 16:29:57] [CHECK] Downloaded: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:29:57 +07:00: [2026-01-12 16:29:57] [UPLOAD] Starting upload to Google Drive...
+2026-01-12 16:29:57 +07:00: [2026-01-12 16:29:57] [RCLONE] Start upload: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:30:00 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:00 +07:00: Checks:                 0 / 0, -, Listed 1
+2026-01-12 16:30:00 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:00 +07:00: Checks:                 0 / 0, -, Listed 2
+2026-01-12 16:30:01 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:01 +07:00: Checks:                 0 / 0, -, Listed 2
+2026-01-12 16:30:01 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:01 +07:00: Checks:                 0 / 0, -, Listed 9
+2026-01-12 16:30:02 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:02 +07:00: Checks:                 0 / 7, 0%, Listed 16
+2026-01-12 16:30:02 +07:00: Elapsed time:         2.5s
+2026-01-12 16:30:02 +07:00: Checking:
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  *       01 - Giới thiệu/006 Chốt thỏa thuận.mp4: checking
+2026-01-12 16:30:02 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:02 +07:00: Checks:                 0 / 7, 0%, Listed 16
+2026-01-12 16:30:02 +07:00: Elapsed time:         2.9s
+2026-01-12 16:30:02 +07:00: Checking:
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:30:02 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:30:02 +07:00:  *       01 - Giới thiệu/006 Chốt thỏa thuận.mp4: checking
+2026-01-12 16:30:03 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:03 +07:00: Checks:                 2 / 8, 25%, Listed 16
+2026-01-12 16:30:03 +07:00: Deleted:                1 (files), 0 (dirs), 61.684 MiB (freed)
+2026-01-12 16:30:03 +07:00: Elapsed time:         3.4s
+2026-01-12 16:30:03 +07:00: Checking:
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:03 +07:00: Checks:                 2 / 8, 25%, Listed 16
+2026-01-12 16:30:03 +07:00: Deleted:                1 (files), 0 (dirs), 61.684 MiB (freed)
+2026-01-12 16:30:03 +07:00: Elapsed time:         3.9s
+2026-01-12 16:30:03 +07:00: Checking:
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:30:03 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:30:04 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:04 +07:00: Checks:                 8 / 11, 73%, Listed 16
+2026-01-12 16:30:04 +07:00: Deleted:                4 (files), 0 (dirs), 392.628 MiB (freed)
+2026-01-12 16:30:04 +07:00: Elapsed time:         4.4s
+2026-01-12 16:30:04 +07:00: Checking:
+2026-01-12 16:30:04 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:30:04 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:30:04 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:30:04 +07:00: Checks:                14 / 14, 100%, Listed 16
+2026-01-12 16:30:04 +07:00: Deleted:                7 (files), 0 (dirs), 894.507 MiB (freed)
+2026-01-12 16:30:04 +07:00: Elapsed time:         4.8s
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [RCLONE] Upload successful
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [UPLOAD] Upload successful!
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [DB] Task 19 status -> completed
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [WEBHOOK] Calling Node.js webhook...
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [API] Calling webhook with HMAC auth: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [API FAIL] Status: 500 - {"success":false,"message":"Lỗi server nội bộ"}
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [KEEP] Webhook failed, keeping files for manual inspection
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [SUCCESS] Task completed successfully
+2026-01-12 16:30:04 +07:00: [2026-01-12 16:30:04] [WORKER #5] ✅ Job completed: Task 19
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [WORKER #2] Received job from rq:queue:downloads
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [WORKER #2] Job data: {'taskId': 20, 'email': 'nguyenhuuthanga3@gmail.com', 'courseUrl': 'https://samsungu.udemy.com/course/ky-thuat-am-phan-trong-moi-tinh-huong/', 'timestamp': '2026-01-12T09:39:14.839Z', 'jobId': 'task-20'}
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] ============================================================
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [RQ JOB] Processing download job
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [*] Task ID: 20
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [*] Email: nguyenhuuthanga3@gmail.com
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [*] URL: https://samsungu.udemy.com/course/ky-thuat-am-phan-trong-moi-tinh-huong/
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] ============================================================
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [SANDBOX] Task directory: Staging_Download/Task_20
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [ATTEMPT 1/3] Downloading course...
+2026-01-12 16:39:14 +07:00: [2026-01-12 16:39:14] [DOWNLOAD] Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/ky-thuat-am-phan-trong-moi-tinh-huong/ -o Staging_Download/Task_20 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+2026-01-12 16:39:22 +07:00: 
+2026-01-12 16:39:22 +07:00: 01/12 16:39:22 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:24 +07:00: [#3291b1 88MiB/154MiB(57%) CN:3 DL:339MiB]
+2026-01-12 16:39:24 +07:00: [#3291b1 147MiB/154MiB(95%) CN:1 DL:117MiB]
+2026-01-12 16:39:24 +07:00: 
+2026-01-12 16:39:24 +07:00: 01/12 16:39:24 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/001 Giới thiệu chung về đàm phán.mp4
+2026-01-12 16:39:24 +07:00: 
+2026-01-12 16:39:24 +07:00: Download Results:
+2026-01-12 16:39:24 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:24 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:24 +07:00: 3291b1|OK  |   103MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/001 Giới thiệu chung về đàm phán.mp4
+2026-01-12 16:39:24 +07:00: 
+2026-01-12 16:39:24 +07:00: Status Legend:
+2026-01-12 16:39:24 +07:00: (OK):download completed.
+2026-01-12 16:39:29 +07:00: 
+2026-01-12 16:39:29 +07:00: 01/12 16:39:29 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:31 +07:00: [#7a7e7f 77MiB/90MiB(85%) CN:1 DL:183MiB]
+2026-01-12 16:39:31 +07:00: 
+2026-01-12 16:39:31 +07:00: 01/12 16:39:31 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/002 Kỹ năng giao tiếp trong đàm phán.mp4
+2026-01-12 16:39:31 +07:00: 
+2026-01-12 16:39:31 +07:00: Download Results:
+2026-01-12 16:39:31 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:31 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:31 +07:00: 7a7e7f|OK  |   102MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/002 Kỹ năng giao tiếp trong đàm phán.mp4
+2026-01-12 16:39:31 +07:00: 
+2026-01-12 16:39:31 +07:00: Status Legend:
+2026-01-12 16:39:31 +07:00: (OK):download completed.
+2026-01-12 16:39:34 +07:00: 
+2026-01-12 16:39:34 +07:00: 01/12 16:39:34 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:36 +07:00: [#305398 110MiB/124MiB(88%) CN:1 DL:130MiB]
+2026-01-12 16:39:36 +07:00: 
+2026-01-12 16:39:36 +07:00: 01/12 16:39:36 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/003 Các phong cách đàm phán.mp4
+2026-01-12 16:39:36 +07:00: 
+2026-01-12 16:39:36 +07:00: Download Results:
+2026-01-12 16:39:36 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:36 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:36 +07:00: 305398|OK  |    83MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/003 Các phong cách đàm phán.mp4
+2026-01-12 16:39:36 +07:00: 
+2026-01-12 16:39:36 +07:00: Status Legend:
+2026-01-12 16:39:36 +07:00: (OK):download completed.
+2026-01-12 16:39:39 +07:00: 
+2026-01-12 16:39:39 +07:00: 01/12 16:39:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:41 +07:00: [#16ddff 178MiB/223MiB(80%) CN:8 DL:352MiB]
+2026-01-12 16:39:41 +07:00: 
+2026-01-12 16:39:41 +07:00: 01/12 16:39:41 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/004 Đàm phán trong các tình huống khác nhau.mp4
+2026-01-12 16:39:41 +07:00: 
+2026-01-12 16:39:41 +07:00: Download Results:
+2026-01-12 16:39:41 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:41 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:41 +07:00: 16ddff|OK  |   207MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/004 Đàm phán trong các tình huống khác nhau.mp4
+2026-01-12 16:39:41 +07:00: 
+2026-01-12 16:39:41 +07:00: Status Legend:
+2026-01-12 16:39:41 +07:00: (OK):download completed.
+2026-01-12 16:39:43 +07:00: 
+2026-01-12 16:39:43 +07:00: 01/12 16:39:43 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:45 +07:00: [#dd0b57 94MiB/115MiB(82%) CN:1 DL:228MiB]
+2026-01-12 16:39:45 +07:00: 
+2026-01-12 16:39:45 +07:00: 01/12 16:39:45 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/005 Ba biến số quyết định trong đàm phán.mp4
+2026-01-12 16:39:45 +07:00: 
+2026-01-12 16:39:45 +07:00: Download Results:
+2026-01-12 16:39:45 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:45 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:45 +07:00: dd0b57|OK  |    91MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/005 Ba biến số quyết định trong đàm phán.mp4
+2026-01-12 16:39:45 +07:00: 
+2026-01-12 16:39:45 +07:00: Status Legend:
+2026-01-12 16:39:45 +07:00: (OK):download completed.
+2026-01-12 16:39:48 +07:00: 
+2026-01-12 16:39:48 +07:00: 01/12 16:39:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:50 +07:00: [#445372 74MiB/124MiB(59%) CN:3 DL:172MiB]
+2026-01-12 16:39:50 +07:00: 
+2026-01-12 16:39:50 +07:00: 01/12 16:39:50 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/006 Chốt thỏa thuận.mp4
+2026-01-12 16:39:50 +07:00: 
+2026-01-12 16:39:50 +07:00: Download Results:
+2026-01-12 16:39:50 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:50 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:50 +07:00: 445372|OK  |    94MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/006 Chốt thỏa thuận.mp4
+2026-01-12 16:39:50 +07:00: 
+2026-01-12 16:39:50 +07:00: Status Legend:
+2026-01-12 16:39:50 +07:00: (OK):download completed.
+2026-01-12 16:39:53 +07:00: 
+2026-01-12 16:39:53 +07:00: 01/12 16:39:53 [[1;32mNOTICE[0m] Downloading 1 item(s)
+2026-01-12 16:39:54 +07:00: [#0d0ea4 48MiB/61MiB(79%) CN:1 DL:58MiB]
+2026-01-12 16:39:54 +07:00: 
+2026-01-12 16:39:54 +07:00: 01/12 16:39:54 [[1;32mNOTICE[0m] Download complete: /root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/007 Tổng kết.mp4
+2026-01-12 16:39:54 +07:00: 
+2026-01-12 16:39:54 +07:00: Download Results:
+2026-01-12 16:39:54 +07:00: gid   |stat|avg speed  |path/URI
+2026-01-12 16:39:54 +07:00: ======+====+===========+=======================================================
+2026-01-12 16:39:54 +07:00: 0d0ea4|OK  |    48MiB/s|/root/server/udemy_dl/Staging_Download/Task_20/ky-thuat-am-phan-trong-moi-tinh-huong/01 - Giới thiệu/007 Tổng kết.mp4
+2026-01-12 16:39:54 +07:00: 
+2026-01-12 16:39:54 +07:00: Status Legend:
+2026-01-12 16:39:54 +07:00: (OK):download completed.
+2026-01-12 16:39:54 +07:00: [2026-01-12 16:39:54] [CHECK] Downloaded: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:39:54 +07:00: [2026-01-12 16:39:54] [UPLOAD] Starting upload to Google Drive...
+2026-01-12 16:39:54 +07:00: [2026-01-12 16:39:54] [RCLONE] Start upload: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:39:57 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:39:57 +07:00: Checks:                 0 / 0, -, Listed 2
+2026-01-12 16:39:58 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:39:58 +07:00: Checks:                 0 / 0, -, Listed 2
+2026-01-12 16:39:58 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:39:58 +07:00: Checks:                 0 / 0, -, Listed 9
+2026-01-12 16:39:59 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:39:59 +07:00: Checks:                 0 / 7, 0%, Listed 16
+2026-01-12 16:39:59 +07:00: Elapsed time:         2.0s
+2026-01-12 16:39:59 +07:00: Checking:
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  *       01 - Giới thiệu/006 Chốt thỏa thuận.mp4: checking
+2026-01-12 16:39:59 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:39:59 +07:00: Checks:                 0 / 7, 0%, Listed 16
+2026-01-12 16:39:59 +07:00: Elapsed time:         2.5s
+2026-01-12 16:39:59 +07:00: Checking:
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:39:59 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:39:59 +07:00:  *       01 - Giới thiệu/006 Chốt thỏa thuận.mp4: checking
+2026-01-12 16:40:00 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:40:00 +07:00: Checks:                 0 / 7, 0%, Listed 16
+2026-01-12 16:40:00 +07:00: Elapsed time:         2.9s
+2026-01-12 16:40:00 +07:00: Checking:
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  *       01 - Giới thiệu/006 Chốt thỏa thuận.mp4: checking
+2026-01-12 16:40:00 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:40:00 +07:00: Checks:                 2 / 8, 25%, Listed 16
+2026-01-12 16:40:00 +07:00: Deleted:                1 (files), 0 (dirs), 61.684 MiB (freed)
+2026-01-12 16:40:00 +07:00: Elapsed time:         3.4s
+2026-01-12 16:40:00 +07:00: Checking:
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/002 Kỹ…iếp trong đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/003 Cá…hong cách đàm phán.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/004 Đà…nh huống khác nhau.mp4: checking
+2026-01-12 16:40:00 +07:00:  * 01 - Giới thiệu/005 Ba…ịnh trong đàm phán.mp4: checking
+2026-01-12 16:40:01 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:40:01 +07:00: Checks:                10 / 12, 83%, Listed 16
+2026-01-12 16:40:01 +07:00: Deleted:                5 (files), 0 (dirs), 516.999 MiB (freed)
+2026-01-12 16:40:01 +07:00: Elapsed time:         3.9s
+2026-01-12 16:40:01 +07:00: Checking:
+2026-01-12 16:40:01 +07:00:  * 01 - Giới thiệu/001 Gi… chung về đàm phán.mp4: checking
+2026-01-12 16:40:01 +07:00: Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+2026-01-12 16:40:01 +07:00: Checks:                14 / 14, 100%, Listed 16
+2026-01-12 16:40:01 +07:00: Deleted:                7 (files), 0 (dirs), 894.507 MiB (freed)
+2026-01-12 16:40:01 +07:00: 
+2026-01-12 16:40:01 +07:00: [2026-01-12 16:40:01] [RCLONE] Upload successful
+2026-01-12 16:40:01 +07:00: [2026-01-12 16:40:01] [UPLOAD] Upload successful!
+2026-01-12 16:40:01 +07:00: [2026-01-12 16:40:01] [DB] Task 20 status -> completed
+2026-01-12 16:40:01 +07:00: [2026-01-12 16:40:01] [WEBHOOK] Calling Node.js webhook...
+2026-01-12 16:40:01 +07:00: 
+2026-01-12 16:40:01 +07:00: [2026-01-12 16:40:01] [API] Calling webhook with HMAC auth: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:40:01 +07:00: 
+2026-01-12 16:40:08 +07:00: [2026-01-12 16:40:08] [API] Webhook successful: ky-thuat-am-phan-trong-moi-tinh-huong
+2026-01-12 16:40:08 +07:00: [2026-01-12 16:40:08] [CLEAN] Removed task directory: Task_20
+2026-01-12 16:40:08 +07:00: 
+2026-01-12 16:40:08 +07:00: [2026-01-12 16:40:08] [CLEANUP] Task sandbox removed (all steps completed)
+2026-01-12 16:40:08 +07:00: 
+2026-01-12 16:40:08 +07:00: [2026-01-12 16:40:08] [SUCCESS] Task completed successfully
+2026-01-12 16:40:08 +07:00: [2026-01-12 16:40:08] [WORKER #2] ✅ Job completed: Task 20
+2026-01-12 18:52:57 +07:00: [2026-01-12 18:52:57] [WORKER #1] Shutting down gracefully...
+2026-01-12 18:52:57 +07:00: [2026-01-12 18:52:57] [WORKER #1] Worker stopped.
+2026-01-12 18:52:57 +07:00: [2026-01-12 18:52:57] [WORKER #2] Shutting down gracefully...
+2026-01-12 18:52:57 +07:00: [2026-01-12 18:52:57] [WORKER #2] Worker stopped.
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] [WORKER #3] Shutting down gracefully...
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] [WORKER #3] Worker stopped.
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] [WORKER #4] Shutting down gracefully...
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] [WORKER #4] Worker stopped.
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] [PM2] Using INSTANCE_ID=0 -> Worker #1
+2026-01-12 18:52:59 +07:00: 
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] >>> REDIS WORKER #1 STARTED <<<
+2026-01-12 18:52:59 +07:00: 
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] Listening to queue: rq:queue:downloads
+2026-01-12 18:52:59 +07:00: [2026-01-12 18:52:59] [REDIS] Connected to localhost:6379
+2026-01-12 18:52:59 +07:00: 
+2026-01-12 18:53:00 +07:00: [2026-01-12 18:53:00] [WORKER #5] Shutting down gracefully...
+2026-01-12 18:53:00 +07:00: [2026-01-12 18:53:00] [WORKER #5] Worker stopped.
+2026-01-12 18:53:01 +07:00: [2026-01-12 18:53:01] [PM2] Using INSTANCE_ID=1 -> Worker #2
+2026-01-12 18:53:01 +07:00: 
+2026-01-12 18:53:01 +07:00: [2026-01-12 18:53:01] >>> REDIS WORKER #2 STARTED <<<
+2026-01-12 18:53:01 +07:00: 
+2026-01-12 18:53:01 +07:00: [2026-01-12 18:53:01] Listening to queue: rq:queue:downloads
+2026-01-12 18:53:01 +07:00: [2026-01-12 18:53:01] [REDIS] Connected to localhost:6379
+2026-01-12 18:53:01 +07:00: 
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] [PM2] Using INSTANCE_ID=2 -> Worker #3
+2026-01-12 18:53:02 +07:00: 
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] >>> REDIS WORKER #3 STARTED <<<
+2026-01-12 18:53:02 +07:00: 
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] Listening to queue: rq:queue:downloads
+2026-01-12 18:53:02 +07:00: 
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] [PM2] Using INSTANCE_ID=3 -> Worker #4
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] >>> REDIS WORKER #4 STARTED <<<
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] Listening to queue: rq:queue:downloads
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] [REDIS] Connected to localhost:6379
+2026-01-12 18:53:02 +07:00: [2026-01-12 18:53:02] [REDIS] Connected to localhost:6379
+2026-01-12 18:53:02 +07:00: 
+2026-01-12 18:53:03 +07:00: [2026-01-12 18:53:03] [PM2] Using INSTANCE_ID=4 -> Worker #5
+2026-01-12 18:53:03 +07:00: 
+2026-01-12 18:53:03 +07:00: [2026-01-12 18:53:03] >>> REDIS WORKER #5 STARTED <<<
+2026-01-12 18:53:03 +07:00: 
+2026-01-12 18:53:03 +07:00: [2026-01-12 18:53:03] Listening to queue: rq:queue:downloads
+2026-01-12 18:53:03 +07:00: 
+2026-01-12 18:53:03 +07:00: [2026-01-12 18:53:03] [REDIS] Connected to localhost:6379

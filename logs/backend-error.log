@@ -1,0 +1,17 @@
+2026-01-12 16:23:52 +07:00: [31m[1m[ERROR][0m [90m16:23:52[0m Failed to start server: Can't DROP FOREIGN KEY `download_tasks_ibfk_1`; check that it exists
+2026-01-12 16:30:04 +07:00: Error: {
+  message: "Unknown column 'driver_url' in 'SELECT'",
+  stack: 'Error\n' +
+    '    at Query.run (/root/server/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /root/server/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/root/server/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async DownloadTask.findAll (/root/server/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async DownloadTask.findOne (/root/server/node_modules/sequelize/lib/model.js:1240:12)\n' +
+    '    at async DownloadTask.findByPk (/root/server/node_modules/sequelize/lib/model.js:1221:12)\n' +
+    '    at async Object.finalizeDownload (/root/server/src/services/webhook.service.js:181:16)\n' +
+    '    at async /root/server/src/controllers/webhook.controller.js:84:18',
+  statusCode: 500,
+  path: '/api/v1/webhook/finalize',
+  method: 'POST'
+}

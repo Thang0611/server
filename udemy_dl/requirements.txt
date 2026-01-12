@@ -17,3 +17,6 @@ pathvalidate
 coloredlogs
 browser_cookie3
 demoji
+mysql-connector-python
+rq
+redis

@@ -1,0 +1,45 @@
+[Unit]
+Description=Udemy Download Workers - RQ (Redis Queue) Service
+Documentation=https://github.com/your-org/your-repo
+After=network-online.target mysql.service redis.service
+Wants=network-online.target
+Requires=redis.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=root
+Group=root
+WorkingDirectory=/root/server
+
+# Environment
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+# Load environment variables from .env file
+EnvironmentFile=/root/server/.env
+
+# Start command - uses the start_workers.sh script to spawn 5 workers
+ExecStart=/root/server/start_workers.sh
+
+# Stop command - uses the stop_workers.sh script for graceful shutdown
+ExecStop=/root/server/stop_workers.sh
+
+# Restart policy - not needed for oneshot, managed manually
+# Restart=on-failure
+# RestartSec=10
+
+# Logging
+StandardOutput=append:/var/log/udemy-worker-rq.log
+StandardError=append:/var/log/udemy-worker-rq-error.log
+
+# Process limits
+LimitNOFILE=65536
+TimeoutStopSec=90
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

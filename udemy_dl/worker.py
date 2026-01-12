@@ -318,6 +318,8 @@ import sys
 from datetime import datetime
 from dotenv import load_dotenv
 import requests
+import hmac
+import hashlib
 
 # ================= 1. SETUP =================
 # Load .env
@@ -401,19 +403,43 @@ def upload_to_drive(local_path):
         return False
 
 def notify_node_webhook(task_id, folder_name_local):
-    """Gọi Node.js để update DB (driver_url) và gửi mail"""
+    """
+    Gọi Node.js để update DB (driver_url) và gửi mail
+    ✅ SECURITY: Sử dụng HMAC-SHA256 để xác thực webhook
+    """
     api_url = "https://api.khoahocgiare.info/api/v1/webhook/finalize"
     secret = os.getenv('API_SECRET_KEY') or "KEY_BAO_MAT_CUA_BAN_2025"
     folder_name_only = os.path.basename(folder_name_local)
-
+    
+    # Tạo timestamp (Unix timestamp dạng string)
+    timestamp = str(int(time.time()))
+    
+    # Payload gửi đi
     payload = {
-        "secret_key": secret,
         "task_id": task_id,
-        "folder_name": folder_name_only
+        "folder_name": folder_name_only,
+        "timestamp": timestamp
+    }
+    
+    # Tạo HMAC-SHA256 signature
+    # Message = task_id + folder_name + timestamp
+    message = f"{task_id}{folder_name_only}{timestamp}"
+    signature = hmac.new(
+        secret.encode('utf-8'),
+        message.encode('utf-8'),
+        hashlib.sha256
+    ).hexdigest()
+    
+    # Headers với signature và timestamp
+    headers = {
+        "Content-Type": "application/json",
+        "X-Signature": signature,
+        "X-Timestamp": timestamp
     }
     
     try:
-        res = requests.post(api_url, json=payload, timeout=30)
+        log(f"[API] Calling webhook with HMAC auth: {folder_name_only}")
+        res = requests.post(api_url, json=payload, headers=headers, timeout=30)
         if res.status_code == 200:
             log(f"[API] Success Webhook: {folder_name_only}")
         else:
@@ -459,10 +485,11 @@ def main():
         for attempt in range(1, MAX_RETRIES + 1):
             try:
                 log(f"[ATTEMPT {attempt}] Downloading...")
+                # ✅ SECURITY FIX: Không truyền UDEMY_TOKEN qua CLI argument
+                # Token sẽ được đọc từ environment variable trong main.py
                 cmd = [
                     sys.executable, "main.py",
                     "-c", task['course_url'],
-                    "-b", UDEMY_TOKEN,
                     "-o", STAGING_DIR,
                     "-q", "720", "--download-captions", "--download-assets", "--download-quizzes",
                     "--concurrent-downloads", "10", "--continue-lecture-numbers"
