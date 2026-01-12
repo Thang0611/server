@@ -9,6 +9,7 @@ const infoCourseService = require('./infoCourse.service');
 const { generateVietQR } = require('../utils/qrGenerator');
 const Logger = require('../utils/logger.util');
 const { AppError } = require('../middleware/errorHandler.middleware');
+const { addDownloadJob } = require('../queues/download.queue');
 
 const PRICE_PER_COURSE = 2000; // VND
 
@@ -290,20 +291,88 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
       tasksUpdated: updatedCount
     });
 
-    // After commit, trigger download process
+    // ================================================================
+    // PHASE 2: PUSH JOBS TO REDIS QUEUE (Replaces old polling system)
+    // ================================================================
+    // After transaction is committed and payment is confirmed, push jobs to Redis queue.
+    // Python workers will consume these jobs and process downloads immediately.
+    //
+    // IMPORTANT: If queue push fails, we DON'T revert the payment status because:
+    // 1. Payment is already confirmed and committed to database
+    // 2. Customer has already paid - reverting would cause data inconsistency
+    // 3. Jobs can be manually re-queued later using admin tools
+    // 4. Database still has status='processing' so we can identify stuck tasks
+    //
+    // Failure scenarios and recovery:
+    // - Redis down: Jobs stay in DB as 'processing', can be re-queued manually
+    // - Network issue: Same as above, temporary issue, retry works
+    // - Worker down: Jobs queue up in Redis, workers process when back online
+    // ================================================================
+    
     if (updatedCount > 0) {
       try {
-        // Reload order with all relations for processing
-        const orderForProcessing = await Order.findByPk(order.id, {
-          attributes: ['id', 'order_code', 'user_email', 'total_amount', 'payment_status']
+        // Fetch all tasks that were just updated to 'processing'
+        const tasks = await DownloadTask.findAll({
+          where: {
+            order_id: order.id,
+            status: 'processing'
+          },
+          attributes: ['id', 'email', 'course_url']
+        });
+
+        Logger.info('Pushing tasks to Redis queue', {
+          orderId: order.id,
+          taskCount: tasks.length,
+          queueSystem: 'Redis + RQ (Phase 2)'
+        });
+
+        // Push each task to Redis queue
+        let successCount = 0;
+        let failCount = 0;
+        
+        for (const task of tasks) {
+          try {
+            await addDownloadJob({
+              taskId: task.id,
+              email: task.email,
+              courseUrl: task.course_url
+            });
+
+            successCount++;
+            
+            Logger.success('Task pushed to Redis queue', {
+              taskId: task.id,
+              orderId: order.id,
+              email: task.email
+            });
+          } catch (queueError) {
+            failCount++;
+            
+            // Log error but continue with other tasks
+            // Task remains in DB with status='processing' for manual recovery
+            Logger.error('Failed to push task to Redis queue', queueError, {
+              taskId: task.id,
+              orderId: order.id,
+              email: task.email,
+              recovery: 'Task can be manually re-queued using: node scripts/requeue-task.js ' + task.id
+            });
+          }
+        }
+        
+        Logger.info('Queue push summary', {
+          orderId: order.id,
+          total: tasks.length,
+          success: successCount,
+          failed: failCount
         });
         
-        // Process order (this will trigger worker to handle downloads)
-        await downloadService.processOrder(orderForProcessing);
       } catch (processError) {
         // Log error but don't fail webhook - payment is already confirmed
-        Logger.error('Failed to trigger download process after payment', processError, {
-          orderId: order.id
+        // Customer has paid, so we must not return an error to payment gateway
+        Logger.error('Failed to push tasks to queue after payment', processError, {
+          orderId: order.id,
+          impact: 'Payment confirmed but downloads not queued',
+          recovery: 'Use admin panel to re-queue all tasks for this order'
         });
       }
     }

@@ -53,7 +53,7 @@ app.use('/api/v1/webhook', webhookRoutes);
 app.use('/api/v1', infoCourseRoutes);
 app.use('/api/v1', enrollRoutes);
 app.use('/api/v1', grantAccessRoutes);
-app.use('/api/payment', paymentRoutes);
+app.use('/api/v1/payment', paymentRoutes);
 
 // Error handling middleware (must be last)
 app.use(errorHandler);

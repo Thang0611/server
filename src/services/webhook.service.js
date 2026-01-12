@@ -179,7 +179,7 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
 
   // Find task
   const task = await DownloadTask.findByPk(taskId, {
-    attributes: ['id', 'email', 'course_url', 'title', 'status', 'driver_url', 'driver_folder']
+    attributes: ['id', 'email', 'course_url', 'title', 'status', 'drive_link']
   });
 
   if (!task) {
@@ -205,8 +205,7 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
   // Update task status
   const updateData = {
     status: driveLink ? 'completed' : 'failed',
-    driver_url: driveLink,
-    driver_folder: folderName
+    drive_link: driveLink
   };
 
   await task.update(updateData);
