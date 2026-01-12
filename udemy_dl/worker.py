@@ -368,11 +368,11 @@ def get_task():
         cur = conn.cursor(dictionary=True)
         # Transaction để tránh race condition
         conn.start_transaction()
-        cur.execute("SELECT id, course_url, email FROM downloads WHERE status = 'enrolled' ORDER BY createdAt ASC LIMIT 1 FOR UPDATE")
+        cur.execute("SELECT id, course_url, email FROM download_tasks WHERE status = 'enrolled' ORDER BY created_at ASC LIMIT 1 FOR UPDATE")
         task = cur.fetchone()
         
         if task:
-            cur.execute("UPDATE downloads SET status = 'downloading', updatedAt = NOW() WHERE id = %s", (task['id'],))
+            cur.execute("UPDATE download_tasks SET status = 'processing', updated_at = NOW() WHERE id = %s", (task['id'],))
             conn.commit()
             return task
         else:
@@ -425,7 +425,7 @@ def update_status(task_id, status):
     conn = get_db_connection()
     try:
         cur = conn.cursor()
-        cur.execute("UPDATE downloads SET status = %s, updatedAt = NOW() WHERE id = %s", (status, task_id))
+        cur.execute("UPDATE download_tasks SET status = %s, updated_at = NOW() WHERE id = %s", (status, task_id))
         conn.commit()
     finally:
         conn.close()
@@ -436,11 +436,11 @@ def main():
     log(">>> PYTHON WORKER STARTED <<<")
     clean_staging()
     
-    # Reset Zombie
+    # Reset Zombie - Reset tasks stuck in 'processing' back to 'enrolled'
     try:
         c = get_db_connection()
         cur = c.cursor()
-        cur.execute("UPDATE downloads SET status = 'enrolled' WHERE status = 'downloading'")
+        cur.execute("UPDATE download_tasks SET status = 'enrolled' WHERE status = 'processing'")
         c.close()
     except: pass
 

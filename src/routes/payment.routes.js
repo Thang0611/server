@@ -1,14 +1,23 @@
+/**
+ * Payment routes
+ * @module routes/payment
+ */
+
 const express = require('express');
 const router = express.Router();
 const paymentController = require('../controllers/payment.controller');
+const {
+  validateCreateOrder,
+  validateWebhook
+} = require('../middleware/validation.middleware');
 
-// POST: Tạo đơn hàng
-router.post('/create-order', paymentController.createOrder);
+// POST: Create order
+router.post('/create-order', validateCreateOrder, paymentController.createOrder);
 
-// POST: Webhook nhận từ SePay
-router.post('/webhook', paymentController.handleWebhook);
+// POST: Payment webhook from gateway
+router.post('/webhook', validateWebhook, paymentController.handleWebhook);
 
-// GET: Client hỏi trạng thái đơn
-router.get('/check-status/:orderCode', paymentController.checkStatus);
+// GET: Check order status (optimized for polling)
+router.get('/check-status/:orderCode', paymentController.checkOrderStatus);
 
 module.exports = router;

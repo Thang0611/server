@@ -1,60 +1,95 @@
+/**
+ * Main server entry point
+ * @module server
+ */
+
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { sequelize } = require('./src/models');
-const downloadRoutes = require('./src/routes/download.routes');
+const { errorHandler } = require('./src/middleware/errorHandler.middleware');
+const Logger = require('./src/utils/logger.util');
 
-const DownloadTask = require('./src/models/downloadTask.model');
-const Order = require('./src/models/order.model');
-const transporter = require('./src/config/email'); // Nhớ file config email của bạn
+// Route imports
+const downloadRoutes = require('./src/routes/download.routes');
 const webhookRoutes = require('./src/routes/webhook.routes');
-const grantAccess = require('./src/routes/grantAccess.routes');
-const infoCourse =require('./src/routes/infoCourse.routes')
-const enroll =require('./src/routes/enroll.routes')
-const cors = require('cors'); // Import thư viện
-const paymentRoutes =require('./src/routes/payment.routes')
+const grantAccessRoutes = require('./src/routes/grantAccess.routes');
+const infoCourseRoutes = require('./src/routes/infoCourse.routes');
+const enrollRoutes = require('./src/routes/enroll.routes');
+const paymentRoutes = require('./src/routes/payment.routes');
+
+// Configuration
+const PORT = process.env.PORT || 3000;
+const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
+
 const corsOptions = {
-    origin: '*', // Thay bằng domain WordPress của bạn (không có dấu / ở cuối)
-    optionsSuccessStatus: 200, // Một số trình duyệt cũ cần cái này
-    methods: "GET, POST", // Các phương thức cho phép
+  origin: "*",
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
 };
 
+// Initialize Express app
 const app = express();
-app.use(cors(corsOptions))
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
 
-// Routes
+// Middleware
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Health check endpoint
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Server is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// API Routes
 app.use('/api/v1', downloadRoutes);
 app.use('/api/v1/webhook', webhookRoutes);
-app.get('/', (req, res) => {
-    console.log("Hello world")
-    res.send("Hello World - Server is running!");
-});
-app.use('/api/v1', infoCourse);
-app.use('/api/v1', enroll);
+app.use('/api/v1', infoCourseRoutes);
+app.use('/api/v1', enrollRoutes);
+app.use('/api/v1', grantAccessRoutes);
 app.use('/api/payment', paymentRoutes);
 
-// ---> THÊM DÒNG NÀY
+// Error handling middleware (must be last)
+app.use(errorHandler);
 
-app.use('/api/v1', grantAccess);
-const PORT = process.env.PORT;
+// Start server
+const startServer = async () => {
+  try {
+    // Test database connection
+    await sequelize.authenticate();
+    Logger.info('Database connection established successfully');
 
+    // Sync database models - alter: true will add missing columns to existing tables
+    await sequelize.sync({ alter: true });
+    Logger.info('Database models synchronized');
 
-// Khởi động Server
-sequelize.sync().then(async () => {
-    console.log('[Database] Kết nối thành công.');
-
-    // --- CẢNH BÁO QUAN TRỌNG ---
-    // Mình đã REMOVE đoạn "Reset Zombie Tasks" vì file Python đang chạy độc lập.
-    // Nếu bạn reset ở đây, khi Node.js restart, nó sẽ phá hỏng các task mà Python đang tải.
-    app.listen(PORT,'0.0.0.0', () => {
-        console.log(`Server Node.js (API) đang chạy tại cổng ${PORT}`);
-        
-        // CHỈ chạy logic gửi mail, KHÔNG chạy logic download
-        // Ví dụ: Quét email mỗi 1 phút
-        // setInterval(processEmailQueue, 60000); 
+    // Start listening
+    app.listen(PORT, '0.0.0.0', () => {
+      Logger.info(`Server is running on port ${PORT}`, { port: PORT });
     });
-}).catch(err => {
-    console.error('[Database] Lỗi kết nối:', err);
+  } catch (error) {
+    Logger.error('Failed to start server', error);
+    process.exit(1);
+  }
+};
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (err) => {
+  Logger.error('Unhandled Promise Rejection', err);
+  process.exit(1);
 });
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+  Logger.error('Uncaught Exception', err);
+  process.exit(1);
+});
+
+// Start the server
+startServer();

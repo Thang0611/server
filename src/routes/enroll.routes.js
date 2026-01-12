@@ -1,8 +1,17 @@
+/**
+ * Enroll routes
+ * @module routes/enroll
+ */
+
 const express = require('express');
 const router = express.Router();
-const entrllControler = require('../controllers/enroll.controller');
+const enrollController = require('../controllers/enroll.controller');
+const { validateEnroll } = require('../middleware/validation.middleware');
 
-// Định nghĩa: POST /api/v1/downloads/request
-router.post('/enroll',entrllControler.enrollController);
+/**
+ * POST /api/v1/enroll
+ * Enrolls user in courses
+ */
+router.post('/enroll', validateEnroll, enrollController.enrollController);
 
 module.exports = router;
