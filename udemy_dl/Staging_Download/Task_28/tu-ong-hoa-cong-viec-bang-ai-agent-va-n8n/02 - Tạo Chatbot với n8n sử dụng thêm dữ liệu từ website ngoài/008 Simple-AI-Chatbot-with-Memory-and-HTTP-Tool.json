@@ -1,0 +1,139 @@
+{
+  "name": "Simple AI Chatbot with Memory and HTTP Tool",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -260,
+        -40
+      ],
+      "id": "fc3cb4ab-d02e-4b64-9d67-52ab3cd52d2c",
+      "name": "When chat message received",
+      "webhookId": "824e8c5a-06f0-4d53-8484-382921d71f4f"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -40,
+        -40
+      ],
+      "id": "2e64a0ff-78b2-492f-8374-f16d565d2c63",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        180
+      ],
+      "id": "f2f70340-342a-4642-8825-3c9fddef6cc1",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "yR0jiPLYZSr22k9g",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        60,
+        180
+      ],
+      "id": "b7efd6d1-08d7-4c8d-9587-0f62b9208d15",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Dùng tool này để lấy tin tức mới nhất về Việt nam",
+        "url": "https://vnexpress.net/"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        220,
+        180
+      ],
+      "id": "506f3d86-70b0-418f-8cd1-f8b32b66ecb1",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a0389b7e-2515-433e-802d-b5adcf1c44de",
+  "meta": {
+    "instanceId": "6c2b4fd81715f0f5ce2fbc49a03cf4e3cd4b1946dc2fbb217dec2ac50f3806a1"
+  },
+  "id": "ekWTrRkRMHkxAoxs",
+  "tags": []
+}

@@ -83,6 +83,13 @@ const Order = sequelize.define('Order', {
     defaultValue: 'pending'
   },
 
+  // Order fulfillment status (tracks if all downloads are complete)
+  order_status: {
+    type: DataTypes.ENUM('pending', 'processing', 'completed', 'failed'),
+    defaultValue: 'pending',
+    comment: 'Tracks overall order fulfillment: pending → processing → completed/failed'
+  },
+
   payment_gateway_data: {
     type: DataTypes.JSON,
     allowNull: true

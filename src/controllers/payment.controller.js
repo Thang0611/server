@@ -224,7 +224,7 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
     // Optimization: Only select required fields, no relationship tree
     const order = await Order.findOne({
       where: { order_code: normalizedOrderCode },
-      attributes: ['id', 'order_code', 'payment_status', 'total_amount']
+      attributes: ['id', 'order_code', 'payment_status', 'order_status', 'total_amount']
     });
 
     if (!order) {
@@ -242,14 +242,17 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
 
     Logger.info('Order status retrieved successfully', {
       orderCode: order.order_code,
-      status: order.payment_status,
+      paymentStatus: order.payment_status,
+      orderStatus: order.order_status,
       amount: order.total_amount
     });
 
-    // Return simplified response for polling
+    // Return response with both payment and order status
     res.json({
       success: true,
-      status: order.payment_status,
+      status: order.payment_status, // Backward compatibility: payment status
+      paymentStatus: order.payment_status, // Explicit payment status
+      orderStatus: order.order_status, // NEW: Order fulfillment status
       amount: order.total_amount
     });
   } catch (error) {
@@ -268,9 +271,52 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
   }
 });
 
+/**
+ * Lookup orders by email
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const lookupOrders = asyncHandler(async (req, res, next) => {
+  const { email } = req.query;
+
+  // Validate email parameter
+  if (!email) {
+    throw new AppError('Email parameter is required', 400);
+  }
+
+  Logger.info('Order lookup request', { email });
+
+  // Get orders by email
+  const orders = await paymentService.getOrdersByEmail(email);
+
+  // Format response
+  const formattedOrders = orders.map(order => ({
+    order_code: order.order_code,
+    status: order.order_status, // Overall order status
+    payment_status: order.payment_status,
+    total_amount: order.total_amount,
+    created_at: order.created_at,
+    updated_at: order.updated_at,
+    items: order.items || [] // Download tasks/courses
+  }));
+
+  Logger.success('Orders retrieved successfully', {
+    email,
+    count: formattedOrders.length
+  });
+
+  res.json({
+    success: true,
+    count: formattedOrders.length,
+    data: formattedOrders
+  });
+});
+
 module.exports = {
   createOrder,
   handleWebhook,
   checkStatus,
-  checkOrderStatus
+  checkOrderStatus,
+  lookupOrders
 };
