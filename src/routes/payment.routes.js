@@ -20,4 +20,7 @@ router.post('/webhook', validateWebhook, paymentController.handleWebhook);
 // GET: Check order status (optimized for polling)
 router.get('/check-status/:orderCode', paymentController.checkOrderStatus);
 
+// GET: Lookup orders by email
+router.get('/lookup', paymentController.lookupOrders);
+
 module.exports = router;

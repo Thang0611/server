@@ -4,8 +4,10 @@
  */
 
 const { Order } = require('../models');
+const sequelize = require('../config/database');
 const downloadService = require('./download.service');
 const infoCourseService = require('./infoCourse.service');
+const enrollService = require('./enroll.service');
 const { generateVietQR } = require('../utils/qrGenerator');
 const Logger = require('../utils/logger.util');
 const { AppError } = require('../middleware/errorHandler.middleware');
@@ -14,41 +16,16 @@ const { addDownloadJob } = require('../queues/download.queue');
 const PRICE_PER_COURSE = 2000; // VND
 
 /**
- * Generates a unique order code
+ * Generates a sequential order code based on order ID
  * Format: DH + 6 digits (e.g., DH000001, DH000002)
- * @returns {Promise<string>} - Unique order code
+ * @param {number} orderId - Auto-incremented order ID from database
+ * @returns {string} - Sequential order code
  */
-const generateOrderCode = async () => {
-  let orderCode;
-  let isUnique = false;
-  let attempts = 0;
-  const maxAttempts = 10;
-
-  while (!isUnique && attempts < maxAttempts) {
-    // Generate order code: DH + 6 digits (padded with zeros)
-    const sequence = String(Date.now()).slice(-6).padStart(6, '0');
-    orderCode = `DH${sequence}`;
-
-    // Check if order code already exists
-    const existingOrder = await Order.findOne({
-      where: { order_code: orderCode },
-      attributes: ['id']
-    });
-
-    if (!existingOrder) {
-      isUnique = true;
-    } else {
-      attempts++;
-      // Add small delay to ensure different timestamp
-      await new Promise(resolve => setTimeout(resolve, 10));
-    }
-  }
-
-  if (!isUnique) {
-    throw new AppError('Không thể tạo mã đơn hàng duy nhất', 500);
-  }
-
-  return orderCode;
+const generateOrderCode = (orderId) => {
+  // Sequential order code: DH + 6 digits (padded with zeros)
+  // Example: ID 1 -> DH000001, ID 100 -> DH000100
+  const sequence = String(orderId).padStart(6, '0');
+  return `DH${sequence}`;
 };
 
 /**
@@ -76,16 +53,20 @@ const createOrder = async (email, courses) => {
     // Calculate total amount based on valid courses
     const totalAmount = validCourses.length * PRICE_PER_COURSE;
 
-    // Generate unique order code
-    const orderCode = await generateOrderCode();
-
-    // Create order in database with status 'pending' (waiting for payment)
+    // Create order in database WITHOUT order_code first
+    // This allows us to get the auto-incremented ID
     const order = await Order.create({
-      order_code: orderCode,
+      order_code: 'TEMP', // Temporary placeholder
       user_email: email,
       total_amount: totalAmount,
       payment_status: 'pending' // Order is created as pending, waiting for payment confirmation
     });
+
+    // Generate sequential order code using the auto-incremented ID
+    const orderCode = generateOrderCode(order.id);
+    
+    // Update order with the sequential order code
+    await order.update({ order_code: orderCode });
 
     Logger.success('Order created', {
       orderId: order.id,
@@ -258,19 +239,21 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
       fullPayload: webhookData // Store full payload for debugging
     };
 
-    // Transaction: Update Order.payment_status to 'paid' AND update related DownloadTasks.status to 'processing'
+    // Transaction: Update Order.payment_status to 'paid' AND order_status to 'processing'
     await order.update({
       payment_status: 'paid',
+      order_status: 'processing', // Mark order as being processed
       payment_gateway_data: paymentGatewayData
     }, { transaction });
 
-    // Update download tasks status from 'paid' to 'processing'
+    // Update download tasks status to 'processing'
+    // Only update tasks that are in 'pending' status (waiting for payment)
     const [updatedCount] = await DownloadTask.update(
       { status: 'processing' },
       {
         where: {
           order_id: order.id,
-          status: 'paid'
+          status: 'pending' // ✅ FIXED: Only update pending tasks (not 'paid' anymore)
         },
         transaction
       }
@@ -292,20 +275,21 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
     });
 
     // ================================================================
-    // PHASE 2: PUSH JOBS TO REDIS QUEUE (Replaces old polling system)
+    // PHASE 2: ENROLL COURSES THEN PUSH JOBS TO REDIS QUEUE
     // ================================================================
-    // After transaction is committed and payment is confirmed, push jobs to Redis queue.
-    // Python workers will consume these jobs and process downloads immediately.
+    // After transaction is committed and payment is confirmed:
+    // 1. ENROLL all courses first (required before download)
+    // 2. Push jobs to Redis queue for download
     //
-    // IMPORTANT: If queue push fails, we DON'T revert the payment status because:
+    // IMPORTANT: If enrollment or queue push fails, we DON'T revert payment because:
     // 1. Payment is already confirmed and committed to database
     // 2. Customer has already paid - reverting would cause data inconsistency
-    // 3. Jobs can be manually re-queued later using admin tools
-    // 4. Database still has status='processing' so we can identify stuck tasks
+    // 3. Failed tasks can be manually re-enrolled/re-queued later using admin tools
+    // 4. Database status tracks enrollment/queue state for recovery
     //
     // Failure scenarios and recovery:
-    // - Redis down: Jobs stay in DB as 'processing', can be re-queued manually
-    // - Network issue: Same as above, temporary issue, retry works
+    // - Enrollment fails: Task status stays 'processing', can retry enrollment manually
+    // - Redis down: Jobs stay in DB as 'enrolled', can be re-queued manually
     // - Worker down: Jobs queue up in Redis, workers process when back online
     // ================================================================
     
@@ -317,62 +301,140 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
             order_id: order.id,
             status: 'processing'
           },
-          attributes: ['id', 'email', 'course_url']
+          attributes: ['id', 'email', 'course_url', 'title']
         });
 
-        Logger.info('Pushing tasks to Redis queue', {
+        Logger.info('Starting enrollment and queue push', {
           orderId: order.id,
           taskCount: tasks.length,
-          queueSystem: 'Redis + RQ (Phase 2)'
+          workflow: 'Enroll → Queue → Download'
         });
 
-        // Push each task to Redis queue
-        let successCount = 0;
-        let failCount = 0;
+        // ================================================================
+        // STEP 1: ENROLL ALL COURSES
+        // ================================================================
+        let enrolledCount = 0;
+        let enrollFailedCount = 0;
+        const enrolledTasks = [];
         
         for (const task of tasks) {
           try {
-            await addDownloadJob({
+            Logger.info('Enrolling course', {
               taskId: task.id,
-              email: task.email,
-              courseUrl: task.course_url
-            });
-
-            successCount++;
-            
-            Logger.success('Task pushed to Redis queue', {
-              taskId: task.id,
-              orderId: order.id,
+              courseUrl: task.course_url,
               email: task.email
             });
-          } catch (queueError) {
-            failCount++;
+
+            // Call enrollment service
+            const enrollResults = await enrollService.enrollCourses(
+              [task.course_url],
+              task.email
+            );
+
+            // Check enrollment result
+            const enrollResult = enrollResults[0];
+            if (enrollResult && enrollResult.success && enrollResult.status === 'enrolled') {
+              enrolledCount++;
+              enrolledTasks.push(task);
+              
+              Logger.success('Course enrolled successfully', {
+                taskId: task.id,
+                courseId: enrollResult.courseId,
+                title: enrollResult.title,
+                email: task.email
+              });
+            } else {
+              enrollFailedCount++;
+              
+              Logger.error('Course enrollment failed', new Error(enrollResult?.message || 'Unknown error'), {
+                taskId: task.id,
+                courseUrl: task.course_url,
+                email: task.email,
+                enrollResult: enrollResult,
+                recovery: 'Task can be manually re-enrolled using enrollment API'
+              });
+            }
+          } catch (enrollError) {
+            enrollFailedCount++;
             
-            // Log error but continue with other tasks
-            // Task remains in DB with status='processing' for manual recovery
-            Logger.error('Failed to push task to Redis queue', queueError, {
+            Logger.error('Exception during course enrollment', enrollError, {
               taskId: task.id,
-              orderId: order.id,
+              courseUrl: task.course_url,
               email: task.email,
-              recovery: 'Task can be manually re-queued using: node scripts/requeue-task.js ' + task.id
+              recovery: 'Task can be manually re-enrolled using enrollment API'
             });
           }
         }
         
-        Logger.info('Queue push summary', {
+        Logger.info('Enrollment summary', {
           orderId: order.id,
           total: tasks.length,
-          success: successCount,
-          failed: failCount
+          enrolled: enrolledCount,
+          failed: enrollFailedCount
         });
+
+        // ================================================================
+        // STEP 2: PUSH ENROLLED TASKS TO REDIS QUEUE
+        // ================================================================
+        if (enrolledTasks.length > 0) {
+          Logger.info('Pushing enrolled tasks to Redis queue', {
+            orderId: order.id,
+            enrolledTaskCount: enrolledTasks.length
+          });
+
+          let queueSuccessCount = 0;
+          let queueFailCount = 0;
+          
+          for (const task of enrolledTasks) {
+            try {
+              await addDownloadJob({
+                taskId: task.id,
+                email: task.email,
+                courseUrl: task.course_url
+              });
+
+              queueSuccessCount++;
+              
+              Logger.success('Task pushed to Redis queue', {
+                taskId: task.id,
+                orderId: order.id,
+                email: task.email
+              });
+            } catch (queueError) {
+              queueFailCount++;
+              
+              // Log error but continue with other tasks
+              // Task remains in DB with status='enrolled' for manual recovery
+              Logger.error('Failed to push task to Redis queue', queueError, {
+                taskId: task.id,
+                orderId: order.id,
+                email: task.email,
+                recovery: 'Task can be manually re-queued using: node scripts/requeue-task.js ' + task.id
+              });
+            }
+          }
+          
+          Logger.info('Queue push summary', {
+            orderId: order.id,
+            enrolled: enrolledTasks.length,
+            queued: queueSuccessCount,
+            queueFailed: queueFailCount
+          });
+        } else {
+          Logger.warn('No tasks enrolled successfully, skipping queue push', {
+            orderId: order.id,
+            totalTasks: tasks.length,
+            enrollFailed: enrollFailedCount
+          });
+        }
         
       } catch (processError) {
         // Log error but don't fail webhook - payment is already confirmed
         // Customer has paid, so we must not return an error to payment gateway
-        Logger.error('Failed to push tasks to queue after payment', processError, {
+        Logger.error('Failed to enroll courses or push tasks to queue after payment', processError, {
           orderId: order.id,
-          impact: 'Payment confirmed but downloads not queued',
-          recovery: 'Use admin panel to re-queue all tasks for this order'
+          impact: 'Payment confirmed but enrollment/downloads not started',
+          recovery: 'Use admin panel to re-enroll and re-queue all tasks for this order'
         });
       }
     }
@@ -422,7 +484,7 @@ const getOrderStatus = async (orderCode) => {
 
     const order = await Order.findOne({
       where: { order_code: orderCode },
-      attributes: ['id', 'order_code', 'user_email', 'total_amount', 'payment_status', 'created_at', 'updated_at']
+      attributes: ['id', 'order_code', 'user_email', 'total_amount', 'payment_status', 'order_status', 'created_at', 'updated_at']
     });
 
     if (!order) {
@@ -435,6 +497,7 @@ const getOrderStatus = async (orderCode) => {
       email: order.user_email,
       totalAmount: order.total_amount,
       paymentStatus: order.payment_status,
+      orderStatus: order.order_status, // NEW: Order fulfillment status
       createdAt: order.created_at,
       updatedAt: order.updated_at
     };
@@ -447,8 +510,59 @@ const getOrderStatus = async (orderCode) => {
   }
 };
 
+/**
+ * Get orders by email with related download tasks
+ * @param {string} email - Customer email
+ * @returns {Promise<Array>} - Array of orders with download tasks
+ * @throws {AppError} - If query fails
+ */
+const getOrdersByEmail = async (email) => {
+  try {
+    if (!email) {
+      throw new AppError('Email là bắt buộc', 400);
+    }
+
+    const DownloadTask = require('../models/downloadTask.model');
+
+    // Query orders by email (case-insensitive) with related download tasks
+    const orders = await Order.findAll({
+      where: sequelize.where(
+        sequelize.fn('LOWER', sequelize.col('user_email')),
+        sequelize.fn('LOWER', email)
+      ),
+      include: [{
+        model: DownloadTask,
+        as: 'items', // Use the association alias defined in models/index.js
+        attributes: ['id', 'course_url', 'title', 'status', 'drive_link', 'price', 'created_at', 'updated_at'],
+        required: false // LEFT JOIN to include orders even without tasks
+      }],
+      attributes: [
+        'id',
+        'order_code',
+        'user_email',
+        'total_amount',
+        'payment_status',
+        'order_status',
+        'created_at',
+        'updated_at'
+      ],
+      order: [['id', 'DESC']], // Newest orders first
+      raw: false // Need Sequelize instances for associations
+    });
+
+    return orders;
+  } catch (error) {
+    if (error instanceof AppError) {
+      throw error;
+    }
+    Logger.error('Failed to get orders by email', error, { email });
+    throw new AppError('Lỗi server nội bộ khi lấy danh sách đơn hàng', 500);
+  }
+};
+
 module.exports = {
   createOrder,
   processPaymentWebhook,
-  getOrderStatus
+  getOrderStatus,
+  getOrdersByEmail
 };

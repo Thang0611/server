@@ -167,10 +167,74 @@ def notify_node_webhook(task_id, folder_name_local):
 
 # ================= 3. MAIN PROCESSING FUNCTION =================
 
+def check_enrollment_status(task_id, max_wait_seconds=15):
+    """
+    Check if task is enrolled before downloading
+    Wait up to max_wait_seconds for enrollment to complete
+    
+    Args:
+        task_id (int): Task ID to check
+        max_wait_seconds (int): Maximum time to wait for enrollment (default 5 minutes)
+    
+    Returns:
+        tuple: (is_enrolled: bool, status: str, error_message: str)
+    """
+    conn = None
+    start_time = time.time()
+    check_interval = 10  # Check every 10 seconds
+    
+    try:
+        while (time.time() - start_time) < max_wait_seconds:
+            try:
+                conn = get_db_connection()
+                cur = conn.cursor(dictionary=True)
+                cur.execute(
+                    "SELECT id, status, email, course_url FROM download_tasks WHERE id = %s",
+                    (task_id,)
+                )
+                task = cur.fetchone()
+                
+                if not task:
+                    return (False, 'not_found', f'Task {task_id} not found in database')
+                
+                status = task['status']
+                
+                # Check if already enrolled
+                if status == 'enrolled':
+                    log(f"[ENROLL CHECK] ✅ Task {task_id} is enrolled, ready to download")
+                    return (True, status, None)
+                
+                # Check if enrollment failed
+                if status == 'failed':
+                    return (False, status, f'Task {task_id} enrollment failed')
+                
+                # Check if still processing enrollment
+                if status in ['processing', 'pending', 'paid']:
+                    elapsed = int(time.time() - start_time)
+                    log(f"[ENROLL CHECK] ⏳ Task {task_id} status={status}, waiting for enrollment... ({elapsed}s/{max_wait_seconds}s)")
+                    time.sleep(check_interval)
+                    continue
+                
+                # Unknown status
+                return (False, status, f'Task {task_id} has unexpected status: {status}')
+                
+            except Exception as e:
+                log(f"[ENROLL CHECK] [ERROR] Database query failed: {e}")
+                time.sleep(check_interval)
+            finally:
+                if conn:
+                    conn.close()
+        
+        # Timeout reached
+        return (False, 'timeout', f'Task {task_id} enrollment timeout after {max_wait_seconds}s')
+        
+    except Exception as e:
+        return (False, 'error', f'Enrollment check failed: {e}')
+
 def process_download(task_data):
     """
     Main function to process a download task
-    ✅ IMPROVED: Task isolation + Smart retry with resume capability
+    ✅ IMPROVED: Task isolation + Smart retry with resume capability + Enrollment check
     
     Args:
         task_data (dict): Job data from Redis queue
@@ -201,6 +265,27 @@ def process_download(task_data):
             'taskId': task_id
         }
     
+    # ✅ CRITICAL FIX: Check enrollment status before downloading
+    log(f"[ENROLL CHECK] Verifying enrollment status for task {task_id}...")
+    is_enrolled, status, error_msg = check_enrollment_status(task_id, max_wait_seconds=15)
+    
+    if not is_enrolled:
+        log(f"[ENROLL CHECK] ❌ Cannot proceed with download: {error_msg}")
+        log(f"[ENROLL CHECK] Task status: {status}")
+        
+        # Update task status to failed if not already
+        if status not in ['failed', 'not_found']:
+            update_task_status(task_id, 'failed')
+        
+        return {
+            'success': False,
+            'error': f'Enrollment required before download: {error_msg}',
+            'taskId': task_id,
+            'status': status
+        }
+    
+    log(f"[ENROLL CHECK] ✅ Enrollment verified, proceeding with download...")
+    
     # ✅ FIX: Create task-specific sandbox directory
     task_sandbox = os.path.join(STAGING_DIR, f"Task_{task_id}")
     os.makedirs(task_sandbox, exist_ok=True)
@@ -215,10 +300,11 @@ def process_download(task_data):
         try:
             log(f"[ATTEMPT {attempt}/{MAX_RETRIES}] Downloading course...")
             
-            # ✅ FIX: Download into task-specific directory
+            # ✅ FIX: Download into task-specific directory with bearer token
             cmd = [
                 sys.executable, "main.py",
                 "-c", course_url,
+                "-b", UDEMY_TOKEN,  # ← FIXED: Add bearer token for authentication
                 "-o", task_sandbox,  # ← Changed from STAGING_DIR
                 "-q", "720",
                 "--download-captions",

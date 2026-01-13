@@ -52,8 +52,8 @@ exports.processTask = async (task) => {
     status: taskWithEmail.status
   });
 
-  // Check if task status is 'processing' (tasks with status 'paid' or 'pending' should not be processed yet)
-  // Status flow: 'paid' -> 'processing' (after payment) -> 'enrolled' -> 'completed'
+  // Check if task status is 'processing' (tasks with status 'pending' should not be processed yet)
+  // Status flow: 'pending' -> 'processing' (after payment) -> 'enrolled' -> 'completed'
   if (taskWithEmail.status !== 'processing') {
     Logger.info('Task status is not processing, skipping', {
       taskId: taskWithEmail.id,

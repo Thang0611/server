@@ -123,7 +123,7 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
     // If orderId is null/undefined/empty, resolvedOrderId remains null (tasks can exist without order)
 
     // Set common fields - ensure all required fields are present
-    // Status is 'paid' initially, will be changed to 'pending' when payment is confirmed via webhook
+    // Status is 'pending' initially, will be changed to 'processing' when payment is confirmed via webhook
     const tasksToCreate = normalizedCourses.map(task => ({
       course_url: task.course_url,
       title: task.title || null,
@@ -131,7 +131,7 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
       email: email, // Required field
       order_id: resolvedOrderId, // Can be null
       phone_number: phoneNumber || null,
-      status: 'paid', // Set to 'paid' initially, will be 'pending' after webhook confirms payment
+      status: 'pending', // ✅ FIXED: Use 'pending' instead of 'paid' - will be updated to 'processing' after payment webhook
       retry_count: 0
     }));
 
@@ -147,12 +147,13 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
       count: savedTasks.length
     });
 
-    // Don't process tasks immediately - they are created with status 'paid'
-    // Tasks will be processed after webhook confirms payment and sets status to 'pending'
-    Logger.info('Download tasks created with status paid, waiting for payment confirmation', {
+    // Don't process tasks immediately - they are created with status 'pending'
+    // Tasks will be processed after webhook confirms payment and sets status to 'processing'
+    Logger.info('Download tasks created with status pending, waiting for payment confirmation', {
       orderId,
       email,
-      taskCount: savedTasks.length
+      taskCount: savedTasks.length,
+      status: 'pending'
     });
 
     return {

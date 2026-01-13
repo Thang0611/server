@@ -15,3 +15,10 @@
   path: '/api/v1/webhook/finalize',
   method: 'POST'
 }
+2026-01-12 20:08:36 +07:00: [31m[1m[ERROR][0m [90m20:08:36[0m Failed to start server: Can't DROP FOREIGN KEY `download_tasks_ibfk_1`; check that it exists
+2026-01-12 20:27:14 +07:00: [31m[1m[ERROR][0m [90m20:27:14[0m Failed to crawl course: Request failed with status code 502 [url=https://samsungu.udemy.com/course/ky-thuat-am-p...]
+2026-01-12 20:27:14 +07:00: [31m[1m[ERROR][0m [90m20:27:14[0m Error processing course URL: Lỗi khi lấy thông tin khóa học [url=https://samsungu.udemy.com/course/ky-thuat-am-p...]
+2026-01-13 11:11:31 +07:00: [31m[1m[ERROR][0m [90m11:11:31[0m Failed to start server: Constraint download_tasks_ibfk_2 on table download_tasks does not exist
+2026-01-13 12:11:33 +07:00: [31m[1m[ERROR][0m [90m12:11:33[0m Failed to start server: Constraint download_tasks_ibfk_1 on table download_tasks does not exist
+2026-01-13 14:36:09 +07:00: [33m[1m[WARN][0m  [90m14:36:09[0m Course ID not found [url=https://www.udemy.com/course/thuc-chien-tu-ong-...]
+2026-01-13 14:36:59 +07:00: [33m[1m[WARN][0m  [90m14:36:59[0m Course ID not found [url=https://www.udemy.com/course/thuc-chien-tu-ong-...]

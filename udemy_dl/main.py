@@ -1974,7 +1974,23 @@ def main():
     if save_to_file:
         logger.info("> 'save_to_file' was specified, data will be saved to json files")
 
-    load_dotenv()
+    # ✅ FIX: Load .env từ multiple locations (current dir, parent dir, hoặc script dir)
+    env_paths = [
+        os.path.join(os.path.dirname(__file__), '.env'),  # Current script directory
+        os.path.join(os.path.dirname(__file__), '../.env'),  # Parent directory
+        '.env',  # Current working directory
+    ]
+    env_loaded = False
+    for env_path in env_paths:
+        if os.path.exists(env_path):
+            load_dotenv(dotenv_path=env_path)
+            env_loaded = True
+            logger.debug(f"> Loaded environment from: {env_path}")
+            break
+    
+    if not env_loaded:
+        load_dotenv()  # Fallback to default behavior
+    
     # ✅ SECURITY FIX: Đọc token từ environment variable thay vì CLI argument
     if bearer_token:
         bearer_token = bearer_token

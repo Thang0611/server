@@ -4,14 +4,18 @@
  */
 
 const DownloadTask = require('../models/downloadTask.model');
-const transporter = require('../config/email');
+const Order = require('../models/order.model');
 const { findFolderByName, grantReadAccess } = require('../utils/drive.util');
-const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
+const { sendBatchCompletionEmail } = require('./email.service');
 const Logger = require('../utils/logger.util');
 const { AppError } = require('../middleware/errorHandler.middleware');
 
 const MAX_RETRY_ATTEMPTS = 10;
 const RETRY_DELAY_MS = 3000;
+
+// Task statuses that indicate the task is still in progress
+// Removed 'paid' as it's redundant - tasks are created as 'pending' now
+const IN_PROGRESS_STATUSES = ['pending', 'processing', 'enrolled'];
 
 /**
  * Waits for a specified duration
@@ -62,104 +66,87 @@ const grantFolderAccess = async (folderId, email) => {
 };
 
 /**
- * Sends completion email to customer
- * @param {Object} task - Download task object
- * @param {string} folderName - Folder name
- * @param {string} driveLink - Google Drive link
- * @returns {Promise<void>}
+ * Checks if all tasks in an order are completed (no tasks in progress)
+ * @param {number} orderId - Order ID
+ * @returns {Promise<Object>} - Object containing completion status and tasks
  */
-const sendCompletionEmail = async (task, folderName, driveLink) => {
-  if (!process.env.EMAIL_USER) {
-    throw new AppError('Email configuration missing', 500);
+const checkOrderCompletion = async (orderId) => {
+  if (!orderId) {
+    Logger.warn('No order_id provided for completion check');
+    return { isComplete: false, tasks: [] };
   }
 
-  const courseDisplayName = task.title || folderName;
-  const cleanSourceUrl = transformToNormalizeUdemyCourseUrl(task.course_url);
+  // Query all tasks belonging to this order
+  const allTasks = await DownloadTask.findAll({
+    where: { order_id: orderId },
+    attributes: ['id', 'status', 'drive_link', 'title', 'course_url', 'email'],
+    raw: true
+  });
 
-  const mailOptions = {
-    from: `"KhoaHocGiaRe Support" <${process.env.EMAIL_USER}>`,
-    to: task.email,
-    subject: `✅ Hoàn tất: Khóa học "${courseDisplayName}" đã sẵn sàng!`,
-    html: `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-          body { margin: 0; padding: 0; background-color: #f4f4f7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-          .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-          .header { background-color: #2c3e50; padding: 30px 20px; text-align: center; }
-          .header h1 { color: #ffffff; margin: 0; font-size: 24px; font-weight: 600; }
-          .content { padding: 40px 30px; color: #51545e; line-height: 1.6; }
-          .success-icon { text-align: center; margin-bottom: 20px; }
-          .info-box { background-color: #f8f9fa; border-left: 4px solid #10b981; padding: 20px; border-radius: 4px; margin: 25px 0; }
-          .info-item { margin-bottom: 10px; font-size: 15px; }
-          .info-item strong { color: #2c3e50; min-width: 120px; display: inline-block; }
-          .btn-container { text-align: center; margin-top: 35px; margin-bottom: 20px; }
-          .btn { background-color: #007bff; color: #ffffff !important; padding: 14px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px; display: inline-block; box-shadow: 0 4px 6px rgba(0, 123, 255, 0.25); transition: background-color 0.3s; }
-          .btn:hover { background-color: #0056b3; }
-          .warning-box { margin-top: 25px; padding: 15px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 6px; color: #856404; font-size: 14px; text-align: left; }
-          .warning-title { font-weight: bold; display: flex; align-items: center; margin-bottom: 5px; }
-          .footer { background-color: #f4f4f7; padding: 20px; text-align: center; font-size: 12px; color: #a8aaaf; }
-        </style>
-      </head>
-      <body>
-        <div style="padding: 40px 0;">
-          <div class="container">
-            <div class="header">
-              <h1>Khóa Học Đã Tải Xong! 🚀</h1>
-            </div>
-            <div class="content">
-              <div class="success-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" width="60" alt="Success" style="display:block; margin:0 auto;">
-              </div>
-              <p style="text-align: center; font-size: 16px; margin-bottom: 30px;">
-                Hệ thống đã xử lý thành công yêu cầu của bạn.<br>
-                Dưới đây là thông tin truy cập khóa học:
-              </p>
-              <div class="info-box">
-                <div class="info-item">
-                  <strong>📦 Khóa học:</strong><br> 
-                  <span style="color: #333;">${courseDisplayName}</span>
-                </div>
-                <div class="info-item" style="margin-top: 15px;">
-                  <strong>📧 Email:</strong><br> 
-                  <span style="color: #333;">${task.email}</span>
-                </div>
-                <div class="info-item" style="margin-top: 15px;">
-                  <strong>🔗 Nguồn gốc:</strong><br> 
-                  <a href="${cleanSourceUrl}" style="color: #007bff; text-decoration: none; word-break: break-all; font-size: 13px;">${cleanSourceUrl}</a>
-                </div>
-              </div>
-              <div class="btn-container">
-                <a href="${driveLink}" class="btn">
-                  📂 TRUY CẬP GOOGLE DRIVE NGAY
-                </a>
-                <div class="warning-box">
-                  <div class="warning-title">⚠️ LƯU Ý QUAN TRỌNG:</div>
-                  Chúng tôi chỉ lưu trữ khóa học này trên Drive trong vòng <strong>30 ngày</strong>.<br>
-                  Vui lòng <strong>tải về máy tính cá nhân</strong> của bạn ngay để lưu trữ lâu dài và tránh mất dữ liệu.
-                </div>
-              </div>
-            </div>
-            <div class="footer">
-              <p>Email này được gửi tự động từ hệ thống KhoaHocGiaRe.</p>
-              <p>© ${new Date().getFullYear()} All rights reserved.</p>
-            </div>
-          </div>
-        </div>
-      </body>
-      </html>
-    `
+  if (allTasks.length === 0) {
+    Logger.warn('No tasks found for order', { orderId });
+    return { isComplete: false, tasks: [] };
+  }
+
+  // Check if any tasks are still in progress
+  const inProgressTasks = allTasks.filter(task => 
+    IN_PROGRESS_STATUSES.includes(task.status)
+  );
+
+  const isComplete = inProgressTasks.length === 0;
+
+  Logger.info('[Order Check] Task status summary', {
+    orderId,
+    totalTasks: allTasks.length,
+    inProgress: inProgressTasks.length,
+    isComplete
+  });
+
+  return {
+    isComplete,
+    tasks: allTasks,
+    inProgressCount: inProgressTasks.length
   };
-
-  await transporter.sendMail(mailOptions);
-  Logger.success('Completion email sent', { email: task.email, taskId: task.id });
 };
 
 /**
- * Finalizes a download task
+ * Sends batch notification email for completed order
+ * @param {number} orderId - Order ID
+ * @param {Array} tasks - All tasks in the order
+ * @returns {Promise<void>}
+ */
+const sendOrderCompletionNotification = async (orderId, tasks) => {
+  try {
+    // Fetch order details
+    const order = await Order.findByPk(orderId, {
+      attributes: ['id', 'order_code', 'user_email', 'total_amount'],
+      raw: true
+    });
+
+    if (!order) {
+      Logger.error('Order not found for batch email', { orderId });
+      return;
+    }
+
+    Logger.info('[Batch Email] Sending order completion notification', {
+      orderId: order.id,
+      orderCode: order.order_code,
+      taskCount: tasks.length
+    });
+
+    await sendBatchCompletionEmail(order, tasks);
+
+  } catch (error) {
+    Logger.error('[Batch Email] Failed to send order completion notification', error, {
+      orderId,
+      taskCount: tasks.length
+    });
+    // Don't throw - order is already processed
+  }
+};
+
+/**
+ * Finalizes a download task with batch notification logic
  * @param {number} taskId - Task ID
  * @param {string} folderName - Folder name on Google Drive
  * @param {string} secretKey - Secret key for authentication
@@ -177,32 +164,44 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
     throw new AppError('Forbidden: Wrong Key', 403);
   }
 
-  // Find task
+  // Find task with order_id
   const task = await DownloadTask.findByPk(taskId, {
-    attributes: ['id', 'email', 'course_url', 'title', 'status', 'drive_link']
+    attributes: ['id', 'email', 'course_url', 'title', 'status', 'drive_link', 'order_id']
   });
 
   if (!task) {
     throw new AppError('Task not found', 404);
   }
 
-  Logger.info('Finalizing download', { taskId });
+  Logger.info('[Webhook] Finalizing download task', { 
+    taskId, 
+    orderId: task.order_id,
+    folderName 
+  });
 
-  // Find folder on Drive with retry
+  // ===== STEP 1: Find folder on Drive with retry =====
   const driveFolder = await findFolderWithRetry(folderName);
   let driveLink = null;
 
   if (driveFolder) {
     driveLink = driveFolder.webViewLink;
-    Logger.success('Drive folder found', { folderId: driveFolder.id });
+    Logger.success('[Webhook] Drive folder found', { 
+      folderId: driveFolder.id,
+      taskId 
+    });
 
-    // Grant access
+    // Grant access to user
     await grantFolderAccess(driveFolder.id, task.email);
   } else {
-    Logger.warn('Drive folder not found after retries', { folderName, taskId });
+    Logger.warn('[Webhook] Drive folder not found after retries', { 
+      folderName, 
+      taskId 
+    });
   }
 
-  // Update task status
+  // ===== STEP 2: Update current task with STRICT validation =====
+  // Task is 'completed' ONLY if we have a valid drive_link
+  // Task is 'failed' if no drive_link (even if folder was expected)
   const updateData = {
     status: driveLink ? 'completed' : 'failed',
     drive_link: driveLink
@@ -210,23 +209,69 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
 
   await task.update(updateData);
 
-  // Send email if successful
-  if (driveLink && process.env.EMAIL_USER) {
-    try {
-      await sendCompletionEmail(task, folderName, driveLink);
-    } catch (error) {
-      Logger.error('Failed to send completion email', error, { taskId });
-      // Don't throw - task is already updated
+  Logger.info('[Webhook] Task updated', {
+    taskId,
+    status: updateData.status,
+    hasDriveLink: !!driveLink
+  });
+
+  // ===== STEP 3: Check Order Completion & Update Order Status =====
+  const orderId = task.order_id;
+  
+  if (orderId) {
+    const { isComplete, tasks, inProgressCount } = await checkOrderCompletion(orderId);
+
+    if (isComplete) {
+      // All tasks are done - update Order status and send batch notification
+      Logger.info('[Order Completion] Order #' + orderId + ': All tasks finished. Updating order status...', {
+        orderId,
+        totalTasks: tasks.length,
+        successfulTasks: tasks.filter(t => t.status === 'completed' && t.drive_link).length
+      });
+
+      // Update Order status to 'completed'
+      // Use atomic update to prevent race conditions
+      const order = await Order.findByPk(orderId);
+      if (order) {
+        // Determine final order status based on task results
+        const allTasksSuccessful = tasks.every(t => t.status === 'completed' && t.drive_link);
+        const finalOrderStatus = allTasksSuccessful ? 'completed' : 'completed'; // completed with some failures
+        
+        await order.update({ 
+          order_status: finalOrderStatus 
+        });
+
+        Logger.success('[Order Status] Order updated to COMPLETED', {
+          orderId: order.id,
+          orderCode: order.order_code,
+          orderStatus: finalOrderStatus,
+          allSuccess: allTasksSuccessful
+        });
+      }
+
+      // Send batch completion notification
+      await sendOrderCompletionNotification(orderId, tasks);
+    } else {
+      // Still have tasks in progress - wait
+      Logger.info('[Order Status] Order #' + orderId + ': Waiting for other tasks to complete', {
+        orderId,
+        inProgressCount,
+        totalTasks: tasks.length
+      });
     }
+  } else {
+    Logger.warn('[Webhook] Task has no order_id - skipping batch notification', { taskId });
   }
 
   return {
     success: true,
     taskId,
-    driveLink: driveLink || null
+    driveLink: driveLink || null,
+    status: updateData.status
   };
 };
 
 module.exports = {
-  finalizeDownload
+  finalizeDownload,
+  checkOrderCompletion
 };
