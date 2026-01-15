@@ -9,8 +9,7 @@ const https = require('https');
 const { transformToSamsungUdemy } = require('../utils/url.util');
 const Logger = require('../utils/logger.util');
 const { AppError } = require('../middleware/errorHandler.middleware');
-
-const PRICE_PER_COURSE = 2000;
+const { pricingConfig } = require('../utils/pricing.util');
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY = 1000; // 1 second
 const MAX_CONCURRENT_REQUESTS = 3; // Limit concurrent requests
@@ -269,7 +268,7 @@ const getCourseInfo = async (urls) => {
           url: rawUrl,
           title: data.title,
           image: data.image,
-          price: PRICE_PER_COURSE,
+          price: pricingConfig.PRICE_PER_COURSE,
           courseId: data.courseId
         };
       } else {

@@ -1,3 +1,0 @@
-
-007 T-o-API-key-cho-OpenAI
-https://platform.openai.com/settings/organization/api-keys

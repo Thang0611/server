@@ -9,16 +9,16 @@
  *   - Delete all: pm2 delete ecosystem.config.js
  * 
  * Individual control:
- *   - pm2 restart backend
- *   - pm2 restart client-nextjs
- *   - pm2 restart udemy-dl-workers
+ *   - pm2 restart api
+ *   - pm2 restart nextjs
+ *   - pm2 restart workers
  */
 
 module.exports = {
   apps: [
     // ==================== NODE.JS BACKEND API ====================
     {
-      name: 'backend',
+      name: 'api',
       script: './server.js',
       instances: 2,  // Run 2 instances for load balancing (or use 'max' for all CPU cores)
       exec_mode: 'cluster',  // Node.js cluster mode for load balancing
@@ -52,10 +52,10 @@ module.exports = {
 
     // ==================== NEXT.JS FRONTEND ====================
     {
-      name: 'client-nextjs',
+      name: 'nextjs',
       script: 'npm',
       args: 'start',
-      cwd: '/root/clone-app',  // Next.js application directory
+      cwd: '/root/project/clone-app',  // Next.js application directory
       instances: 1,  // Next.js usually runs as single instance (or 'max' for SSR apps)
       exec_mode: 'cluster',
       env: {
@@ -64,8 +64,8 @@ module.exports = {
       },
       
       // Logs
-      error_file: '/root/server/logs/nextjs-error.log',
-      out_file: '/root/server/logs/nextjs-out.log',
+      error_file: '/root/project/server/logs/nextjs-error.log',
+      out_file: '/root/project/server/logs/nextjs-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       merge_logs: true,
       
@@ -78,10 +78,10 @@ module.exports = {
 
     // ==================== PYTHON REDIS WORKERS ====================
     {
-      name: 'udemy-dl-workers',
+      name: 'workers',
       script: 'worker_rq.py',  // Script name only (cwd is udemy_dl)
       interpreter: 'python3',  // Use Python 3 interpreter
-      instances: 5,  // Run 5 parallel workers for concurrent downloads
+      instances: 2,  // Run 2 parallel workers for concurrent downloads
       exec_mode: 'fork',  // Python uses fork mode (not Node cluster)
       
       // Environment variables
@@ -110,7 +110,7 @@ module.exports = {
       
       watch: false,
       
-      // ⚠️ IMPORTANT: Each instance will get unique INSTANCE_ID env var (0, 1, 2, 3, 4)
+      // ⚠️ IMPORTANT: Each instance will get unique INSTANCE_ID env var (0, 1)
       instance_var: 'INSTANCE_ID'
     }
   ],

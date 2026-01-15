@@ -7,7 +7,9 @@ const DownloadTask = require('../models/downloadTask.model');
 const Order = require('../models/order.model');
 const { findFolderByName, grantReadAccess } = require('../utils/drive.util');
 const { sendBatchCompletionEmail } = require('./email.service');
+const auditService = require('./audit.service');
 const Logger = require('../utils/logger.util');
+const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 
 const MAX_RETRY_ATTEMPTS = 10;
@@ -202,6 +204,7 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
   // ===== STEP 2: Update current task with STRICT validation =====
   // Task is 'completed' ONLY if we have a valid drive_link
   // Task is 'failed' if no drive_link (even if folder was expected)
+  const previousStatus = task.status;
   const updateData = {
     status: driveLink ? 'completed' : 'failed',
     drive_link: driveLink
@@ -214,6 +217,64 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
     status: updateData.status,
     hasDriveLink: !!driveLink
   });
+
+  // ✅ LIFECYCLE LOG: Download/Upload Outcome
+  if (updateData.status === 'completed' && driveLink) {
+    // Upload success (download was already logged by Python worker)
+    lifecycleLogger.logUploadSuccess(taskId, driveLink, {
+      folderName,
+      orderId: task.order_id
+    });
+  } else if (updateData.status === 'failed') {
+    // Upload/Download failed
+    lifecycleLogger.logUploadError(
+      taskId,
+      `Drive folder not found after ${MAX_RETRY_ATTEMPTS} retries`,
+      { folderName, orderId: task.order_id }
+    );
+  }
+
+  // ===== STEP 2.5: LOG AUDIT EVENT =====
+  // FIX: Add audit logging for download completion/failure
+  try {
+    if (updateData.status === 'completed') {
+      await auditService.logDownload(
+        task.order_id,
+        taskId,
+        'download_completed',
+        `Download completed successfully. Drive folder: ${folderName}`,
+        { 
+          folderName,
+          driveLink: updateData.drive_link,
+          previousStatus,
+          newStatus: updateData.status
+        },
+        'info'
+      );
+    } else {
+      await auditService.logDownload(
+        task.order_id,
+        taskId,
+        'download_failed',
+        `Download failed: Drive folder not found after ${MAX_RETRY_ATTEMPTS} retries`,
+        { 
+          folderName,
+          previousStatus,
+          newStatus: updateData.status,
+          retries: MAX_RETRY_ATTEMPTS
+        },
+        'error'
+      );
+    }
+  } catch (auditError) {
+    // Don't throw - audit logging should never break the main flow
+    Logger.error('[Webhook] Failed to log audit event', auditError, { 
+      taskId, 
+      orderId: task.order_id,
+      errorMessage: auditError?.message,
+      errorStack: auditError?.stack
+    });
+  }
 
   // ===== STEP 3: Check Order Completion & Update Order Status =====
   const orderId = task.order_id;
@@ -247,6 +308,28 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
           orderStatus: finalOrderStatus,
           allSuccess: allTasksSuccessful
         });
+
+        // FIX: Log order completion audit event
+        try {
+          await auditService.logEvent({
+            orderId: order.id,
+            eventType: 'order_completed',
+            eventCategory: 'system',
+            severity: allTasksSuccessful ? 'info' : 'warning',
+            message: `Order completed: ${tasks.filter(t => t.status === 'completed' && t.drive_link).length}/${tasks.length} tasks successful`,
+            details: {
+              totalTasks: tasks.length,
+              completedTasks: tasks.filter(t => t.status === 'completed' && t.drive_link).length,
+              failedTasks: tasks.filter(t => t.status === 'failed' || !t.drive_link).length,
+              allTasksSuccessful
+            },
+            previousStatus: 'processing',
+            newStatus: finalOrderStatus,
+            source: 'webhook_handler'
+          });
+        } catch (auditError) {
+          Logger.error('[Webhook] Failed to log order completion audit event', auditError, { orderId });
+        }
       }
 
       // Send batch completion notification

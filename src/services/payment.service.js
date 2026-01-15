@@ -3,17 +3,17 @@
  * @module services/payment
  */
 
-const { Order } = require('../models');
+const { Order, DownloadTask } = require('../models');
 const sequelize = require('../config/database');
 const downloadService = require('./download.service');
 const infoCourseService = require('./infoCourse.service');
 const enrollService = require('./enroll.service');
 const { generateVietQR } = require('../utils/qrGenerator');
 const Logger = require('../utils/logger.util');
+const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 const { addDownloadJob } = require('../queues/download.queue');
-
-const PRICE_PER_COURSE = 2000; // VND
+const { calculateOrderPrice, getComboUnitPrice, pricingConfig } = require('../utils/pricing.util');
 
 /**
  * Generates a sequential order code based on order ID
@@ -42,16 +42,27 @@ const createOrder = async (email, courses) => {
       throw new AppError('Email và danh sách khóa học là bắt buộc', 400);
     }
 
-    // Filter only valid courses (those with success: true from crawl step)
-    // If courses come from frontend after crawl, they should have url property
-    const validCourses = courses.filter(course => course.url);
+    // Filter valid courses and calculate total price using pricing utility
+    const { validCourses, validCount, totalPrice } = calculateOrderPrice(courses);
 
     if (validCourses.length === 0) {
       throw new AppError('Không có khóa học hợp lệ', 400);
     }
 
-    // Calculate total amount based on valid courses
-    const totalAmount = validCourses.length * PRICE_PER_COURSE;
+    // Use calculated total price
+    const totalAmount = totalPrice;
+
+    // Check if combo applies and calculate unit price
+    const comboUnitPrice = getComboUnitPrice(validCount, totalAmount);
+    
+    if (comboUnitPrice !== null) {
+      const comboType = validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : 'Unknown';
+      Logger.info(`${comboType} order detected`, {
+        totalPrice: totalAmount,
+        unitPrice: comboUnitPrice,
+        courseCount: validCount
+      });
+    }
 
     // Create order in database WITHOUT order_code first
     // This allows us to get the auto-incremented ID
@@ -72,8 +83,44 @@ const createOrder = async (email, courses) => {
       orderId: order.id,
       orderCode: order.order_code,
       email: order.user_email,
-      totalAmount: order.total_amount
+      totalAmount: order.total_amount,
+      isCombo: comboUnitPrice !== null,
+      comboType: validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : null
     });
+
+    // ✅ LIFECYCLE LOG: Order Creation with validation details
+    try {
+      // Get validation results from infoCourse service
+      const validationResults = await infoCourseService.getCourseInfo(validCourses.map(c => c.url));
+      const successCount = validationResults.filter(r => r.success).length;
+      const failedUrls = validationResults.filter(r => !r.success).map(r => r.url);
+      
+      lifecycleLogger.logOrderCreated(
+        order.id,
+        email,
+        totalAmount,
+        order.payment_status,
+        {
+          successCount,
+          totalCount: validCourses.length,
+          failedUrls
+        }
+      );
+    } catch (validationError) {
+      // Log validation error but don't fail order creation
+      Logger.warn('Failed to get validation details for lifecycle log', { orderId: order.id });
+      lifecycleLogger.logOrderCreated(
+        order.id,
+        email,
+        totalAmount,
+        order.payment_status,
+        {
+          successCount: validCourses.length,
+          totalCount: validCourses.length,
+          failedUrls: []
+        }
+      );
+    }
 
     // Create download tasks for this order
     let downloadTasks = [];
@@ -90,6 +137,46 @@ const createOrder = async (email, courses) => {
         orderId: order.id,
         taskCount: downloadTasks.length
       });
+
+      // If combo applies, update all task prices to the calculated unit price
+      if (comboUnitPrice !== null && downloadTasks.length > 0) {
+        try {
+          const taskIds = downloadTasks.map(task => task.id);
+          const comboType = validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : 'Unknown';
+          
+          await DownloadTask.update(
+            { price: comboUnitPrice },
+            {
+              where: {
+                id: taskIds,
+                order_id: order.id
+              }
+            }
+          );
+
+          Logger.success(`Updated ${comboType} task prices`, {
+            orderId: order.id,
+            taskCount: taskIds.length,
+            unitPrice: comboUnitPrice,
+            totalPrice: totalAmount
+          });
+
+          // Refresh tasks to get updated prices
+          downloadTasks = await DownloadTask.findAll({
+            where: {
+              id: taskIds,
+              order_id: order.id
+            }
+          });
+        } catch (priceUpdateError) {
+          // Log error but don't fail - order and tasks are already created
+          Logger.error('Failed to update combo task prices', priceUpdateError, {
+            orderId: order.id,
+            unitPrice: comboUnitPrice,
+            comboType: validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : 'Unknown'
+          });
+        }
+      }
     } catch (taskError) {
       // Log error but don't fail the order creation
       // Tasks can be created later via webhook or manual process
@@ -104,10 +191,17 @@ const createOrder = async (email, courses) => {
     const qrCodeUrl = generateVietQR(totalAmount, orderCode);
 
     // Format courses info for response (ensure all have price)
+    // For combo orders, use the calculated unit price
+    const unitPriceForResponse = comboUnitPrice !== null 
+      ? comboUnitPrice 
+      : pricingConfig.PRICE_PER_COURSE;
+    
     const coursesInfo = validCourses.map(course => ({
       url: course.url,
       title: course.title || null,
-      price: course.price !== undefined && course.price !== null ? parseFloat(course.price) : PRICE_PER_COURSE,
+      price: comboUnitPrice !== null 
+        ? comboUnitPrice 
+        : (course.price !== undefined && course.price !== null ? parseFloat(course.price) : pricingConfig.PRICE_PER_COURSE),
       courseId: course.courseId || null
     }));
 
@@ -274,6 +368,13 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
       tasksUpdated: updatedCount
     });
 
+    // ✅ LIFECYCLE LOG: Payment Received
+    lifecycleLogger.logPaymentReceived(
+      order.id,
+      receivedAmount,
+      webhookData?.gateway || 'SePay'
+    );
+
     // ================================================================
     // PHASE 2: ENROLL COURSES THEN PUSH JOBS TO REDIS QUEUE
     // ================================================================
@@ -325,24 +426,79 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
               email: task.email
             });
 
-            // Call enrollment service
+            // ✅ FIX: Pass order_id to enrollment service to find correct task
+            // Call enrollment service with order_id to ensure we enroll the correct task
             const enrollResults = await enrollService.enrollCourses(
               [task.course_url],
-              task.email
+              task.email,
+              order.id // Pass order_id to find correct task
             );
 
             // Check enrollment result
             const enrollResult = enrollResults[0];
             if (enrollResult && enrollResult.success && enrollResult.status === 'enrolled') {
-              enrolledCount++;
-              enrolledTasks.push(task);
+              // ✅ FIX: Verify status is actually updated in DB before pushing to queue
+              // This prevents race condition where worker checks status before DB commit
+              let isStatusVerified = false;
+              let retryCount = 0;
+              const maxRetries = 10; // 10 retries = 5 seconds max wait
               
-              Logger.success('Course enrolled successfully', {
-                taskId: task.id,
-                courseId: enrollResult.courseId,
-                title: enrollResult.title,
-                email: task.email
-              });
+              while (retryCount < maxRetries && !isStatusVerified) {
+                const taskInDb = await DownloadTask.findByPk(task.id, {
+                  attributes: ['id', 'status']
+                });
+                
+                if (taskInDb && taskInDb.status === 'enrolled') {
+                  isStatusVerified = true;
+                  break;
+                }
+                
+                // Wait 500ms before retry
+                await new Promise(resolve => setTimeout(resolve, 500));
+                retryCount++;
+              }
+              
+              if (isStatusVerified) {
+                enrolledCount++;
+                enrolledTasks.push(task);
+                
+                Logger.success('Course enrolled successfully', {
+                  taskId: task.id,
+                  courseId: enrollResult.courseId,
+                  title: enrollResult.title,
+                  email: task.email,
+                  verificationRetries: retryCount
+                });
+
+                // ✅ FIX: LIFECYCLE LOG - Only log after DB verification
+                // NOTE: enroll.service.js already logs ENROLL_SUCCESS, so we skip here to avoid duplicate
+                // Only log if enrollment service didn't log (edge case)
+                const finalTaskCheck = await DownloadTask.findByPk(task.id, {
+                  attributes: ['id', 'status', 'order_id']
+                });
+                
+                // Skip logging here - enroll.service.js already logs it
+                // This prevents duplicate ENROLL_SUCCESS logs
+                Logger.debug('Enrollment verified in payment service', {
+                  taskId: task.id,
+                  status: finalTaskCheck?.status,
+                  orderId: order.id
+                });
+              } else {
+                enrollFailedCount++;
+                
+                const taskInDb = await DownloadTask.findByPk(task.id, {
+                  attributes: ['id', 'status']
+                });
+                
+                Logger.error('Enrollment status verification failed', new Error('Status not updated in DB'), {
+                  taskId: task.id,
+                  expectedStatus: 'enrolled',
+                  actualStatus: taskInDb?.status || 'unknown',
+                  retries: retryCount,
+                  recovery: 'Task can be manually re-enrolled using enrollment API'
+                });
+              }
             } else {
               enrollFailedCount++;
               

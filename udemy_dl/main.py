@@ -1991,12 +1991,17 @@ def main():
     if not env_loaded:
         load_dotenv()  # Fallback to default behavior
     
-    # ✅ SECURITY FIX: Đọc token từ environment variable thay vì CLI argument
+    # ✅ SECURITY FIX: Đọc token từ cookies.txt (access_token) hoặc environment variable
     if bearer_token:
         bearer_token = bearer_token
     else:
-        # Thử đọc từ UDEMY_TOKEN trước (nhất quán với worker.py), fallback sang UDEMY_BEARER
-        bearer_token = os.getenv("UDEMY_TOKEN") or os.getenv("UDEMY_BEARER")
+        # Try to get access_token from cookies.txt first, then fallback to env vars
+        try:
+            from cookie_utils import get_udemy_token
+            bearer_token = get_udemy_token()
+        except ImportError:
+            # Fallback if cookie_utils not available
+            bearer_token = os.getenv("UDEMY_TOKEN") or os.getenv("UDEMY_BEARER")
 
     udemy = Udemy(bearer_token)
     portal_name = udemy.extract_portal_name(course_url)
