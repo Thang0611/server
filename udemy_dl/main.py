@@ -363,9 +363,27 @@ def pre_run():
     stream.setLevel(LOG_LEVEL)
     stream.setFormatter(console_formatter)
 
-    # create a handler for file logging
-    file_handler = logging.FileHandler(LOG_FILE_PATH)
-    file_handler.setFormatter(file_formatter)
+    # ✅ FIX: Check if TASK_LOG_FILE environment variable is set (from worker_rq.py)
+    # If set, write to task log file instead of timestamped file
+    # This ensures ALL logs (logging module + stdout/stderr) go to one file
+    task_log_file = os.getenv('TASK_LOG_FILE')
+    if task_log_file:
+        # Write to task-specific log file (for admin dashboard)
+        # Use 'a' mode to append (worker already wrote header)
+        file_handler = logging.FileHandler(task_log_file, mode='a', encoding='utf-8')
+        file_handler.setFormatter(file_formatter)
+        # Also add a separator line to distinguish logging module output
+        try:
+            with open(task_log_file, 'a', encoding='utf-8') as f:
+                f.write(f"\n{'='*60}\n")
+                f.write(f"[LOGGING MODULE] Starting download process\n")
+                f.write(f"{'='*60}\n")
+        except Exception:
+            pass  # Ignore if file write fails
+    else:
+        # Default: Write to timestamped file (when run standalone)
+        file_handler = logging.FileHandler(LOG_FILE_PATH)
+        file_handler.setFormatter(file_formatter)
 
     # construct the logger
     logger = logging.getLogger("udemy-downloader")

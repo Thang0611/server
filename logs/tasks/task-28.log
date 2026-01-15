@@ -1,0 +1,468 @@
+{"timestamp":"2026-01-15T08:26:45.081Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":28,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/prompt-engineering-for-work/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:26:45.104Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":28,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T15:26:45.109125] Starting download for task 28
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/prompt-engineering-for-work/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_28 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+[32m[03:26:45][0m [34m[udemy-downloader][0m [pre_run:376] [1;30mINFO:[0m Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_28
+[32m[03:26:45][0m [34m[udemy-downloader][0m [pre_run:386] [1;30mWARNING:[0m [33m> Keyfile not found! You won't be able to decrypt any encrypted videos![0m
+[32m[03:26:46][0m [34m[udemy-downloader][0m [visit:1185] [1;30mINFO:[0m Visit request successful
+[32m[03:26:46][0m [34m[udemy-downloader][0m [main:2026] [1;30mINFO:[0m > Fetching course information, this may take a minute...
+[32m[03:26:46][0m [34m[udemy-downloader][0m [_handle_pagination:896] [1;30mINFO:[0m > Downloading data page 2/2
+[32m[03:26:48][0m [34m[udemy-downloader][0m [main:2029] [1;30mINFO:[0m > Course information retrieved!
+[32m[03:26:48][0m [34m[udemy-downloader][0m [main:2034] [1;30mINFO:[0m > Fetching course curriculum, this may take a minute...
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2058] [1;30mINFO:[0m > Course curriculum retrieved!
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2089] [1;30mINFO:[0m > Processing course data, this may take a minute. 
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 2 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 3 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 4 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 5 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 6 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 7 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 8 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 9 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 10 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 11 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 12 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 13 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 14 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 15 of 15
+[32m[03:26:50][0m [34m[udemy-downloader][0m [parse_new:1713] [1;30mINFO:[0m Chapter(s) (1)
+[32m[03:26:50][0m [34m[udemy-downloader][0m [parse_new:1714] [1;30mINFO:[0m Lecture(s) (14)
+[32m[03:26:50][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 1 of 1 =======
+[32m[03:26:53][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 1 of 14
+[32m[03:26:53][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:26:53][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:26:53 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#95f49a 72MiB/82MiB(87%) CN:1 DL:147MiB]
+
+01/15 15:26:54 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/001 Key Prompt Engineering Concepts.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+95f49a|OK  |    92MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/001 Key Prompt Engineering Concepts.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:26:54][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:26:54][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '001 Key Prompt Engineering Concepts_en.vtt'
+
+01/15 15:26:54 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:26:54 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/001 Key Prompt Engineering Concepts_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+59da78|OK  |   6.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/001 Key Prompt Engineering Concepts_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:26:54][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:26:54][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:26:54][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:26:59][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 2 of 14
+[32m[03:26:59][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:26:59][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:26:59 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#5c0f0e 81MiB/97MiB(83%) CN:1 DL:179MiB]
+
+01/15 15:27:01 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/002 Core Prompting Techniques.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5c0f0e|OK  |    86MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/002 Core Prompting Techniques.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:01][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:01][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '002 Core Prompting Techniques_en.vtt'
+
+01/15 15:27:01 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:01 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/002 Core Prompting Techniques_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+8d0f8e|OK  |   2.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/002 Core Prompting Techniques_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:01][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:01][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:01][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:04][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 3 of 14
+[32m[03:27:04][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:04][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:04 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#3b17c2 38MiB/74MiB(51%) CN:1 DL:43MiB]
+[#3b17c2 59MiB/74MiB(79%) CN:1 DL:30MiB]
+
+01/15 15:27:07 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/003 Writing Better Work Emails with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3b17c2|OK  |    28MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/003 Writing Better Work Emails with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:07][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:07][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '003 Writing Better Work Emails with AI_en.vtt'
+
+01/15 15:27:07 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:08 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/003 Writing Better Work Emails with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+77b65c|OK  |   5.7MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/003 Writing Better Work Emails with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:08][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:08][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:08][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:11][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 4 of 14
+[32m[03:27:11][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:11][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:11 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#5b99dd 85MiB/96MiB(88%) CN:1 DL:166MiB]
+
+01/15 15:27:13 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/004 Planning and Prioritizing Tasks with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5b99dd|OK  |    86MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/004 Planning and Prioritizing Tasks with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:13][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:13][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '004 Planning and Prioritizing Tasks with AI_en.vtt'
+
+01/15 15:27:13 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:13 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/004 Planning and Prioritizing Tasks with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3d6101|OK  |   3.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/004 Planning and Prioritizing Tasks with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:13][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:13][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:13][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:16][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 5 of 14
+[32m[03:27:16][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:16][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:16 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#e8e1a3 81MiB/90MiB(89%) CN:1 DL:174MiB]
+
+01/15 15:27:17 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/005 Summarizing and Extracting Key Points with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e8e1a3|OK  |    99MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/005 Summarizing and Extracting Key Points with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:17][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:17][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '005 Summarizing and Extracting Key Points with AI_en.vtt'
+
+01/15 15:27:17 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:18 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/005 Summarizing and Extracting Key Points with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+177387|OK  |   7.0MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/005 Summarizing and Extracting Key Points with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:18][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:18][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:18][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:21][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 6 of 14
+[32m[03:27:21][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:21][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:21 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#d68163 79MiB/87MiB(91%) CN:1 DL:125MiB]
+
+01/15 15:27:22 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/006 Brainstorming and Generating Ideas with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d68163|OK  |   100MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/006 Brainstorming and Generating Ideas with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:22][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:22][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '006 Brainstorming and Generating Ideas with AI_en.vtt'
+
+01/15 15:27:22 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:22 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/006 Brainstorming and Generating Ideas with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+ba1ecb|OK  |   3.2MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/006 Brainstorming and Generating Ideas with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:22][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:22][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:22][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:25][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 7 of 14
+[32m[03:27:25][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:25][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:25 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#d7230a 92MiB/105MiB(88%) CN:1 DL:149MiB]
+
+01/15 15:27:27 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/007 Improving Writing and Rewriting with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d7230a|OK  |    98MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/007 Improving Writing and Rewriting with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:27][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:27][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '007 Improving Writing and Rewriting with AI_en.vtt'
+
+01/15 15:27:27 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:27 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/007 Improving Writing and Rewriting with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+12bebb|OK  |   7.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/007 Improving Writing and Rewriting with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:27][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:27][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:27][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:31][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 8 of 14
+[32m[03:27:31][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:31][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:31 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#62b0bf 61MiB/81MiB(75%) CN:1 DL:90MiB]
+[#62b0bf 77MiB/81MiB(95%) CN:1 DL:42MiB]
+
+01/15 15:27:33 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/008 Creating Visuals and Presentations with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+62b0bf|OK  |    44MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/008 Creating Visuals and Presentations with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:33][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:33][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '008 Creating Visuals and Presentations with AI_en.vtt'
+
+01/15 15:27:33 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:33 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/008 Creating Visuals and Presentations with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+76274e|OK  |   3.2MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/008 Creating Visuals and Presentations with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:33][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:33][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:33][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:36][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 9 of 14
+[32m[03:27:36][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:36][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:36 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#509307 75MiB/87MiB(86%) CN:1 DL:176MiB]
+
+01/15 15:27:37 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/009 Automating Repetitive Tasks with AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+509307|OK  |   100MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/009 Automating Repetitive Tasks with AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:37][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:37][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '009 Automating Repetitive Tasks with AI_en.vtt'
+
+01/15 15:27:37 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:37 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/009 Automating Repetitive Tasks with AI_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+f627b7|OK  |   3.3MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/009 Automating Repetitive Tasks with AI_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:37][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:37][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:37][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:41][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 10 of 14
+[32m[03:27:41][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:41][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:41 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#2e05b6 71MiB/86MiB(83%) CN:1 DL:158MiB]
+
+01/15 15:27:43 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/010 Collaborating with AI as a Thought Partner.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2e05b6|OK  |    91MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/010 Collaborating with AI as a Thought Partner.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:43][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:43][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '010 Collaborating with AI as a Thought Partner_en.vtt'
+
+01/15 15:27:43 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:43 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/010 Collaborating with AI as a Thought Partner_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+9eaae0|OK  |   3.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/010 Collaborating with AI as a Thought Partner_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:43][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:43][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:43][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:45][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 11 of 14
+[32m[03:27:45][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:45][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:45 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#c369b2 72MiB/80MiB(89%) CN:1 DL:111MiB]
+
+01/15 15:27:47 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/011 Building Your Own Prompt Playbook.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+c369b2|OK  |    90MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/011 Building Your Own Prompt Playbook.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:47][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:47][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '011 Building Your Own Prompt Playbook_en.vtt'
+
+01/15 15:27:47 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:47 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/011 Building Your Own Prompt Playbook_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d84f51|OK  |   3.2MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/011 Building Your Own Prompt Playbook_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:47][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:47][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:47][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:50][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 12 of 14
+[32m[03:27:50][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:50][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:50 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#05ed2d 69MiB/84MiB(82%) CN:1 DL:151MiB]
+
+01/15 15:27:52 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/012 Prompting Best Practices and Final Tips.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+05ed2d|OK  |    74MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/012 Prompting Best Practices and Final Tips.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:52][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:52][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '012 Prompting Best Practices and Final Tips_en.vtt'
+
+01/15 15:27:52 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:52 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/012 Prompting Best Practices and Final Tips_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+aae5d7|OK  |   6.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/012 Prompting Best Practices and Final Tips_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:52][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:52][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:52][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:55][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 13 of 14
+[32m[03:27:55][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:27:55][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:27:55 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#8410d0 81MiB/98MiB(82%) CN:1 DL:183MiB]
+
+01/15 15:27:57 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/013 Next Steps.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+8410d0|OK  |    86MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/013 Next Steps.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:57][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 3 caption(s)...
+[32m[03:27:57][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '013 Next Steps_en.vtt'
+
+01/15 15:27:57 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:27:57 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/013 Next Steps_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+a9c0a0|OK  |   2.5MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_28/prompt-engineering-for-work/01 - Prompt Engineering at Work/013 Next Steps_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:27:57][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:27:57][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:27:57][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:27:57][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 14 of 14
+[32m[03:27:57][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 1 asset(s) for lecture...
+{"timestamp":"2026-01-15T08:27:57.917Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":28,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":72,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:28:05.124Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":28,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":80,"folderName":"prompt-engineering-for-work"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}

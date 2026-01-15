@@ -22,6 +22,43 @@ from cookie_utils import get_udemy_token
 from lifecycle_logger import log_download_success, log_download_error, log_upload_success, log_upload_error
 from task_logger import log_info, log_error, log_warn, log_progress, log_to_node_api
 
+# ================= 0. TEE WRITER FOR DUAL OUTPUT =================
+
+class TeeWriter:
+    """
+    Duplicate output to both stdout (for PM2 logs) and task log file
+    This ensures logs appear in both worker-out.log and task-specific log files
+    """
+    def __init__(self, file_path):
+        self.file = open(file_path, 'a', encoding='utf-8')
+        self.stdout = sys.stdout
+    
+    def write(self, data):
+        # Write to both stdout (PM2 will capture) and task log file
+        self.stdout.write(data)
+        self.stdout.flush()  # Ensure immediate output to PM2
+        self.file.write(data)
+        self.file.flush()  # Ensure immediate write to file
+    
+    def flush(self):
+        self.stdout.flush()
+        self.file.flush()
+    
+    def fileno(self):
+        # Return stdout's file descriptor for subprocess compatibility
+        # This allows subprocess.run() to work with TeeWriter
+        return self.stdout.fileno()
+    
+    def close(self):
+        if self.file:
+            self.file.close()
+    
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
 # ================= 1. SETUP =================
 # Load .env
 env_paths = [
@@ -416,6 +453,11 @@ def process_download(task_data):
             os.makedirs(task_log_dir, exist_ok=True)
             task_log_path = os.path.join(task_log_dir, f'task-{task_id}.log')
             
+            # ✅ FIX: Set environment variable so main.py can write to task log file
+            # This ensures ALL logs (stdout, stderr, logging module) go to task log file
+            os.environ['TASK_LOG_FILE'] = task_log_path
+            os.environ['TASK_ID'] = str(task_id)
+            
             # ✅ EMIT: Download in progress (simulated - main.py doesn't report progress yet)
             # Note: For real progress, we'd need to modify main.py to emit progress events
             emit_progress(task_id, order_id, percent=30, current_file="Downloading course content...")
@@ -424,20 +466,19 @@ def process_download(task_data):
             if order_id:
                 log_progress(task_id, order_id, 30, "Downloading course content...", {'attempt': attempt})
             
-            # ✅ FIX: Run with stdout/stderr redirected to task log file
-            with open(task_log_path, 'a', encoding='utf-8') as log_file:
-                log_file.write(f"\n{'='*60}\n")
-                log_file.write(f"[{datetime.now().isoformat()}] Starting download for task {task_id}\n")
-                log_file.write(f"Command: {' '.join(cmd)}\n")
-                log_file.write(f"{'='*60}\n")
-                log_file.flush()  # Ensure header is written
+            # ✅ FIX: Run with stdout/stderr duplicated to both stdout (PM2) and task log file
+            # This ensures logs appear in worker-out.log (for pm2 log worker) AND task log file
+            with TeeWriter(task_log_path) as tee:
+                # Write header to both stdout and task log file
+                header = f"\n{'='*60}\n[{datetime.now().isoformat()}] Starting download for task {task_id}\nCommand: {' '.join(cmd)}\n{'='*60}\n"
+                tee.write(header)
                 
-                # ✅ FIX: Run subprocess with output redirected and proper timeout
+                # ✅ FIX: Run subprocess with output duplicated to both stdout and task log file
                 # Use subprocess.run() which supports timeout natively
                 try:
                     result = subprocess.run(
                         cmd,
-                        stdout=log_file,
+                        stdout=tee,  # TeeWriter will duplicate to both stdout and file
                         stderr=subprocess.STDOUT,  # Merge stderr to stdout
                         text=True,
                         timeout=DOWNLOAD_TIMEOUT,
