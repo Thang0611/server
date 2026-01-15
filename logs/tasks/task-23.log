@@ -3313,3 +3313,117 @@ Status Legend:
 [32m[03:14:02][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 31 of 32 =======
 [32m[03:14:02][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 183 of 190
 [32m[03:14:02][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 1 asset(s) for lecture...
+[32m[03:14:06][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 184 of 190
+[32m[03:14:06][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:14:06][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:14:06 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#a28121 49MiB/68MiB(72%) CN:1 DL:57MiB]
+
+01/15 15:14:08 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/184 Bạn có thực sự hiểu if __name__ == __main__ để làm gì không.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+a28121|OK  |    39MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/184 Bạn có thực sự hiểu if __name__ == __main__ để làm gì không.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:14:08][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:14:08][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:14:11][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 185 of 190
+[32m[03:14:11][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:14:11][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:14:11 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#c354c4 73MiB/89MiB(83%) CN:1 DL:165MiB]
+
+01/15 15:14:13 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/185 Cách truyền tham số vào chương trình Python (Nâng Cao).mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+c354c4|OK  |    79MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/185 Cách truyền tham số vào chương trình Python (Nâng Cao).mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:14:13][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:14:13][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:14:18][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 186 of 190
+[32m[03:14:18][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:14:18][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:14:18 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#24b4f7 92MiB/154MiB(59%) CN:3 DL:207MiB]
+[#24b4f7 142MiB/154MiB(92%) CN:1 DL:97MiB]
+
+01/15 15:14:20 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/186 Những cách format string (chuỗi) trong Python - Rất hay dùng khi sử dụng print.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+24b4f7|OK  |    81MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/186 Những cách format string (chuỗi) trong Python - Rất hay dùng khi sử dụng print.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:14:20][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:14:20][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:14:24][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 187 of 190
+[32m[03:14:24][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:14:24][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:14:24 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#38bbdd 65MiB/81MiB(80%) CN:1 DL:149MiB]
+
+01/15 15:14:25 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/187 Lambda function - Hàm không tên.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+38bbdd|OK  |    73MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/187 Lambda function - Hàm không tên.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:14:25][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:14:25][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:14:30][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 188 of 190
+[32m[03:14:30][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:14:30][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:14:30 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#9268fa 65MiB/83MiB(78%) CN:1 DL:137MiB]
+
+01/15 15:14:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/188 Xử lý JSON - response trong web, json data trong AI.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+9268fa|OK  |    67MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/188 Xử lý JSON - response trong web, json data trong AI.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:14:32][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:14:32][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:14:35][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 189 of 190
+[32m[03:14:35][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:14:35][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:14:35 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#68a407 37MiB/49MiB(75%) CN:1 DL:55MiB]
+
+01/15 15:14:37 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/189 Xử lý Pickle file - rất hay dùng để lưu Machine Learning model.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+68a407|OK  |    43MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_23/30-days-of-code-the-complete-python-bootcamp-vietnamese/31 - Tips and Tricks - Những điều bạn ít thấy/189 Xử lý Pickle file - rất hay dùng để lưu Machine Learning model.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:14:37][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:14:37][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:14:37][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 32 of 32 =======
+[32m[03:14:37][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 190 of 190
+[32m[03:14:37][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 1 asset(s) for lecture...
+{"timestamp":"2026-01-15T08:14:39.762Z","level":"info","category":"download","source":"python_worker","orderId":18,"taskId":23,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":1516,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:15:41.112Z","level":"info","category":"download","source":"python_worker","orderId":18,"taskId":23,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":1578,"folderName":"30-days-of-code-the-complete-python-bootcamp-vietnamese"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}

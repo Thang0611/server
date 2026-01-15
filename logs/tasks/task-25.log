@@ -1,0 +1,521 @@
+{"timestamp":"2026-01-15T08:22:16.245Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":25,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/designing-ai-assistants/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:22:16.271Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":25,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T15:22:16.280142] Starting download for task 25
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/designing-ai-assistants/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_25 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+[32m[03:22:17][0m [34m[udemy-downloader][0m [pre_run:376] [1;30mINFO:[0m Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_25
+[32m[03:22:17][0m [34m[udemy-downloader][0m [pre_run:386] [1;30mWARNING:[0m [33m> Keyfile not found! You won't be able to decrypt any encrypted videos![0m
+[32m[03:22:19][0m [34m[udemy-downloader][0m [visit:1185] [1;30mINFO:[0m Visit request successful
+[32m[03:22:19][0m [34m[udemy-downloader][0m [main:2026] [1;30mINFO:[0m > Fetching course information, this may take a minute...
+[32m[03:22:28][0m [34m[udemy-downloader][0m [_handle_pagination:896] [1;30mINFO:[0m > Downloading data page 2/2
+[32m[03:22:29][0m [34m[udemy-downloader][0m [main:2029] [1;30mINFO:[0m > Course information retrieved!
+[32m[03:22:29][0m [34m[udemy-downloader][0m [main:2034] [1;30mINFO:[0m > Fetching course curriculum, this may take a minute...
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2058] [1;30mINFO:[0m > Course curriculum retrieved!
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2089] [1;30mINFO:[0m > Processing course data, this may take a minute. 
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 2 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 4 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 5 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 6 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 7 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 9 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 10 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 11 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 12 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 13 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 14 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 15 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 17 of 17
+[32m[03:22:32][0m [34m[udemy-downloader][0m [parse_new:1713] [1;30mINFO:[0m Chapter(s) (4)
+[32m[03:22:32][0m [34m[udemy-downloader][0m [parse_new:1714] [1;30mINFO:[0m Lecture(s) (13)
+[32m[03:22:32][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 1 of 4 =======
+[32m[03:22:37][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 1 of 13
+[32m[03:22:37][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:37][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:37 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#955209 3.9MiB/50MiB(7%) CN:2 DL:8.0MiB ETA:5s]
+[#955209 25MiB/50MiB(49%) CN:2 DL:17MiB ETA:1s]
+[#955209 43MiB/50MiB(85%) CN:2 DL:17MiB]
+
+01/15 15:22:41 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/01 - Introduction/001 Intro to Designing AI Assistants.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+955209|OK  |    16MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/01 - Introduction/001 Intro to Designing AI Assistants.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:41][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:22:41][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '001 Intro to Designing AI Assistants_en.vtt'
+
+01/15 15:22:41 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:41 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/01 - Introduction/001 Intro to Designing AI Assistants_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bef4d8|OK  |   2.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/01 - Introduction/001 Intro to Designing AI Assistants_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:41][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:41][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:41][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:41][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 2 of 4 =======
+[32m[03:22:45][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 2 of 13
+[32m[03:22:45][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:45][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:45 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#66f830 4.1MiB/63MiB(6%) CN:2 DL:7.5MiB ETA:7s]
+[#66f830 20MiB/63MiB(31%) CN:2 DL:12MiB ETA:3s]
+[#66f830 36MiB/63MiB(58%) CN:2 DL:14MiB ETA:1s]
+[#66f830 48MiB/63MiB(75%) CN:2 DL:13MiB ETA:1s]
+[#66f830 61MiB/63MiB(97%) CN:1 DL:13MiB]
+
+01/15 15:22:50 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/002 A wave of innovation.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+66f830|OK  |    13MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/002 A wave of innovation.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:50][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:22:50][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '002 A wave of innovation_en.vtt'
+
+01/15 15:22:50 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:50 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/002 A wave of innovation_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+f11bf3|OK  |   1.9MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/002 A wave of innovation_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:50][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:50][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:50][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:56][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 3 of 13
+[32m[03:22:56][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:56][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:56 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#151348 3.9MiB/49MiB(7%) CN:2 DL:6.2MiB ETA:7s]
+[#151348 18MiB/49MiB(38%) CN:2 DL:10MiB ETA:2s]
+[#151348 35MiB/49MiB(70%) CN:2 DL:12MiB ETA:1s]
+
+01/15 15:23:00 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/003 The new standard in business.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+151348|OK  |    13MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/003 The new standard in business.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:00][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:23:00][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '003 The new standard in business_en.vtt'
+
+01/15 15:23:00 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:01 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/003 The new standard in business_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e749c9|OK  |   1.6MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/003 The new standard in business_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:01][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:01][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:01][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:06][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 4 of 13
+[32m[03:23:06][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:06][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:06 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#0766bf 3.9MiB/95MiB(4%) CN:4 DL:8.1MiB ETA:11s]
+[#0766bf 26MiB/95MiB(27%) CN:4 DL:17MiB ETA:3s]
+[#0766bf 50MiB/95MiB(53%) CN:4 DL:20MiB ETA:2s]
+[#0766bf 81MiB/95MiB(84%) CN:2 DL:23MiB]
+[#0766bf 90MiB/95MiB(94%) CN:2 DL:20MiB]
+
+01/15 15:23:12 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/004 What is conversation design.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+0766bf|OK  |    19MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/004 What is conversation design.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:12][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:23:12][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '004 What is conversation design_en.vtt'
+
+01/15 15:23:12 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:12 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/004 What is conversation design_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+455e3b|OK  |   3.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/004 What is conversation design_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:12][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:12][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:12][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:18][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 5 of 13
+[32m[03:23:18][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:18][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:18 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#0afb9a 3.9MiB/117MiB(3%) CN:4 DL:7.0MiB ETA:16s]
+[#0afb9a 20MiB/117MiB(17%) CN:4 DL:13MiB ETA:7s]
+[#0afb9a 46MiB/117MiB(39%) CN:4 DL:18MiB ETA:3s]
+[#0afb9a 62MiB/117MiB(53%) CN:4 DL:17MiB ETA:3s]
+[#0afb9a 95MiB/117MiB(81%) CN:3 DL:21MiB ETA:1s]
+[#0afb9a 114MiB/117MiB(97%) CN:1 DL:20MiB]
+
+01/15 15:23:24 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/005 Psychology of conversations.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+0afb9a|OK  |    20MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/005 Psychology of conversations.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:24][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:23:24][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '005 Psychology of conversations_en.vtt'
+
+01/15 15:23:24 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:25 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/005 Psychology of conversations_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+0ea419|OK  |   4.7MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/02 - The field of conversation design/005 Psychology of conversations_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:25][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:25][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:25][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:25][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 3 of 4 =======
+[32m[03:23:33][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 6 of 13
+[32m[03:23:33][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:33][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:33 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#8bba5f 1.0MiB/222MiB(0%) CN:8 DL:6.4MiB ETA:34s]
+[#8bba5f 28MiB/222MiB(12%) CN:8 DL:24MiB ETA:7s]
+[#8bba5f 73MiB/222MiB(32%) CN:8 DL:34MiB ETA:4s]
+[#8bba5f 125MiB/222MiB(56%) CN:8 DL:39MiB ETA:2s]
+[#8bba5f 172MiB/222MiB(77%) CN:6 DL:41MiB ETA:1s]
+[#8bba5f 195MiB/222MiB(87%) CN:2 DL:38MiB]
+[#8bba5f 206MiB/222MiB(92%) CN:1 DL:33MiB]
+[#8bba5f 214MiB/222MiB(96%) CN:1 DL:29MiB]
+
+01/15 15:23:42 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/006 The conversation design workflow.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+8bba5f|OK  |    27MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/006 The conversation design workflow.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:42][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:23:42][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '006 The conversation design workflow_en.vtt'
+
+01/15 15:23:42 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:42 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/006 The conversation design workflow_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e60921|OK  |   3.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/006 The conversation design workflow_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:42][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:42][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:42][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:48][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 7 of 13
+[32m[03:23:48][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:48][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#3c24aa 1.6MiB/142MiB(1%) CN:4 DL:4.9MiB ETA:28s]
+[#3c24aa 20MiB/142MiB(14%) CN:4 DL:15MiB ETA:7s]
+[#3c24aa 46MiB/142MiB(32%) CN:4 DL:19MiB ETA:4s]
+[#3c24aa 75MiB/142MiB(53%) CN:4 DL:22MiB ETA:2s]
+[#3c24aa 106MiB/142MiB(75%) CN:4 DL:24MiB ETA:1s]
+[#3c24aa 131MiB/142MiB(92%) CN:2 DL:24MiB]
+
+01/15 15:23:55 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/007 Use case Let's buy some sneakers.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3c24aa|OK  |    23MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/007 Use case Let's buy some sneakers.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:55][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:23:55][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '007 Use case Let's buy some sneakers_en.vtt'
+
+01/15 15:23:55 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:55 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/007 Use case Let's buy some sneakers_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+de30ae|OK  |   6.5MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/007 Use case Let's buy some sneakers_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:55][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:55][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:55][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:59][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 8 of 13
+[32m[03:23:59][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:59][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:59 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#bab655 3.9MiB/35MiB(11%) CN:1 DL:6.1MiB ETA:5s]
+[#bab655 14MiB/35MiB(42%) CN:1 DL:8.9MiB ETA:2s]
+[#bab655 23MiB/35MiB(68%) CN:1 DL:8.6MiB ETA:1s]
+[#bab655 33MiB/35MiB(94%) CN:1 DL:8.8MiB]
+
+01/15 15:24:04 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/008 Conversation design fundamentals.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bab655|OK  |   9.1MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/008 Conversation design fundamentals.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:04][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:24:04][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '008 Conversation design fundamentals_en.vtt'
+
+01/15 15:24:04 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:04 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/008 Conversation design fundamentals_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5bcc04|OK  |   563KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/008 Conversation design fundamentals_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:04][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:04][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:04][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:09][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 9 of 13
+[32m[03:24:09][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:09][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:09 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#2efb44 176KiB/77MiB(0%) CN:2 DL:489KiB ETA:2m41s]
+[#2efb44 8.9MiB/77MiB(11%) CN:2 DL:6.4MiB ETA:10s]
+[#2efb44 26MiB/77MiB(33%) CN:2 DL:11MiB ETA:4s]
+[#2efb44 46MiB/77MiB(59%) CN:2 DL:13MiB ETA:2s]
+[#2efb44 64MiB/77MiB(83%) CN:2 DL:14MiB]
+
+01/15 15:24:15 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/009 Wizard of Oz testing.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2efb44|OK  |    15MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/009 Wizard of Oz testing.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:15][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:24:15][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '009 Wizard of Oz testing_en.vtt'
+
+01/15 15:24:15 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:15 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/009 Wizard of Oz testing_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+b45cf4|OK  |   1.8MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/009 Wizard of Oz testing_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:15][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:15][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:15][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:21][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 10 of 13
+[32m[03:24:21][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:21][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:21 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#e3c034 1.6MiB/96MiB(1%) CN:4 DL:4.9MiB ETA:19s]
+[#e3c034 14MiB/96MiB(15%) CN:4 DL:9.9MiB ETA:8s]
+[#e3c034 33MiB/96MiB(35%) CN:4 DL:13MiB ETA:4s]
+[#e3c034 55MiB/96MiB(58%) CN:4 DL:15MiB ETA:2s]
+[#e3c034 72MiB/96MiB(75%) CN:4 DL:16MiB ETA:1s]
+[#e3c034 89MiB/96MiB(93%) CN:2 DL:16MiB]
+[#e3c034 95MiB/96MiB(99%) CN:1 DL:14MiB]
+
+01/15 15:24:28 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/010 Behavior design and the expert rewrite.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e3c034|OK  |    14MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/010 Behavior design and the expert rewrite.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:28][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:24:28][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '010 Behavior design and the expert rewrite_en.vtt'
+
+01/15 15:24:28 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:28 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/010 Behavior design and the expert rewrite_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+17cadf|OK  |   4.5MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/010 Behavior design and the expert rewrite_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:28][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:28][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:28][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:32][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 11 of 13
+[32m[03:24:32][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:32][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#bbedfd 0B/99MiB(0%) CN:4 DL:254KiB ETA:6m41s]
+[#bbedfd 4.0MiB/99MiB(4%) CN:4 DL:3.9MiB ETA:24s]
+[#bbedfd 27MiB/99MiB(27%) CN:4 DL:13MiB ETA:5s]
+[#bbedfd 52MiB/99MiB(53%) CN:4 DL:17MiB ETA:2s]
+[#bbedfd 76MiB/99MiB(77%) CN:4 DL:19MiB ETA:1s]
+[#bbedfd 98MiB/99MiB(99%) CN:1 DL:19MiB]
+
+01/15 15:24:38 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/011 Detailed conversation design.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bbedfd|OK  |    19MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/011 Detailed conversation design.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:38][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:24:38][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '011 Detailed conversation design_en.vtt'
+
+01/15 15:24:38 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/011 Detailed conversation design_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d14438|OK  |   1.7MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/011 Detailed conversation design_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:39][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:39][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:39][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:44][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 12 of 13
+[32m[03:24:44][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:44][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:44 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#5c61a9 3.9MiB/100MiB(3%) CN:4 DL:6.0MiB ETA:15s]
+[#5c61a9 14MiB/100MiB(14%) CN:4 DL:9.0MiB ETA:9s]
+[#5c61a9 34MiB/100MiB(34%) CN:4 DL:13MiB ETA:5s]
+[#5c61a9 66MiB/100MiB(66%) CN:3 DL:18MiB ETA:1s]
+[#5c61a9 85MiB/100MiB(85%) CN:2 DL:18MiB]
+[#5c61a9 93MiB/100MiB(93%) CN:1 DL:15MiB]
+
+01/15 15:24:52 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/012 One workflow.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5c61a9|OK  |    15MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/012 One workflow.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:52][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:24:52][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '012 One workflow_en.vtt'
+
+01/15 15:24:52 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:52 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/012 One workflow_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+765729|OK  |   2.1MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/03 - The conversation design workflow/012 One workflow_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:52][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:52][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:52][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:52][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 4 of 4 =======
+[32m[03:24:57][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 13 of 13
+[32m[03:24:57][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:57][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:57 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#339a2c 3.9MiB/38MiB(10%) CN:1 DL:6.7MiB ETA:5s]
+[#339a2c 11MiB/38MiB(31%) CN:1 DL:7.5MiB ETA:3s]
+[#339a2c 23MiB/38MiB(62%) CN:1 DL:9.2MiB ETA:1s]
+[#339a2c 31MiB/38MiB(83%) CN:1 DL:8.2MiB]
+
+01/15 15:25:02 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/04 - Outro/013 Outro.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+339a2c|OK  |   8.7MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/04 - Outro/013 Outro.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:02][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 7 caption(s)...
+[32m[03:25:02][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '013 Outro_en.vtt'
+
+01/15 15:25:02 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:02 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/04 - Outro/013 Outro_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7cf5b6|OK  |   1.3MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_25/designing-ai-assistants/04 - Outro/013 Outro_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:02][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:25:02][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:25:02][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+{"timestamp":"2026-01-15T08:25:03.180Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":25,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":166,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:25:18.019Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":25,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":181,"folderName":"designing-ai-assistants"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}

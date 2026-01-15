@@ -29,24 +29,43 @@ const redisSubscriber = redis.createClient({
 // Connection handlers
 // FIX: Safely handle Redis errors without accessing .value property
 redisPublisher.on('error', (err) => {
-  const errorMessage = err?.message || String(err);
-  const errorStack = err?.stack || '';
-  Logger.error('Redis Publisher Error', { 
-    error: errorMessage,
-    stack: errorStack,
-    errorType: err?.constructor?.name
+  // FIX: Safely handle error - check if err exists and has message
+  if (!err) {
+    Logger.error('Redis Publisher Error: Unknown error (err is null/undefined)', null, {
+      errorType: 'Unknown',
+      timestamp: new Date().toISOString()
+    });
+    return;
+  }
+  
+  // Create Error object if err is not already an Error
+  const errorObj = err instanceof Error ? err : new Error(String(err));
+  const errorMessage = errorObj.message || String(err) || 'Unknown error';
+  
+  Logger.error('Redis Publisher Error', errorObj, {
+    errorType: err?.constructor?.name || 'Unknown',
+    redisError: errorMessage
   });
 });
 redisPublisher.on('connect', () => Logger.info('Redis Publisher Connected'));
 
 redisSubscriber.on('error', (err) => {
-  // FIX: Safely handle error without accessing .value
-  const errorMessage = err?.message || String(err);
-  const errorStack = err?.stack || '';
-  Logger.error('Redis Subscriber Error', { 
-    error: errorMessage,
-    stack: errorStack,
-    errorType: err?.constructor?.name
+  // FIX: Safely handle error - check if err exists and has message
+  if (!err) {
+    Logger.error('Redis Subscriber Error: Unknown error (err is null/undefined)', null, {
+      errorType: 'Unknown',
+      timestamp: new Date().toISOString()
+    });
+    return;
+  }
+  
+  // Create Error object if err is not already an Error
+  const errorObj = err instanceof Error ? err : new Error(String(err));
+  const errorMessage = errorObj.message || String(err) || 'Unknown error';
+  
+  Logger.error('Redis Subscriber Error', errorObj, {
+    errorType: err?.constructor?.name || 'Unknown',
+    redisError: errorMessage
   });
 });
 redisSubscriber.on('connect', () => Logger.info('Redis Subscriber Connected'));

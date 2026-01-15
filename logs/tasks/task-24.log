@@ -1,0 +1,1212 @@
+{"timestamp":"2026-01-15T08:22:16.495Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":24,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/intro-to-large-language-models-llms/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:22:16.522Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":24,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T15:22:16.530531] Starting download for task 24
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/intro-to-large-language-models-llms/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_24 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+[32m[03:22:17][0m [34m[udemy-downloader][0m [pre_run:376] [1;30mINFO:[0m Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_24
+[32m[03:22:17][0m [34m[udemy-downloader][0m [pre_run:386] [1;30mWARNING:[0m [33m> Keyfile not found! You won't be able to decrypt any encrypted videos![0m
+[32m[03:22:18][0m [34m[udemy-downloader][0m [visit:1185] [1;30mINFO:[0m Visit request successful
+[32m[03:22:18][0m [34m[udemy-downloader][0m [main:2026] [1;30mINFO:[0m > Fetching course information, this may take a minute...
+[32m[03:22:19][0m [34m[udemy-downloader][0m [_handle_pagination:896] [1;30mINFO:[0m > Downloading data page 2/2
+[32m[03:22:20][0m [34m[udemy-downloader][0m [main:2029] [1;30mINFO:[0m > Course information retrieved!
+[32m[03:22:20][0m [34m[udemy-downloader][0m [main:2034] [1;30mINFO:[0m > Fetching course curriculum, this may take a minute...
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2058] [1;30mINFO:[0m > Course curriculum retrieved!
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2089] [1;30mINFO:[0m > Processing course data, this may take a minute. 
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 2 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 3 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 4 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 5 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 6 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 7 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 8 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 10 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 11 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 12 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 13 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 14 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 15 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 16 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 17 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 18 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 20 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 21 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 22 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 23 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 24 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 25 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 26 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 27 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 28 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 29 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 31 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 32 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 33 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 34 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 35 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 36 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 38 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 39 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 40 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 41 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 42 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 43 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 44 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 46 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 47 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 48 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 49 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 50 of 50
+[32m[03:22:25][0m [34m[udemy-downloader][0m [parse_new:1713] [1;30mINFO:[0m Chapter(s) (6)
+[32m[03:22:25][0m [34m[udemy-downloader][0m [parse_new:1714] [1;30mINFO:[0m Lecture(s) (44)
+[32m[03:22:25][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 1 of 6 =======
+[32m[03:22:28][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 1 of 44
+[32m[03:22:28][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:28][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:28 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#7c7d5d 26MiB/49MiB(53%) CN:1 DL:44MiB]
+[#7c7d5d 36MiB/49MiB(74%) CN:1 DL:23MiB]
+
+01/15 15:22:31 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/001 Introduction.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7c7d5d|OK  |    29MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/001 Introduction.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:31][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:22:31][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '001 Introduction_en.vtt'
+
+01/15 15:22:31 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:31 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/001 Introduction_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5defd9|OK  |   1.5MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/001 Introduction_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:31][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:31][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:31][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:31][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 2 of 44
+[32m[03:22:31][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 1 asset(s) for lecture...
+[32m[03:22:36][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 3 of 44
+[32m[03:22:36][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:36][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:36 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#9b52f6 41MiB/63MiB(64%) CN:1 DL:62MiB]
+
+01/15 15:22:38 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/003 What are LLMs.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+9b52f6|OK  |    40MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/003 What are LLMs.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:38][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:22:38][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '003 What are LLMs_en.vtt'
+
+01/15 15:22:38 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:38 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/003 What are LLMs_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+52d411|OK  |   1.7MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/003 What are LLMs_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:38][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:38][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:38][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:41][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 4 of 44
+[32m[03:22:41][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:41][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:41 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#95fe9f 42MiB/60MiB(69%) CN:2 DL:62MiB]
+
+01/15 15:22:42 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/004 How large is an LLM.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+95fe9f|OK  |    45MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/004 How large is an LLM.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:42][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:22:42][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '004 How large is an LLM_en.vtt'
+
+01/15 15:22:42 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:43 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/004 How large is an LLM_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+1fa251|OK  |   3.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/004 How large is an LLM_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:43][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:43][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:43][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:45][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 5 of 44
+[32m[03:22:45][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:45][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:45 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:46 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/005 General purpose models.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+774b46|OK  |   104MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/005 General purpose models.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:46][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:22:46][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '005 General purpose models_en.vtt'
+
+01/15 15:22:46 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:46 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/005 General purpose models_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+683d91|OK  |   664KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/005 General purpose models_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:46][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:46][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:46][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:52][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 6 of 44
+[32m[03:22:52][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:52][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:52 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#c4c738 26MiB/51MiB(51%) CN:1 DL:31MiB]
+[#c4c738 44MiB/51MiB(85%) CN:1 DL:22MiB]
+
+01/15 15:22:54 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/006 Pre-training and fine tuning.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+c4c738|OK  |    23MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/006 Pre-training and fine tuning.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:54][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:22:54][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '006 Pre-training and fine tuning_en.vtt'
+
+01/15 15:22:54 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:54 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/006 Pre-training and fine tuning_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+ffbe66|OK  |   3.0MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/006 Pre-training and fine tuning_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:54][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:54][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:54][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:57][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 7 of 44
+[32m[03:22:57][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:22:57][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:22:57 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#b8eec2 55MiB/71MiB(77%) CN:1 DL:65MiB]
+
+01/15 15:22:59 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/007 What can LLMs be used for.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+b8eec2|OK  |    48MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/007 What can LLMs be used for.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:59][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:22:59][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '007 What can LLMs be used for_en.vtt'
+
+01/15 15:22:59 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:22:59 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/007 What can LLMs be used for_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bbaaa2|OK  |   1.2MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/01 - Introduction to Large Language Models/007 What can LLMs be used for_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:22:59][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:22:59][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:22:59][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:22:59][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 2 of 6 =======
+[32m[03:23:01][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 8 of 44
+[32m[03:23:01][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:01][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:02 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:02 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/008 Deep learning recap.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2c85cf|OK  |    87MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/008 Deep learning recap.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:02][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:02][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '008 Deep learning recap_en.vtt'
+
+01/15 15:23:02 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:02 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/008 Deep learning recap_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+6920a6|OK  |   472KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/008 Deep learning recap_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:02][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:02][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:02][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:05][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 9 of 44
+[32m[03:23:05][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:05][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:05 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#1f3982 54MiB/77MiB(71%) CN:1 DL:62MiB]
+
+01/15 15:23:07 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/009 The problem with RNNs.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+1f3982|OK  |    43MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/009 The problem with RNNs.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:07][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:07][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '009 The problem with RNNs_en.vtt'
+
+01/15 15:23:07 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:07 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/009 The problem with RNNs_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+413a99|OK  |   2.1MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/009 The problem with RNNs_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:07][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:07][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:07][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:13][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 10 of 44
+[32m[03:23:13][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:13][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:13 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#54cc56 40MiB/57MiB(70%) CN:1 DL:59MiB]
+
+01/15 15:23:15 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/010 The solution attention is all you need.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+54cc56|OK  |    41MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/010 The solution attention is all you need.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:15][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:15][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '010 The solution attention is all you need_en.vtt'
+
+01/15 15:23:15 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:15 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/010 The solution attention is all you need_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+ae2aa9|OK  |   0.9MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/010 The solution attention is all you need_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:15][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:15][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:15][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:20][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 11 of 44
+[32m[03:23:20][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:20][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:20 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:20 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/011 The transformer architecture.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+ad94cc|OK  |    99MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/011 The transformer architecture.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:20][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:20][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '011 The transformer architecture_en.vtt'
+
+01/15 15:23:20 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:20 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/011 The transformer architecture_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+51dd5b|OK  |   244KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/011 The transformer architecture_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:20][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:20][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:20][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:23][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 12 of 44
+[32m[03:23:23][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:23][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:23 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#a2454b 45MiB/60MiB(74%) CN:1 DL:67MiB]
+
+01/15 15:23:25 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/012 Input embeddings.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+a2454b|OK  |    39MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/012 Input embeddings.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:25][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:25][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '012 Input embeddings_en.vtt'
+
+01/15 15:23:25 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:25 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/012 Input embeddings_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2fc28d|OK  |   824KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/012 Input embeddings_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:25][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:25][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:25][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:30][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 13 of 44
+[32m[03:23:30][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:30][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:30 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#daae33 79MiB/86MiB(91%) CN:1 DL:156MiB]
+
+01/15 15:23:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/013 Multi-headed attention.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+daae33|OK  |    93MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/013 Multi-headed attention.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:32][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:32][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '013 Multi-headed attention_en.vtt'
+
+01/15 15:23:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/013 Multi-headed attention_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+eacff0|OK  |   1.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/013 Multi-headed attention_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:32][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:32][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:32][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:38][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 14 of 44
+[32m[03:23:38][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:38][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:38 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#22b0c7 42MiB/55MiB(75%) CN:1 DL:59MiB]
+
+01/15 15:23:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/014 Feed-forward layer.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+22b0c7|OK  |    46MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/014 Feed-forward layer.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:39][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:39][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '014 Feed-forward layer_en.vtt'
+
+01/15 15:23:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/014 Feed-forward layer_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+44d607|OK  |   727KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/014 Feed-forward layer_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:39][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:39][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:39][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:44][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 15 of 44
+[32m[03:23:44][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:44][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:44 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:44 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/015 Masked multihead attention.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+b25492|OK  |   193MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/015 Masked multihead attention.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:44][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:44][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '015 Masked multihead attention_en.vtt'
+
+01/15 15:23:44 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:44 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/015 Masked multihead attention_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2ada91|OK  |   328KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/015 Masked multihead attention_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:44][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:44][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:44][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:48][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 16 of 44
+[32m[03:23:48][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:48][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:49 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/016 Predicting the final outputs.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7bd50e|OK  |   160MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/016 Predicting the final outputs.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:49][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:49][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '016 Predicting the final outputs_en.vtt'
+
+01/15 15:23:49 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:49 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/016 Predicting the final outputs_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e2bb39|OK  |   590KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/02 - The Transformer Architecture/016 Predicting the final outputs_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:49][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:49][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:49][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:49][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 3 of 6 =======
+[32m[03:23:51][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 17 of 44
+[32m[03:23:51][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:51][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:51 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:51 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/017 What does GPT mean.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+a65385|OK  |   154MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/017 What does GPT mean.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:51][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:51][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '017 What does GPT mean_en.vtt'
+
+01/15 15:23:51 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:51 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/017 What does GPT mean_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+544548|OK  |   1.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/017 What does GPT mean_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:51][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:51][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:51][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:55][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 18 of 44
+[32m[03:23:55][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:55][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:55 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#7c9ac6 43MiB/53MiB(81%) CN:1 DL:63MiB]
+
+01/15 15:23:57 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/018 The development of ChatGPT.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7c9ac6|OK  |    47MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/018 The development of ChatGPT.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:57][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:23:57][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '018 The development of ChatGPT_en.vtt'
+
+01/15 15:23:57 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:57 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/018 The development of ChatGPT_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+17ebad|OK  |   425KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/018 The development of ChatGPT_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:57][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:23:57][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:23:57][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:23:59][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 19 of 44
+[32m[03:23:59][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:23:59][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:23:59 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:23:59 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/019 OpenAI API.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+ac3b47|OK  |   124MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/019 OpenAI API.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:23:59][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:23:59][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:02][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 20 of 44
+[32m[03:24:02][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:02][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:02 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:03 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/020 Generating text.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d4a963|OK  |   167MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/020 Generating text.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:03][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:24:03][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '020 Generating text_en.vtt'
+
+01/15 15:24:03 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:03 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/020 Generating text_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e8a96c|OK  |   1.2MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/020 Generating text_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:03][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:03][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:03][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:05][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 21 of 44
+[32m[03:24:05][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:05][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:05 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:06 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/021 Customizing GPT Output.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+65f067|OK  |   151MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/021 Customizing GPT Output.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:06][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:24:06][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '021 Customizing GPT Output_en.vtt'
+
+01/15 15:24:06 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:06 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/021 Customizing GPT Output_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+cfc588|OK  |   1.1MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/021 Customizing GPT Output_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:06][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:06][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:06][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:10][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 22 of 44
+[32m[03:24:10][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:10][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:10 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#7ff18e 41MiB/45MiB(91%) CN:1 DL:49MiB]
+
+01/15 15:24:12 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/022 Keyword text summarization.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7ff18e|OK  |    52MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/022 Keyword text summarization.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:12][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:24:12][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '022 Keyword text summarization_en.vtt'
+
+01/15 15:24:12 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:12 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/022 Keyword text summarization_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+12aea0|OK  |   547KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/022 Keyword text summarization_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:12][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:12][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:12][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:18][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 23 of 44
+[32m[03:24:18][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:18][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:18 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#2becd5 37MiB/44MiB(84%) CN:1 DL:43MiB]
+
+01/15 15:24:19 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/023 Coding a simple chatbot.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2becd5|OK  |    40MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/023 Coding a simple chatbot.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:19][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:24:19][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '023 Coding a simple chatbot_en.vtt'
+
+01/15 15:24:19 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:19 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/023 Coding a simple chatbot_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+40f290|OK  |   1.2MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/023 Coding a simple chatbot_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:19][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:19][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:19][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:23][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 24 of 44
+[32m[03:24:23][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:23][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:23 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:23 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/024 Introduction to Langchain in Python.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d2b682|OK  |   160MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/024 Introduction to Langchain in Python.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:23][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:24:23][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '024 Introduction to Langchain in Python_en.vtt'
+
+01/15 15:24:23 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:23 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/024 Introduction to Langchain in Python_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d9d663|OK  |   471KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/024 Introduction to Langchain in Python_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:23][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:23][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:23][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:29][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 25 of 44
+[32m[03:24:29][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:29][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:29 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#7e6b43 45MiB/59MiB(76%) CN:1 DL:66MiB]
+
+01/15 15:24:30 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/025 Langchain.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7e6b43|OK  |    44MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/025 Langchain.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:30][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:24:30][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:33][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 26 of 44
+[32m[03:24:33][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:33][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:33 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#4cd02d 37MiB/40MiB(91%) CN:1 DL:54MiB]
+
+01/15 15:24:35 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/026 Adding custom data to our chatbot.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+4cd02d|OK  |    45MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/03 - Getting started with GPT models/026 Adding custom data to our chatbot.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:35][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:24:35][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:35][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 4 of 6 =======
+[32m[03:24:37][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 27 of 44
+[32m[03:24:37][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:37][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:37 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#60d25b 34MiB/58MiB(59%) CN:1 DL:40MiB]
+
+01/15 15:24:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/027 Hugging Face package.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+60d25b|OK  |    33MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/027 Hugging Face package.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:39][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 14 caption(s)...
+[32m[03:24:39][0m [34m[udemy-downloader][0m [process_caption:1528] [1;30mINFO:[0m     >  Downloading caption: '027 Hugging Face package_en.vtt'
+
+01/15 15:24:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:24:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/027 Hugging Face package_en.vtt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bc2e7d|OK  |   0.9MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/027 Hugging Face package_en.vtt
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:40][0m [34m[udemy-downloader][0m [process_caption:1541] [1;30mINFO:[0m     > Converting caption to SRT format...
+[32m[03:24:40][0m [34m[udemy-downloader][0m [process_caption:1543] [1;30mINFO:[0m     > Caption conversion complete.
+[32m[03:24:40][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:45][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 28 of 44
+[32m[03:24:45][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:45][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:45 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#b24c01 35MiB/44MiB(80%) CN:1 DL:41MiB]
+
+01/15 15:24:47 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/028 The transformer pipeline.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+b24c01|OK  |    33MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/028 The transformer pipeline.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:47][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:24:47][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:52][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 29 of 44
+[32m[03:24:52][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:52][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:52 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#3241c8 38MiB/55MiB(69%) CN:1 DL:55MiB]
+
+01/15 15:24:54 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/029 Pre-trained tokenizers.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3241c8|OK  |    39MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/029 Pre-trained tokenizers.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:54][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:24:54][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:24:57][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 30 of 44
+[32m[03:24:57][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:24:57][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:24:57 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#1b40a8 48MiB/60MiB(78%) CN:1 DL:70MiB]
+
+01/15 15:24:58 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/030 Special tokens.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+1b40a8|OK  |    45MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/030 Special tokens.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:24:58][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:24:58][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:01][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 31 of 44
+[32m[03:25:01][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:01][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:01 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:01 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/031 Hugging Face and PyTorch, TensorFlow.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+ae1d45|OK  |   194MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/031 Hugging Face and PyTorch, TensorFlow.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:01][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:01][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:06][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 32 of 44
+[32m[03:25:06][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:06][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:06 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:06 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/032 Saving and loading models.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+94a430|OK  |   216MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/04 - Hugging Face Transformers/032 Saving and loading models.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:06][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:06][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:06][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 5 of 6 =======
+[32m[03:25:09][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 33 of 44
+[32m[03:25:09][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:09][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:09 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#397552 44MiB/65MiB(68%) CN:1 DL:66MiB]
+
+01/15 15:25:11 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/033 GPT vs BERT.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+397552|OK  |    39MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/033 GPT vs BERT.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:11][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:11][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:17][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 34 of 44
+[32m[03:25:17][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:17][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:17 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#e330a6 82MiB/98MiB(83%) CN:1 DL:129MiB]
+
+01/15 15:25:19 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/034 BERT architecture.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e330a6|OK  |    76MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/034 BERT architecture.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:19][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:19][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:24][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 35 of 44
+[32m[03:25:24][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:24][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:24 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:24 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/035 Loading the model and tokenizer.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+211499|OK  |   137MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/035 Loading the model and tokenizer.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:24][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:24][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:29][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 36 of 44
+[32m[03:25:29][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:29][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:29 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:29 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/036 BERT embeddings.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5fb434|OK  |   199MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/036 BERT embeddings.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:29][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:29][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:32][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 37 of 44
+[32m[03:25:32][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:32][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:33 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/037 Calculating the response.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+c1ad7f|OK  |    99MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/037 Calculating the response.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:33][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:33][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:36][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 38 of 44
+[32m[03:25:36][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:36][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:36 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#912249 76MiB/78MiB(97%) CN:1 DL:92MiB]
+
+01/15 15:25:37 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/038 Creating a QA bot.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+912249|OK  |    92MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/038 Creating a QA bot.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:37][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:37][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:43][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 39 of 44
+[32m[03:25:43][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:43][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:43 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#cffebf 26MiB/49MiB(54%) CN:1 DL:38MiB]
+[#cffebf 44MiB/49MiB(89%) CN:1 DL:25MiB]
+
+01/15 15:25:46 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/039 BERT, RoBERTa, DistilBERT.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+cffebf|OK  |    24MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/05 - Question and answer models with BERT/039 BERT, RoBERTa, DistilBERT.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:46][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:46][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:46][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 6 of 6 =======
+[32m[03:25:48][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 40 of 44
+[32m[03:25:48][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:48][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#43e979 76MiB/87MiB(87%) CN:1 DL:124MiB]
+
+01/15 15:25:50 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/040 GPT vs BERT vs XLNET.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+43e979|OK  |    84MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/040 GPT vs BERT vs XLNET.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:50][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:50][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:25:56][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 41 of 44
+[32m[03:25:56][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:25:56][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:25:56 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#79a72e 47MiB/68MiB(69%) CN:1 DL:54MiB]
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 Preprocessing our data.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+79a72e|OK  |    38MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 Preprocessing our data.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:25:58][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:25:58][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 3 asset(s) for lecture...
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 emotion-labels-train.csv
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5e47fc|OK  |    35MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 emotion-labels-train.csv
+
+Status Legend:
+(OK):download completed.
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 emotion-labels-test.csv
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+83328b|OK  |    38MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 emotion-labels-test.csv
+
+Status Legend:
+(OK):download completed.
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:25:58 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 emotion-labels-val.csv
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+0c8455|OK  |    11MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/041 emotion-labels-val.csv
+
+Status Legend:
+(OK):download completed.
+[32m[03:26:04][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 42 of 44
+[32m[03:26:04][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:26:04][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:26:04 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:26:04 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/042 XLNet Embeddings.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+335b96|OK  |   139MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/042 XLNet Embeddings.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:26:04][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:26:04][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:26:07][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 43 of 44
+[32m[03:26:07][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:26:07][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:26:07 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:26:07 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/043 Fine tuning XLNet.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5c20b3|OK  |   147MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/043 Fine tuning XLNet.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:26:07][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:26:07][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[03:26:11][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 44 of 44
+[32m[03:26:11][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[03:26:11][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 15:26:11 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 15:26:11 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/044 Evaluating our model.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+857f3f|OK  |   168MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_24/intro-to-large-language-models-llms/06 - Text classification with XLNet/044 Evaluating our model.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[03:26:11][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[03:26:11][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+{"timestamp":"2026-01-15T08:26:12.007Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":24,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":235,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-15T08:26:28.137Z","level":"info","category":"download","source":"python_worker","orderId":19,"taskId":24,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":251,"folderName":"intro-to-large-language-models-llms"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}

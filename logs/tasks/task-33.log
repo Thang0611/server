@@ -1,0 +1,83 @@
+{"timestamp":"2026-01-15T09:45:34.062Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T09:45:34.084Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T16:45:34.089566] Starting download for task 33
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_33 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+{"timestamp":"2026-01-15T09:45:34.096Z","level":"error","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"'TeeWriter' object has no attribute 'fileno'","details":{"attempt":1},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T09:45:54.118Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":2},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T16:45:54.125753] Starting download for task 33
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_33 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+{"timestamp":"2026-01-15T09:45:54.130Z","level":"error","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"'TeeWriter' object has no attribute 'fileno'","details":{"attempt":2},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T09:46:22.060Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T09:46:22.080Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T16:46:22.085110] Starting download for task 33
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_33 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+
+============================================================
+[LOGGING MODULE] Starting download process
+============================================================
+[04:46:22] [udemy-downloader] [pre_run:394] INFO: Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_33
+[04:46:22] [udemy-downloader] [pre_run:404] WARNING: > Keyfile not found! You won't be able to decrypt any encrypted videos!
+[04:46:23] [udemy-downloader] [visit:1203] INFO: Visit request successful
+[04:46:23] [udemy-downloader] [main:2044] INFO: > Fetching course information, this may take a minute...
+[04:46:24] [udemy-downloader] [_handle_pagination:914] INFO: > Downloading data page 2/2
+[04:46:27] [udemy-downloader] [main:2047] INFO: > Course information retrieved!
+[04:46:27] [udemy-downloader] [main:2052] INFO: > Fetching course curriculum, this may take a minute...
+[04:46:28] [udemy-downloader] [main:2076] INFO: > Course curriculum retrieved!
+[04:46:28] [udemy-downloader] [main:2107] INFO: > Processing course data, this may take a minute. 
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 2 of 9
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 4 of 9
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 5 of 9
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 6 of 9
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 7 of 9
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 8 of 9
+[04:46:28] [udemy-downloader] [main:2151] INFO: Processing 9 of 9
+[04:46:28] [udemy-downloader] [parse_new:1731] INFO: Chapter(s) (2)
+[04:46:28] [udemy-downloader] [parse_new:1732] INFO: Lecture(s) (7)
+[04:46:28] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 1 of 2 =======
+[04:46:30] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 1 of 7
+[04:46:30] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:46:30] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:46:32] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:46:32] [udemy-downloader] [parse_new:1822] INFO:     > Processing 0 asset(s) for lecture...
+[04:46:32] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 2 of 2 =======
+[04:46:35] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 2 of 7
+[04:46:35] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:46:35] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:46:39] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:46:39] [udemy-downloader] [parse_new:1822] INFO:     > Processing 5 asset(s) for lecture...
+[04:46:42] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 3 of 7
+[04:46:42] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:46:42] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:46:47] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:46:47] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[04:46:50] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 4 of 7
+[04:46:50] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:46:50] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:46:54] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:46:54] [udemy-downloader] [parse_new:1822] INFO:     > Processing 4 asset(s) for lecture...
+[04:46:58] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 5 of 7
+[04:46:58] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:46:58] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:47:02] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:47:02] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[04:47:05] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 6 of 7
+[04:47:05] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:47:05] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:47:08] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:47:08] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[04:47:12] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 7 of 7
+[04:47:12] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[04:47:12] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[04:47:16] [udemy-downloader] [parse_new:1808] INFO: Processing 0 caption(s)...
+[04:47:16] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+{"timestamp":"2026-01-15T09:47:16.432Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":54,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-15T09:47:23.978Z","level":"info","category":"download","source":"python_worker","orderId":23,"taskId":33,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":61,"folderName":"creative-css-hover-and-animation-effects-in-hindi"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}
