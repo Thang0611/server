@@ -4,3 +4,6 @@ service-account_.json
 service-account.json
 node_modules
 /udemy_dl/Staging_Download
+
+# Deprecated backup folder
+_deprecated_backup/

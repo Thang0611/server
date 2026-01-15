@@ -539,8 +539,262 @@ const sendBatchCompletionEmail = async (orderData, tasks) => {
   );
 };
 
+/**
+ * Sends payment success notification email to customer
+ * @param {Object} orderData - Order information
+ * @returns {Promise<void>}
+ */
+const sendPaymentSuccessEmail = async (orderData) => {
+  if (!process.env.EMAIL_USER) {
+    Logger.warn('Email not configured, cannot send payment success email');
+    return;
+  }
+
+  if (!orderData || !orderData.user_email) {
+    Logger.warn('Invalid order data for payment success email', { orderId: orderData?.id });
+    return;
+  }
+
+  const orderId = orderData.id || orderData.order_code || 'N/A';
+  const orderCode = orderData.order_code || orderId;
+
+  Logger.info('[Payment Success Email] Preparing email', {
+    orderId: orderData.id,
+    orderCode,
+    email: orderData.user_email
+  });
+
+  const mailOptions = {
+    from: `"KhoaHocGiaRe Support" <${process.env.EMAIL_USER}>`,
+    to: orderData.user_email,
+    subject: `Xác nhận thanh toán thành công - Đơn hàng #${orderCode}`,
+    html: `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          
+          body { 
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+          
+          .container { 
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+          }
+          
+          /* Header - Compact */
+          .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 16px 12px;
+            color: #fff;
+          }
+          .header-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+          }
+          .header-code {
+            font-size: 13px;
+            opacity: 0.9;
+          }
+          
+          /* Content - Minimal padding */
+          .content { 
+            padding: 12px;
+          }
+          
+          /* Status Banner - Top of content */
+          .status-banner {
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 600;
+          }
+          .status-banner.success {
+            background-color: #d1fae5;
+            color: #065f46;
+          }
+          
+          /* Message Box */
+          .message-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+          }
+          .message-box p {
+            margin-bottom: 12px;
+          }
+          .message-box p:last-child {
+            margin-bottom: 0;
+          }
+          .message-box strong {
+            color: #1f2937;
+            font-weight: 600;
+          }
+          
+          /* Summary - Key:Value pairs, tight spacing */
+          .summary {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+          }
+          .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 13px;
+          }
+          .summary-label {
+            color: #6b7280;
+          }
+          .summary-value {
+            font-weight: 600;
+            color: #1f2937;
+          }
+          
+          /* Info Box */
+          .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #1e40af;
+          }
+          .info-box strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+          }
+          
+          /* Footer - Minimal */
+          .footer {
+            background-color: #f9fafb;
+            padding: 12px;
+            text-align: center;
+            font-size: 11px;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+          }
+          .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+          }
+          
+          /* Desktop adjustments */
+          @media only screen and (min-width: 600px) {
+            body {
+              padding: 20px;
+            }
+            .container {
+              border-radius: 8px;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+              border-radius: 8px 8px 0 0;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <!-- Compact Header -->
+          <div class="header">
+            <div class="header-title">✅ Xác nhận thanh toán thành công</div>
+            <div class="header-code">Đơn hàng #${orderCode}</div>
+          </div>
+          
+          <div class="content">
+            <!-- Status Banner -->
+            <div class="status-banner success">
+              ✓ Thanh toán đã được xác nhận thành công!
+            </div>
+
+            <!-- Message Box -->
+            <div class="message-box">
+              <p>Xin chào,</p>
+              <p>Chúng tôi đã nhận được thanh toán của bạn cho đơn hàng <strong>#${orderCode}</strong>.</p>
+              <p><strong>Hệ thống đang xử lý đơn hàng của bạn.</strong></p>
+            </div>
+
+            <!-- Info Box with Key Message -->
+            <div class="info-box">
+              <strong>⏰ Thông tin quan trọng:</strong>
+              Bạn vui lòng đợi trong khoảng 15 phút - 2 tiếng. Hệ thống đang chuẩn bị tài nguyên và sẽ gửi link khóa học qua email này ngay khi xong.
+            </div>
+
+            <!-- Compact Summary -->
+            <div class="summary">
+              <div class="summary-row">
+                <span class="summary-label">Mã đơn:</span>
+                <span class="summary-value">#${orderCode}</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Email:</span>
+                <span class="summary-value" style="font-size: 12px;">${orderData.user_email}</span>
+              </div>
+              ${orderData.total_amount ? `
+              <div class="summary-row">
+                <span class="summary-label">Số tiền:</span>
+                <span class="summary-value">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(orderData.total_amount)}</span>
+              </div>
+              ` : ''}
+            </div>
+          </div>
+
+          <!-- Minimal Footer -->
+          <div class="footer">
+            Hỗ trợ: <a href="mailto:${ADMIN_EMAIL}">${ADMIN_EMAIL}</a>
+            <div style="margin-top: 4px;">© ${new Date().getFullYear()} KhoaHocGiaRe</div>
+          </div>
+        </div>
+      </body>
+      </html>
+    `
+  };
+
+  await transporter.sendMail(mailOptions);
+  
+  Logger.success('[Payment Success Email] Email sent successfully', {
+    orderId: orderData.id,
+    orderCode,
+    email: orderData.user_email
+  });
+
+  // ✅ LIFECYCLE LOG: Payment Success Email Sent
+  lifecycleLogger.logEmailSent(
+    orderData.id,
+    orderData.user_email,
+    'payment_success'
+  );
+};
+
 module.exports = {
   sendErrorAlert,
   sendBatchCompletionEmail,
+  sendPaymentSuccessEmail,
   isTaskSuccessful
 };

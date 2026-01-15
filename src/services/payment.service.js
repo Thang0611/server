@@ -14,6 +14,7 @@ const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 const { addDownloadJob } = require('../queues/download.queue');
 const { calculateOrderPrice, getComboUnitPrice, pricingConfig } = require('../utils/pricing.util');
+const { sendPaymentSuccessEmail } = require('./email.service');
 
 /**
  * Generates a sequential order code based on order ID
@@ -374,6 +375,23 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
       receivedAmount,
       webhookData?.gateway || 'SePay'
     );
+
+    // ✅ SEND PAYMENT SUCCESS EMAIL
+    try {
+      await sendPaymentSuccessEmail({
+        id: order.id,
+        order_code: order.order_code,
+        user_email: order.user_email,
+        total_amount: order.total_amount
+      });
+    } catch (emailError) {
+      // Log error but don't fail webhook - payment is already confirmed
+      Logger.error('Failed to send payment success email', emailError, {
+        orderId: order.id,
+        orderCode: order.order_code,
+        impact: 'Payment confirmed but email notification failed'
+      });
+    }
 
     // ================================================================
     // PHASE 2: ENROLL COURSES THEN PUSH JOBS TO REDIS QUEUE
