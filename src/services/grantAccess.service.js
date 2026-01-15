@@ -8,6 +8,7 @@ const https = require('https');
 const { extractIdFromUrl, grantReadAccess } = require('../utils/drive.util');
 const transporter = require('../config/email');
 const Logger = require('../utils/logger.util');
+const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 
 const WORDPRESS_URL = process.env.WORDPRESS_URL || 'https://khoahocgiare.info';
@@ -191,6 +192,28 @@ const grantAccess = async (orderId, email, courses) => {
       if (isGranted) {
         Logger.success('Access granted', { fileId, orderId });
         successList.push({ name: courseName, url: finalUrl });
+        
+        // ✅ LIFECYCLE LOG: Permission Granted
+        // Try to find taskId from drive_link
+        try {
+          const DownloadTask = require('../models/downloadTask.model');
+          const task = await DownloadTask.findOne({
+            where: { drive_link: finalUrl, order_id: orderId },
+            attributes: ['id']
+          });
+          
+          if (task) {
+            lifecycleLogger.logPermissionGranted(task.id, email, finalUrl);
+          } else {
+            // Log without taskId if not found
+            lifecycleLogger.logEvent('PERMISSION_GRANTED', 
+              `[PERMISSION_GRANTED] [OrderId: ${orderId}] [User: ${email}] [Course: ${courseName}]`,
+              { orderId, email, courseName, driveLink: finalUrl }
+            );
+          }
+        } catch (logError) {
+          Logger.warn('Failed to log permission granted', { orderId, courseName });
+        }
       } else {
         Logger.warn('Access grant failed', { courseName, fileId, orderId });
         failedList.push({
@@ -198,6 +221,21 @@ const grantAccess = async (orderId, email, courses) => {
           reason: 'Google API từ chối (Lỗi quyền Bot)',
           link: finalUrl
         });
+        
+        // ✅ LIFECYCLE LOG: Permission Error
+        try {
+          const DownloadTask = require('../models/downloadTask.model');
+          const task = await DownloadTask.findOne({
+            where: { drive_link: finalUrl, order_id: orderId },
+            attributes: ['id']
+          });
+          
+          if (task) {
+            lifecycleLogger.logPermissionError(task.id, 'Google API từ chối (Lỗi quyền Bot)', { orderId, email, courseName });
+          }
+        } catch (logError) {
+          Logger.warn('Failed to log permission error', { orderId, courseName });
+        }
       }
     } catch (error) {
       Logger.error('Exception during access grant', error, { courseName, fileId, orderId });
@@ -206,6 +244,21 @@ const grantAccess = async (orderId, email, courses) => {
         reason: `Lỗi hệ thống: ${error.message}`,
         link: finalUrl
       });
+      
+      // ✅ LIFECYCLE LOG: Permission Error
+      try {
+        const DownloadTask = require('../models/downloadTask.model');
+        const task = await DownloadTask.findOne({
+          where: { drive_link: finalUrl, order_id: orderId },
+          attributes: ['id']
+        });
+        
+        if (task) {
+          lifecycleLogger.logPermissionError(task.id, error.message, { orderId, email, courseName });
+        }
+      } catch (logError) {
+        Logger.warn('Failed to log permission error', { orderId, courseName });
+      }
     }
   }
 

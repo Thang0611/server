@@ -1,0 +1,373 @@
+{"timestamp":"2026-01-15T07:32:13.061Z","level":"info","category":"download","source":"python_worker","orderId":15,"taskId":20,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-15T07:32:13.093Z","level":"info","category":"download","source":"python_worker","orderId":15,"taskId":20,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-15T14:32:13.105424] Starting download for task 20
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_20 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+[32m[02:32:14][0m [34m[udemy-downloader][0m [pre_run:376] [1;30mINFO:[0m Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_20
+[32m[02:32:14][0m [34m[udemy-downloader][0m [pre_run:386] [1;30mWARNING:[0m [33m> Keyfile not found! You won't be able to decrypt any encrypted videos![0m
+[32m[02:32:15][0m [34m[udemy-downloader][0m [visit:1185] [1;30mINFO:[0m Visit request successful
+[32m[02:32:15][0m [34m[udemy-downloader][0m [main:2026] [1;30mINFO:[0m > Fetching course information, this may take a minute...
+[32m[02:32:16][0m [34m[udemy-downloader][0m [_handle_pagination:896] [1;30mINFO:[0m > Downloading data page 2/2
+[32m[02:32:17][0m [34m[udemy-downloader][0m [main:2029] [1;30mINFO:[0m > Course information retrieved!
+[32m[02:32:17][0m [34m[udemy-downloader][0m [main:2034] [1;30mINFO:[0m > Fetching course curriculum, this may take a minute...
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2058] [1;30mINFO:[0m > Course curriculum retrieved!
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2089] [1;30mINFO:[0m > Processing course data, this may take a minute. 
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 2 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 4 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 5 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 6 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 7 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 8 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [main:2133] [1;30mINFO:[0m Processing 9 of 9
+[32m[02:32:18][0m [34m[udemy-downloader][0m [parse_new:1713] [1;30mINFO:[0m Chapter(s) (2)
+[32m[02:32:18][0m [34m[udemy-downloader][0m [parse_new:1714] [1;30mINFO:[0m Lecture(s) (7)
+[32m[02:32:18][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 1 of 2 =======
+[32m[02:32:22][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 1 of 7
+[32m[02:32:22][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:32:22][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:32:22 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#7118c1 3.9MiB/11MiB(35%) CN:1 DL:4.9MiB ETA:1s]
+
+01/15 14:32:24 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/01 - Course Preview/001 Course Preview.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7118c1|OK  |   8.4MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/01 - Course Preview/001 Course Preview.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:32:24][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:32:24][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 0 asset(s) for lecture...
+[32m[02:32:24][0m [34m[udemy-downloader][0m [parse_new:1736] [1;30mINFO:[0m ======= Processing chapter 2 of 2 =======
+[32m[02:32:27][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 2 of 7
+[32m[02:32:27][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:32:27][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:32:27 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#cdc4a1 8.2MiB/112MiB(7%) CN:4 DL:13MiB ETA:7s]
+[#cdc4a1 44MiB/112MiB(39%) CN:4 DL:26MiB ETA:2s]
+[#cdc4a1 86MiB/112MiB(76%) CN:4 DL:32MiB]
+[#cdc4a1 109MiB/112MiB(97%) CN:2 DL:29MiB]
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 0.1 Card Hover Effects Design.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+cdc4a1|OK  |    26MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 0.1 Card Hover Effects Design.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:32:32][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:32:32][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 5 asset(s) for lecture...
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 index.html
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3fd3bf|OK  |   703KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 index.html
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 style.css
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d53aac|OK  |   567KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 style.css
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 code.png
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+18fc5e|OK  |   799KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 code.png
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 design.png
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+511525|OK  |   905KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 design.png
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:32 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 launch.png
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7dc69f|OK  |   1.8MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/002 launch.png
+
+Status Legend:
+(OK):download completed.
+[32m[02:32:36][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 3 of 7
+[32m[02:32:36][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:32:36][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:32:36 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#e22af9 7.9MiB/36MiB(22%) CN:1 DL:9.6MiB ETA:2s]
+[#e22af9 19MiB/36MiB(55%) CN:1 DL:10MiB ETA:1s]
+[#e22af9 31MiB/36MiB(88%) CN:1 DL:11MiB]
+
+01/15 14:32:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/003 0.2 Shining Text Animation Effects.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e22af9|OK  |    11MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/003 0.2 Shining Text Animation Effects.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:32:39][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:32:39][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 2 asset(s) for lecture...
+
+01/15 14:32:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/003 index.html
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+2df8ae|OK  |    66KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/003 index.html
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:39 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/003 style.css
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+694237|OK  |   304KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/003 style.css
+
+Status Legend:
+(OK):download completed.
+[32m[02:32:43][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 4 of 7
+[32m[02:32:43][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:32:43][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:32:43 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#306d3d 0B/0B CN:1 DL:0B]
+[#306d3d 640KiB/85MiB(0%) CN:4 DL:1.0MiB ETA:1m20s]
+[#306d3d 21MiB/85MiB(24%) CN:4 DL:13MiB ETA:4s]
+[#306d3d 55MiB/85MiB(64%) CN:3 DL:21MiB ETA:1s]
+[#306d3d 79MiB/85MiB(93%) CN:1 DL:21MiB]
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 0.3 Blur Focus Hover Effects.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+306d3d|OK  |    21MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 0.3 Blur Focus Hover Effects.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:32:48][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:32:48][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 4 asset(s) for lecture...
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 index.html
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3c7167|OK  |    62KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 index.html
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 style.css
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+f5f7ea|OK  |   197KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 style.css
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 bg.jpg
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+985906|OK  |    28MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 bg.jpg
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:32:48 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 logo.png
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+9c3d4e|OK  |    18MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/004 logo.png
+
+Status Legend:
+(OK):download completed.
+[32m[02:33:23][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 5 of 7
+[32m[02:33:23][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:33:23][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:33:23 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#5d0df2 576KiB/21MiB(2%) CN:1 DL:1.0MiB ETA:19s]
+[#5d0df2 7.8MiB/21MiB(36%) CN:1 DL:5.1MiB ETA:2s]
+[#5d0df2 8.0MiB/21MiB(37%) CN:1 DL:3.1MiB ETA:4s]
+[#5d0df2 11MiB/21MiB(56%) CN:1 DL:3.2MiB ETA:2s]
+
+01/15 14:33:28 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/005 0.4 Fill Text Color On Hover.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+5d0df2|OK  |   4.5MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/005 0.4 Fill Text Color On Hover.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:33:28][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:33:28][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 2 asset(s) for lecture...
+
+01/15 14:33:28 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:33:28 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/005 index.html
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bbc5d5|OK  |    49KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/005 index.html
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:33:28 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:33:28 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/005 style.css
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+8c21a1|OK  |   108KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/005 style.css
+
+Status Legend:
+(OK):download completed.
+[32m[02:33:32][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 6 of 7
+[32m[02:33:32][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:33:32][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:33:32 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#a55f7b 11MiB/39MiB(30%) CN:2 DL:15MiB ETA:1s]
+[#a55f7b 27MiB/39MiB(70%) CN:2 DL:14MiB]
+
+01/15 14:33:35 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/006 0.5 CSS Loading Text Animation Effects.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+a55f7b|OK  |    15MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/006 0.5 CSS Loading Text Animation Effects.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:33:35][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:33:35][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 2 asset(s) for lecture...
+
+01/15 14:33:35 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:33:35 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/006 index.html
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+e09a9b|OK  |   113KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/006 index.html
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:33:35 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:33:35 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/006 style.css
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+d3e0c9|OK  |   196KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/006 style.css
+
+Status Legend:
+(OK):download completed.
+[32m[02:33:39][0m [34m[udemy-downloader][0m [parse_new:1764] [1;30mINFO:[0m   > Processing lecture 7 of 7
+[32m[02:33:39][0m [34m[udemy-downloader][0m [process_lecture:1580] [1;30mINFO:[0m       > Lecture doesn't have DRM, attempting to download...
+[32m[02:33:39][0m [34m[udemy-downloader][0m [process_lecture:1585] [1;30mINFO:[0m       ====== Selected quality: video 720
+
+01/15 14:33:39 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#f2b8b3 6.2MiB/26MiB(24%) CN:1 DL:9.4MiB ETA:2s]
+[#f2b8b3 19MiB/26MiB(74%) CN:1 DL:11MiB]
+
+01/15 14:33:41 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/007 0.6 Text Expand On Hover.mp4
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+f2b8b3|OK  |    11MiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/007 0.6 Text Expand On Hover.mp4
+
+Status Legend:
+(OK):download completed.
+[32m[02:33:41][0m [34m[udemy-downloader][0m [parse_new:1790] [1;30mINFO:[0m Processing 0 caption(s)...
+[32m[02:33:41][0m [34m[udemy-downloader][0m [parse_new:1804] [1;30mINFO:[0m     > Processing 2 asset(s) for lecture...
+
+01/15 14:33:41 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:33:41 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/007 index.html
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+bd5a4e|OK  |   123KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/007 index.html
+
+Status Legend:
+(OK):download completed.
+
+01/15 14:33:41 [[1;32mNOTICE[0m] Downloading 1 item(s)
+
+01/15 14:33:41 [[1;32mNOTICE[0m] Download complete: /root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/007 style.css
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+24fe9d|OK  |   226KiB/s|/root/project/server/udemy_dl/Staging_Download/Task_20/creative-css-hover-and-animation-effects-in-hindi/02 - CSS Creative Effects and Animation Tutorials/007 style.css
+
+Status Legend:
+(OK):download completed.
+{"timestamp":"2026-01-15T07:33:42.004Z","level":"info","category":"download","source":"python_worker","orderId":15,"taskId":20,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":88,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-15T07:33:50.695Z","level":"info","category":"download","source":"python_worker","orderId":15,"taskId":20,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":97,"folderName":"creative-css-hover-and-animation-effects-in-hindi"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}

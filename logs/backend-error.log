@@ -1,24 +1,139 @@
-2026-01-12 16:23:52 +07:00: [31m[1m[ERROR][0m [90m16:23:52[0m Failed to start server: Can't DROP FOREIGN KEY `download_tasks_ibfk_1`; check that it exists
-2026-01-12 16:30:04 +07:00: Error: {
-  message: "Unknown column 'driver_url' in 'SELECT'",
-  stack: 'Error\n' +
-    '    at Query.run (/root/server/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
-    '    at /root/server/node_modules/sequelize/lib/sequelize.js:315:28\n' +
-    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
-    '    at async MySQLQueryInterface.select (/root/server/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
-    '    at async DownloadTask.findAll (/root/server/node_modules/sequelize/lib/model.js:1140:21)\n' +
-    '    at async DownloadTask.findOne (/root/server/node_modules/sequelize/lib/model.js:1240:12)\n' +
-    '    at async DownloadTask.findByPk (/root/server/node_modules/sequelize/lib/model.js:1221:12)\n' +
-    '    at async Object.finalizeDownload (/root/server/src/services/webhook.service.js:181:16)\n' +
-    '    at async /root/server/src/controllers/webhook.controller.js:84:18',
-  statusCode: 500,
-  path: '/api/v1/webhook/finalize',
+2026-01-15 11:13:08 +07:00: [33m[1m[WARN][0m  [90m11:13:08[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 11:13:08 +07:00: [33m[1m[WARN][0m  [90m11:13:08[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 11:15:49 +07:00: [31m[1m[ERROR][0m [90m11:15:49[0m Enrollment status verification failed: Status not updated in DB [taskId=15]
+2026-01-15 11:15:49 +07:00: [33m[1m[WARN][0m  [90m11:15:49[0m No tasks enrolled successfully, skipping queue push [orderId=10]
+2026-01-15 11:22:38 +07:00: [33m[1m[WARN][0m  [90m11:22:38[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 11:22:43 +07:00: [33m[1m[WARN][0m  [90m11:22:43[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 11:24:06 +07:00: [31m[1m[ERROR][0m [90m11:24:06[0m Enrollment status verification failed: Status not updated in DB [taskId=16]
+2026-01-15 11:24:06 +07:00: [33m[1m[WARN][0m  [90m11:24:06[0m No tasks enrolled successfully, skipping queue push [orderId=11]
+2026-01-15 11:26:06 +07:00: [33m[1m[WARN][0m  [90m11:26:06[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 11:26:12 +07:00: [33m[1m[WARN][0m  [90m11:26:12[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:27:20 +07:00: [31m[1m[ERROR][0m [90m11:27:20[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:01 +07:00: [31m[1m[ERROR][0m [90m11:28:01[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:01 +07:00: [31m[1m[ERROR][0m [90m11:28:01[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:01 +07:00: [31m[1m[ERROR][0m [90m11:28:01[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:01 +07:00: [31m[1m[ERROR][0m [90m11:28:01[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:28:09 +07:00: [31m[1m[ERROR][0m [90m11:28:09[0m Redis Subscriber Error: undefined
+2026-01-15 11:41:20 +07:00: Error: {
+  message: 'Unterminated string in JSON at position 119 (line 5 column 35)',
+  stack: 'SyntaxError: Unterminated string in JSON at position 119 (line 5 column 35)\n' +
+    '    at JSON.parse (<anonymous>)\n' +
+    '    at parse (/root/project/server/node_modules/body-parser/lib/types/json.js:74:19)\n' +
+    '    at /root/project/server/node_modules/body-parser/lib/read.js:163:18\n' +
+    '    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n' +
+    '    at invokeCallback (/root/project/server/node_modules/raw-body/index.js:238:16)\n' +
+    '    at done (/root/project/server/node_modules/raw-body/index.js:227:7)\n' +
+    '    at IncomingMessage.onEnd (/root/project/server/node_modules/raw-body/index.js:287:7)\n' +
+    '    at IncomingMessage.emit (node:events:508:28)\n' +
+    '    at endReadableNT (node:internal/streams/readable:1701:12)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)',
+  statusCode: 400,
+  path: '/api/v1/payment/webhook',
   method: 'POST'
 }
-2026-01-12 20:08:36 +07:00: [31m[1m[ERROR][0m [90m20:08:36[0m Failed to start server: Can't DROP FOREIGN KEY `download_tasks_ibfk_1`; check that it exists
-2026-01-12 20:27:14 +07:00: [31m[1m[ERROR][0m [90m20:27:14[0m Failed to crawl course: Request failed with status code 502 [url=https://samsungu.udemy.com/course/ky-thuat-am-p...]
-2026-01-12 20:27:14 +07:00: [31m[1m[ERROR][0m [90m20:27:14[0m Error processing course URL: Lỗi khi lấy thông tin khóa học [url=https://samsungu.udemy.com/course/ky-thuat-am-p...]
-2026-01-13 11:11:31 +07:00: [31m[1m[ERROR][0m [90m11:11:31[0m Failed to start server: Constraint download_tasks_ibfk_2 on table download_tasks does not exist
-2026-01-13 12:11:33 +07:00: [31m[1m[ERROR][0m [90m12:11:33[0m Failed to start server: Constraint download_tasks_ibfk_1 on table download_tasks does not exist
-2026-01-13 14:36:09 +07:00: [33m[1m[WARN][0m  [90m14:36:09[0m Course ID not found [url=https://www.udemy.com/course/thuc-chien-tu-ong-...]
-2026-01-13 14:36:59 +07:00: [33m[1m[WARN][0m  [90m14:36:59[0m Course ID not found [url=https://www.udemy.com/course/thuc-chien-tu-ong-...]
+2026-01-15 11:42:22 +07:00: [31m[1m[ERROR][0m [90m11:42:22[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:22 +07:00: [31m[1m[ERROR][0m [90m11:42:22[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:22 +07:00: [31m[1m[ERROR][0m [90m11:42:22[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:22 +07:00: [31m[1m[ERROR][0m [90m11:42:22[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:58 +07:00: [31m[1m[ERROR][0m [90m11:42:58[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:58 +07:00: [31m[1m[ERROR][0m [90m11:42:58[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:58 +07:00: [31m[1m[ERROR][0m [90m11:42:58[0m Redis Subscriber Error: undefined
+2026-01-15 11:42:58 +07:00: [31m[1m[ERROR][0m [90m11:42:58[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:06 +07:00: [31m[1m[ERROR][0m [90m11:43:06[0m Redis Subscriber Error: undefined
+2026-01-15 11:43:09 +07:00: [31m[1m[ERROR][0m [90m11:43:09[0m Error granting Drive access: Forbidden. User message: "Sorry, you cannot share with test@example.com because they do not have a Google Account."
+2026-01-15 14:22:05 +07:00: [33m[1m[WARN][0m  [90m14:22:05[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 14:22:05 +07:00: [33m[1m[WARN][0m  [90m14:22:05[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:32:13 +07:00: [31m[1m[ERROR][0m [90m14:32:13[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:41 +07:00: [31m[1m[ERROR][0m [90m14:33:41[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:41 +07:00: [31m[1m[ERROR][0m [90m14:33:41[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:41 +07:00: [31m[1m[ERROR][0m [90m14:33:41[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:41 +07:00: [31m[1m[ERROR][0m [90m14:33:41[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:42 +07:00: [31m[1m[ERROR][0m [90m14:33:42[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:50 +07:00: [31m[1m[ERROR][0m [90m14:33:50[0m Redis Subscriber Error: undefined
+2026-01-15 14:33:52 +07:00: [31m[1m[ERROR][0m [90m14:33:52[0m [UnifiedLogger] Failed to log to database: Cannot add or update a child row: a foreign key constraint fails (`udemy_bot`.`task_logs`, CONSTRAINT `task_logs_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `download_tasks` (`id`) ON DELETE CASCADE)
+2026-01-15 14:34:47 +07:00: [31m[1m[ERROR][0m [90m14:34:47[0m [UnifiedLogger] Failed to log to database: Cannot add or update a child row: a foreign key constraint fails (`udemy_bot`.`task_logs`, CONSTRAINT `task_logs_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `download_tasks` (`id`) ON DELETE CASCADE)
+2026-01-15 14:43:22 +07:00: [31m[1m[ERROR][0m [90m14:43:22[0m [UnifiedLogger] Failed to log to database: Cannot add or update a child row: a foreign key constraint fails (`udemy_bot`.`task_logs`, CONSTRAINT `task_logs_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `download_tasks` (`id`) ON DELETE CASCADE)
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined
+2026-01-15 14:49:22 +07:00: [31m[1m[ERROR][0m [90m14:49:22[0m Redis Subscriber Error: undefined

@@ -1,3 +1,0 @@
-[2026-01-12 16:04:06] >>> REDIS WORKER #1 STARTED <<<
-[2026-01-12 16:04:06] Listening to queue: rq:queue:downloads
-[2026-01-12 16:04:06] [REDIS] Connected to localhost:6379

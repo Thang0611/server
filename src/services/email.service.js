@@ -5,6 +5,7 @@
 
 const transporter = require('../config/email');
 const Logger = require('../utils/logger.util');
+const lifecycleLogger = require('./lifecycleLogger.service');
 const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@khoahocgiare.info';
@@ -529,6 +530,13 @@ const sendBatchCompletionEmail = async (orderData, tasks) => {
     successCount,
     failedCount
   });
+
+  // ✅ LIFECYCLE LOG: Email Sent
+  lifecycleLogger.logEmailSent(
+    orderData.id,
+    orderData.user_email,
+    'completion'
+  );
 };
 
 module.exports = {

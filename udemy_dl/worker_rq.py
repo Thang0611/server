@@ -1,6 +1,7 @@
 """
 Redis-based Worker for processing Udemy course downloads
 Uses simple Redis list for job queue (compatible with Node.js)
+ENHANCED: Real-time progress tracking via Redis Pub/Sub
 """
 
 import mysql.connector
@@ -16,6 +17,10 @@ import hmac
 import hashlib
 import time
 import redis
+from progress_emitter import emit_progress, emit_status_change, emit_order_complete
+from cookie_utils import get_udemy_token
+from lifecycle_logger import log_download_success, log_download_error, log_upload_success, log_upload_error
+from task_logger import log_info, log_error, log_warn, log_progress, log_to_node_api
 
 # ================= 1. SETUP =================
 # Load .env
@@ -30,8 +35,8 @@ def log(msg):
     """Log with timestamp"""
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {msg}")
 
-# Check required environment variables
-REQUIRED = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'UDEMY_TOKEN']
+# Check required environment variables (UDEMY_TOKEN is optional now, will use access_token from cookies)
+REQUIRED = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME']
 if any(not os.getenv(v) for v in REQUIRED):
     log("[CRITICAL] Missing required environment variables")
     sys.exit(1)
@@ -46,8 +51,15 @@ DB_CONFIG = {
     'autocommit': True
 }
 
-# Download configuration
-UDEMY_TOKEN = os.getenv('UDEMY_TOKEN')
+# Download configuration - Get token from cookies.txt first, fallback to UDEMY_TOKEN env
+UDEMY_TOKEN = get_udemy_token()
+if not UDEMY_TOKEN:
+    log("[WARN] No access_token found in cookies.txt and no UDEMY_TOKEN in env. Downloads may fail.")
+else:
+    # Check if token came from cookies.txt
+    from cookie_utils import get_access_token_from_cookies
+    token_source = "cookies.txt" if get_access_token_from_cookies() else "UDEMY_TOKEN env"
+    log(f"[INFO] Using token from {token_source}")
 STAGING_DIR = "Staging_Download"
 RCLONE_REMOTE = "gdrive"
 RCLONE_DEST_PATH = "UdemyCourses/download_khoahoc"
@@ -57,8 +69,19 @@ DOWNLOAD_TIMEOUT = 144000  # 40 hours
 # ================= 2. HELPER FUNCTIONS =================
 
 def get_db_connection():
-    """Create a new MySQL connection"""
-    return mysql.connector.connect(**DB_CONFIG)
+    """
+    Create a new MySQL connection
+    ✅ OPTIMIZED: Simple connection management with proper error handling
+    """
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        return conn
+    except mysql.connector.Error as e:
+        log(f"[DB ERR] Failed to create connection: {e}")
+        raise
+    except Exception as e:
+        log(f"[DB ERR] Unexpected error creating connection: {e}")
+        raise
 
 def clean_staging(task_id=None):
     """
@@ -99,23 +122,41 @@ def upload_to_drive(local_path):
         log(f"[RCLONE] Upload failed: {e}")
         return False
 
-def update_task_status(task_id, status):
-    """Update task status in MySQL database"""
+def update_task_status(task_id, status, error_log=None):
+    """
+    Update task status in MySQL database
+    ✅ OPTIMIZED: Better error handling and connection management
+    """
     conn = None
     try:
         conn = get_db_connection()
         cur = conn.cursor()
-        cur.execute(
-            "UPDATE download_tasks SET status = %s, updated_at = NOW() WHERE id = %s",
-            (status, task_id)
-        )
+        
+        if error_log:
+            cur.execute(
+                "UPDATE download_tasks SET status = %s, error_log = %s, updated_at = NOW() WHERE id = %s",
+                (status, error_log, task_id)
+            )
+        else:
+            cur.execute(
+                "UPDATE download_tasks SET status = %s, updated_at = NOW() WHERE id = %s",
+                (status, task_id)
+            )
         conn.commit()
         log(f"[DB] Task {task_id} status -> {status}")
+    except mysql.connector.Error as e:
+        log(f"[DB ERR] MySQL error updating task {task_id}: {e}")
     except Exception as e:
         log(f"[DB ERR] Failed to update task {task_id}: {e}")
+        import traceback
+        log(f"[DB ERR] Traceback: {traceback.format_exc()}")
     finally:
+        # ✅ FIX: Always close connection to prevent leaks
         if conn:
-            conn.close()
+            try:
+                conn.close()
+            except:
+                pass
 
 def notify_node_webhook(task_id, folder_name_local):
     """
@@ -172,19 +213,21 @@ def check_enrollment_status(task_id, max_wait_seconds=15):
     Check if task is enrolled before downloading
     Wait up to max_wait_seconds for enrollment to complete
     
+    ✅ OPTIMIZED: Better connection management and error handling
+    
     Args:
         task_id (int): Task ID to check
-        max_wait_seconds (int): Maximum time to wait for enrollment (default 5 minutes)
+        max_wait_seconds (int): Maximum time to wait for enrollment (default 15 seconds)
     
     Returns:
         tuple: (is_enrolled: bool, status: str, error_message: str)
     """
-    conn = None
     start_time = time.time()
-    check_interval = 10  # Check every 10 seconds
+    check_interval = 2  # ✅ OPTIMIZED: Check every 2 seconds (faster response)
     
     try:
         while (time.time() - start_time) < max_wait_seconds:
+            conn = None
             try:
                 conn = get_db_connection()
                 cur = conn.cursor(dictionary=True)
@@ -211,24 +254,34 @@ def check_enrollment_status(task_id, max_wait_seconds=15):
                 # Check if still processing enrollment
                 if status in ['processing', 'pending', 'paid']:
                     elapsed = int(time.time() - start_time)
-                    log(f"[ENROLL CHECK] ⏳ Task {task_id} status={status}, waiting for enrollment... ({elapsed}s/{max_wait_seconds}s)")
+                    if elapsed % 5 == 0:  # Log every 5 seconds to avoid spam
+                        log(f"[ENROLL CHECK] ⏳ Task {task_id} status={status}, waiting for enrollment... ({elapsed}s/{max_wait_seconds}s)")
                     time.sleep(check_interval)
                     continue
                 
                 # Unknown status
                 return (False, status, f'Task {task_id} has unexpected status: {status}')
                 
+            except mysql.connector.Error as e:
+                log(f"[ENROLL CHECK] [ERROR] MySQL error: {e}")
+                time.sleep(check_interval)
             except Exception as e:
                 log(f"[ENROLL CHECK] [ERROR] Database query failed: {e}")
                 time.sleep(check_interval)
             finally:
+                # ✅ FIX: Always close connection to prevent leaks
                 if conn:
-                    conn.close()
+                    try:
+                        conn.close()
+                    except:
+                        pass
         
         # Timeout reached
         return (False, 'timeout', f'Task {task_id} enrollment timeout after {max_wait_seconds}s')
         
     except Exception as e:
+        import traceback
+        log(f"[ENROLL CHECK] [CRITICAL] Enrollment check failed: {e}\n{traceback.format_exc()}")
         return (False, 'error', f'Enrollment check failed: {e}')
 
 def process_download(task_data):
@@ -286,19 +339,60 @@ def process_download(task_data):
     
     log(f"[ENROLL CHECK] ✅ Enrollment verified, proceeding with download...")
     
+    # ✅ FIX: Get order_id for progress tracking (optimized connection handling)
+    order_id = None
+    conn = None
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute("SELECT order_id FROM download_tasks WHERE id = %s", (task_id,))
+        task_row = cur.fetchone()
+        order_id = task_row.get('order_id') if task_row else None
+    except Exception as e:
+        log(f"[ERROR] Failed to get order_id for task {task_id}: {e}")
+        order_id = None
+    finally:
+        # ✅ FIX: Only close if not in pool
+        if conn:
+            try:
+                global _db_connection_pool
+                if _db_connection_pool and conn not in _db_connection_pool:
+                    conn.close()
+            except:
+                pass
+    
+    # ✅ UNIFIED LOGGER: Log enrollment verified
+    if order_id:
+        log_info(task_id, order_id, 'Enrollment verified, starting download', category='enrollment')
+    
     # ✅ FIX: Create task-specific sandbox directory
     task_sandbox = os.path.join(STAGING_DIR, f"Task_{task_id}")
     os.makedirs(task_sandbox, exist_ok=True)
     log(f"[SANDBOX] Task directory: {task_sandbox}")
     
+    # ✅ EMIT: Download started (0%)
+    emit_progress(task_id, order_id, percent=0, current_file="Initializing download...")
+    emit_status_change(task_id, order_id, 'downloading', 'enrolled', 'Starting download process')
+    
+    # ✅ UNIFIED LOGGER: Log download started
+    if order_id:
+        log_info(task_id, order_id, 'Download started', {'courseUrl': course_url}, progress=0, category='download')
+    
     success = False
     final_folder = None
     webhook_success = False
+    download_start_time = time.time()
     
     # Retry loop
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             log(f"[ATTEMPT {attempt}/{MAX_RETRIES}] Downloading course...")
+            
+            # ✅ EMIT: Progress update for retry attempt
+            progress_percent = 10 if attempt == 1 else 10 + ((attempt - 1) * 5)
+            emit_progress(task_id, order_id, 
+                         percent=progress_percent, 
+                         current_file=f"Download attempt {attempt}/{MAX_RETRIES}")
             
             # ✅ FIX: Download into task-specific directory with bearer token
             cmd = [
@@ -316,7 +410,60 @@ def process_download(task_data):
             
             # Run download process
             log(f"[DOWNLOAD] Command: {' '.join(cmd)}")
-            subprocess.run(cmd, check=True, timeout=DOWNLOAD_TIMEOUT)
+            
+            # ✅ FIX: Redirect stdout/stderr to task log file for progress parsing
+            task_log_dir = os.path.join(os.path.dirname(__file__), '../logs/tasks')
+            os.makedirs(task_log_dir, exist_ok=True)
+            task_log_path = os.path.join(task_log_dir, f'task-{task_id}.log')
+            
+            # ✅ EMIT: Download in progress (simulated - main.py doesn't report progress yet)
+            # Note: For real progress, we'd need to modify main.py to emit progress events
+            emit_progress(task_id, order_id, percent=30, current_file="Downloading course content...")
+            
+            # ✅ UNIFIED LOGGER: Log download in progress
+            if order_id:
+                log_progress(task_id, order_id, 30, "Downloading course content...", {'attempt': attempt})
+            
+            # ✅ FIX: Run with stdout/stderr redirected to task log file
+            with open(task_log_path, 'a', encoding='utf-8') as log_file:
+                log_file.write(f"\n{'='*60}\n")
+                log_file.write(f"[{datetime.now().isoformat()}] Starting download for task {task_id}\n")
+                log_file.write(f"Command: {' '.join(cmd)}\n")
+                log_file.write(f"{'='*60}\n")
+                log_file.flush()  # Ensure header is written
+                
+                # ✅ FIX: Run subprocess with output redirected and proper timeout
+                # Use subprocess.run() which supports timeout natively
+                try:
+                    result = subprocess.run(
+                        cmd,
+                        stdout=log_file,
+                        stderr=subprocess.STDOUT,  # Merge stderr to stdout
+                        text=True,
+                        timeout=DOWNLOAD_TIMEOUT,
+                        check=True,
+                        cwd=os.path.dirname(__file__)  # Run from udemy_dl directory
+                    )
+                except subprocess.TimeoutExpired as e:
+                    log(f"[TIMEOUT] Download exceeded {DOWNLOAD_TIMEOUT}s timeout")
+                    raise
+                except subprocess.CalledProcessError as e:
+                    log(f"[ERROR] Process failed with exit code {e.returncode}")
+                    raise
+                except Exception as e:
+                    log(f"[ERROR] Subprocess error: {e}")
+                    raise
+            
+            # ✅ EMIT: Download completed
+            emit_progress(task_id, order_id, percent=70, current_file="Download completed, preparing upload...")
+            
+            # ✅ UNIFIED LOGGER: Log download completed
+            if order_id:
+                download_duration = int(time.time() - download_start_time)
+                log_progress(task_id, order_id, 70, "Download completed, preparing upload...", {
+                    'duration': download_duration,
+                    'attempt': attempt
+                })
             
             # Check for output folder
             subdirs = [f.path for f in os.scandir(task_sandbox) if f.is_dir()]
@@ -328,30 +475,104 @@ def process_download(task_data):
             
             # Upload to Google Drive
             log(f"[UPLOAD] Starting upload to Google Drive...")
+            emit_progress(task_id, order_id, percent=80, current_file="Uploading to Google Drive...")
+            emit_status_change(task_id, order_id, 'uploading', 'downloading', 'Starting upload to Google Drive')
+            
+            # ✅ UNIFIED LOGGER: Log upload started
+            if order_id:
+                log_info(task_id, order_id, 'Upload started', {
+                    'folderName': os.path.basename(final_folder)
+                }, progress=80, category='upload')
+            
             if upload_to_drive(final_folder):
                 log(f"[UPLOAD] Upload successful!")
+                emit_progress(task_id, order_id, percent=95, current_file="Upload completed, finalizing...")
+                
+                # ✅ LIFECYCLE LOG: Upload Success
+                # Get drive link from folder name (will be finalized by webhook)
+                log_upload_success(task_id, f"Folder: {os.path.basename(final_folder)}", {
+                    'folderName': os.path.basename(final_folder),
+                    'orderId': order_id
+                })
+                
+                # ✅ UNIFIED LOGGER: Log upload success
+                if order_id:
+                    log_info(task_id, order_id, 'Upload completed successfully', {
+                        'folderName': os.path.basename(final_folder)
+                    }, progress=95, category='upload')
+                
                 success = True
                 break  # Exit retry loop on success
             else:
+                # ✅ LIFECYCLE LOG: Upload Error
+                log_upload_error(task_id, "Rclone upload failed", {
+                    'folderName': os.path.basename(final_folder) if final_folder else None,
+                    'orderId': order_id
+                })
+                
+                # ✅ UNIFIED LOGGER: Log upload error
+                if order_id:
+                    log_error(task_id, order_id, 'Upload failed', {
+                        'folderName': os.path.basename(final_folder) if final_folder else None
+                    }, category='upload')
+                
                 raise Exception("Rclone upload failed")
         
         except subprocess.TimeoutExpired:
-            log(f"[TIMEOUT] Download exceeded {DOWNLOAD_TIMEOUT}s")
+            error_msg = f"Download exceeded {DOWNLOAD_TIMEOUT}s timeout"
+            log(f"[TIMEOUT] {error_msg}")
+            # ✅ EMIT: Error progress (but don't set to 0% - keep last progress)
+            emit_status_change(task_id, order_id, 'retrying', 'downloading', error_msg)
+            # ✅ UNIFIED LOGGER: Log timeout
+            if order_id:
+                log_warn(task_id, order_id, error_msg, {'attempt': attempt, 'timeout': DOWNLOAD_TIMEOUT}, category='download')
         except subprocess.CalledProcessError as e:
-            log(f"[ERROR] main.py failed with exit code {e.returncode}")
+            error_msg = f"main.py failed with exit code {e.returncode}"
+            log(f"[ERROR] {error_msg}")
+            emit_status_change(task_id, order_id, 'retrying', 'downloading', error_msg)
+            # ✅ UNIFIED LOGGER: Log process error
+            if order_id:
+                log_error(task_id, order_id, error_msg, {'attempt': attempt, 'exitCode': e.returncode}, category='download')
         except Exception as e:
-            log(f"[ERROR] {e}")
+            error_msg = str(e)
+            log(f"[ERROR] {error_msg}")
+            emit_status_change(task_id, order_id, 'retrying', 'downloading', error_msg)
+            # ✅ UNIFIED LOGGER: Log general error
+            if order_id:
+                log_error(task_id, order_id, error_msg, {'attempt': attempt}, category='download')
         
         # ✅ SMART RETRY: Don't clean staging on failure (allow resume)
         if attempt < MAX_RETRIES:
             log(f"[RESUME] Keeping downloaded files for resume on next attempt...")
             log(f"[INFO] Retrying in 20 seconds...")
+            # ✅ EMIT: Retry countdown
+            emit_progress(task_id, order_id, 
+                         percent=progress_percent, 
+                         current_file=f"Retrying in 20 seconds... ({attempt}/{MAX_RETRIES})")
             time.sleep(20)
     
     # Process result
     if success and final_folder:
+        # ✅ EMIT: 100% completion
+        emit_progress(task_id, order_id, percent=100, current_file="Task completed successfully!")
+        
+        # ✅ LIFECYCLE LOG: Download Success
+        download_duration = int(time.time() - download_start_time)
+        log_download_success(task_id, download_duration, {
+            'folderName': os.path.basename(final_folder),
+            'orderId': order_id
+        })
+        
+        # ✅ UNIFIED LOGGER: Log download completed
+        if order_id:
+            log_progress(task_id, order_id, 100, "Task completed successfully!", {
+                'duration': download_duration,
+                'folderName': os.path.basename(final_folder)
+            })
+        
         # Update database to 'completed'
         update_task_status(task_id, 'completed')
+        emit_status_change(task_id, order_id, 'completed', 'uploading', 'Task completed successfully')
         
         # Notify Node.js to update drive_url and send email
         log(f"[WEBHOOK] Calling Node.js webhook...")
@@ -368,22 +589,62 @@ def process_download(task_data):
         return {
             'success': True,
             'taskId': task_id,
-            'folder': os.path.basename(final_folder)
+            'folder': os.path.basename(final_folder)  # ✅ FIX: Use os.path.basename() not os.basename()
         }
     else:
-        # Update database to 'failed'
-        update_task_status(task_id, 'failed')
+        # ✅ CRITICAL: Bridge ephemeral error to persistent audit log
+        # Determine specific error message
+        error_details = {
+            'task_id': task_id,
+            'order_id': order_id,
+            'course_url': course_url,
+            'retries_attempted': MAX_RETRIES,
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        # Check for specific error patterns
+        error_message = 'Download or upload failed after retries'
+        if not os.path.exists(task_sandbox):
+            error_message = 'Task sandbox directory not created - possible disk space issue'
+            error_details['error_type'] = 'DISK_SPACE'
+        elif os.path.exists(task_sandbox):
+            subdirs = [f.path for f in os.scandir(task_sandbox) if f.is_dir()]
+            if not subdirs:
+                error_message = 'No course folder found after download - possible authentication issue'
+                error_details['error_type'] = 'AUTHENTICATION'
+        
+        # ✅ EMIT: Progress set to 0% to indicate failure
+        emit_progress(task_id, order_id, percent=0, current_file=f"Failed: {error_message}")
+        emit_status_change(task_id, order_id, 'failed', 'downloading', error_message)
+        
+        # ✅ LIFECYCLE LOG: Download Error
+        download_duration = int(time.time() - download_start_time) if 'download_start_time' in locals() else 0
+        log_download_error(task_id, error_message, {
+            'orderId': order_id,
+            'retriesAttempted': MAX_RETRIES,
+            'duration': download_duration,
+            **error_details
+        })
+        
+        # ✅ UNIFIED LOGGER: Log download error
+        if order_id:
+            log_error(task_id, order_id, error_message, error_details, category='download')
+        
+        # ✅ FIX: Update database to 'failed' with detailed error log (optimized)
+        update_task_status(task_id, 'failed', json.dumps(error_details))
         
         # ✅ KEEP failed folder for debugging (don't clean)
         log(f"[FAILED] Task failed after {MAX_RETRIES} retries")
         log(f"[DEBUG] Failed files kept at: {task_sandbox}")
         log(f"[DEBUG] You can manually inspect or retry this task")
+        log(f"[ERROR DETAILS] {json.dumps(error_details, indent=2)}")
         
         log("[FAILED] Task failed after retries")
         return {
             'success': False,
             'taskId': task_id,
-            'error': 'Download or upload failed after retries'
+            'error': error_message,
+            'details': error_details
         }
 
 # ================= 4. REDIS QUEUE CONSUMER =================
@@ -444,8 +705,28 @@ def start_worker(worker_id=1):
                         
                 except json.JSONDecodeError as e:
                     log(f"[WORKER #{worker_id}] [ERROR] Invalid job JSON: {e}")
+                    # Update task status if we have taskId
+                    try:
+                        job_data_parsed = json.loads(job_json) if job_json else {}
+                        task_id = job_data_parsed.get('taskId')
+                        if task_id:
+                            update_task_status(task_id, 'failed', f'Invalid job JSON: {str(e)}')
+                    except:
+                        pass
                 except Exception as e:
+                    import traceback
+                    error_trace = traceback.format_exc()
                     log(f"[WORKER #{worker_id}] [ERROR] Processing failed: {e}")
+                    log(f"[WORKER #{worker_id}] [ERROR] Traceback: {error_trace}")
+                    
+                    # ✅ FIX: Update task status on processing error
+                    try:
+                        job_data_parsed = json.loads(job_json) if job_json else {}
+                        task_id = job_data_parsed.get('taskId')
+                        if task_id:
+                            update_task_status(task_id, 'failed', f'Worker processing error: {str(e)}\n{error_trace}')
+                    except:
+                        pass
             else:
                 # No job available (timeout), continue waiting
                 pass

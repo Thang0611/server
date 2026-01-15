@@ -9,6 +9,7 @@ const path = require('path');
 const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
 const DownloadTask = require('../models/downloadTask.model');
 const Logger = require('../utils/logger.util');
+const lifecycleLogger = require('./lifecycleLogger.service');
 
 // --- CẤU HÌNH ---
 const ssSUBDOMAIN = 'samsungu.udemy.com';
@@ -172,21 +173,56 @@ const enrollByGet = async (courseId, cookieString, refererUrl) => {
 
 // --- MAIN SERVICE ---
 
-const enrollCourses = async (urls, email) => {
+const enrollCourses = async (urls, email, orderId = null) => {
     if (!email) throw new Error("Yêu cầu Email để cập nhật Database.");
 
     const cookieString = getCookieFromFile();
     const results = [];
 
-    Logger.info('Starting enrollment', { email, count: urls.length });
+    Logger.info('Starting enrollment', { email, count: urls.length, orderId });
 
     for (const rawUrl of urls) {
         try {
-            // 1. Tìm Task trong DB (chỉ lấy các trường cần thiết)
-            const task = await DownloadTask.findOne({
-                where: { email: email, course_url: rawUrl },
-                attributes: ['id', 'email', 'course_url', 'title', 'status']
-            });
+            // ✅ FIX: Tìm Task trong DB - ưu tiên task có order_id và status 'processing'
+            // Nếu có orderId, tìm task theo order_id + email + course_url + status 'processing'
+            // Nếu không có orderId, tìm task mới nhất (theo id DESC) với status 'processing' hoặc 'pending'
+            let task = null;
+            
+            if (orderId) {
+                // Tìm task theo order_id (chính xác nhất)
+                task = await DownloadTask.findOne({
+                    where: { 
+                        order_id: orderId,
+                        email: email, 
+                        course_url: rawUrl,
+                        status: ['processing', 'pending'] // Chỉ lấy task chưa enroll
+                    },
+                    attributes: ['id', 'email', 'course_url', 'title', 'status', 'order_id'],
+                    order: [['id', 'DESC']] // Lấy task mới nhất nếu có nhiều
+                });
+            }
+            
+            // Fallback: Nếu không tìm thấy với orderId, tìm task mới nhất với status processing/pending
+            if (!task) {
+                task = await DownloadTask.findOne({
+                    where: { 
+                        email: email, 
+                        course_url: rawUrl,
+                        status: ['processing', 'pending'] // Chỉ lấy task chưa enroll
+                    },
+                    attributes: ['id', 'email', 'course_url', 'title', 'status', 'order_id'],
+                    order: [['id', 'DESC']] // Lấy task mới nhất
+                });
+            }
+            
+            // Last fallback: Tìm bất kỳ task nào (cho backward compatibility)
+            if (!task) {
+                task = await DownloadTask.findOne({
+                    where: { email: email, course_url: rawUrl },
+                    attributes: ['id', 'email', 'course_url', 'title', 'status', 'order_id'],
+                    order: [['id', 'DESC']]
+                });
+            }
 
             if (!task) {
                 Logger.warn('Task not found in database', { email, url: rawUrl });
@@ -203,11 +239,25 @@ const enrollCourses = async (urls, email) => {
             Logger.debug('Enrolling course', { courseId, title, taskId: task.id });
             const enrollResult = await enrollByGet(courseId, cookieString, rawUrl);
 
-            const isSuccess = !enrollResult.finalUrl.includes("login") && !enrollResult.finalUrl.includes("sso");
+            // ✅ FIX: Better enrollment success detection
+            // Check multiple indicators to ensure enrollment actually succeeded
+            const hasLoginRedirect = enrollResult.finalUrl.includes("login") || enrollResult.finalUrl.includes("sso");
+            const hasCourseUrl = enrollResult.finalUrl.includes("/course/") && !hasLoginRedirect;
+            const isSuccess = !hasLoginRedirect && (hasCourseUrl || enrollResult.statusCode === 200);
             const finalStatus = isSuccess ? 'enrolled' : 'failed';
+            
+            Logger.debug('Enrollment result', {
+              taskId: task.id,
+              finalUrl: enrollResult.finalUrl,
+              statusCode: enrollResult.statusCode,
+              hasLoginRedirect,
+              hasCourseUrl,
+              isSuccess,
+              finalStatus
+            });
 
             // 4. Update DB (chỉ cập nhật các trường cần thiết)
-            await DownloadTask.update(
+            const [updatedRows] = await DownloadTask.update(
                 { title, status: finalStatus },
                 {
                     where: { id: task.id },
@@ -215,7 +265,71 @@ const enrollCourses = async (urls, email) => {
                 }
             );
 
-            Logger.success('Enrollment completed', { taskId: task.id, status: finalStatus });
+            // ✅ FIX: Verify update succeeded
+            if (updatedRows === 0) {
+                throw new Error(`Failed to update task ${task.id} status to ${finalStatus}`);
+            }
+
+            // ✅ FIX: Refresh task to verify status was actually updated
+            // Use transaction to ensure data consistency
+            const updatedTask = await DownloadTask.findByPk(task.id, {
+                attributes: ['id', 'status', 'title', 'order_id'],
+                transaction: null // Explicit read after write
+            });
+
+            if (!updatedTask || updatedTask.status !== finalStatus) {
+                throw new Error(`Status verification failed: expected ${finalStatus}, got ${updatedTask?.status}`);
+            }
+
+            Logger.success('Enrollment completed', { 
+                taskId: task.id, 
+                status: finalStatus,
+                verified: true,
+                orderId: updatedTask.order_id
+            });
+
+            // ✅ FIX: LIFECYCLE LOG - Only log SUCCESS after DB verification
+            // CRITICAL: Only log if status is actually 'enrolled' in database
+            if (isSuccess && updatedTask.status === 'enrolled') {
+              // Double-check: Verify status one more time before logging
+              const finalCheck = await DownloadTask.findByPk(task.id, {
+                attributes: ['id', 'status', 'order_id']
+              });
+              
+              if (finalCheck && finalCheck.status === 'enrolled' && finalCheck.order_id) {
+                lifecycleLogger.logEnrollSuccess(
+                  finalCheck.order_id,
+                  task.id,
+                  email,
+                  rawUrl
+                );
+              } else {
+                // Status changed or missing order_id - log warning
+                Logger.warn('Enrollment success logged but status mismatch in final check', {
+                  taskId: task.id,
+                  expectedStatus: 'enrolled',
+                  actualStatus: finalCheck?.status,
+                  hasOrderId: !!finalCheck?.order_id
+                });
+              }
+            } else if (isSuccess && updatedTask.status !== 'enrolled') {
+              // Enrollment API returned success but DB status is not 'enrolled'
+              Logger.error('Enrollment API success but DB status mismatch', new Error('Status mismatch'), {
+                taskId: task.id,
+                apiSuccess: isSuccess,
+                dbStatus: updatedTask.status,
+                expectedStatus: 'enrolled'
+              });
+              
+              // Log as error instead
+              if (updatedTask.order_id) {
+                lifecycleLogger.logEnrollError(
+                  task.id,
+                  `Enrollment API success but DB status is ${updatedTask.status} instead of 'enrolled'`,
+                  { orderId: updatedTask.order_id, url: rawUrl, email }
+                );
+              }
+            }
 
             results.push({
                 success: isSuccess,
@@ -228,6 +342,25 @@ const enrollCourses = async (urls, email) => {
 
         } catch (err) {
             Logger.error('Enrollment failed', err, { url: rawUrl, email, taskId: task?.id });
+
+            // ✅ LIFECYCLE LOG: Enrollment Error
+            try {
+              const taskWithOrder = await DownloadTask.findOne({
+                where: { email, course_url: rawUrl },
+                attributes: ['id', 'order_id']
+              });
+              
+              if (taskWithOrder) {
+                lifecycleLogger.logEnrollError(
+                  taskWithOrder.id,
+                  err.message,
+                  { orderId: taskWithOrder.order_id, url: rawUrl, email }
+                );
+              }
+            } catch (logError) {
+              // Don't fail enrollment if logging fails
+              Logger.warn('Failed to log enrollment error to lifecycle logger', { taskId: task?.id });
+            }
 
             // Cập nhật trạng thái failed vào DB để không bị treo pending
             try {
