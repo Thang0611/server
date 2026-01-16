@@ -6,7 +6,7 @@
 const infoCourseService = require('../services/infoCourse.service');
 const { asyncHandler } = require('../middleware/errorHandler.middleware');
 const Logger = require('../utils/logger.util');
-const { calculateTotalPrice, getComboUnitPrice, pricingConfig } = require('../utils/pricing.util');
+const { calculateTotalPrice, getComboUnitPrice, getComboPriceDistribution, pricingConfig } = require('../utils/pricing.util');
 
 /**
  * Gets course information for provided URLs
@@ -26,29 +26,53 @@ const getCourseInfo = asyncHandler(async (req, res, next) => {
   const validCount = validCourses.length;
   const totalAmount = calculateTotalPrice(validCount);
 
-  // Check if combo applies and calculate unit price
+  // Check if combo applies and get price distribution
   const comboUnitPrice = getComboUnitPrice(validCount, totalAmount);
+  const priceDistribution = comboUnitPrice !== null 
+    ? getComboPriceDistribution(validCount, totalAmount)
+    : null;
   
-  // Determine the unit price to use for each course
-  const unitPrice = comboUnitPrice !== null ? comboUnitPrice : pricingConfig.PRICE_PER_COURSE;
-
   // Update prices in results array for valid courses
+  // For combo orders, use accurate price distribution
+  let validCourseIndex = 0;
   const updatedResults = results.map(course => {
     if (course.success === true) {
+      let coursePrice;
+      if (priceDistribution && validCourseIndex < priceDistribution.length) {
+        // Use distributed price for combo orders
+        coursePrice = priceDistribution[validCourseIndex];
+        validCourseIndex++;
+      } else if (comboUnitPrice !== null) {
+        // Fallback to base unit price if distribution not available
+        coursePrice = comboUnitPrice;
+        validCourseIndex++;
+      } else {
+        // Use default per-course price
+        coursePrice = pricingConfig.PRICE_PER_COURSE;
+        validCourseIndex++;
+      }
+      
       return {
         ...course,
-        price: unitPrice
+        price: coursePrice
       };
     }
     return course;
   });
 
+  // Calculate average unit price for logging
+  const avgUnitPrice = priceDistribution 
+    ? priceDistribution.reduce((sum, p) => sum + p, 0) / priceDistribution.length
+    : (comboUnitPrice !== null ? comboUnitPrice : pricingConfig.PRICE_PER_COURSE);
+  
   Logger.debug('Course info response prepared', {
     validCount,
     totalAmount,
-    unitPrice,
+    priceDistribution,
+    avgUnitPrice: Math.round(avgUnitPrice),
     isCombo: comboUnitPrice !== null,
-    comboType: validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : null
+    comboType: validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : null,
+    sumCheck: priceDistribution ? priceDistribution.reduce((sum, p) => sum + p, 0) : null
   });
 
   res.status(200).json({

@@ -13,7 +13,7 @@ const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 const { addDownloadJob } = require('../queues/download.queue');
-const { calculateOrderPrice, getComboUnitPrice, pricingConfig } = require('../utils/pricing.util');
+const { calculateOrderPrice, getComboUnitPrice, getComboPriceDistribution, pricingConfig } = require('../utils/pricing.util');
 const { sendPaymentSuccessEmail } = require('./email.service');
 
 /**
@@ -139,36 +139,78 @@ const createOrder = async (email, courses) => {
         taskCount: downloadTasks.length
       });
 
-      // If combo applies, update all task prices to the calculated unit price
+      // If combo applies, update task prices with accurate distribution
       if (comboUnitPrice !== null && downloadTasks.length > 0) {
         try {
-          const taskIds = downloadTasks.map(task => task.id);
           const comboType = validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : 'Unknown';
           
-          await DownloadTask.update(
-            { price: comboUnitPrice },
-            {
+          // Get accurate price distribution for each course
+          const priceDistribution = getComboPriceDistribution(validCount, totalAmount);
+          
+          if (priceDistribution && priceDistribution.length === downloadTasks.length) {
+            // Update each task with its specific price
+            const updatePromises = downloadTasks.map((task, index) => {
+              const taskPrice = priceDistribution[index];
+              return DownloadTask.update(
+                { price: taskPrice },
+                {
+                  where: {
+                    id: task.id,
+                    order_id: order.id
+                  }
+                }
+              );
+            });
+            
+            await Promise.all(updatePromises);
+
+            // Verify total
+            const calculatedTotal = priceDistribution.reduce((sum, price) => sum + price, 0);
+            
+            Logger.success(`Updated ${comboType} task prices with accurate distribution`, {
+              orderId: order.id,
+              taskCount: downloadTasks.length,
+              priceDistribution,
+              calculatedTotal,
+              expectedTotal: totalAmount,
+              isExact: calculatedTotal === totalAmount
+            });
+
+            // Refresh tasks to get updated prices
+            const taskIds = downloadTasks.map(task => task.id);
+            downloadTasks = await DownloadTask.findAll({
               where: {
                 id: taskIds,
                 order_id: order.id
               }
-            }
-          );
-
-          Logger.success(`Updated ${comboType} task prices`, {
-            orderId: order.id,
-            taskCount: taskIds.length,
-            unitPrice: comboUnitPrice,
-            totalPrice: totalAmount
-          });
-
-          // Refresh tasks to get updated prices
-          downloadTasks = await DownloadTask.findAll({
-            where: {
-              id: taskIds,
-              order_id: order.id
-            }
-          });
+            });
+          } else {
+            Logger.warn('Price distribution length mismatch', {
+              orderId: order.id,
+              taskCount: downloadTasks.length,
+              distributionLength: priceDistribution?.length,
+              fallback: 'Using base unit price for all tasks'
+            });
+            
+            // Fallback: use base unit price for all tasks
+            const taskIds = downloadTasks.map(task => task.id);
+            await DownloadTask.update(
+              { price: comboUnitPrice },
+              {
+                where: {
+                  id: taskIds,
+                  order_id: order.id
+                }
+              }
+            );
+            
+            downloadTasks = await DownloadTask.findAll({
+              where: {
+                id: taskIds,
+                order_id: order.id
+              }
+            });
+          }
         } catch (priceUpdateError) {
           // Log error but don't fail - order and tasks are already created
           Logger.error('Failed to update combo task prices', priceUpdateError, {
@@ -192,19 +234,33 @@ const createOrder = async (email, courses) => {
     const qrCodeUrl = generateVietQR(totalAmount, orderCode);
 
     // Format courses info for response (ensure all have price)
-    // For combo orders, use the calculated unit price
-    const unitPriceForResponse = comboUnitPrice !== null 
-      ? comboUnitPrice 
-      : pricingConfig.PRICE_PER_COURSE;
+    // For combo orders, use accurate price distribution
+    const priceDistribution = comboUnitPrice !== null 
+      ? getComboPriceDistribution(validCount, totalAmount)
+      : null;
     
-    const coursesInfo = validCourses.map(course => ({
-      url: course.url,
-      title: course.title || null,
-      price: comboUnitPrice !== null 
-        ? comboUnitPrice 
-        : (course.price !== undefined && course.price !== null ? parseFloat(course.price) : pricingConfig.PRICE_PER_COURSE),
-      courseId: course.courseId || null
-    }));
+    const coursesInfo = validCourses.map((course, index) => {
+      let coursePrice;
+      if (priceDistribution && priceDistribution.length > index) {
+        // Use distributed price for combo orders
+        coursePrice = priceDistribution[index];
+      } else if (comboUnitPrice !== null) {
+        // Fallback to base unit price if distribution not available
+        coursePrice = comboUnitPrice;
+      } else {
+        // Use course price or default per-course price
+        coursePrice = course.price !== undefined && course.price !== null 
+          ? parseFloat(course.price) 
+          : pricingConfig.PRICE_PER_COURSE;
+      }
+      
+      return {
+        url: course.url,
+        title: course.title || null,
+        price: coursePrice,
+        courseId: course.courseId || null
+      };
+    });
 
     // Return complete order info (without downloadTasks)
     return {
