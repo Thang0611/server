@@ -5670,3 +5670,670 @@
 2026-01-16 00:58:12 +07:00: [32m[1m[INFO][0m  [90m00:58:12[0m [WebSocket] Client subscribed to order [orderId=2]
 2026-01-16 00:58:44 +07:00: [32m[1m[INFO][0m  [90m00:58:44[0m [WebSocket] Client disconnected
 2026-01-16 00:58:44 +07:00: [32m[1m[INFO][0m  [90m00:58:44[0m [WebSocket] Client disconnected
+2026-01-16 09:28:37 +07:00: [32m[1m[INFO][0m  [90m09:28:37[0m [WebSocket] Client connected
+2026-01-16 09:28:37 +07:00: [32m[1m[INFO][0m  [90m09:28:37[0m [WebSocket] Client connected
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:38 +07:00: [32m[1m[INFO][0m  [90m09:28:38[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client disconnected
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client disconnected
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client connected
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client connected
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:40 +07:00: [32m[1m[INFO][0m  [90m09:28:40[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to task [taskId=39]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:41 +07:00: [32m[1m[INFO][0m  [90m09:28:41[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:43 +07:00: [32m[1m[INFO][0m  [90m09:28:43[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to task [taskId=39]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to task [taskId=40]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:44 +07:00: [32m[1m[INFO][0m  [90m09:28:44[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:45 +07:00: [32m[1m[INFO][0m  [90m09:28:45[0m [WebSocket] Client subscribed to task [taskId=40]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:49 +07:00: [32m[1m[INFO][0m  [90m09:28:49[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:28:55 +07:00: [32m[1m[INFO][0m  [90m09:28:55[0m [WebSocket] Client disconnected
+2026-01-16 09:28:55 +07:00: [32m[1m[INFO][0m  [90m09:28:55[0m [WebSocket] Client disconnected
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client connected
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client connected
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:28:56 +07:00: [32m[1m[INFO][0m  [90m09:28:56[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:29:02 +07:00: [32m[1m[INFO][0m  [90m09:29:02[0m [WebSocket] Client disconnected
+2026-01-16 09:29:02 +07:00: [32m[1m[INFO][0m  [90m09:29:02[0m [WebSocket] Client disconnected
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client connected
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client connected
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 09:29:03 +07:00: [32m[1m[INFO][0m  [90m09:29:03[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 09:29:33 +07:00: [32m[1m[INFO][0m  [90m09:29:33[0m [WebSocket] Client disconnected
+2026-01-16 09:29:33 +07:00: [32m[1m[INFO][0m  [90m09:29:33[0m [WebSocket] Client disconnected
+2026-01-16 11:50:47 +07:00: [32m[1m[INFO][0m  [90m11:50:47[0m [WebSocket] Client connected
+2026-01-16 11:50:47 +07:00: [32m[1m[INFO][0m  [90m11:50:47[0m [WebSocket] Client connected
+2026-01-16 11:50:48 +07:00: [32m[1m[INFO][0m  [90m11:50:48[0m [WebSocket] Client disconnected
+2026-01-16 11:50:48 +07:00: [32m[1m[INFO][0m  [90m11:50:48[0m [WebSocket] Client disconnected
+2026-01-16 11:57:30 +07:00: [32m[1m[INFO][0m  [90m11:57:30[0m Starting course info retrieval
+2026-01-16 11:57:33 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m11:57:33[0m Course info retrieval completed
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client connected
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client connected
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:32:35 +07:00: [32m[1m[INFO][0m  [90m12:32:35[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to task [taskId=40]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:32:38 +07:00: [32m[1m[INFO][0m  [90m12:32:38[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:32:40 +07:00: [32m[1m[INFO][0m  [90m12:32:40[0m [WebSocket] Client subscribed to task [taskId=40]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:32:59 +07:00: [32m[1m[INFO][0m  [90m12:32:59[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to task [taskId=40]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to task [taskId=17]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:33:01 +07:00: [32m[1m[INFO][0m  [90m12:33:01[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=30]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=29]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=24]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=23]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=22]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=20]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=19]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=18]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=15]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=14]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=12]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=11]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=10]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=9]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=3]
+2026-01-16 12:33:02 +07:00: [32m[1m[INFO][0m  [90m12:33:02[0m [WebSocket] Client subscribed to order [orderId=2]
+2026-01-16 12:33:12 +07:00: [32m[1m[INFO][0m  [90m12:33:12[0m [WebSocket] Client disconnected
+2026-01-16 12:33:12 +07:00: [32m[1m[INFO][0m  [90m12:33:12[0m [WebSocket] Client disconnected
+2026-01-16 13:14:14 +07:00: [32m[1m[INFO][0m  [90m13:14:14[0m [WebSocket] Client connected
+2026-01-16 13:14:14 +07:00: [32m[1m[INFO][0m  [90m13:14:14[0m [WebSocket] Client connected
+2026-01-16 13:14:14 +07:00: [32m[1m[INFO][0m  [90m13:14:14[0m [WebSocket] Client disconnected
+2026-01-16 13:14:14 +07:00: [32m[1m[INFO][0m  [90m13:14:14[0m [WebSocket] Client disconnected
+2026-01-16 13:16:22 +07:00: [32m[1m[INFO][0m  [90m13:16:22[0m SIGINT received, closing Redis client...
+2026-01-16 13:16:23 +07:00: [32m[1m[INFO][0m  [90m13:16:23[0m Redis client closed
+2026-01-16 13:16:23 +07:00: [32m[1m[INFO][0m  [90m13:16:23[0m Redis connections closed
+2026-01-16 13:16:23 +07:00: [32m[1m[INFO][0m  [90m13:16:23[0m SIGINT received, closing Redis client...
+2026-01-16 13:16:23 +07:00: [32m[1m[INFO][0m  [90m13:16:23[0m Redis client closed
+2026-01-16 13:16:23 +07:00: [32m[1m[INFO][0m  [90m13:16:23[0m Redis connections closed
+2026-01-16 13:16:28 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-16 13:16:29 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-16 13:16:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-16 13:16:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-16 13:16:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-16 13:16:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Redis Client Connected
+2026-01-16 13:16:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-16 13:16:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-16 13:16:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-16 13:16:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Redis Client Connected
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Database connection established successfully
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Database connection established successfully
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m [Progress] Callback registered for Redis messages
+2026-01-16 13:16:32 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:16:32[0m [WebSocket] Server initialized
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m WebSocket server initialized successfully
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Redis Publisher Connected
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Redis Subscriber Connected
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Server is running on port 3000
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:32 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:16:32[0m [Progress] All pattern subscriptions active
+2026-01-16 13:16:32 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:16:32[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 13:16:32 +07:00: [32m[1m[INFO][0m  [90m13:16:32[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m [Progress] Callback registered for Redis messages
+2026-01-16 13:16:33 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:16:33[0m [WebSocket] Server initialized
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m WebSocket server initialized successfully
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m Server is running on port 3000
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m Redis Publisher Connected
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m Redis Subscriber Connected
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:33 +07:00: [32m[1m[INFO][0m  [90m13:16:33[0m [Progress] Subscribed to pattern
+2026-01-16 13:16:33 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:16:33[0m [Progress] All pattern subscriptions active
+2026-01-16 13:16:33 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:16:33[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 13:22:07 +07:00: [32m[1m[INFO][0m  [90m13:22:07[0m Order lookup request [email=nguyenhuuthanga3@gmail.com]
+2026-01-16 13:22:07 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:22:07[0m Orders retrieved successfully [email=nguyenhuuthanga3@gmail.com, count=18]
+2026-01-16 13:22:50 +07:00: [32m[1m[INFO][0m  [90m13:22:50[0m Order lookup request [email=Nguyenhuuthanga3@gmail.com]
+2026-01-16 13:22:50 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:22:50[0m Orders retrieved successfully [email=Nguyenhuuthanga3@gmail.com, count=18]
+2026-01-16 13:24:07 +07:00: [32m[1m[INFO][0m  [90m13:24:07[0m Order lookup request [email=nguyenhuuthanga3@gmail.com]
+2026-01-16 13:24:07 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:24:07[0m Orders retrieved successfully [email=nguyenhuuthanga3@gmail.com, count=18]
+2026-01-16 13:31:51 +07:00: [32m[1m[INFO][0m  [90m13:31:51[0m SIGINT received, closing Redis client...
+2026-01-16 13:31:51 +07:00: [32m[1m[INFO][0m  [90m13:31:51[0m Redis client closed
+2026-01-16 13:31:51 +07:00: [32m[1m[INFO][0m  [90m13:31:51[0m Redis connections closed
+2026-01-16 13:31:51 +07:00: [32m[1m[INFO][0m  [90m13:31:51[0m SIGINT received, closing Redis client...
+2026-01-16 13:31:51 +07:00: [32m[1m[INFO][0m  [90m13:31:51[0m Redis client closed
+2026-01-16 13:31:51 +07:00: [32m[1m[INFO][0m  [90m13:31:51[0m Redis connections closed
+2026-01-16 13:31:56 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-16 13:31:57 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-16 13:31:57 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-16 13:31:58 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-16 13:32:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-16 13:32:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-16 13:31:57 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-16 13:31:58 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-16 13:32:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-16 13:32:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-16 13:32:01 +07:00: [32m[1m[INFO][0m  [90m13:32:01[0m Redis Client Connected
+2026-01-16 13:32:01 +07:00: [32m[1m[INFO][0m  [90m13:32:01[0m Redis Client Connected
+2026-01-16 13:32:01 +07:00: [32m[1m[INFO][0m  [90m13:32:01[0m Database connection established successfully
+2026-01-16 13:32:01 +07:00: [32m[1m[INFO][0m  [90m13:32:01[0m Database connection established successfully
+2026-01-16 13:32:01 +07:00: [32m[1m[INFO][0m  [90m13:32:01[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Callback registered for Redis messages
+2026-01-16 13:32:02 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:02[0m [WebSocket] Server initialized
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m WebSocket server initialized successfully
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Redis Publisher Connected
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Server is running on port 3000
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 13:32:01 +07:00: [32m[1m[INFO][0m  [90m13:32:01[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Callback registered for Redis messages
+2026-01-16 13:32:02 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:02[0m [WebSocket] Server initialized
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m WebSocket server initialized successfully
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Redis Subscriber Connected
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:02[0m [Progress] All pattern subscriptions active
+2026-01-16 13:32:02 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:02[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Server is running on port 3000
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Redis Publisher Connected
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m Redis Subscriber Connected
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m[INFO][0m  [90m13:32:02[0m [Progress] Subscribed to pattern
+2026-01-16 13:32:02 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:02[0m [Progress] All pattern subscriptions active
+2026-01-16 13:32:02 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:02[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 13:32:56 +07:00: [32m[1m[INFO][0m  [90m13:32:56[0m Order lookup request [email=nguyenhuuthanga3@gmail.com]
+2026-01-16 13:32:56 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:32:56[0m Orders retrieved successfully [email=nguyenhuuthanga3@gmail.com, count=18]
+2026-01-16 13:33:18 +07:00: [32m[1m[INFO][0m  [90m13:33:18[0m Order lookup request [email=nguyenhuuthanga3@gmail.com]
+2026-01-16 13:33:18 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:33:18[0m Orders retrieved successfully [email=nguyenhuuthanga3@gmail.com, count=18]
+2026-01-16 13:33:38 +07:00: [32m[1m[INFO][0m  [90m13:33:38[0m Order lookup request [email=nguyenhuuthanga3@gmail.com]
+2026-01-16 13:33:38 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:33:38[0m Orders retrieved successfully [email=nguyenhuuthanga3@gmail.com, count=18]
+2026-01-16 15:20:17 +07:00: [32m[1m[INFO][0m  [90m15:20:17[0m Starting course info retrieval
+2026-01-16 15:20:18 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m15:20:18[0m Course info retrieval completed
+2026-01-16 15:20:39 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m15:20:39[0m Order created [orderId=31, orderCode=DH000031, email=nguyenhuuthanga3@gmail.com]
+2026-01-16 15:20:39 +07:00: [32m[1m[INFO][0m  [90m15:20:39[0m Starting course info retrieval
+2026-01-16 15:20:40 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m15:20:40[0m Course info retrieval completed
+2026-01-16 15:20:40 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m15:20:40[0m Download tasks created [orderId=31, email=nguyenhuuthanga3@gmail.com, count=1]
+2026-01-16 15:20:40 +07:00: [32m[1m[INFO][0m  [90m15:20:40[0m Download tasks created with status pending, waiting for payment confirmation [orderId=31, email=nguyenhuuthanga3@gmail.com, status=pending]
+2026-01-16 15:20:40 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m15:20:40[0m Download tasks created for order [orderId=31]
+2026-01-16 15:20:42 +07:00: [32m[1m[INFO][0m  [90m15:20:42[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:42 +07:00: [32m[1m[INFO][0m  [90m15:20:42[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:42 +07:00: [32m[1m[INFO][0m  [90m15:20:42[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:42 +07:00: [32m[1m[INFO][0m  [90m15:20:42[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:42 +07:00: [32m[1m[INFO][0m  [90m15:20:42[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:42 +07:00: [32m[1m[INFO][0m  [90m15:20:42[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:43 +07:00: [32m[1m[INFO][0m  [90m15:20:43[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:43 +07:00: [32m[1m[INFO][0m  [90m15:20:43[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:44 +07:00: [32m[1m[INFO][0m  [90m15:20:44[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:44 +07:00: [32m[1m[INFO][0m  [90m15:20:44[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:45 +07:00: [32m[1m[INFO][0m  [90m15:20:45[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:45 +07:00: [32m[1m[INFO][0m  [90m15:20:45[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:46 +07:00: [32m[1m[INFO][0m  [90m15:20:46[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:46 +07:00: [32m[1m[INFO][0m  [90m15:20:46[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:47 +07:00: [32m[1m[INFO][0m  [90m15:20:47[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:47 +07:00: [32m[1m[INFO][0m  [90m15:20:47[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:48 +07:00: [32m[1m[INFO][0m  [90m15:20:48[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:48 +07:00: [32m[1m[INFO][0m  [90m15:20:48[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:49 +07:00: [32m[1m[INFO][0m  [90m15:20:49[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:49 +07:00: [32m[1m[INFO][0m  [90m15:20:49[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:50 +07:00: [32m[1m[INFO][0m  [90m15:20:50[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:50 +07:00: [32m[1m[INFO][0m  [90m15:20:50[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:51 +07:00: [32m[1m[INFO][0m  [90m15:20:51[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:51 +07:00: [32m[1m[INFO][0m  [90m15:20:51[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:52 +07:00: [32m[1m[INFO][0m  [90m15:20:52[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:52 +07:00: [32m[1m[INFO][0m  [90m15:20:52[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:53 +07:00: [32m[1m[INFO][0m  [90m15:20:53[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:53 +07:00: [32m[1m[INFO][0m  [90m15:20:53[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 15:20:54 +07:00: [32m[1m[INFO][0m  [90m15:20:54[0m Check order status request [orderCode=DH000031]
+2026-01-16 15:20:54 +07:00: [32m[1m[INFO][0m  [90m15:20:54[0m Order status retrieved successfully [orderCode=DH000031]
+2026-01-16 17:20:00 +07:00: [32m[1m[INFO][0m  [90m17:20:00[0m SIGINT received, closing Redis client...
+2026-01-16 17:20:00 +07:00: [32m[1m[INFO][0m  [90m17:20:00[0m SIGINT received, closing Redis client...
+2026-01-16 17:20:24 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-16 17:20:24 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-16 17:20:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-16 17:20:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-16 17:20:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-16 17:20:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-16 17:20:33 +07:00: [32m[1m[INFO][0m  [90m17:20:33[0m Redis Client Connected
+2026-01-16 17:20:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-16 17:20:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-16 17:20:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-16 17:20:32 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-16 17:20:33 +07:00: [32m[1m[INFO][0m  [90m17:20:33[0m Redis Client Connected
+2026-01-16 17:20:33 +07:00: [32m[1m[INFO][0m  [90m17:20:33[0m Database connection established successfully
+2026-01-16 17:20:33 +07:00: [32m[1m[INFO][0m  [90m17:20:33[0m Database connection established successfully
+2026-01-16 17:20:33 +07:00: [32m[1m[INFO][0m  [90m17:20:33[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Callback registered for Redis messages
+2026-01-16 17:20:34 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:20:34[0m [WebSocket] Server initialized
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m WebSocket server initialized successfully
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Redis Publisher Connected
+2026-01-16 17:20:33 +07:00: [32m[1m[INFO][0m  [90m17:20:33[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Callback registered for Redis messages
+2026-01-16 17:20:34 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:20:34[0m [WebSocket] Server initialized
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m WebSocket server initialized successfully
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Redis Subscriber Connected
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Server is running on port 3000
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Redis Publisher Connected
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Server is running on port 3000
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m Redis Subscriber Connected
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:20:34[0m [Progress] All pattern subscriptions active
+2026-01-16 17:20:34 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:20:34[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m[INFO][0m  [90m17:20:34[0m [Progress] Subscribed to pattern
+2026-01-16 17:20:34 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:20:34[0m [Progress] All pattern subscriptions active
+2026-01-16 17:20:34 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:20:34[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 17:52:41 +07:00: [32m[1m[INFO][0m  [90m17:52:41[0m SIGINT received, closing Redis client...
+2026-01-16 17:52:41 +07:00: [32m[1m[INFO][0m  [90m17:52:41[0m Redis client closed
+2026-01-16 17:52:41 +07:00: [32m[1m[INFO][0m  [90m17:52:41[0m Redis connections closed
+2026-01-16 17:52:46 +07:00: [32m[1m[INFO][0m  [90m17:52:46[0m SIGINT received, closing Redis client...
+2026-01-16 17:52:46 +07:00: [32m[1m[INFO][0m  [90m17:52:46[0m Redis client closed
+2026-01-16 17:52:46 +07:00: [32m[1m[INFO][0m  [90m17:52:46[0m Redis connections closed
+2026-01-16 17:53:17 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-16 17:53:17 +07:00: [dotenv@17.2.3] injecting env (26) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-16 17:53:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-16 17:53:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-16 17:53:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-16 17:53:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Redis Client Connected
+2026-01-16 17:53:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-16 17:53:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-16 17:53:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-16 17:53:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Redis Client Connected
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Database connection established successfully
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Database connection established successfully
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Callback registered for Redis messages
+2026-01-16 17:53:21 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:21[0m [WebSocket] Server initialized
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m WebSocket server initialized successfully
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Redis Publisher Connected
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Database models sync skipped (set ENABLE_DB_SYNC=true to enable)
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Callback registered for Redis messages
+2026-01-16 17:53:21 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:21[0m [WebSocket] Server initialized
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m WebSocket server initialized successfully
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m WebSocket CORS allowed origins: https://khoahocgiare.info
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Redis Subscriber Connected
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Redis Publisher Connected
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Redis Subscriber Connected
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:21[0m [Progress] All pattern subscriptions active
+2026-01-16 17:53:21 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:21[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m [Progress] Subscribed to pattern
+2026-01-16 17:53:21 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:21[0m [Progress] All pattern subscriptions active
+2026-01-16 17:53:21 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:21[0m [WebSocket] Redis-to-WebSocket bridge established
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Server is running on port 3000
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Server is running on port 3000
+2026-01-16 17:53:21 +07:00: [32m[1m[INFO][0m  [90m17:53:21[0m Admin Dashboard API available at /api/admin/*
+2026-01-16 17:53:44 +07:00: [32m[1m[INFO][0m  [90m17:53:44[0m Starting course info retrieval
+2026-01-16 17:53:51 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:51[0m Course info retrieval completed
+2026-01-16 17:53:56 +07:00: [32m[1m[INFO][0m  [90m17:53:56[0m Combo 5 order detected
+2026-01-16 17:53:56 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:56[0m Order created [orderId=32, orderCode=DH000032, email=nguyenhuuthanga3@gmail.com]
+2026-01-16 17:53:56 +07:00: [32m[1m[INFO][0m  [90m17:53:56[0m Starting course info retrieval
+2026-01-16 17:53:58 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:58[0m Course info retrieval completed
+2026-01-16 17:53:58 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:58[0m Download tasks created [orderId=32, email=nguyenhuuthanga3@gmail.com, count=1]
+2026-01-16 17:53:58 +07:00: [32m[1m[INFO][0m  [90m17:53:58[0m Download tasks created with status pending, waiting for payment confirmation [orderId=32, email=nguyenhuuthanga3@gmail.com, status=pending]
+2026-01-16 17:53:58 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m17:53:58[0m Download tasks created for order [orderId=32]
+2026-01-16 17:53:59 +07:00: [32m[1m[INFO][0m  [90m17:53:59[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:53:59 +07:00: [32m[1m[INFO][0m  [90m17:53:59[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:53:59 +07:00: [32m[1m[INFO][0m  [90m17:53:59[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:53:59 +07:00: [32m[1m[INFO][0m  [90m17:53:59[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:00 +07:00: [32m[1m[INFO][0m  [90m17:54:00[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:00 +07:00: [32m[1m[INFO][0m  [90m17:54:00[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:00 +07:00: [32m[1m[INFO][0m  [90m17:54:00[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:00 +07:00: [32m[1m[INFO][0m  [90m17:54:00[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:01 +07:00: [32m[1m[INFO][0m  [90m17:54:01[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:01 +07:00: [32m[1m[INFO][0m  [90m17:54:01[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:02 +07:00: [32m[1m[INFO][0m  [90m17:54:02[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:02 +07:00: [32m[1m[INFO][0m  [90m17:54:02[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:03 +07:00: [32m[1m[INFO][0m  [90m17:54:03[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:03 +07:00: [32m[1m[INFO][0m  [90m17:54:03[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:04 +07:00: [32m[1m[INFO][0m  [90m17:54:04[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:04 +07:00: [32m[1m[INFO][0m  [90m17:54:04[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:05 +07:00: [32m[1m[INFO][0m  [90m17:54:05[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:05 +07:00: [32m[1m[INFO][0m  [90m17:54:05[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:06 +07:00: [32m[1m[INFO][0m  [90m17:54:06[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:06 +07:00: [32m[1m[INFO][0m  [90m17:54:06[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:07 +07:00: [32m[1m[INFO][0m  [90m17:54:07[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:07 +07:00: [32m[1m[INFO][0m  [90m17:54:07[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:09 +07:00: [32m[1m[INFO][0m  [90m17:54:09[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:09 +07:00: [32m[1m[INFO][0m  [90m17:54:09[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:09 +07:00: [32m[1m[INFO][0m  [90m17:54:09[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:09 +07:00: [32m[1m[INFO][0m  [90m17:54:09[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:10 +07:00: [32m[1m[INFO][0m  [90m17:54:10[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:10 +07:00: [32m[1m[INFO][0m  [90m17:54:10[0m Order status retrieved successfully [orderCode=DH000032]
+2026-01-16 17:54:11 +07:00: [32m[1m[INFO][0m  [90m17:54:11[0m Check order status request [orderCode=DH000032]
+2026-01-16 17:54:11 +07:00: [32m[1m[INFO][0m  [90m17:54:11[0m Order status retrieved successfully [orderCode=DH000032]
