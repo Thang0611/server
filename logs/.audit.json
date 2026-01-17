@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/root/project/server/logs/.audit.json",
+    "files": [
+        {
+            "date": 1768633660275,
+            "name": "/root/project/server/logs/combined-2026-01-17.log",
+            "hash": "218a5c0f4d43f8976bd64468e5320608048f20c569e4db8bbb255d2cb1acac49"
+        },
+        {
+            "date": 1768633660281,
+            "name": "/root/project/server/logs/error-2026-01-17.log",
+            "hash": "30f1798f2728a7da07cc23529a1c8ecef9e840045dd32102d28d0d505cb21513"
+        },
+        {
+            "date": 1768633660285,
+            "name": "/root/project/server/logs/exceptions-2026-01-17.log",
+            "hash": "5f36ab66e7e1586f9dacb025f929c9230b56f06ebf4147276ea781faf21b79f4"
+        },
+        {
+            "date": 1768633660287,
+            "name": "/root/project/server/logs/rejections-2026-01-17.log",
+            "hash": "bca980d3e381bd2acf73bed16960d74a78bf8218734e5e430b4f6f2482a20471"
+        }
+    ],
+    "hashType": "sha256"
+}

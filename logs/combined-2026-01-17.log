@@ -1,0 +1,624 @@
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Server is running on port 3000","port":"3000","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"level":"info","message":"Admin Dashboard API available at /api/admin/*","service":"udemy-api","timestamp":"2026-01-17 14:07:44"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:45"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:46"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:46"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:46"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:46"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:46"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:46"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"yk-CXHNVr5DnukKpAAAD","timestamp":"2026-01-17 14:07:46"}
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:07:46"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:07:46"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:07:46"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:07:46"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"Server is running on port 3000","port":"3000","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"Admin Dashboard API available at /api/admin/*","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:07:47"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"wM6Fu_qfRx4czrPXAAAB","timestamp":"2026-01-17 14:07:48"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"yk-CXHNVr5DnukKpAAAD","timestamp":"2026-01-17 14:07:48"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"dfhGUKiy0mWgQOhSAAAF","timestamp":"2026-01-17 14:07:48"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:07:49"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"MqxebL79l6cDrZIuAAAB","timestamp":"2026-01-17 14:07:49"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:07:49"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"dfhGUKiy0mWgQOhSAAAF","timestamp":"2026-01-17 14:07:57"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"j2_9e0wfNM75hoe_AAAD","timestamp":"2026-01-17 14:07:58"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"MqxebL79l6cDrZIuAAAB","timestamp":"2026-01-17 14:08:01"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"j2_9e0wfNM75hoe_AAAD","timestamp":"2026-01-17 14:08:01"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:08:01"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"kD_weGZbXI_QGXZIAAAH","timestamp":"2026-01-17 14:08:01"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:08:02"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"I5OxGsLCRLKA9mfxAAAF","timestamp":"2026-01-17 14:08:02"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:08:10"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:08:10"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"client namespace disconnect","service":"udemy-api","socketId":"I5OxGsLCRLKA9mfxAAAF","timestamp":"2026-01-17 14:08:26"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"client namespace disconnect","service":"udemy-api","socketId":"kD_weGZbXI_QGXZIAAAH","timestamp":"2026-01-17 14:08:26"}
+{"level":"info","message":"[TaskRecovery] Starting stuck task recovery...","service":"udemy-api","timestamp":"2026-01-17 14:08:34"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found jobs in queue","service":"udemy-api","timestamp":"2026-01-17 14:08:34"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found potentially stuck tasks","service":"udemy-api","statuses":"all","timestamp":"2026-01-17 14:08:34"}
+{"count":0,"level":"info","message":"[TaskRecovery] Tasks confirmed stuck (not in queue)","service":"udemy-api","timestamp":"2026-01-17 14:08:34"}
+{"failed":0,"level":"info","message":"No stuck tasks found","recovered":0,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:08:34","totalChecked":0}
+{"level":"info","maxConcurrent":3,"message":"Starting course info retrieval","service":"udemy-api","timestamp":"2026-01-17 14:08:35","totalUrls":1}
+{"index":0,"level":"warn","message":"Invalid URL format","service":"udemy-api","timestamp":"2026-01-17 14:08:35","url":"{\"success\":false,\"message\":\"Lỗi server nội bộ\"}"}
+{"avgTimePerCourse":1,"durationMs":1,"failed":1,"level":"info","message":"✓ Course info retrieval completed","service":"udemy-api","success":0,"timestamp":"2026-01-17 14:08:35","total":1}
+{"level":"info","message":"[TaskRecovery] Starting stuck task recovery...","service":"udemy-api","timestamp":"2026-01-17 14:08:37"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found jobs in queue","service":"udemy-api","timestamp":"2026-01-17 14:08:37"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found potentially stuck tasks","service":"udemy-api","statuses":"all","timestamp":"2026-01-17 14:08:37"}
+{"count":0,"level":"info","message":"[TaskRecovery] Tasks confirmed stuck (not in queue)","service":"udemy-api","timestamp":"2026-01-17 14:08:37"}
+{"failed":0,"level":"info","message":"No stuck tasks found","recovered":0,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:08:37","totalChecked":0}
+{"level":"info","maxConcurrent":3,"message":"Starting course info retrieval","service":"udemy-api","timestamp":"2026-01-17 14:09:08","totalUrls":1}
+{"avgTimePerCourse":1296,"durationMs":1296,"failed":0,"level":"info","message":"✓ Course info retrieval completed","service":"udemy-api","success":1,"timestamp":"2026-01-17 14:09:09","total":1}
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:09:10"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:09:11"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:13"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:13"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:15"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:15"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:17"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:17"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:19"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:19"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:21"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:21"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:21"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:21"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:22"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:22"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:23"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:23"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:24"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:25"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:25"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:27"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:27"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:27"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:27"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:09:27"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:29"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:29"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:31"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:31"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:33"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:33"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:35"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:35"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:37"}
+{"error":{"message":"listen EADDRINUSE: address already in use 0.0.0.0:3000"},"level":"error","message":"Port 3000 is already in use. Trying to use alternative port or waiting...","service":"udemy-api","timestamp":"2026-01-17 14:09:37"}
+{"level":"info","message":"Retrying server start...","service":"udemy-api","timestamp":"2026-01-17 14:09:39"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:10:12"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:10:12"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"vaKxM1WpaN-tmFFCAAAJ","timestamp":"2026-01-17 14:10:12"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"rubXkeo8ulAElRweAAAH","timestamp":"2026-01-17 14:10:12"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"rubXkeo8ulAElRweAAAH","timestamp":"2026-01-17 14:10:14"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"vaKxM1WpaN-tmFFCAAAJ","timestamp":"2026-01-17 14:10:14"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:10:15"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:10:15"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"agWXxhgAVMW2OyEaAAAL","timestamp":"2026-01-17 14:10:15"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"Dj5Ru_I0GpYD7BzqAAAJ","timestamp":"2026-01-17 14:10:15"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"agWXxhgAVMW2OyEaAAAL","timestamp":"2026-01-17 14:10:22"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"Dj5Ru_I0GpYD7BzqAAAJ","timestamp":"2026-01-17 14:10:22"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:10:22"}
+{"level":"warn","message":"Request with no origin blocked in production","service":"udemy-api","timestamp":"2026-01-17 14:10:22"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"MbVo0yyq_xQoCkVtAAAN","timestamp":"2026-01-17 14:10:23"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"sH4sKuXHzGqhR2EFAAAL","timestamp":"2026-01-17 14:10:23"}
+{"level":"info","message":"SIGINT received, closing Redis client...","service":"udemy-api","timestamp":"2026-01-17 14:10:39"}
+{"level":"info","message":"Redis client closed","service":"udemy-api","timestamp":"2026-01-17 14:10:39"}
+{"level":"info","message":"Redis connections closed","service":"udemy-api","timestamp":"2026-01-17 14:10:39"}
+{"level":"info","message":"SIGINT received, closing Redis client...","service":"udemy-api","timestamp":"2026-01-17 14:10:42"}
+{"level":"info","message":"Redis client closed","service":"udemy-api","timestamp":"2026-01-17 14:10:42"}
+{"level":"info","message":"Redis connections closed","service":"udemy-api","timestamp":"2026-01-17 14:10:42"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"DKaVJXFRcAeSCcd_AAAN","timestamp":"2026-01-17 14:10:46"}
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Server is running on port 3000","port":"3000","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"Admin Dashboard API available at /api/admin/*","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:10:49"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"KFpqVBRLzK0O5MiSAAAB","timestamp":"2026-01-17 14:10:50"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"JieMQy914zhkmblwAAAD","timestamp":"2026-01-17 14:10:50"}
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Server is running on port 3000","port":"3000","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Admin Dashboard API available at /api/admin/*","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:10:51"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"KFpqVBRLzK0O5MiSAAAB","timestamp":"2026-01-17 14:11:00"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"JieMQy914zhkmblwAAAD","timestamp":"2026-01-17 14:11:00"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"aQKowsBjXC8Ild5YAAAF","timestamp":"2026-01-17 14:11:00"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"3nMUiUE9Yk_2Rq_lAAAH","timestamp":"2026-01-17 14:11:01"}
+{"level":"info","message":"[TaskRecovery] Starting stuck task recovery...","service":"udemy-api","timestamp":"2026-01-17 14:11:39"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found jobs in queue","service":"udemy-api","timestamp":"2026-01-17 14:11:39"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found potentially stuck tasks","service":"udemy-api","statuses":"all","timestamp":"2026-01-17 14:11:39"}
+{"count":0,"level":"info","message":"[TaskRecovery] Tasks confirmed stuck (not in queue)","service":"udemy-api","timestamp":"2026-01-17 14:11:39"}
+{"failed":0,"level":"info","message":"No stuck tasks found","recovered":0,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:11:39","totalChecked":0}
+{"level":"info","message":"[TaskRecovery] Starting stuck task recovery...","service":"udemy-api","timestamp":"2026-01-17 14:11:41"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found jobs in queue","service":"udemy-api","timestamp":"2026-01-17 14:11:41"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found potentially stuck tasks","service":"udemy-api","statuses":"all","timestamp":"2026-01-17 14:11:41"}
+{"count":0,"level":"info","message":"[TaskRecovery] Tasks confirmed stuck (not in queue)","service":"udemy-api","timestamp":"2026-01-17 14:11:41"}
+{"failed":0,"level":"info","message":"No stuck tasks found","recovered":0,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:11:41","totalChecked":0}
+{"level":"info","message":"SIGINT received, closing Redis client...","service":"udemy-api","timestamp":"2026-01-17 14:12:14"}
+{"level":"info","message":"Redis client closed","service":"udemy-api","timestamp":"2026-01-17 14:12:14"}
+{"level":"info","message":"Redis connections closed","service":"udemy-api","timestamp":"2026-01-17 14:12:14"}
+{"level":"info","message":"SIGINT received, closing Redis client...","service":"udemy-api","timestamp":"2026-01-17 14:12:19"}
+{"level":"info","message":"Redis client closed","service":"udemy-api","timestamp":"2026-01-17 14:12:19"}
+{"level":"info","message":"Redis connections closed","service":"udemy-api","timestamp":"2026-01-17 14:12:19"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"zT4Hf7ucqgr8Z1MIAAAB","timestamp":"2026-01-17 14:12:21"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:21"}
+{"level":"info","message":"Trust proxy enabled - Express will use X-Forwarded-For headers for client IP","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Server is running on port 3000","port":"3000","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Admin Dashboard API available at /api/admin/*","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:12:23"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"zT4Hf7ucqgr8Z1MIAAAB","timestamp":"2026-01-17 14:12:24"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"Idrx59wtVHKTTsu8AAAD","timestamp":"2026-01-17 14:12:24"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"dJlI2j4QmAPsQX6yAAAB","timestamp":"2026-01-17 14:12:25"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:25"}
+{"level":"info","message":"Trust proxy enabled - Express will use X-Forwarded-For headers for client IP","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Redis Client Connected","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Database connection established successfully","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Database models sync skipped (set ENABLE_DB_SYNC=true to enable)","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"warn","message":"Note: \"Too many keys\" error may occur if database schema has >64 foreign keys","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[Progress] Callback registered for Redis messages","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"✓ [WebSocket] Server initialized","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"WebSocket server initialized successfully","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"WebSocket CORS allowed origins: https://khoahocgiare.info","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Starting auto-recovery for stuck tasks...","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Server is running on port 3000","port":"3000","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Admin Dashboard API available at /api/admin/*","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Redis Publisher Connected","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"Redis Subscriber Connected","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"task:*:status","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:progress","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:status","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[Progress] Subscribed to pattern","pattern":"order:*:complete","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"✓ [Progress] All pattern subscriptions active","patterns":["task:*:progress","task:*:status","order:*:progress","order:*:status","order:*:complete"],"patternsCount":5,"service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"✓ [WebSocket] Redis-to-WebSocket bridge established","service":"udemy-api","timestamp":"2026-01-17 14:12:28"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"dJlI2j4QmAPsQX6yAAAB","timestamp":"2026-01-17 14:12:29"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"9mpHiGQRc1T8KJgUAAAD","timestamp":"2026-01-17 14:12:29"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"i7_nt9XkNWjurCsrAAAF","timestamp":"2026-01-17 14:12:30"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:30"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"i7_nt9XkNWjurCsrAAAF","timestamp":"2026-01-17 14:12:37"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"18AVXkbWyWZXedsaAAAH","timestamp":"2026-01-17 14:12:37"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"Mql1VTqNwZOIzwz1AAAJ","timestamp":"2026-01-17 14:12:38"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:38"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"o-jG57u69eJXnTLFAAAB","timestamp":"2026-01-17 14:12:43"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"Mql1VTqNwZOIzwz1AAAJ","timestamp":"2026-01-17 14:12:43"}
+{"level":"info","maxConcurrent":3,"message":"Starting course info retrieval","service":"udemy-api","timestamp":"2026-01-17 14:12:53","totalUrls":1}
+{"avgTimePerCourse":1159,"durationMs":1159,"failed":0,"level":"info","message":"✓ Course info retrieval completed","service":"udemy-api","success":1,"timestamp":"2026-01-17 14:12:54","total":1}
+{"comboType":null,"email":"downloadudemyfull@gmail.com","isCombo":false,"level":"info","message":"✓ Order created","orderCode":"DH000037","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:12:57","totalAmount":50000}
+{"level":"info","maxConcurrent":3,"message":"Starting course info retrieval","service":"udemy-api","timestamp":"2026-01-17 14:12:57","totalUrls":1}
+{"avgTimePerCourse":990,"durationMs":990,"failed":0,"level":"info","message":"✓ Course info retrieval completed","service":"udemy-api","success":1,"timestamp":"2026-01-17 14:12:58","total":1}
+{"count":1,"email":"downloadudemyfull@gmail.com","level":"info","message":"✓ Download tasks created","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:12:58"}
+{"email":"downloadudemyfull@gmail.com","level":"info","message":"Download tasks created with status pending, waiting for payment confirmation","orderId":37,"service":"udemy-api","status":"pending","taskCount":1,"timestamp":"2026-01-17 14:12:58"}
+{"level":"info","message":"✓ Download tasks created for order","orderId":37,"service":"udemy-api","taskCount":1,"timestamp":"2026-01-17 14:12:58"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:12:59"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:12:59"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:12:59"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:12:59"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:12:59"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:12:59"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:00"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:00"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:01"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:01"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:02"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:02"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:03"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:03"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:04"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:04"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:05"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:05"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:06"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:06"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:07"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:07"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:08"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:08"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:09"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:09"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:10"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:10"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:11"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:11"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:12"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:12"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"pending","paymentStatus":"pending","service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"level":"info","message":"[TaskRecovery] Starting stuck task recovery...","service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found jobs in queue","service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"count":1,"level":"info","message":"[TaskRecovery] Found potentially stuck tasks","service":"udemy-api","statuses":"all","timestamp":"2026-01-17 14:13:13"}
+{"count":1,"level":"info","message":"[TaskRecovery] Tasks confirmed stuck (not in queue)","service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"enrolled":0,"level":"info","message":"[TaskRecovery] Task breakdown","pending":1,"processing":0,"service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"breakdown":{"enrolled":0,"pending":1,"processing":0},"failed":0,"level":"info","message":"Recovered 0 task(s), 0 failed, 0 already in queue","recovered":0,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:13:13","totalChecked":1,"totalStuck":1}
+{"breakdown":{"enrolled":0,"pending":1,"processing":0},"failed":0,"level":"info","message":"Recovered 0 task(s), 0 failed, 0 already in queue","recovered":0,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:13:13","totalChecked":1,"totalStuck":1}
+{"body":{"accountNumber":"10001874613","accumulated":5705793,"code":"DH000037","content":"MBVCB.12625794737.6017BFTVG2WYWKYH.DH000037.CT tu 9987027740 NGUYEN HUU THANG toi 10001874613 NGUYEN HUU THANG tai TPBANK","description":"BankAPINotify MBVCB.12625794737.6017BFTVG2WYWKYH.DH000037.CT tu 9987027740 NGUYEN HUU THANG toi 10001874613 NGUYEN HUU THANG tai TPBANK","gateway":"TPBank","id":39144100,"referenceCode":"868V602260171917","subAccount":null,"transactionDate":"2026-01-17 14:13:12","transferAmount":50000,"transferType":"in"},"headers":{"accept":"*/*","accept-encoding":"gzip, br","authorization":"Apikey 4RWyGpaRyClq3OAmBp0nASE0CC","cdn-loop":"cloudflare; loops=1","cf-connecting-ip":"2600:3c15::2000:8aff:fedd:874b","cf-ipcountry":"SG","cf-ray":"9bf40c7d7ce5f543-SIN","cf-visitor":"{\"scheme\":\"https\"}","content-length":"526","content-type":"application/json","host":"api.khoahocgiare.info","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","x-forwarded-for":"2600:3c15::2000:8aff:fedd:874b, 2600:3c15::2000:8aff:fedd:874b","x-forwarded-host":"api.khoahocgiare.info","x-forwarded-port":"80","x-forwarded-proto":"http","x-real-ip":"2600:3c15::2000:8aff:fedd:874b"},"level":"info","message":"SePay webhook received","service":"udemy-api","timestamp":"2026-01-17T07:13:13.918Z"}
+{"level":"info","message":"Order code extracted from req.body.code","orderCode":"DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"gateway":"TPBank","level":"info","message":"Processing SePay webhook","orderCode":"DH000037","referenceCode":"868V602260171917","service":"udemy-api","timestamp":"2026-01-17T07:13:13.923Z","transactionDate":"2026-01-17 14:13:12","transferAmount":50000}
+{"currentStatus":"pending","expectedAmount":"50000","level":"info","message":"Order found","orderCode":"DH000037","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"difference":0,"expected":50000,"level":"info","message":"Amount validated","received":50000,"service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"level":"info","message":"Transaction updates","orderStatus":"paid","service":"udemy-api","tasksUpdated":1,"timestamp":"2026-01-17 14:13:13"}
+{"amount":50000,"level":"info","message":"✓ Order payment processed successfully","orderCode":"DH000037","orderId":37,"service":"udemy-api","tasksUpdated":1,"timestamp":"2026-01-17 14:13:13"}
+{"email":"downloadudemyfull@gmail.com","level":"info","message":"[Payment Success Email] Preparing email","orderCode":"DH000037","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:13"}
+{"level":"info","message":"Check order status request","method":"GET","orderCode":"DH000037","originalUrl":"/api/v1/payment/check-status/DH000037","path":"/check-status/DH000037","service":"udemy-api","timestamp":"2026-01-17 14:13:14"}
+{"amount":"50000","level":"info","message":"Order status retrieved successfully","orderCode":"DH000037","orderStatus":"processing","paymentStatus":"paid","service":"udemy-api","timestamp":"2026-01-17 14:13:14"}
+{"email":"downloadudemyfull@gmail.com","level":"info","message":"✓ [Payment Success Email] Email sent successfully","orderCode":"DH000037","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:16"}
+{"level":"info","message":"Starting enrollment and queue push","orderId":37,"service":"udemy-api","taskCount":1,"timestamp":"2026-01-17 14:13:16","workflow":"Enroll → Queue → Download"}
+{"courseUrl":"https://samsungu.udemy.com/course/java-tutorial/","email":"downloadudemyfull@gmail.com","level":"info","message":"Enrolling course","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:16"}
+{"count":1,"email":"downloadudemyfull@gmail.com","level":"info","message":"Starting enrollment","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:16"}
+{"level":"info","message":"[TaskRecovery] Starting stuck task recovery...","service":"udemy-api","timestamp":"2026-01-17 14:13:18"}
+{"count":0,"level":"info","message":"[TaskRecovery] Found jobs in queue","service":"udemy-api","timestamp":"2026-01-17 14:13:18"}
+{"count":1,"level":"info","message":"[TaskRecovery] Found potentially stuck tasks","service":"udemy-api","statuses":"all","timestamp":"2026-01-17 14:13:18"}
+{"count":1,"level":"info","message":"[TaskRecovery] Tasks confirmed stuck (not in queue)","service":"udemy-api","timestamp":"2026-01-17 14:13:18"}
+{"enrolled":0,"level":"info","message":"[TaskRecovery] Task breakdown","pending":0,"processing":1,"service":"udemy-api","timestamp":"2026-01-17 14:13:18"}
+{"courseUrl":"https://samsungu.udemy.com/course/java-tutorial/","level":"info","message":"[TaskRecovery] Re-enrolling processing task","orderId":37,"service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:18"}
+{"count":1,"email":"downloadudemyfull@gmail.com","level":"info","message":"Starting enrollment","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:18"}
+{"level":"info","message":"✓ Enrollment completed","orderId":37,"service":"udemy-api","status":"enrolled","taskId":59,"timestamp":"2026-01-17 14:13:19","verified":true}
+{"level":"info","message":"✓ Enrollment completed","orderId":37,"service":"udemy-api","status":"enrolled","taskId":59,"timestamp":"2026-01-17 14:13:21","verified":true}
+{"courseId":24823,"email":"downloadudemyfull@gmail.com","level":"info","message":"✓ Course enrolled successfully","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:22","title":"Free Java Tutorial - Learning Java for Complete Beginners","verificationRetries":0}
+{"enrolled":1,"failed":0,"level":"info","message":"Enrollment summary","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:22","total":1}
+{"enrolledTaskCount":1,"level":"info","message":"Pushing enrolled tasks to Redis queue","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:13:22"}
+{"courseUrl":"https://samsungu.udemy.com/course/java-tutorial/","email":"downloadudemyfull@gmail.com","jobId":"task-59","level":"info","message":"✓ Download job added to queue","queue":"rq:queue:downloads","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:22"}
+{"email":"downloadudemyfull@gmail.com","level":"info","message":"✓ Task pushed to Redis queue","orderId":37,"service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:22"}
+{"enrolled":1,"level":"info","message":"Queue push summary","orderId":37,"queueFailed":0,"queued":1,"service":"udemy-api","timestamp":"2026-01-17 14:13:22"}
+{"level":"info","message":"Webhook processing result","orderCode":"DH000037","orderId":37,"paymentStatus":"paid","service":"udemy-api","success":true,"tasksUpdated":1,"timestamp":"2026-01-17 14:13:22"}
+{"error":{"message":"listener is not a function"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"listener is not a function","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"listener is not a function"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"listener is not a function","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:23"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:24"}
+{"level":"info","message":"✓ [TaskRecovery] Task re-enrolled successfully","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:24"}
+{"courseUrl":"https://samsungu.udemy.com/course/java-tutorial/","level":"info","message":"[TaskRecovery] Re-queuing enrolled task","orderId":37,"service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:24"}
+{"courseUrl":"https://samsungu.udemy.com/course/java-tutorial/","email":"downloadudemyfull@gmail.com","jobId":"task-59","level":"info","message":"✓ Download job added to queue","queue":"rq:queue:downloads","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:24"}
+{"level":"info","message":"✓ [TaskRecovery] Task re-queued successfully","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:13:24"}
+{"breakdown":{"enrolled":1,"pending":0,"processing":1},"failed":0,"level":"info","message":"Recovered 1 task(s), 0 failed, 0 already in queue","recovered":1,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:13:24","totalChecked":1,"totalStuck":1}
+{"breakdown":{"enrolled":1,"pending":0,"processing":1},"failed":0,"level":"info","message":"Recovered 1 task(s), 0 failed, 0 already in queue","recovered":1,"service":"udemy-api","skipped":0,"success":true,"timestamp":"2026-01-17 14:13:24","totalChecked":1,"totalStuck":1}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:25"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:13:56"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:14:16"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:14:16"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:14:16"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:14:16"}
+{"email":"downloadudemyfull@gmail.com","level":"info","message":"Order lookup request","service":"udemy-api","timestamp":"2026-01-17 14:14:30"}
+{"count":1,"email":"downloadudemyfull@gmail.com","level":"info","message":"✓ Orders retrieved successfully","service":"udemy-api","timestamp":"2026-01-17 14:14:30"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","timestamp":"2026-01-17 14:14:39"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:40"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:41"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:41"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:41"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":59,"timestamp":"2026-01-17 14:14:41"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:41"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:41"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:41"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":59,"timestamp":"2026-01-17 14:14:44"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:44"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:44"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:44"}
+{"data":{"taskId":53},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:53","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":53,"timestamp":"2026-01-17 14:14:44"}
+{"data":{"taskId":54},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:54","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":54,"timestamp":"2026-01-17 14:14:44"}
+{"data":{"taskId":55},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:55","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":55,"timestamp":"2026-01-17 14:14:44"}
+{"data":{"taskId":56},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:56","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":56,"timestamp":"2026-01-17 14:14:44"}
+{"data":{"taskId":57},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:57","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":57,"timestamp":"2026-01-17 14:14:44"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:46"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:46"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:46"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:50"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:50"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:50"}
+{"data":{"taskId":53},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:53","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":53,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":54},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:54","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":54,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":55},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:55","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":55,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":56},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:56","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":56,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":57},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:57","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":57,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":59,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":59,"timestamp":"2026-01-17 14:14:51"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","taskId":59,"timestamp":"2026-01-17 14:14:53"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:54"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:54"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:14:54"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"Y6DaDMdAznwaF93WAAAD","timestamp":"2026-01-17 14:15:19"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"MvalXrfBum_OfQ24AAAL","timestamp":"2026-01-17 14:15:19"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:45"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:45"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:45"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:45"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:46"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:21:47"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:26"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:27"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:27"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:27"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:27"}
+{"folderName":"java-tutorial","level":"info","message":"Webhook authenticated successfully","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:23:27"}
+{"folderName":"java-tutorial","level":"info","message":"[Webhook] Finalizing download task","orderId":37,"service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:23:27"}
+{"folderId":"1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","level":"info","message":"✓ [Webhook] Drive folder found","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:23:28"}
+{"fileId":"1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","level":"info","message":"Granted Drive access","service":"udemy-api","timestamp":"2026-01-17 14:23:30","userEmail":"downloadudemyfull@gmail.com"}
+{"email":"downloadudemyfull@gmail.com","folderId":"1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","level":"info","message":"✓ Folder access granted","service":"udemy-api","timestamp":"2026-01-17 14:23:30"}
+{"hasDriveLink":true,"level":"info","message":"[Webhook] Task updated","service":"udemy-api","status":"completed","taskId":59,"timestamp":"2026-01-17 14:23:30"}
+{"auditLogId":78,"eventType":"download_completed","level":"info","message":"Download completed successfully. Drive folder: java-tutorial","orderId":37,"service":"udemy-api","severity":"info","taskId":59,"timestamp":"2026-01-17 14:23:30"}
+{"inProgress":0,"isComplete":true,"level":"info","message":"[Order Check] Task status summary","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:23:30","totalTasks":1}
+{"level":"info","message":"[Order Completion] Order #37: All tasks finished. Updating order status...","orderId":37,"service":"udemy-api","successfulTasks":1,"timestamp":"2026-01-17 14:23:30","totalTasks":1}
+{"allSuccess":true,"level":"info","message":"✓ [Order Status] Order updated to COMPLETED","orderCode":"DH000037","orderId":37,"orderStatus":"completed","service":"udemy-api","timestamp":"2026-01-17 14:23:30"}
+{"auditLogId":79,"eventType":"order_completed","level":"info","message":"Order completed: 1/1 tasks successful","orderId":37,"service":"udemy-api","severity":"info","taskId":null,"timestamp":"2026-01-17 14:23:30"}
+{"level":"info","message":"[Batch Email] Sending order completion notification","orderCode":"DH000037","orderId":37,"service":"udemy-api","taskCount":1,"timestamp":"2026-01-17 14:23:30"}
+{"failedCount":0,"level":"info","message":"[Batch Email] Preparing order summary","orderCode":"DH000037","orderId":37,"service":"udemy-api","successCount":1,"timestamp":"2026-01-17 14:23:30","totalTasks":1}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:31"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:31"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:31"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:31"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:31"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:31"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:32"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:32"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:32"}
+{"error":{"message":"Cannot read properties of undefined (reading 'value')"},"errorType":"TypeError","level":"error","message":"Redis Subscriber Error","redisError":"Cannot read properties of undefined (reading 'value')","service":"udemy-api","timestamp":"2026-01-17 14:23:32"}
+{"folderName":"java-tutorial","level":"info","message":"Webhook authenticated successfully","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:23:32"}
+{"folderName":"java-tutorial","level":"info","message":"[Webhook] Finalizing download task","orderId":37,"service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:23:32"}
+{"email":"downloadudemyfull@gmail.com","failedCount":0,"level":"info","message":"✓ [Batch Email] Order completion email sent successfully","orderCode":"DH000037","orderId":37,"service":"udemy-api","successCount":1,"timestamp":"2026-01-17 14:23:32","totalTasks":1}
+{"folderId":"1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","level":"info","message":"✓ [Webhook] Drive folder found","service":"udemy-api","taskId":59,"timestamp":"2026-01-17 14:23:33"}
+{"fileId":"1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","level":"info","message":"Granted Drive access","service":"udemy-api","timestamp":"2026-01-17 14:23:35","userEmail":"downloadudemyfull@gmail.com"}
+{"email":"downloadudemyfull@gmail.com","folderId":"1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","level":"info","message":"✓ Folder access granted","service":"udemy-api","timestamp":"2026-01-17 14:23:35"}
+{"hasDriveLink":true,"level":"info","message":"[Webhook] Task updated","service":"udemy-api","status":"completed","taskId":59,"timestamp":"2026-01-17 14:23:35"}
+{"auditLogId":80,"eventType":"download_completed","level":"info","message":"Download completed successfully. Drive folder: java-tutorial","orderId":37,"service":"udemy-api","severity":"info","taskId":59,"timestamp":"2026-01-17 14:23:35"}
+{"inProgress":0,"isComplete":true,"level":"info","message":"[Order Check] Task status summary","orderId":37,"service":"udemy-api","timestamp":"2026-01-17 14:23:35","totalTasks":1}
+{"level":"info","message":"[Order Completion] Order #37: All tasks finished. Updating order status...","orderId":37,"service":"udemy-api","successfulTasks":1,"timestamp":"2026-01-17 14:23:35","totalTasks":1}
+{"allSuccess":true,"level":"info","message":"✓ [Order Status] Order updated to COMPLETED","orderCode":"DH000037","orderId":37,"orderStatus":"completed","service":"udemy-api","timestamp":"2026-01-17 14:23:35"}
+{"auditLogId":81,"eventType":"order_completed","level":"info","message":"Order completed: 1/1 tasks successful","orderId":37,"service":"udemy-api","severity":"info","taskId":null,"timestamp":"2026-01-17 14:23:35"}
+{"level":"info","message":"[Batch Email] Sending order completion notification","orderCode":"DH000037","orderId":37,"service":"udemy-api","taskCount":1,"timestamp":"2026-01-17 14:23:35"}
+{"failedCount":0,"level":"info","message":"[Batch Email] Preparing order summary","orderCode":"DH000037","orderId":37,"service":"udemy-api","successCount":1,"timestamp":"2026-01-17 14:23:35","totalTasks":1}
+{"email":"downloadudemyfull@gmail.com","failedCount":0,"level":"info","message":"✓ [Batch Email] Order completion email sent successfully","orderCode":"DH000037","orderId":37,"service":"udemy-api","successCount":1,"timestamp":"2026-01-17 14:23:36","totalTasks":1}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"1SfdDIpsYafcN3vXAAAF","timestamp":"2026-01-17 18:26:54"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:54"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:55"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:55"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:55"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:55"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:55"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:26:55"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:07"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:07"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:07"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:08"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:08"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:08"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"1SfdDIpsYafcN3vXAAAF","taskId":59,"timestamp":"2026-01-17 18:27:13"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:13"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:13"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:13"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:15"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:15"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:15"}
+{"data":{"taskId":59},"level":"info","message":"[WebSocket] Client subscribed to task","room":"task:59","service":"udemy-api","socketId":"1SfdDIpsYafcN3vXAAAF","taskId":59,"timestamp":"2026-01-17 18:27:16"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:16"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:16"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:16"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:17"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:17"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:27:17"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"ping timeout","service":"udemy-api","socketId":"mOp8omNUO7mWwoxUAAAH","timestamp":"2026-01-17 18:50:40"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"ping timeout","service":"udemy-api","socketId":"1SfdDIpsYafcN3vXAAAF","timestamp":"2026-01-17 18:50:40"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"ozjh4ZtYgfuPXb0tAAAN","timestamp":"2026-01-17 18:51:19"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 18:51:19"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":37},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":37,"room":"order:37","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":36},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":36,"room":"order:36","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"data":{"orderId":35},"level":"info","message":"[WebSocket] Client subscribed to order","orderId":35,"room":"order:35","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:19:28"}
+{"ip":"127.0.0.1","level":"info","message":"[WebSocket] Client connected","service":"udemy-api","socketId":"2ILP9ilO2pmCbk1lAAAL","timestamp":"2026-01-17 19:19:28"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"ping timeout","service":"udemy-api","socketId":"ozjh4ZtYgfuPXb0tAAAN","timestamp":"2026-01-17 19:19:40"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"ping timeout","service":"udemy-api","socketId":"W5H1zcGaw5Hk1VpkAAAJ","timestamp":"2026-01-17 19:19:40"}
+{"level":"info","maxConcurrent":3,"message":"Starting course info retrieval","service":"udemy-api","timestamp":"2026-01-17 19:50:59","totalUrls":1}
+{"index":0,"level":"warn","message":"Invalid URL format - transform failed","service":"udemy-api","timestamp":"2026-01-17 19:50:59","url":"http://localhost:4000?test_event_code=TEST59193"}
+{"avgTimePerCourse":18,"durationMs":18,"failed":1,"level":"info","message":"✓ Course info retrieval completed","service":"udemy-api","success":0,"timestamp":"2026-01-17 19:50:59","total":1}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"YKRfJR029FGJHfiLAAAP","timestamp":"2026-01-17 19:54:21"}
+{"level":"info","message":"[WebSocket] Client disconnected","reason":"transport close","service":"udemy-api","socketId":"2ILP9ilO2pmCbk1lAAAL","timestamp":"2026-01-17 19:54:21"}
