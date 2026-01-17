@@ -9,6 +9,10 @@ const { asyncHandler } = require('../middleware/errorHandler.middleware');
 const { AppError } = require('../middleware/errorHandler.middleware');
 const Logger = require('../utils/logger.util');
 const { Op } = require('sequelize');
+const { sendBatchCompletionEmail } = require('../services/email.service');
+const { addDownloadJob } = require('../queues/download.queue');
+const { TASK_STATUS, IN_PROGRESS_STATUSES } = require('../constants/taskStatus');
+const enrollService = require('../services/enroll.service');
 
 /**
  * Get all paid orders with their tasks (Hierarchical View)
@@ -590,11 +594,448 @@ const getDashboardStats = asyncHandler(async (req, res) => {
   });
 });
 
+/**
+ * Resend completion email for an order
+ * 
+ * @route POST /api/admin/orders/:id/resend-email
+ * @access Admin only
+ */
+const resendOrderEmail = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  // Verify order exists and is paid
+  const order = await Order.findOne({
+    where: { 
+      id,
+      payment_status: 'paid'
+    },
+    attributes: ['id', 'order_code', 'user_email', 'total_amount']
+  });
+
+  if (!order) {
+    throw new AppError('Order not found or not paid', 404);
+  }
+
+  // Get all tasks for this order
+  const tasks = await DownloadTask.findAll({
+    where: { order_id: id },
+    attributes: [
+      'id',
+      'course_url',
+      'title',
+      'status',
+      'drive_link',
+      'error_log'
+    ]
+  });
+
+  if (tasks.length === 0) {
+    throw new AppError('No tasks found for this order', 404);
+  }
+
+  // Send batch completion email
+  try {
+    await sendBatchCompletionEmail(order, tasks);
+    
+    Logger.info('[Admin] Resent order completion email', {
+      orderId: order.id,
+      orderCode: order.order_code,
+      email: order.user_email,
+      taskCount: tasks.length
+    });
+
+    res.json({
+      success: true,
+      message: 'Email sent successfully',
+      data: {
+        orderId: order.id,
+        orderCode: order.order_code,
+        email: order.user_email,
+        taskCount: tasks.length
+      }
+    });
+  } catch (error) {
+    Logger.error('[Admin] Failed to resend order email', error, {
+      orderId: order.id,
+      orderCode: order.order_code
+    });
+    throw new AppError(`Failed to send email: ${error.message}`, 500);
+  }
+});
+
+/**
+ * Retry download for non-completed courses in an order
+ * Sets up automatic email notification when all tasks complete
+ * 
+ * @route POST /api/admin/orders/:id/retry-download
+ * @access Admin only
+ */
+const retryOrderDownload = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  // Step 1: Get order details
+  const order = await Order.findOne({
+    where: { 
+      id,
+      payment_status: 'paid'
+    },
+    attributes: ['id', 'order_code', 'user_email', 'total_amount']
+  });
+
+  if (!order) {
+    throw new AppError('Order not found or not paid', 404);
+  }
+
+  // Step 2: Get all tasks and filter non-completed ones
+  const allTasks = await DownloadTask.findAll({
+    where: { order_id: id },
+    attributes: [
+      'id',
+      'course_url',
+      'title',
+      'status',
+      'email',
+      'drive_link',
+      'error_log'
+    ]
+  });
+
+  if (allTasks.length === 0) {
+    throw new AppError('No tasks found for this order', 404);
+  }
+
+  // Filter tasks: skip only 'completed', retry all other statuses
+  const tasksToRetry = allTasks.filter(task => {
+    return task.status !== TASK_STATUS.COMPLETED;
+  });
+
+  const completedTasks = allTasks.filter(task => task.status === TASK_STATUS.COMPLETED);
+
+  if (tasksToRetry.length === 0) {
+    return res.json({
+      success: true,
+      message: 'No tasks need retry - all tasks are already completed',
+      data: {
+        orderId: order.id,
+        orderCode: order.order_code,
+        totalTasks: allTasks.length,
+        completedTasks: completedTasks.length,
+        retriedTasks: 0
+      }
+    });
+  }
+
+  // Step 3: Process tasks by status
+  // Separate tasks into 'enrolled' (can queue directly) and others (need enrollment first)
+  const enrolledTasksToQueue = tasksToRetry.filter(t => t.status === TASK_STATUS.ENROLLED);
+  const tasksNeedingEnrollment = tasksToRetry.filter(t => t.status !== TASK_STATUS.ENROLLED);
+
+  let enrolledCount = 0;
+  let enrollFailedCount = 0;
+  let queuedCount = 0;
+  let queueErrors = [];
+
+  // Step 3a: Process tasks that need enrollment (failed, processing, pending, etc.)
+  for (const task of tasksNeedingEnrollment) {
+    try {
+      // Reset task to 'processing' status (if not already processing)
+      // This allows re-enrollment for failed/pending tasks
+      if (task.status !== TASK_STATUS.PROCESSING) {
+        await DownloadTask.update(
+          { 
+            status: TASK_STATUS.PROCESSING,
+            error_log: null 
+          },
+          {
+            where: { id: task.id },
+            fields: ['status', 'error_log']
+          }
+        );
+      }
+
+      // Enroll the course
+      Logger.info('[Admin] Re-enrolling task', {
+        taskId: task.id,
+        orderId: order.id,
+        previousStatus: task.status,
+        courseUrl: task.course_url
+      });
+
+      const enrollResults = await enrollService.enrollCourses(
+        [task.course_url],
+        task.email,
+        order.id
+      );
+
+      const enrollResult = enrollResults[0];
+      if (enrollResult && enrollResult.success && enrollResult.status === 'enrolled') {
+        // Verify status updated in DB
+        const updatedTask = await DownloadTask.findByPk(task.id);
+        if (updatedTask && updatedTask.status === TASK_STATUS.ENROLLED) {
+          enrolledTasksToQueue.push(updatedTask); // Add to queue list
+          enrolledCount++;
+        } else {
+          enrollFailedCount++;
+          Logger.warn('[Admin] Enrollment status not verified', {
+            taskId: task.id,
+            expectedStatus: TASK_STATUS.ENROLLED,
+            actualStatus: updatedTask?.status
+          });
+        }
+      } else {
+        enrollFailedCount++;
+        Logger.error('[Admin] Re-enrollment failed', new Error(enrollResult?.message || 'Unknown error'), {
+          taskId: task.id,
+          enrollResult
+        });
+      }
+    } catch (error) {
+      enrollFailedCount++;
+      Logger.error('[Admin] Failed to re-enroll task', error, {
+        taskId: task.id,
+        orderId: order.id
+      });
+    }
+  }
+
+  // Step 3b: Queue all enrolled tasks for download
+  for (const task of enrolledTasksToQueue) {
+    try {
+      await addDownloadJob({
+        taskId: task.id,
+        email: task.email,
+        courseUrl: task.course_url
+      });
+      queuedCount++;
+
+      Logger.info('[Admin] Task queued for download retry', {
+        taskId: task.id,
+        orderId: order.id,
+        courseUrl: task.course_url
+      });
+    } catch (error) {
+      queueErrors.push({
+        taskId: task.id,
+        error: error.message
+      });
+      Logger.error('[Admin] Failed to queue task for retry', error, {
+        taskId: task.id,
+        orderId: order.id
+      });
+    }
+  }
+
+  // Step 4: Start completion tracking (polling mechanism)
+  // This will monitor tasks and send email when all are completed
+  startOrderCompletionTracking(order.id, order.order_code, order.user_email);
+
+      const message = tasksNeedingEnrollment.length > 0
+    ? `Re-enrolled ${enrolledCount} task(s), queued ${queuedCount} task(s) for download. ${enrollFailedCount > 0 ? `${enrollFailedCount} enrollment(s) failed.` : ''}`
+    : `Queued ${queuedCount} task(s) for download`;
+
+  res.json({
+    success: true,
+    message,
+    data: {
+      orderId: order.id,
+      orderCode: order.order_code,
+      totalTasks: allTasks.length,
+      completedTasks: completedTasks.length,
+      retriedTasks: tasksToRetry.length,
+      enrolledTasks: enrolledCount,
+      enrollFailed: enrollFailedCount,
+      queuedTasks: queuedCount,
+      queueErrors: queueErrors.length > 0 ? queueErrors : undefined
+    }
+  });
+});
+
+/**
+ * Starts polling mechanism to track order completion
+ * Sends email automatically when all tasks reach 'completed' status
+ * 
+ * @param {number} orderId - Order ID
+ * @param {string} orderCode - Order code
+ * @param {string} userEmail - User email
+ */
+let trackingIntervals = new Map(); // Track active polling intervals
+
+const startOrderCompletionTracking = (orderId, orderCode, userEmail) => {
+  // Clear any existing tracking for this order
+  if (trackingIntervals.has(orderId)) {
+    clearInterval(trackingIntervals.get(orderId));
+  }
+
+  const POLL_INTERVAL = 300000; // Check every 5 minutes
+  const MAX_POLL_DURATION = 10800000; // Stop after 3 hours
+  const startTime = Date.now();
+
+  Logger.info('[Admin] Starting order completion tracking', {
+    orderId,
+    orderCode,
+    pollInterval: POLL_INTERVAL,
+    maxDuration: MAX_POLL_DURATION
+  });
+
+  const checkInterval = setInterval(async () => {
+    try {
+      // Check if max duration exceeded
+      if (Date.now() - startTime > MAX_POLL_DURATION) {
+        clearInterval(checkInterval);
+        trackingIntervals.delete(orderId);
+        Logger.warn('[Admin] Order completion tracking timeout', {
+          orderId,
+          orderCode,
+          duration: MAX_POLL_DURATION
+        });
+        return;
+      }
+
+      // Get all tasks for this order
+      const tasks = await DownloadTask.findAll({
+        where: { order_id: orderId },
+        attributes: ['id', 'status', 'drive_link', 'title', 'course_url', 'email']
+      });
+
+      if (tasks.length === 0) {
+        clearInterval(checkInterval);
+        trackingIntervals.delete(orderId);
+        Logger.warn('[Admin] No tasks found for tracking', { orderId });
+        return;
+      }
+
+      // Check if all tasks are completed
+      const allCompleted = tasks.every(task => task.status === TASK_STATUS.COMPLETED);
+      const inProgressCount = tasks.filter(task => 
+        IN_PROGRESS_STATUSES.includes(task.status)
+      ).length;
+
+      if (allCompleted) {
+        // All tasks completed - send email and stop tracking
+        clearInterval(checkInterval);
+        trackingIntervals.delete(orderId);
+
+        try {
+          const order = await Order.findByPk(orderId, {
+            attributes: ['id', 'order_code', 'user_email', 'total_amount']
+          });
+
+          if (order) {
+            await sendBatchCompletionEmail(order, tasks);
+            
+            Logger.success('[Admin] Order completion email sent automatically', {
+              orderId,
+              orderCode,
+              email: userEmail,
+              taskCount: tasks.length
+            });
+          }
+        } catch (emailError) {
+          Logger.error('[Admin] Failed to send automatic completion email', emailError, {
+            orderId,
+            orderCode,
+            email: userEmail
+          });
+        }
+      } else {
+        // Still in progress - log status
+        Logger.debug('[Admin] Order still processing', {
+          orderId,
+          orderCode,
+          totalTasks: tasks.length,
+          inProgress: inProgressCount,
+          completed: tasks.filter(t => t.status === TASK_STATUS.COMPLETED).length
+        });
+      }
+    } catch (error) {
+      Logger.error('[Admin] Error in completion tracking', error, {
+        orderId,
+        orderCode
+      });
+    }
+  }, POLL_INTERVAL);
+
+  // Store interval for cleanup
+  trackingIntervals.set(orderId, checkInterval);
+};
+
+/**
+ * Recover stuck tasks for all orders (auto-recovery)
+ * @route POST /api/admin/tasks/recover
+ * @access Admin only
+ */
+const recoverAllStuckTasks = asyncHandler(async (req, res) => {
+  const taskRecoveryService = require('../services/taskRecovery.service');
+  const { maxTasks = 100 } = req.body;
+
+  Logger.info('[Admin] Manual recovery triggered', { maxTasks });
+
+  try {
+    const result = await taskRecoveryService.recoverStuckTasks({
+      maxTasks: parseInt(maxTasks, 10)
+    });
+
+    res.json({
+      success: true,
+      message: result.message,
+      data: result
+    });
+  } catch (error) {
+    Logger.error('[Admin] Recovery failed', error);
+    throw new AppError(`Recovery failed: ${error.message}`, 500);
+  }
+});
+
+/**
+ * Recover stuck tasks for a specific order
+ * @route POST /api/admin/orders/:id/recover
+ * @access Admin only
+ */
+const recoverOrderTasks = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const taskRecoveryService = require('../services/taskRecovery.service');
+
+  Logger.info('[Admin] Manual order recovery triggered', { orderId: id });
+
+  const order = await Order.findByPk(id, {
+    attributes: ['id', 'order_code', 'payment_status']
+  });
+
+  if (!order) {
+    throw new AppError('Order not found', 404);
+  }
+
+  if (order.payment_status !== 'paid') {
+    throw new AppError('Order is not paid, cannot recover tasks', 400);
+  }
+
+  try {
+    const result = await taskRecoveryService.recoverOrderTasks(parseInt(id, 10));
+
+    res.json({
+      success: true,
+      message: `Recovered ${result.recovered} task(s) for order ${order.order_code}`,
+      data: {
+        orderId: order.id,
+        orderCode: order.order_code,
+        ...result
+      }
+    });
+  } catch (error) {
+    Logger.error('[Admin] Order recovery failed', error, { orderId: id });
+    throw new AppError(`Recovery failed: ${error.message}`, 500);
+  }
+});
+
 module.exports = {
   getPaidOrders,
   getOrderDetails,
   getOrderAuditLogs,
   getTaskLogs,
   getTaskLogsRaw,
-  getDashboardStats
+  getDashboardStats,
+  resendOrderEmail,
+  retryOrderDownload,
+  recoverAllStuckTasks,
+  recoverOrderTasks
 };

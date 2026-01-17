@@ -1,0 +1,37 @@
+{"timestamp":"2026-01-16T10:59:01.467Z","level":"info","category":"download","source":"python_worker","orderId":33,"taskId":44,"message":"Download started","details":{"courseUrl":"https://samsungu.udemy.com/course/sinavlar-ve-mulakatlar-icin-html5-ve-css3-deneme-sinavlari/"},"progress":null,"currentFile":null,"stack":null,"metadata":null}
+{"timestamp":"2026-01-16T10:59:01.485Z","level":"info","category":"download","source":"python_worker","orderId":33,"taskId":44,"message":"Download progress: 30% (Downloading course content...)","details":{"attempt":1},"progress":30,"currentFile":"Downloading course content...","stack":null,"metadata":null}
+
+============================================================
+[2026-01-16T17:59:01.492431] Starting download for task 44
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/sinavlar-ve-mulakatlar-icin-html5-ve-css3-deneme-sinavlari/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_44 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+
+============================================================
+[LOGGING MODULE] Starting download process
+============================================================
+[05:59:02] [udemy-downloader] [pre_run:394] INFO: Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_44
+[05:59:02] [udemy-downloader] [pre_run:404] WARNING: > Keyfile not found! You won't be able to decrypt any encrypted videos!
+[05:59:03] [udemy-downloader] [visit:1203] INFO: Visit request successful
+[05:59:03] [udemy-downloader] [main:2044] INFO: > Fetching course information, this may take a minute...
+[05:59:05] [udemy-downloader] [_handle_pagination:914] INFO: > Downloading data page 2/2
+[05:59:06] [udemy-downloader] [main:2047] INFO: > Course information retrieved!
+[05:59:06] [udemy-downloader] [main:2052] INFO: > Fetching course curriculum, this may take a minute...
+[05:59:06] [udemy-downloader] [main:2076] INFO: > Course curriculum retrieved!
+[05:59:06] [udemy-downloader] [main:2107] INFO: > Processing course data, this may take a minute. 
+[05:59:06] [udemy-downloader] [main:2187] INFO: Processing 1 of 6
+[05:59:06] [udemy-downloader] [main:2187] INFO: Processing 2 of 6
+[05:59:06] [udemy-downloader] [main:2187] INFO: Processing 3 of 6
+[05:59:06] [udemy-downloader] [main:2187] INFO: Processing 4 of 6
+[05:59:06] [udemy-downloader] [main:2187] INFO: Processing 5 of 6
+[05:59:06] [udemy-downloader] [main:2187] INFO: Processing 6 of 6
+[05:59:06] [udemy-downloader] [parse_new:1731] INFO: Chapter(s) (1)
+[05:59:06] [udemy-downloader] [parse_new:1732] INFO: Lecture(s) (6)
+[05:59:06] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 1 of 1 =======
+[05:59:07] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 1
+[05:59:07] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 2
+[05:59:08] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 3
+[05:59:08] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 4
+[05:59:09] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 5
+[05:59:11] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 6
+{"timestamp":"2026-01-16T10:59:11.882Z","level":"info","category":"download","source":"python_worker","orderId":33,"taskId":44,"message":"Download progress: 70% (Download completed, preparing upload...)","details":{"duration":10,"attempt":1},"progress":70,"currentFile":"Download completed, preparing upload...","stack":null,"metadata":null}
+{"timestamp":"2026-01-16T10:59:17.768Z","level":"info","category":"download","source":"python_worker","orderId":33,"taskId":44,"message":"Download progress: 100% (Task completed successfully!)","details":{"duration":16,"folderName":"sinavlar-ve-mulakatlar-icin-html5-ve-css3-deneme-sinavlari"},"progress":100,"currentFile":"Task completed successfully!","stack":null,"metadata":null}

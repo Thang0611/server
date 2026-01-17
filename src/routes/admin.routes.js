@@ -6,6 +6,11 @@
 const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/admin.controller');
+const { verifyToken, verifyAdmin } = require('../middleware/auth.middleware');
+
+// Apply authentication middleware to all admin routes
+router.use(verifyToken);
+router.use(verifyAdmin);
 
 /**
  * @route   GET /api/admin/orders/paid
@@ -16,11 +21,25 @@ const adminController = require('../controllers/admin.controller');
 router.get('/orders/paid', adminController.getPaidOrders);
 
 /**
- * @route   GET /api/admin/orders/:id
- * @desc    Get detailed order with tasks and audit logs
+ * @route   POST /api/admin/orders/:id/resend-email
+ * @desc    Resend completion email for an order
  * @access  Admin
  */
-router.get('/orders/:id', adminController.getOrderDetails);
+router.post('/orders/:id/resend-email', adminController.resendOrderEmail);
+
+/**
+ * @route   POST /api/admin/orders/:id/retry-download
+ * @desc    Retry download for non-completed courses in an order
+ * @access  Admin
+ */
+router.post('/orders/:id/retry-download', adminController.retryOrderDownload);
+
+/**
+ * @route   POST /api/admin/orders/:id/recover
+ * @desc    Recover stuck tasks for a specific order
+ * @access  Admin
+ */
+router.post('/orders/:id/recover', adminController.recoverOrderTasks);
 
 /**
  * @route   GET /api/admin/orders/:id/logs
@@ -29,6 +48,21 @@ router.get('/orders/:id', adminController.getOrderDetails);
  * @query   severity, category, source, limit
  */
 router.get('/orders/:id/logs', adminController.getOrderAuditLogs);
+
+/**
+ * @route   GET /api/admin/orders/:id
+ * @desc    Get detailed order with tasks and audit logs
+ * @access  Admin
+ */
+router.get('/orders/:id', adminController.getOrderDetails);
+
+/**
+ * @route   POST /api/admin/tasks/recover
+ * @desc    Recover all stuck tasks (system-wide recovery)
+ * @access  Admin
+ * @body    { maxTasks: number } (optional)
+ */
+router.post('/tasks/recover', adminController.recoverAllStuckTasks);
 
 /**
  * @route   GET /api/admin/tasks/:id/logs

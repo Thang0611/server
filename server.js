@@ -123,6 +123,30 @@ const startServer = async () => {
       Logger.warn('WebSocket initialization failed (non-critical)', error);
     }
 
+    // Auto-recover stuck tasks on server startup
+    if (process.env.ENABLE_AUTO_RECOVERY !== 'false') {
+      try {
+        const { recoverStuckTasks } = require('./src/services/taskRecovery.service');
+        Logger.info('Starting auto-recovery for stuck tasks...');
+        
+        // Run recovery asynchronously (don't block server startup)
+        setTimeout(async () => {
+          try {
+            const result = await recoverStuckTasks({
+              maxTasks: parseInt(process.env.MAX_RECOVERY_TASKS || '100', 10)
+            });
+            Logger.success('Auto-recovery completed', result);
+          } catch (recoveryError) {
+            Logger.error('Auto-recovery failed (non-critical)', recoveryError);
+          }
+        }, 50000); // Wait 5 seconds for all services to be ready
+      } catch (error) {
+        Logger.warn('Failed to initialize auto-recovery (non-critical)', error);
+      }
+    } else {
+      Logger.info('Auto-recovery disabled (ENABLE_AUTO_RECOVERY=false)');
+    }
+
     // Start listening with error handling
     server.listen(PORT, '0.0.0.0', () => {
       Logger.info(`Server is running on port ${PORT}`, { port: PORT });
