@@ -6038,3 +6038,383 @@
 2026-01-17 13:48:36 +07:00: [31m[1m[ERROR][0m [90m13:48:36[0m Port 3000 is already in use. Trying to use alternative port or waiting...: bind EADDRINUSE 0.0.0.0:3000
 2026-01-17 13:50:24 +07:00: [33m[1m[WARN][0m  [90m13:50:24[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
 2026-01-17 13:50:24 +07:00: [33m[1m[WARN][0m  [90m13:50:24[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-17 14:07:49 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:07:49 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:08:01 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:08:02 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:08:10 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:08:10 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:08:35 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-17 14:09:08 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-17 14:09:21 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:09:21 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:09:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:09:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:09:24 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/.well-known/appspecific/com.chrome.devtools.json',
+  method: 'GET'
+}
+2026-01-17 14:09:27 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:09:27 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/.well-known/appspecific/com.chrome.devtools.json',
+  method: 'GET'
+}
+2026-01-17 14:09:27 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:10:12 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:10:12 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:10:15 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:10:15 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:10:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:10:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:11:00 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-17 14:11:00 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}

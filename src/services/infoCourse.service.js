@@ -238,9 +238,31 @@ const getCourseInfo = async (urls) => {
   // Process URLs with concurrency limit
   const processFn = async (rawUrl, index) => {
     try {
+      // ✅ FIX: Validate that rawUrl is actually a string URL, not JSON response
+      if (!rawUrl || typeof rawUrl !== 'string') {
+        Logger.warn('Invalid URL format - not a string', { url: rawUrl, index, type: typeof rawUrl });
+        return {
+          success: false,
+          url: String(rawUrl || ''),
+          message: 'URL không hợp lệ (phải là chuỗi)',
+          price: 0
+        };
+      }
+      
+      // ✅ FIX: Check if it looks like a JSON object/response instead of URL
+      if (rawUrl.trim().startsWith('{') || rawUrl.trim().startsWith('[')) {
+        Logger.warn('Invalid URL format - appears to be JSON', { url: rawUrl.substring(0, 100), index });
+        return {
+          success: false,
+          url: rawUrl,
+          message: 'URL không hợp lệ (phát hiện JSON thay vì URL)',
+          price: 0
+        };
+      }
+      
       const formattedUrl = transformToSamsungUdemy(rawUrl);
       if (!formattedUrl) {
-        Logger.warn('Invalid URL format', { url: rawUrl, index });
+        Logger.warn('Invalid URL format - transform failed', { url: rawUrl, index });
         return {
           success: false,
           url: rawUrl,

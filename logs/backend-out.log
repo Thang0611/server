@@ -15043,3 +15043,127 @@
 2026-01-17 13:51:14 +07:00: [32m[1m[INFO][0m  [90m13:51:14[0m [TaskRecovery] Found potentially stuck tasks [count=0]
 2026-01-17 13:51:14 +07:00: [32m[1m[INFO][0m  [90m13:51:14[0m [TaskRecovery] Tasks confirmed stuck (not in queue) [count=0]
 2026-01-17 13:51:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:51:14[0m Auto-recovery completed
+2026-01-17 14:07:33 +07:00: [32m[1m[INFO][0m  [90m14:07:33[0m SIGINT received, closing Redis client...
+2026-01-17 14:07:33 +07:00: [32m[1m[INFO][0m  [90m14:07:33[0m Redis client closed
+2026-01-17 14:07:33 +07:00: [32m[1m[INFO][0m  [90m14:07:33[0m Redis connections closed
+2026-01-17 14:07:37 +07:00: [32m[1m[INFO][0m  [90m14:07:36[0m SIGINT received, closing Redis client...
+2026-01-17 14:07:37 +07:00: [32m[1m[INFO][0m  [90m14:07:37[0m Redis client closed
+2026-01-17 14:07:37 +07:00: [32m[1m[INFO][0m  [90m14:07:37[0m Redis connections closed
+2026-01-17 14:07:39 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-17 14:07:40 +07:00: [32m[1m[INFO][0m  [90m14:07:40[0m [WebSocket] Client connected
+2026-01-17 14:07:42 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:07:39 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-17 14:07:40 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-17 14:07:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-17 14:07:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:10:45 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-17 14:10:47 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:10:45 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-17 14:10:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:10:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-17 14:10:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:10:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:10:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-17 14:10:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:10:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:12:19 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-17 14:12:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-17 14:12:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:12:22 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:12:22 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-17 14:12:25 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:12:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-17 14:12:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:12:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-17 14:12:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: listener is not a function
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: listener is not a function
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')

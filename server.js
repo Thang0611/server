@@ -8,6 +8,8 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 const { sequelize } = require('./src/models');
 const { errorHandler } = require('./src/middleware/errorHandler.middleware');
 const Logger = require('./src/utils/logger.util');
@@ -24,42 +26,160 @@ const internalRoutes = require('./src/routes/internal.routes');
 
 // Configuration
 const PORT = process.env.PORT || 3000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
 
-// CORS Configuration for Production
+// ✅ SECURITY: CORS Configuration - Strict whitelist for Production
+// In production, CORS_ORIGIN must be a comma-separated list of allowed domains (no wildcard)
 const allowedOrigins = CORS_ORIGIN === '*' 
-  ? '*' 
-  : CORS_ORIGIN.split(',').map(origin => origin.trim());
+  ? (NODE_ENV === 'production' ? [] : ['*']) // Production: no wildcard allowed
+  : CORS_ORIGIN.split(',').map(origin => origin.trim()).filter(origin => origin.length > 0);
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (mobile apps, curl, etc.)
-    if (!origin) return callback(null, true);
+    // ✅ FIX: Allow requests with no origin for health checks and internal API calls
+    // This includes: curl, Postman, server-to-server, health checks, etc.
+    if (!origin) {
+      // Always allow requests with no origin (needed for health checks, monitoring, etc.)
+      return callback(null, true);
+    }
     
-    // Allow all origins if CORS_ORIGIN is '*'
-    if (allowedOrigins === '*') return callback(null, true);
+    // Production: Reject wildcard, require explicit whitelist
+    if (NODE_ENV === 'production' && allowedOrigins.length === 0) {
+      Logger.error('CORS_ORIGIN not configured for production! Please set CORS_ORIGIN in .env');
+      return callback(new Error('CORS: Configuration error'));
+    }
+    
+    // ✅ FIX: Allow localhost origins in development
+    if (NODE_ENV === 'development') {
+      // Allow localhost with any port in development
+      if (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) {
+        return callback(null, true);
+      }
+      
+      // Also allow wildcard in development
+      if (allowedOrigins.includes('*')) {
+        return callback(null, true);
+      }
+    }
     
     // Check if origin is in allowed list
-    if (allowedOrigins.indexOf(origin) !== -1) {
+    if (allowedOrigins.includes('*')) {
+      // Wildcard should only be used in development (handled above)
+      Logger.warn(`CORS wildcard not allowed in production, blocking origin: ${origin}`);
+      return callback(new Error('CORS: Origin not allowed'));
+    }
+    
+    if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      Logger.warn(`CORS blocked origin: ${origin}`);
-      callback(null, true); // Still allow but log warning
+      Logger.warn(`CORS blocked origin: ${origin} (not in whitelist)`);
+      callback(new Error('CORS: Origin not allowed'));
     }
   },
   optionsSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true
+  credentials: true,
+  maxAge: 86400 // 24 hours
 };
 
 // Initialize Express app
 const app = express();
 const server = http.createServer(app);
 
+// ✅ SECURITY: Trust Proxy Configuration
+// Enable trust proxy if behind reverse proxy (nginx, load balancer, cloudflare, etc.)
+// This allows Express to correctly identify client IPs from X-Forwarded-For headers
+// Fixes express-rate-limit ERR_ERL_UNEXPECTED_X_FORWARDED_FOR error
+if (process.env.TRUST_PROXY === 'true' || process.env.NODE_ENV === 'production') {
+  // Trust first proxy (common setup: nginx -> node.js)
+  // Set to specific number if you know how many proxies are in front
+  // Set to 'true' to trust all proxies (less secure, use with caution)
+  app.set('trust proxy', 1); // Trust first proxy
+  Logger.info('Trust proxy enabled - Express will use X-Forwarded-For headers for client IP');
+} else if (process.env.TRUST_PROXY === 'false') {
+  // Explicitly disable trust proxy
+  app.set('trust proxy', false);
+  Logger.info('Trust proxy explicitly disabled');
+} else {
+  // Default: auto-detect based on X-Forwarded-For header presence
+  // If header exists, trust proxy (common in production with nginx/load balancer)
+  app.set('trust proxy', true); // Auto-detect: trust if X-Forwarded-For header exists
+  Logger.info('Trust proxy auto-detection enabled (trust if X-Forwarded-For header exists)');
+}
+
+// ✅ SECURITY: Helmet - Protect HTTP Headers
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https:"],
+    },
+  },
+  crossOriginEmbedderPolicy: false, // Allow external resources if needed
+  hsts: {
+    maxAge: 31536000, // 1 year
+    includeSubDomains: true,
+    preload: true
+  }
+}));
+
+// ✅ SECURITY: Rate Limiting - Protect against DDoS/Spam
+// General API rate limit: 100 requests per 15 minutes per IP
+const generalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: {
+    success: false,
+    message: 'Quá nhiều request từ IP này, vui lòng thử lại sau 15 phút.'
+  },
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  handler: (req, res) => {
+    Logger.warn('Rate limit exceeded', { 
+      ip: req.ip, 
+      path: req.path,
+      userAgent: req.get('user-agent')
+    });
+    res.status(429).json({
+      success: false,
+      message: 'Quá nhiều request từ IP này, vui lòng thử lại sau 15 phút.'
+    });
+  }
+});
+
+// Stricter rate limit for download/worker activation endpoints: 10 requests per hour per IP
+const downloadLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 10, // Limit each IP to 10 requests per hour
+  message: {
+    success: false,
+    message: 'Quá nhiều request kích hoạt download, vui lòng thử lại sau 1 giờ.'
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    Logger.warn('Download rate limit exceeded', { 
+      ip: req.ip, 
+      path: req.path,
+      userAgent: req.get('user-agent')
+    });
+    res.status(429).json({
+      success: false,
+      message: 'Quá nhiều request kích hoạt download, vui lòng thử lại sau 1 giờ.'
+    });
+  }
+});
+
 // Middleware
 app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '10mb' })); // Limit body size
+app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
+
+// Apply general rate limiting to all routes
+app.use('/api', generalLimiter);
 
 // Health check endpoint
 app.get('/', (req, res) => {
@@ -69,6 +189,10 @@ app.get('/', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
+
+// ✅ SECURITY: Apply stricter rate limiting to download/worker activation endpoints
+app.use('/api/v1/download', downloadLimiter);
+app.use('/api/v1/enroll', downloadLimiter);
 
 // API Routes
 app.use('/api/v1', downloadRoutes);
