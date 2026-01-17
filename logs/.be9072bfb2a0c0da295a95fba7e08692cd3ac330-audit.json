@@ -14,6 +14,11 @@
             "date": 1768496863187,
             "name": "/root/project/server/logs/lifecycle-error-2026-01-16.log",
             "hash": "2b7c4cffa276f2cc91b0b9ae5aa7bd4c0eb18ffdbd50a4a61de56d586cf47404"
+        },
+        {
+            "date": 1768614926900,
+            "name": "/root/project/server/logs/lifecycle-error-2026-01-17.log",
+            "hash": "33c7ec764118fa44567f358d7fcaf9a60054dbd620559b700d37005df481ef93"
         }
     ],
     "hashType": "sha256"
