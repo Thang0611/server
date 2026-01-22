@@ -38,23 +38,28 @@ const normalizeCourses = (inputCourses) => {
 };
 
 /**
- * Creates download tasks for an order
- * @param {string} orderId - Order ID
- * @param {string} email - Customer email
- * @param {Array} courses - Array of course objects with url property
- * @param {string} [phoneNumber] - Optional phone number
- * @returns {Promise<Object>} - Created tasks and unique URLs
- * @throws {AppError} - If validation fails or creation fails
+ * Tạo download tasks cho một đơn hàng
+ * Mỗi course sẽ tạo 1 task trong database với status = 'pending'
+ * Tasks sẽ được xử lý sau khi thanh toán thành công
+ * 
+ * @param {string} orderId - Order ID (có thể là null nếu chưa có order)
+ * @param {string} email - Email khách hàng (bắt buộc)
+ * @param {Array} courses - Mảng courses, hỗ trợ 2 format:
+ *   1. [{ url: "...", title: "...", price: ... }]
+ *   2. ["url1", "url2"] (legacy format)
+ * @param {string} [phoneNumber] - Số điện thoại (tùy chọn)
+ * @returns {Promise<Object>} - { tasks, uniqueUrls, count }
+ * @throws {AppError} - Nếu validation fail hoặc tạo tasks fail
  */
 const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) => {
   try {
-    // Normalize input courses - handle both formats:
+    // Normalize input: Chuẩn hóa input courses - hỗ trợ 2 format:
     // 1. Array of objects: [{ url: "...", title: "...", price: ... }]
-    // 2. Array of strings: ["url1", "url2"]
+    // 2. Array of strings: ["url1", "url2"] (legacy)
     let inputCourses = [];
     if (Array.isArray(courses)) {
       inputCourses = courses.map(item => {
-        // If it's already an object with url property, use it
+        // Nếu đã là object có url → dùng luôn
         if (typeof item === 'object' && item !== null && item.url) {
           return {
             url: item.url,
@@ -62,11 +67,11 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
             price: item.price !== undefined && item.price !== null ? parseFloat(item.price) : 0
           };
         }
-        // If it's a string, convert to object
+        // Nếu là string → convert sang object
         if (typeof item === 'string') {
           return { url: item, title: null, price: 0 };
         }
-        // Otherwise, skip invalid items
+        // Bỏ qua items không hợp lệ
         return null;
       }).filter(item => item !== null);
     }
@@ -75,16 +80,17 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
       throw new AppError('Không có khóa học nào', 400);
     }
 
-    // Normalize and deduplicate URLs
+    // Normalize và deduplicate URLs: Chuẩn hóa URLs và loại bỏ trùng lặp
+    // Transform sang format samsungu.udemy.com và loại bỏ query params
     const { normalizedCourses, uniqueUrls } = normalizeCourses(inputCourses);
 
     if (normalizedCourses.length === 0) {
       throw new AppError('Không có URL hợp lệ sau khi lọc', 400);
     }
 
-    // Validate and resolve order_id
-    // Note: We don't create orders here to avoid circular dependency with payment.service
-    // Orders should be created via payment.service.createOrder() first
+    // Validate và resolve order_id: Kiểm tra order có tồn tại không
+    // LƯU Ý: Không tạo order ở đây để tránh circular dependency với payment.service
+    // Orders nên được tạo qua payment.service.createOrder() trước
     let resolvedOrderId = null;
     
     if (orderId !== null && orderId !== undefined && orderId !== '') {
@@ -122,23 +128,25 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
     }
     // If orderId is null/undefined/empty, resolvedOrderId remains null (tasks can exist without order)
 
-    // Set common fields - ensure all required fields are present
-    // Status is 'pending' initially, will be changed to 'processing' when payment is confirmed via webhook
+    // Set common fields: Đảm bảo tất cả fields bắt buộc đều có
+    // Status ban đầu là 'pending', sẽ được đổi thành 'processing' khi payment webhook xác nhận thanh toán
+    // Status flow: pending → processing → enrolled → downloading → completed
     const tasksToCreate = normalizedCourses.map(task => ({
-      course_url: task.course_url,
-      title: task.title || null,
-      price: task.price || 0,
-      email: email, // Required field
-      order_id: resolvedOrderId, // Can be null
-      phone_number: phoneNumber || null,
-      status: 'pending', // ✅ FIXED: Use 'pending' instead of 'paid' - will be updated to 'processing' after payment webhook
-      retry_count: 0
+      course_url: task.course_url,  // URL khóa học đã được normalize
+      title: task.title || null,     // Tiêu đề (có thể null, sẽ được update sau khi enroll)
+      price: task.price || 0,        // Giá khóa học
+      email: email,                 // Email khách hàng (bắt buộc)
+      order_id: resolvedOrderId,     // Order ID (có thể null nếu chưa có order)
+      phone_number: phoneNumber || null, // Số điện thoại (tùy chọn)
+      status: 'pending',             // Status ban đầu: pending (chờ thanh toán)
+      retry_count: 0                 // Số lần retry (dùng cho error handling)
     }));
 
-    // Bulk create tasks
+    // Bulk create tasks: Tạo tất cả tasks cùng lúc (hiệu quả hơn create từng cái)
+    // individualHooks: false → Không chạy hooks (beforeCreate, afterCreate) cho từng task
     const savedTasks = await DownloadTask.bulkCreate(tasksToCreate, {
-      validate: true,
-      individualHooks: false
+      validate: true,        // Validate trước khi insert
+      individualHooks: false // Không chạy hooks để tăng performance
     });
 
     Logger.success('Download tasks created', {

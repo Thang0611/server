@@ -10,7 +10,7 @@
  * 
  * Individual control:
  *   - pm2 restart api
- *   - pm2 restart nextjs
+ *   - pm2 restart client
  *   - pm2 restart workers
  */
 
@@ -50,17 +50,17 @@ module.exports = {
       ignore_watch: ['node_modules', 'logs', 'Staging_Download']
     },
 
-    // ==================== NEXT.JS FRONTEND ====================
+    // ==================== NEXT.JS FRONTEND (CLIENT) ====================
     {
-      name: 'nextjs',
+      name: 'client',
       script: 'npm',
       args: 'start',
       cwd: '/root/project/clone-app',  // Next.js application directory
       instances: 1,  // Next.js usually runs as single instance (or 'max' for SSR apps)
-      exec_mode: 'cluster',
+      exec_mode: 'fork',  // Changed to fork mode for Next.js
       env: {
         NODE_ENV: 'production',
-        PORT: 3001  // Adjust port as needed
+        PORT: 4000  // Frontend port
       },
       
       // Logs

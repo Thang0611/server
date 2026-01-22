@@ -6038,3 +6038,1369 @@
 2026-01-17 13:48:36 +07:00: [31m[1m[ERROR][0m [90m13:48:36[0m Port 3000 is already in use. Trying to use alternative port or waiting...: bind EADDRINUSE 0.0.0.0:3000
 2026-01-17 13:50:24 +07:00: [33m[1m[WARN][0m  [90m13:50:24[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
 2026-01-17 13:50:24 +07:00: [33m[1m[WARN][0m  [90m13:50:24[0m Note: "Too many keys" error may occur if database schema has >64 foreign keys
+2026-01-17 14:07:49 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:07:49 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:08:01 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:08:02 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:08:10 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:08:10 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:08:35 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-17 14:09:08 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-17 14:09:21 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:09:21 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:09:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:09:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:09:24 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/.well-known/appspecific/com.chrome.devtools.json',
+  method: 'GET'
+}
+2026-01-17 14:09:27 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/',
+  method: 'GET'
+}
+2026-01-17 14:09:27 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/.well-known/appspecific/com.chrome.devtools.json',
+  method: 'GET'
+}
+2026-01-17 14:09:27 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/favicon.ico',
+  method: 'GET'
+}
+2026-01-17 14:10:12 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:10:12 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:10:15 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:10:15 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:10:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/dashboard/stats',
+  method: 'GET'
+}
+2026-01-17 14:10:22 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:44:25)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/admin/orders/paid',
+  method: 'GET'
+}
+2026-01-17 14:11:00 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-17 14:11:00 +07:00: ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:366:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:680:22)
+    at Object.keyGenerator (/root/project/server/node_modules/express-rate-limit/dist/index.cjs:783:20)
+    at /root/project/server/node_modules/express-rate-limit/dist/index.cjs:844:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /root/project/server/node_modules/express-rate-limit/dist/index.cjs:825:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+2026-01-18 01:44:58 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:77:16)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/v1/get-course-info',
+  method: 'OPTIONS'
+}
+2026-01-18 01:46:09 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:77:16)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/v1/get-course-info',
+  method: 'POST'
+}
+2026-01-18 01:46:14 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:77:16)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/v1/get-course-info',
+  method: 'POST'
+}
+2026-01-18 01:46:44 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:77:16)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/v1/get-course-info',
+  method: 'POST'
+}
+2026-01-18 01:46:46 +07:00: Error: {
+  message: 'CORS: Origin not allowed',
+  stack: 'Error: CORS: Origin not allowed\n' +
+    '    at origin (/root/project/server/server.js:77:16)\n' +
+    '    at /root/project/server/node_modules/cors/lib/index.js:219:13\n' +
+    '    at optionsCallback (/root/project/server/node_modules/cors/lib/index.js:199:9)\n' +
+    '    at corsMiddleware (/root/project/server/node_modules/cors/lib/index.js:204:7)\n' +
+    '    at Layer.handleRequest (/root/project/server/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at trimPrefix (/root/project/server/node_modules/router/index.js:342:13)\n' +
+    '    at /root/project/server/node_modules/router/index.js:297:9\n' +
+    '    at processParams (/root/project/server/node_modules/router/index.js:582:12)\n' +
+    '    at next (/root/project/server/node_modules/router/index.js:291:5)\n' +
+    '    at internalNext (/root/project/server/node_modules/helmet/index.cjs:531:6)',
+  statusCode: 500,
+  path: '/api/v1/get-course-info',
+  method: 'OPTIONS'
+}
+2026-01-18 09:34:39 +07:00: 2026-01-18T02:34:39.737Z Redis Subscriber Error: listener is not a function
+2026-01-18 09:34:39 +07:00: 2026-01-18T02:34:39.735Z Redis Subscriber Error: listener is not a function
+2026-01-18 09:34:39 +07:00: 2026-01-18T02:34:39.846Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:39 +07:00: 2026-01-18T02:34:39.849Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.171Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.172Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.173Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.173Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.176Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.183Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.184Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.177Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.180Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.184Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:34:40 +07:00: 2026-01-18T02:34:40.186Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:20 +07:00: 2026-01-18T02:37:20.719Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:20 +07:00: 2026-01-18T02:37:20.723Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:20 +07:00: 2026-01-18T02:37:20.778Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:20 +07:00: 2026-01-18T02:37:20.786Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:21 +07:00: 2026-01-18T02:37:21.987Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:21 +07:00: 2026-01-18T02:37:21.988Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:21 +07:00: 2026-01-18T02:37:21.994Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:21 +07:00: 2026-01-18T02:37:21.994Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.193Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.193Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.194Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.194Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.818Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.819Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.819Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.821Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:37:22 +07:00: 2026-01-18T02:37:22.822Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.194Z Redis Subscriber Error: listener is not a function
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.195Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.196Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.198Z Redis Subscriber Error: listener is not a function
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.199Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.325Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.331Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:54:53 +07:00: 2026-01-18T12:54:53.327Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:00 +07:00: 2026-01-18T12:56:00.889Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:00 +07:00: 2026-01-18T12:56:00.889Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:00 +07:00: 2026-01-18T12:56:00.896Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.016Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.017Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.017Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.018Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.019Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.020Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.021Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:01 +07:00: 2026-01-18T12:56:01.021Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:13 +07:00: 2026-01-18T12:56:13.950Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:13 +07:00: 2026-01-18T12:56:13.950Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:13 +07:00: 2026-01-18T12:56:13.951Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:13 +07:00: 2026-01-18T12:56:13.951Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:14 +07:00: 2026-01-18T12:56:14.418Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:14 +07:00: 2026-01-18T12:56:14.418Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:14 +07:00: 2026-01-18T12:56:14.420Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:14 +07:00: 2026-01-18T12:56:14.420Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:15 +07:00: 2026-01-18T12:56:15.112Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:15 +07:00: 2026-01-18T12:56:15.113Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 19:56:15 +07:00: 2026-01-18T12:56:15.115Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.359Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.360Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.361Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.362Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.366Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.365Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.366Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.367Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.509Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.509Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.510Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:07:27 +07:00: 2026-01-18T13:07:27.510Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.009Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.009Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.016Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.016Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.635Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.636Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.639Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.637Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.638Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:09:50 +07:00: 2026-01-18T13:09:50.640Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.099Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.103Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.104Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.890Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.892Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.891Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:57 +07:00: 2026-01-18T13:10:57.893Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:58 +07:00: 2026-01-18T13:10:58.341Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:58 +07:00: 2026-01-18T13:10:58.341Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 20:10:58 +07:00: 2026-01-18T13:10:58.344Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.219Z Redis Subscriber Error: listener is not a function
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.222Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.237Z Redis Subscriber Error: listener is not a function
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.264Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.400Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.400Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.400Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.403Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.404Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:55:39 +07:00: 2026-01-18T14:55:39.406Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.689Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.691Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.689Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.826Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.827Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.828Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.829Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.830Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.828Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:06 +07:00: 2026-01-18T14:59:06.831Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:38 +07:00: 2026-01-18T14:59:38.985Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:38 +07:00: 2026-01-18T14:59:38.985Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:38 +07:00: 2026-01-18T14:59:38.985Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:39 +07:00: 2026-01-18T14:59:39.483Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:39 +07:00: 2026-01-18T14:59:39.484Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:39 +07:00: 2026-01-18T14:59:39.483Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:39 +07:00: 2026-01-18T14:59:39.485Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:46 +07:00: 2026-01-18T14:59:46.147Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:46 +07:00: 2026-01-18T14:59:46.147Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 21:59:46 +07:00: 2026-01-18T14:59:46.148Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.769Z Redis Subscriber Error: listener is not a function
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.779Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.774Z Redis Subscriber Error: listener is not a function
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.783Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.965Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.966Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.969Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.969Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.967Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:04:06 +07:00: 2026-01-19T03:04:06.971Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.395Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.399Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.403Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.407Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.936Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.936Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.939Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.940Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:09 +07:00: 2026-01-19T03:07:09.942Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:26 +07:00: 2026-01-19T03:07:26.957Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:26 +07:00: 2026-01-19T03:07:26.958Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:26 +07:00: 2026-01-19T03:07:26.958Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:27 +07:00: 2026-01-19T03:07:27.533Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:27 +07:00: 2026-01-19T03:07:27.533Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:27 +07:00: 2026-01-19T03:07:27.534Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:27 +07:00: 2026-01-19T03:07:27.534Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:33 +07:00: 2026-01-19T03:07:33.257Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:33 +07:00: 2026-01-19T03:07:33.257Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 10:07:33 +07:00: 2026-01-19T03:07:33.259Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.702Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.702Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.703Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.703Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.707Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.707Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.708Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.708Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.890Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.890Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.891Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.891Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.894Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.894Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.895Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.895Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.985Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.986Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.986Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.990Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.991Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.990Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:22 +07:00: 2026-01-19T07:50:22.992Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:23 +07:00: 2026-01-19T07:50:23.291Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:23 +07:00: 2026-01-19T07:50:23.292Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:23 +07:00: 2026-01-19T07:50:23.294Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:23 +07:00: 2026-01-19T07:50:23.294Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:23 +07:00: 2026-01-19T07:50:23.295Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:50:23 +07:00: 2026-01-19T07:50:23.295Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.152Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.153Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.153Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.153Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.280Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.280Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.280Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.282Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.282Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.282Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:08 +07:00: 2026-01-19T07:52:08.282Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:43 +07:00: 2026-01-19T07:52:43.086Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:43 +07:00: 2026-01-19T07:52:43.087Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:43 +07:00: 2026-01-19T07:52:43.088Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:43 +07:00: 2026-01-19T07:52:43.597Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:43 +07:00: 2026-01-19T07:52:43.597Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:43 +07:00: 2026-01-19T07:52:43.598Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.502Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.504Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.900Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.900Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.901Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.901Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.902Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:48 +07:00: 2026-01-19T07:52:48.904Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.027Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.028Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.027Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.029Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.028Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.029Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 14:52:49 +07:00: 2026-01-19T07:52:49.029Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:15 +07:00: 2026-01-19T08:06:15.830Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:15 +07:00: 2026-01-19T08:06:15.830Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:15 +07:00: 2026-01-19T08:06:15.831Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.015Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.016Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.016Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.017Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.017Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.017Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:16 +07:00: 2026-01-19T08:06:16.018Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.124Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.125Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.125Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.535Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.535Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.536Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.536Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.537Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.537Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.538Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:06:20 +07:00: 2026-01-19T08:06:20.538Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:07 +07:00: 2026-01-19T08:08:07.830Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:07 +07:00: 2026-01-19T08:08:07.830Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:07 +07:00: 2026-01-19T08:08:07.832Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:08 +07:00: 2026-01-19T08:08:08.267Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:08 +07:00: 2026-01-19T08:08:08.267Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:08 +07:00: 2026-01-19T08:08:08.268Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.036Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.037Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.037Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.474Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.474Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.475Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.475Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.475Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.475Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.476Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.476Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.905Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.906Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.905Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.906Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.907Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.907Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:12 +07:00: 2026-01-19T08:08:12.907Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:24 +07:00: 2026-01-19T08:08:24.641Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:24 +07:00: 2026-01-19T08:08:24.641Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:24 +07:00: 2026-01-19T08:08:24.642Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:24 +07:00: 2026-01-19T08:08:24.642Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:25 +07:00: 2026-01-19T08:08:25.246Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:25 +07:00: 2026-01-19T08:08:25.246Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:25 +07:00: 2026-01-19T08:08:25.247Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:25 +07:00: 2026-01-19T08:08:25.247Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.154Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.154Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.155Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.312Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.312Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.312Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.314Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.314Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.315Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.315Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.444Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.445Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:08:30 +07:00: 2026-01-19T08:08:30.446Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.873Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.874Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.875Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.997Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.997Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.998Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.997Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:30 +07:00: 2026-01-19T08:10:30.999Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:31 +07:00: 2026-01-19T08:10:30.999Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:31 +07:00: 2026-01-19T08:10:31.001Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:41 +07:00: 2026-01-19T08:10:41.995Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:41 +07:00: 2026-01-19T08:10:41.995Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:41 +07:00: 2026-01-19T08:10:41.997Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:42 +07:00: 2026-01-19T08:10:42.005Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:42 +07:00: 2026-01-19T08:10:42.362Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:42 +07:00: 2026-01-19T08:10:42.362Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:42 +07:00: 2026-01-19T08:10:42.364Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:42 +07:00: 2026-01-19T08:10:42.364Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:45 +07:00: 2026-01-19T08:10:45.930Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:45 +07:00: 2026-01-19T08:10:45.933Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:45 +07:00: 2026-01-19T08:10:45.934Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:45 +07:00: 2026-01-19T08:10:45.935Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.185Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.186Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.187Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.188Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.189Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.308Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.308Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:10:46 +07:00: 2026-01-19T08:10:46.309Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.089Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.090Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.094Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.094Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.226Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.226Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.227Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.227Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.227Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.228Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.228Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:13:49 +07:00: 2026-01-19T08:13:49.228Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:20 +07:00: 2026-01-19T08:14:20.911Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:20 +07:00: 2026-01-19T08:14:20.912Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:20 +07:00: 2026-01-19T08:14:20.919Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:20 +07:00: 2026-01-19T08:14:20.919Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:21 +07:00: 2026-01-19T08:14:21.774Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:21 +07:00: 2026-01-19T08:14:21.774Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:21 +07:00: 2026-01-19T08:14:21.775Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:21 +07:00: 2026-01-19T08:14:21.775Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:25 +07:00: 2026-01-19T08:14:25.787Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:25 +07:00: 2026-01-19T08:14:25.787Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:14:25 +07:00: 2026-01-19T08:14:25.788Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.447Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.447Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.448Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.877Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.877Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.878Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.878Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.879Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.879Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.879Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:17:16 +07:00: 2026-01-19T08:17:16.879Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.527Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.528Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.529Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.903Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.903Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.904Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:01 +07:00: 2026-01-19T08:20:01.904Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:08 +07:00: 2026-01-19T08:20:08.710Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:08 +07:00: 2026-01-19T08:20:08.711Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 15:20:08 +07:00: 2026-01-19T08:20:08.711Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.203Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.206Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.210Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.212Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.213Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.631Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.631Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.632Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.637Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.638Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.639Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:24:16 +07:00: 2026-01-19T15:24:16.639Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.333Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.333Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.337Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.337Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.464Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.464Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.466Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.466Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.467Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.467Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:06 +07:00: 2026-01-19T15:27:06.467Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.184Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.186Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.186Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.187Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.693Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.693Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:27:54 +07:00: 2026-01-19T15:27:54.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:28:02 +07:00: 2026-01-19T15:28:02.209Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:28:02 +07:00: 2026-01-19T15:28:02.209Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:28:02 +07:00: 2026-01-19T15:28:02.210Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:28:02 +07:00: 2026-01-19T15:28:02.210Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.507Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.507Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.508Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.508Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.694Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.694Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.702Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.702Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.703Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:46:28 +07:00: 2026-01-19T15:46:28.703Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:36 +07:00: 2026-01-19T15:48:36.727Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:36 +07:00: 2026-01-19T15:48:36.727Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:36 +07:00: 2026-01-19T15:48:36.732Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.140Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.140Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.141Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.141Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.142Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.142Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.142Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:37 +07:00: 2026-01-19T15:48:37.142Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:56 +07:00: 2026-01-19T15:48:56.333Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:56 +07:00: 2026-01-19T15:48:56.332Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:56 +07:00: 2026-01-19T15:48:56.333Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:57 +07:00: 2026-01-19T15:48:57.116Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:57 +07:00: 2026-01-19T15:48:57.116Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:57 +07:00: 2026-01-19T15:48:57.118Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:48:57 +07:00: 2026-01-19T15:48:57.118Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:49:03 +07:00: 2026-01-19T15:49:03.825Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:49:03 +07:00: 2026-01-19T15:49:03.824Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:49:03 +07:00: 2026-01-19T15:49:03.826Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:49:03 +07:00: 2026-01-19T15:49:03.827Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:50:52 +07:00: 2026-01-19T15:50:52.760Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:50:52 +07:00: 2026-01-19T15:50:52.761Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:50:52 +07:00: 2026-01-19T15:50:52.762Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:50:52 +07:00: 2026-01-19T15:50:52.886Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:50:52 +07:00: 2026-01-19T15:50:52.887Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:50:52 +07:00: 2026-01-19T15:50:52.887Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.450Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.451Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.451Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.584Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.584Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.584Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.585Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.586Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.586Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.587Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:52:57 +07:00: 2026-01-19T15:52:57.587Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.255Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.255Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.256Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.614Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.614Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.615Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:16 +07:00: 2026-01-19T15:53:16.614Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:22 +07:00: 2026-01-19T15:53:22.329Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:22 +07:00: 2026-01-19T15:53:22.330Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:53:22 +07:00: 2026-01-19T15:53:22.331Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.200Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.202Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.202Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.203Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.204Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.205Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.596Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.597Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.597Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.598Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.598Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:54:50 +07:00: 2026-01-19T15:54:50.600Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:48 +07:00: 2026-01-19T15:56:48.629Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:48 +07:00: 2026-01-19T15:56:48.630Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:48 +07:00: 2026-01-19T15:56:48.629Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:48 +07:00: 2026-01-19T15:56:48.631Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.027Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.027Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.028Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.028Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.029Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.029Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:56:49 +07:00: 2026-01-19T15:56:49.030Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:10 +07:00: 2026-01-19T15:57:10.341Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:10 +07:00: 2026-01-19T15:57:10.343Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:10 +07:00: 2026-01-19T15:57:10.344Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:10 +07:00: 2026-01-19T15:57:10.701Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:10 +07:00: 2026-01-19T15:57:10.702Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:10 +07:00: 2026-01-19T15:57:10.703Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:15 +07:00: 2026-01-19T15:57:15.890Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-19 22:57:15 +07:00: 2026-01-19T15:57:15.888Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.038Z Redis Subscriber Error: listener is not a function
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.043Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.039Z Redis Subscriber Error: listener is not a function
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.044Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.066Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.066Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.067Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.067Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.069Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.069Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.069Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.071Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.259Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.260Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.259Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.261Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.262Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.263Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.263Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.264Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.615Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.615Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.617Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.617Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.619Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.619Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.620Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:17:29 +07:00: 2026-01-21T04:17:29.620Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.477Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.478Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.479Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.621Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.625Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.621Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:15 +07:00: 2026-01-21T04:20:15.627Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:50 +07:00: 2026-01-21T04:20:50.512Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:50 +07:00: 2026-01-21T04:20:50.513Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:50 +07:00: 2026-01-21T04:20:50.513Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:50 +07:00: 2026-01-21T04:20:50.515Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:51 +07:00: 2026-01-21T04:20:51.023Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:51 +07:00: 2026-01-21T04:20:51.024Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:51 +07:00: 2026-01-21T04:20:51.026Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.467Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.468Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.600Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.601Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.602Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.726Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.726Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.728Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.729Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.726Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:20:55 +07:00: 2026-01-21T04:20:55.729Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.315Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.316Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.316Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.317Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.555Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.556Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.556Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:05 +07:00: 2026-01-21T04:21:05.556Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.305Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.304Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.306Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.861Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.861Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.862Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:21:56 +07:00: 2026-01-21T04:21:56.862Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.141Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.142Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.142Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.301Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.301Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.302Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.302Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.303Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.304Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.304Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.304Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.541Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.541Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.542Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.543Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.543Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.543Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.543Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:01 +07:00: 2026-01-21T04:22:01.544Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.056Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.056Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.056Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.190Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.190Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.191Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.191Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.192Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.193Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.193Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:10 +07:00: 2026-01-21T04:22:10.193Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.182Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.183Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.183Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.540Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.541Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.540Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:35 +07:00: 2026-01-21T04:22:35.542Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:38 +07:00: 2026-01-21T04:22:38.920Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:38 +07:00: 2026-01-21T04:22:38.920Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:38 +07:00: 2026-01-21T04:22:38.922Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:22:38 +07:00: 2026-01-21T04:22:38.922Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:04 +07:00: 2026-01-21T04:25:04.751Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:04 +07:00: 2026-01-21T04:25:04.752Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:04 +07:00: 2026-01-21T04:25:04.751Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:04 +07:00: 2026-01-21T04:25:04.752Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:05 +07:00: 2026-01-21T04:25:05.149Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:05 +07:00: 2026-01-21T04:25:05.150Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:05 +07:00: 2026-01-21T04:25:05.151Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:05 +07:00: 2026-01-21T04:25:05.151Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:05 +07:00: 2026-01-21T04:25:05.151Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:05 +07:00: 2026-01-21T04:25:05.152Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:51 +07:00: 2026-01-21T04:25:51.270Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:51 +07:00: 2026-01-21T04:25:51.271Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:51 +07:00: 2026-01-21T04:25:51.270Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:51 +07:00: 2026-01-21T04:25:51.630Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:51 +07:00: 2026-01-21T04:25:51.632Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:51 +07:00: 2026-01-21T04:25:51.633Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:57 +07:00: 2026-01-21T04:25:57.273Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:57 +07:00: 2026-01-21T04:25:57.273Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:57 +07:00: 2026-01-21T04:25:57.274Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 11:25:57 +07:00: 2026-01-21T04:25:57.274Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.369Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.371Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.371Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.653Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.654Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.655Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 13:52:11 +07:00: 2026-01-21T06:52:11.656Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.181Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.180Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.190Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.192Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.475Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.477Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.478Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.478Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.480Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.480Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.481Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:11:07 +07:00: 2026-01-21T07:11:07.481Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:11 +07:00: 2026-01-21T07:17:11.926Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:11 +07:00: 2026-01-21T07:17:11.928Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:11 +07:00: 2026-01-21T07:17:11.928Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:12 +07:00: 2026-01-21T07:17:12.674Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:12 +07:00: 2026-01-21T07:17:12.674Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:12 +07:00: 2026-01-21T07:17:12.676Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:12 +07:00: 2026-01-21T07:17:12.676Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:19 +07:00: 2026-01-21T07:17:19.080Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:19 +07:00: 2026-01-21T07:17:19.080Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:19 +07:00: 2026-01-21T07:17:19.080Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 14:17:19 +07:00: 2026-01-21T07:17:19.081Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.131Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.134Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.131Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.136Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.135Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.136Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.136Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.137Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.329Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.329Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.330Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.330Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.339Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.339Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.339Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:55:46 +07:00: 2026-01-21T13:55:46.339Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.202Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.202Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.203Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.203Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.207Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.207Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.208Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.208Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.495Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.495Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.495Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.511Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.511Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 20:56:47 +07:00: 2026-01-21T13:56:47.511Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.731Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.732Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.738Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.739Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.877Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.878Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.878Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.879Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.880Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.880Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.881Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:03:59 +07:00: 2026-01-21T14:03:59.881Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:15 +07:00: 2026-01-21T14:05:15.995Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:15 +07:00: 2026-01-21T14:05:15.995Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:15 +07:00: 2026-01-21T14:05:15.996Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:15 +07:00: 2026-01-21T14:05:15.996Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:16 +07:00: 2026-01-21T14:05:16.528Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:16 +07:00: 2026-01-21T14:05:16.528Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:16 +07:00: 2026-01-21T14:05:16.529Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:16 +07:00: 2026-01-21T14:05:16.529Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:23 +07:00: 2026-01-21T14:05:23.715Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:23 +07:00: 2026-01-21T14:05:23.716Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:23 +07:00: 2026-01-21T14:05:23.716Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:05:23 +07:00: 2026-01-21T14:05:23.717Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.570Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.572Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.572Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.573Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.855Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.855Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.856Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:25:46 +07:00: 2026-01-21T14:25:46.856Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:26:06 +07:00: 2026-01-21T14:26:06.879Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:26:06 +07:00: 2026-01-21T14:26:06.880Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:26:06 +07:00: 2026-01-21T14:26:06.880Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:26:06 +07:00: 2026-01-21T14:26:06.881Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:26:06 +07:00: 2026-01-21T14:26:06.882Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:26:06 +07:00: 2026-01-21T14:26:06.883Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.095Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.096Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.095Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.372Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.373Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.373Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:07 +07:00: 2026-01-21T14:56:07.373Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:27 +07:00: 2026-01-21T14:56:27.379Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:27 +07:00: 2026-01-21T14:56:27.379Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 21:56:27 +07:00: 2026-01-21T14:56:27.380Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.585Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.585Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.586Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.779Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.779Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.779Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 22:26:27 +07:00: 2026-01-21T15:26:27.780Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.545Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.546Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.547Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.548Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.548Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.672Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.673Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.672Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.674Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.673Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.674Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:42:39 +07:00: 2026-01-21T16:42:39.674Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.354Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.354Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.360Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.360Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.542Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.542Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.543Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.543Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.544Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.544Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.545Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:56:31 +07:00: 2026-01-21T16:56:31.546Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:34 +07:00: 2026-01-21T16:58:34.697Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:34 +07:00: 2026-01-21T16:58:34.699Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:35 +07:00: 2026-01-21T16:58:35.347Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:35 +07:00: 2026-01-21T16:58:35.347Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:35 +07:00: 2026-01-21T16:58:35.347Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:35 +07:00: 2026-01-21T16:58:35.348Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:42 +07:00: 2026-01-21T16:58:42.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:42 +07:00: 2026-01-21T16:58:42.501Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:42 +07:00: 2026-01-21T16:58:42.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-21 23:58:42 +07:00: 2026-01-21T16:58:42.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.558Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.559Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.559Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.560Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.562Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.563Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.563Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.563Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.695Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.706Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.706Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.708Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:00:10 +07:00: 2026-01-21T17:00:10.708Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.156Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.194Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.170Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.227Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.633Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.633Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.634Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.636Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.635Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.636Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:25:28 +07:00: 2026-01-21T17:25:28.638Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.353Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.353Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.360Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.361Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.647Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.647Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.649Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.662Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.661Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:30:52 +07:00: 2026-01-21T17:30:52.663Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:54 +07:00: 2026-01-21T17:32:54.272Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:54 +07:00: 2026-01-21T17:32:54.283Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:54 +07:00: 2026-01-21T17:32:54.289Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:54 +07:00: 2026-01-21T17:32:54.302Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:55 +07:00: 2026-01-21T17:32:55.226Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:55 +07:00: 2026-01-21T17:32:55.227Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:55 +07:00: 2026-01-21T17:32:55.228Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:32:55 +07:00: 2026-01-21T17:32:55.228Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:33:02 +07:00: 2026-01-21T17:33:02.559Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:33:02 +07:00: 2026-01-21T17:33:02.559Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:33:02 +07:00: 2026-01-21T17:33:02.560Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:33:02 +07:00: 2026-01-21T17:33:02.560Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:38 +07:00: 2026-01-21T17:37:38.436Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:38 +07:00: 2026-01-21T17:37:38.436Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:38 +07:00: 2026-01-21T17:37:38.439Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:38 +07:00: 2026-01-21T17:37:38.440Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:39 +07:00: 2026-01-21T17:37:39.054Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:39 +07:00: 2026-01-21T17:37:39.053Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:39 +07:00: 2026-01-21T17:37:39.054Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:39 +07:00: 2026-01-21T17:37:39.056Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:39 +07:00: 2026-01-21T17:37:39.056Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:37:39 +07:00: 2026-01-21T17:37:39.056Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:08 +07:00: 2026-01-21T17:39:08.148Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:08 +07:00: 2026-01-21T17:39:08.148Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:08 +07:00: 2026-01-21T17:39:08.159Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:09 +07:00: 2026-01-21T17:39:09.095Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:09 +07:00: 2026-01-21T17:39:09.096Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:09 +07:00: 2026-01-21T17:39:09.096Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:09 +07:00: 2026-01-21T17:39:09.096Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:21 +07:00: 2026-01-21T17:39:21.550Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:21 +07:00: 2026-01-21T17:39:21.551Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 00:39:21 +07:00: 2026-01-21T17:39:21.553Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.425Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.425Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.427Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.428Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.433Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.433Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.433Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.434Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.565Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.565Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.566Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.566Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.576Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.577Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:15:56 +07:00: 2026-01-22T01:15:56.578Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.574Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.574Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.575Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.576Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.728Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.728Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.729Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.729Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.730Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.730Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.730Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:37:15 +07:00: 2026-01-22T01:37:15.730Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:22 +07:00: 2026-01-22T01:40:22.755Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:22 +07:00: 2026-01-22T01:40:22.757Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:22 +07:00: 2026-01-22T01:40:22.757Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:22 +07:00: 2026-01-22T01:40:22.758Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:23 +07:00: 2026-01-22T01:40:23.609Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:23 +07:00: 2026-01-22T01:40:23.609Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:23 +07:00: 2026-01-22T01:40:23.611Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:23 +07:00: 2026-01-22T01:40:23.611Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:31 +07:00: 2026-01-22T01:40:31.320Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:31 +07:00: 2026-01-22T01:40:31.319Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 08:40:31 +07:00: 2026-01-22T01:40:31.320Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.399Z Redis Subscriber Error: listener is not a function
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.399Z Redis Subscriber Error: listener is not a function
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.401Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.401Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.405Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.406Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.406Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.774Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.774Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.775Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.776Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.777Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.777Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.777Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:15 +07:00: 2026-01-22T07:01:15.778Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.503Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.504Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.505Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.504Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.510Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.757Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.759Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.759Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.760Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-22 14:01:21 +07:00: 2026-01-22T07:01:21.761Z Redis Subscriber Error: Cannot read properties of undefined (reading 'value')

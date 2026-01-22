@@ -20,7 +20,7 @@ const DB_CONFIG = {
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'khoahocgiare'
+  database: process.env.DB_NAME || 'getcourses'
 };
 
 // Colors for console output

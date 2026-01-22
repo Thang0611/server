@@ -9,6 +9,17 @@ const adminController = require('../controllers/admin.controller');
 const { verifyToken, verifyAdmin } = require('../middleware/auth.middleware');
 
 // Apply authentication middleware to all admin routes
+router.use((req, res, next) => {
+  const Logger = require('../utils/logger.util');
+  Logger.info('[Admin Route] Request received', {
+    method: req.method,
+    path: req.path,
+    originalUrl: req.originalUrl,
+    hasAuthHeader: !!req.headers.authorization
+  });
+  next();
+});
+
 router.use(verifyToken);
 router.use(verifyAdmin);
 

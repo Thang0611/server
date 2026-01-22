@@ -11,10 +11,10 @@ const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 
-const WORDPRESS_URL = process.env.WORDPRESS_URL || 'https://khoahocgiare.info';
+const WORDPRESS_URL = process.env.WORDPRESS_URL || 'https://getcourses.net';
 const SECRET_KEY = process.env.SECRET_KEY;
 const EMAIL_USER = process.env.EMAIL_USER;
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@khoahocgiare.info';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@getcourses.net';
 
 /**
  * Sends admin alert email
@@ -83,7 +83,7 @@ const sendSuccessEmail = async (email, orderId, successList) => {
     }).join('');
 
     await transporter.sendMail({
-      from: `"KhoaHocGiaRe" <${EMAIL_USER}>`,
+      from: `"GetCourses" <${EMAIL_USER}>`,
       to: email,
       subject: `✅ Tài liệu đơn hàng #${orderId} đã sẵn sàng`,
       html: `

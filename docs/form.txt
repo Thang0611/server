@@ -58,7 +58,7 @@ https://www.udemy.com/course/nodejs-master/..."]
 
 		
 A
-khoahocgiare.info
+getcourses.net
 202.92.5.48
 
 Proxied
@@ -97,7 +97,7 @@ EditWhen toggled open, an additional table row will be added below this row to e
 
 CNAME
 www
-khoahocgiare.info
+getcourses.net
 
 Proxied
 
@@ -105,7 +105,7 @@ Auto
 EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
 
 NS
-khoahocgiare.info
+getcourses.net
 salvador.ns.porkbun.com
 DNS only
 
@@ -113,7 +113,7 @@ Auto
 EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
 
 NS
-khoahocgiare.info
+getcourses.net
 maceio.ns.porkbun.com
 DNS only
 
@@ -121,7 +121,7 @@ Auto
 EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
 
 NS
-khoahocgiare.info
+getcourses.net
 fortaleza.ns.porkbun.com
 DNS only
 
@@ -129,7 +129,7 @@ Auto
 EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
 
 NS
-khoahocgiare.info
+getcourses.net
 curitiba.ns.porkbun.com
 DNS only
 
@@ -145,7 +145,7 @@ Auto
 EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
 
 TXT
-khoahocgiare.info
+getcourses.net
 "brevo-code:c0c52f7294f2d4b899b35165988d412d"
 DNS only
 

@@ -19,6 +19,31 @@
             "date": 1768614926900,
             "name": "/root/project/server/logs/lifecycle-error-2026-01-17.log",
             "hash": "33c7ec764118fa44567f358d7fcaf9a60054dbd620559b700d37005df481ef93"
+        },
+        {
+            "date": 1768673974068,
+            "name": "/root/project/server/logs/lifecycle-error-2026-01-18.log",
+            "hash": "0e308ccb3402743e4fe6678029f3912e5f1605a0c7d34fe3481de21d412ce41f"
+        },
+        {
+            "date": 1768756888210,
+            "name": "/root/project/server/logs/lifecycle-error-2026-01-19.log",
+            "hash": "dd4ec390de04f8e836e6130c18d0af4795420d230b8a8712f68ab61cac919793"
+        },
+        {
+            "date": 1768927252198,
+            "name": "/root/project/server/logs/lifecycle-error-2026-01-20.log",
+            "hash": "b88a66dad2bfcc8b0e78c439593579673bfc9830be331fe0d8baf7a824d8382e"
+        },
+        {
+            "date": 1768932470085,
+            "name": "/root/project/server/logs/lifecycle-error-2026-01-21.log",
+            "hash": "9b5ed6e348e176a25597e9b08e09a3438e77541b92244f2c0deb9e9503775ebf"
+        },
+        {
+            "date": 1769065163635,
+            "name": "/root/project/server/logs/lifecycle-error-2026-01-22.log",
+            "hash": "f72d5f7bc1cf6f5fa1ebc869c981422e6f29f1113bfd15379cf4e0d879e296e9"
         }
     ],
     "hashType": "sha256"

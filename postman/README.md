@@ -1,11 +1,11 @@
-# Postman Collection for KhoaHocGiaRe API
+# Postman Collection for GetCourses API
 
-This directory contains Postman collections and environment files for testing the KhoaHocGiaRe API.
+This directory contains Postman collections and environment files for testing the GetCourses API.
 
 ## Files
 
-- `KhoaHocGiaRe_API.postman_collection.json` - Main API collection with all endpoints
-- `KhoaHocGiaRe_API.postman_environment.json` - Environment variables for testing
+- `GetCourses_API.postman_collection.json` - Main API collection with all endpoints
+- `GetCourses_API.postman_environment.json` - Environment variables for testing
 
 ## Setup Instructions
 
@@ -13,14 +13,14 @@ This directory contains Postman collections and environment files for testing th
 
 1. Open Postman
 2. Click **Import** button
-3. Select `KhoaHocGiaRe_API.postman_collection.json`
+3. Select `GetCourses_API.postman_collection.json`
 4. Click **Import**
 
 ### 2. Import Environment
 
 1. Click **Environments** in the left sidebar
 2. Click **Import**
-3. Select `KhoaHocGiaRe_API.postman_environment.json`
+3. Select `GetCourses_API.postman_environment.json`
 4. Click **Import**
 5. Select the environment from the dropdown (top right)
 
@@ -28,7 +28,7 @@ This directory contains Postman collections and environment files for testing th
 
 Update the following variables in the environment:
 
-- `base_url`: `https://api.khoahocgiare.info` (already set)
+- `base_url`: `https://api.getcourses.net` (already set)
 - `secret_key`: Your `SECRET_KEY` from `.env` file
 - `api_secret_key`: Your `API_SECRET_KEY` from `.env` file
 - `test_email`: Test email address for testing

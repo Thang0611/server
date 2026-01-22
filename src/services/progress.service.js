@@ -26,48 +26,41 @@ const redisSubscriber = redis.createClient({
   password: process.env.REDIS_PASSWORD || undefined,
 });
 
-// Connection handlers
-// FIX: Safely handle Redis errors without accessing .value property
-redisPublisher.on('error', (err) => {
-  // FIX: Safely handle error - check if err exists and has message
-  if (!err) {
-    Logger.error('Redis Publisher Error: Unknown error (err is null/undefined)', null, {
-      errorType: 'Unknown',
-      timestamp: new Date().toISOString()
-    });
-    return;
+// Connection handlers - with extra safe error handling for node-redis v4
+const handleRedisError = (clientName) => (err) => {
+  try {
+    // FIX: Super safe error handling - prevent any property access on undefined
+    if (!err) {
+      console.error(`${new Date().toISOString()} Redis ${clientName} Error: Unknown error`);
+      return;
+    }
+    
+    // Safely extract error message without accessing potentially undefined properties
+    let errorMessage = 'Unknown error';
+    try {
+      if (typeof err === 'string') {
+        errorMessage = err;
+      } else if (err && typeof err.message === 'string') {
+        errorMessage = err.message;
+      } else if (err) {
+        errorMessage = String(err);
+      }
+    } catch (e) {
+      errorMessage = 'Error extracting message failed';
+    }
+    
+    // Use console.error directly to avoid any Logger issues
+    console.error(`${new Date().toISOString()} Redis ${clientName} Error: ${errorMessage}`);
+  } catch (handlerError) {
+    // Last resort - if even our error handler fails
+    console.error('Redis error handler failed:', handlerError);
   }
-  
-  // Create Error object if err is not already an Error
-  const errorObj = err instanceof Error ? err : new Error(String(err));
-  const errorMessage = errorObj.message || String(err) || 'Unknown error';
-  
-  Logger.error('Redis Publisher Error', errorObj, {
-    errorType: err?.constructor?.name || 'Unknown',
-    redisError: errorMessage
-  });
-});
+};
+
+redisPublisher.on('error', handleRedisError('Publisher'));
 redisPublisher.on('connect', () => Logger.info('Redis Publisher Connected'));
 
-redisSubscriber.on('error', (err) => {
-  // FIX: Safely handle error - check if err exists and has message
-  if (!err) {
-    Logger.error('Redis Subscriber Error: Unknown error (err is null/undefined)', null, {
-      errorType: 'Unknown',
-      timestamp: new Date().toISOString()
-    });
-    return;
-  }
-  
-  // Create Error object if err is not already an Error
-  const errorObj = err instanceof Error ? err : new Error(String(err));
-  const errorMessage = errorObj.message || String(err) || 'Unknown error';
-  
-  Logger.error('Redis Subscriber Error', errorObj, {
-    errorType: err?.constructor?.name || 'Unknown',
-    redisError: errorMessage
-  });
-});
+redisSubscriber.on('error', handleRedisError('Subscriber'));
 redisSubscriber.on('connect', () => Logger.info('Redis Subscriber Connected'));
 
 // Initialize connections

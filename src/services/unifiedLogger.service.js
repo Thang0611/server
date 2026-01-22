@@ -275,7 +275,11 @@ class UnifiedLogger {
       logToFile(logData)
     ]);
 
-    return dbLog.status === 'fulfilled' ? dbLog.value : null;
+    // FIX: Safely access .value property - check if dbLog exists and has value
+    if (dbLog && dbLog.status === 'fulfilled' && dbLog.value !== undefined) {
+      return dbLog.value;
+    }
+    return null;
   }
 
   /**

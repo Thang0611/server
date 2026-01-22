@@ -113,3 +113,8 @@
 2026-01-15 11:37:43 +07:00:   File "/root/project/server/udemy_dl/worker_rq.py", line 456
 2026-01-15 11:37:43 +07:00:     emit_progress(task_id, order_id, percent=70, current_file="Download completed, preparing upload...")
 2026-01-15 11:37:43 +07:00: SyntaxError: expected 'except' or 'finally' block
+2026-01-17 14:13:56 +07:00: {"error": true, "task_id": 59, "error_code": "PROCESS_ERROR", "error_message": "Process failed with exit code 1", "timestamp": "2026-01-17T14:13:56.190149", "details": {"exit_code": 1, "command": "/usr/bin/python3 main.py -c https://samsungu.udemy.com/course/java-tutorial/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_59 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers"}}
+2026-01-17 14:13:56 +07:00: {"error": true, "task_id": 59, "error_code": "PROCESS_ERROR", "error_message": "Process failed with exit code 1", "timestamp": "2026-01-17T14:13:56.193102", "details": {"exit_code": 1}}
+2026-01-21 21:25:46 +07:00: {"error": true, "task_id": 112, "error_code": "TIMEOUT_ERROR", "error_message": "Download exceeded 1800s timeout", "timestamp": "2026-01-21T21:25:46.545962", "details": {"timeout_seconds": 1800}}
+2026-01-21 21:56:07 +07:00: {"error": true, "task_id": 112, "error_code": "TIMEOUT_ERROR", "error_message": "Download exceeded 1800s timeout", "timestamp": "2026-01-21T21:56:07.077544", "details": {"timeout_seconds": 1800}}
+2026-01-21 22:26:27 +07:00: {"error": true, "task_id": 112, "error_code": "TIMEOUT_ERROR", "error_message": "Download exceeded 1800s timeout", "timestamp": "2026-01-21T22:26:27.574154", "details": {"timeout_seconds": 1800}}

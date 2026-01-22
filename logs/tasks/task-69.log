@@ -1,0 +1,210 @@
+
+============================================================
+[2026-01-18T20:07:27.645819] Starting download for task 69
+Command: /usr/bin/python3 main.py -c https://samsungu.udemy.com/course/java-oop-iter-academy/ -b BXkdOY7L4dK19hrNj1GnplHFHoMbkXpiLlSn9dcU -o Staging_Download/Task_69 -q 720 --download-captions --download-assets --download-quizzes --concurrent-downloads 10 --continue-lecture-numbers
+============================================================
+
+============================================================
+[LOGGING MODULE] Starting download process
+============================================================
+[08:07:28] [udemy-downloader] [pre_run:394] INFO: Output directory set to /root/project/server/udemy_dl/Staging_Download/Task_69
+[08:07:28] [udemy-downloader] [pre_run:404] WARNING: > Keyfile not found! You won't be able to decrypt any encrypted videos!
+[08:07:29] [udemy-downloader] [visit:1203] INFO: Visit request successful
+[08:07:29] [udemy-downloader] [main:2044] INFO: > Fetching course information, this may take a minute...
+[08:07:30] [udemy-downloader] [_handle_pagination:914] INFO: > Downloading data page 2/2
+[08:07:32] [udemy-downloader] [main:2047] INFO: > Course information retrieved!
+[08:07:32] [udemy-downloader] [main:2052] INFO: > Fetching course curriculum, this may take a minute...
+[08:07:34] [udemy-downloader] [main:2076] INFO: > Course curriculum retrieved!
+[08:07:34] [udemy-downloader] [main:2107] INFO: > Processing course data, this may take a minute. 
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 2 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 3 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 4 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 6 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 7 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 8 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 10 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 11 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 12 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 13 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 14 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 15 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 16 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 18 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 19 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 20 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 22 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 23 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 24 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 26 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 27 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 28 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 30 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 31 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 32 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 34 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 35 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 36 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 38 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 39 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 40 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 42 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 43 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 44 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 45 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 46 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 48 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 49 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 50 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 52 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 53 of 56
+[08:07:34] [udemy-downloader] [main:2151] INFO: Processing 55 of 56
+[08:07:34] [udemy-downloader] [main:2187] INFO: Processing 56 of 56
+[08:07:34] [udemy-downloader] [parse_new:1731] INFO: Chapter(s) (13)
+[08:07:34] [udemy-downloader] [parse_new:1732] INFO: Lecture(s) (43)
+[08:07:34] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 1 of 13 =======
+[08:07:39] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 1 of 43
+[08:07:39] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:07:39] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:07:42] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:07:42] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '001 Classes_en.vtt'
+[08:07:43] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:07:43] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:07:43] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:07:43] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 1
+[08:07:44] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 1 (coding assignment)
+[08:07:44] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 2 of 13 =======
+[08:07:49] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 4 of 43
+[08:07:49] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:07:49] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:07:52] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:07:52] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '004 Objects_en.vtt'
+[08:07:53] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:07:53] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:07:53] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:07:54] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 2
+[08:07:54] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 2 (coding assignment)
+[08:07:54] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 3 of 13 =======
+[08:08:01] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 7 of 43
+[08:08:01] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:08:01] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:08:04] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:08:04] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '007 Advanced Classes and Objects_en.vtt'
+[08:08:04] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:08:05] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:08:05] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:08:05] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 3
+[08:08:06] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 3 (coding assignment)
+[08:08:06] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 4 (coding assignment)
+[08:08:07] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 5 (coding assignment)
+[08:08:08] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 6 (coding assignment)
+[08:08:09] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 7 (coding assignment)
+[08:08:09] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 4 of 13 =======
+[08:08:14] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 14 of 43
+[08:08:14] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:08:14] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:08:18] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:08:18] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '014 Constructors_en.vtt'
+[08:08:18] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:08:18] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:08:18] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:08:18] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 4
+[08:08:20] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 8 (coding assignment)
+[08:08:20] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 5 of 13 =======
+[08:08:25] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 17 of 43
+[08:08:25] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:08:25] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:08:28] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:08:28] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '017 Interfaces_en.vtt'
+[08:08:29] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:08:29] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:08:29] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:08:29] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 5
+[08:08:30] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 9 (coding assignment)
+[08:08:30] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 6 of 13 =======
+[08:08:35] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 20 of 43
+[08:08:35] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:08:35] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:08:38] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:08:38] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '020 Abstract Classes_en.vtt'
+[08:08:38] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:08:38] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:08:38] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:08:39] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 6
+[08:08:39] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 10 (coding assignment)
+[08:08:39] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 7 of 13 =======
+[08:08:44] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 23 of 43
+[08:08:44] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:08:44] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:08:46] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:08:46] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '023 Combining Interfaces and Abstract Classes_en.vtt'
+[08:08:46] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:08:46] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:08:46] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:08:47] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 7
+[08:08:48] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 11 (coding assignment)
+[08:08:48] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 8 of 13 =======
+[08:08:54] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 26 of 43
+[08:08:54] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:08:54] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:08:56] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:08:56] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '026 Inheritance_en.vtt'
+[08:08:57] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:08:57] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:08:57] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:08:58] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 8
+[08:08:58] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 12 (coding assignment)
+[08:08:58] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 9 of 13 =======
+[08:09:03] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 29 of 43
+[08:09:03] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:09:03] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:09:06] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:09:06] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '029 Polymorphism_en.vtt'
+[08:09:06] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:09:06] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:09:06] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:09:07] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 9
+[08:09:08] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 13 (coding assignment)
+[08:09:08] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 10 of 13 =======
+[08:09:14] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 32 of 43
+[08:09:14] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:09:14] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:09:17] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:09:17] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '032 Advanced Inheritance and Polymorphism_en.vtt'
+[08:09:17] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:09:17] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:09:17] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:09:18] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 10
+[08:09:19] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 14 (coding assignment)
+[08:09:20] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 15 (coding assignment)
+[08:09:21] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 16 (coding assignment)
+[08:09:21] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 11 of 13 =======
+[08:09:25] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 37 of 43
+[08:09:25] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:09:25] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:09:28] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:09:28] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '037 Encapsulation_en.vtt'
+[08:09:28] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:09:28] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:09:28] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:09:29] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 11
+[08:09:30] [udemy-downloader] [process_coding_assignment:1709] INFO:   > Processing quiz 17 (coding assignment)
+[08:09:30] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 12 of 13 =======
+[08:09:37] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 40 of 43
+[08:09:37] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:09:37] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:09:40] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:09:40] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '040 SOLID Principles_en.vtt'
+[08:09:41] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:09:41] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:09:41] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:09:41] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 12
+[08:09:41] [udemy-downloader] [parse_new:1754] INFO: ======= Processing chapter 13 of 13 =======
+[08:09:46] [udemy-downloader] [parse_new:1782] INFO:   > Processing lecture 42 of 43
+[08:09:46] [udemy-downloader] [process_lecture:1598] INFO:       > Lecture doesn't have DRM, attempting to download...
+[08:09:46] [udemy-downloader] [process_lecture:1603] INFO:       ====== Selected quality: video 720
+[08:09:48] [udemy-downloader] [parse_new:1808] INFO: Processing 2 caption(s)...
+[08:09:48] [udemy-downloader] [process_caption:1546] INFO:     >  Downloading caption: '042 Garbage Collection_en.vtt'
+[08:09:49] [udemy-downloader] [process_caption:1559] INFO:     > Converting caption to SRT format...
+[08:09:49] [udemy-downloader] [process_caption:1561] INFO:     > Caption conversion complete.
+[08:09:49] [udemy-downloader] [parse_new:1822] INFO:     > Processing 2 asset(s) for lecture...
+[08:09:49] [udemy-downloader] [process_normal_quiz:1687] INFO:   > Processing quiz 13

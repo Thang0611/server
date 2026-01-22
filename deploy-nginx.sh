@@ -49,7 +49,7 @@ fi
 
 # 2. Copy new configuration
 print_status "Installing new configuration..."
-cp /root/server/nginx-config.conf /etc/nginx/sites-available/khoahocgiare.info
+cp /root/server/nginx-config.conf /etc/nginx/sites-available/getcourses.net
 
 # 3. Remove default site if exists
 if [ -L /etc/nginx/sites-enabled/default ]; then
@@ -59,8 +59,8 @@ fi
 
 # 4. Create symbolic link
 print_status "Creating symbolic link..."
-if [ ! -L /etc/nginx/sites-enabled/khoahocgiare.info ]; then
-    ln -s /etc/nginx/sites-available/khoahocgiare.info /etc/nginx/sites-enabled/
+if [ ! -L /etc/nginx/sites-enabled/getcourses.net ]; then
+    ln -s /etc/nginx/sites-available/getcourses.net /etc/nginx/sites-enabled/
     print_success "Symbolic link created"
 else
     print_warning "Symbolic link already exists"
@@ -78,7 +78,7 @@ if nginx -t; then
 else
     print_error "Configuration test failed!"
     print_error "Rolling back to previous configuration..."
-    rm /etc/nginx/sites-enabled/khoahocgiare.info
+    rm /etc/nginx/sites-enabled/getcourses.net
     if [ -f /etc/nginx/sites-available/default.backup.* ]; then
         latest_backup=$(ls -t /etc/nginx/sites-available/default.backup.* | head -1)
         cp "$latest_backup" /etc/nginx/sites-available/default
@@ -114,19 +114,19 @@ print_success "Nginx Deployment Completed Successfully!"
 print_success "========================================="
 echo ""
 print_status "Active server blocks:"
-echo "  • http://api.khoahocgiare.info → localhost:3000"
-echo "  • http://khoahocgiare.info → localhost:3001"
-echo "  • http://www.khoahocgiare.info → localhost:3001"
+echo "  • http://api.getcourses.net → localhost:3000"
+echo "  • http://getcourses.net → localhost:3001"
+echo "  • http://www.getcourses.net → localhost:3001"
 echo ""
 print_status "Log files:"
-echo "  • API Access: /var/log/nginx/api.khoahocgiare.info.access.log"
-echo "  • API Error: /var/log/nginx/api.khoahocgiare.info.error.log"
-echo "  • Frontend Access: /var/log/nginx/khoahocgiare.info.access.log"
-echo "  • Frontend Error: /var/log/nginx/khoahocgiare.info.error.log"
+echo "  • API Access: /var/log/nginx/api.getcourses.net.access.log"
+echo "  • API Error: /var/log/nginx/api.getcourses.net.error.log"
+echo "  • Frontend Access: /var/log/nginx/getcourses.net.access.log"
+echo "  • Frontend Error: /var/log/nginx/getcourses.net.error.log"
 echo ""
 print_status "Next steps:"
 echo "  1. Ensure backend is running on port 3000"
 echo "  2. Ensure frontend is running on port 3001"
-echo "  3. Test domains: curl -I http://khoahocgiare.info"
+echo "  3. Test domains: curl -I http://getcourses.net"
 echo "  4. Consider installing SSL with certbot (see SSL_SETUP.md)"
 echo ""

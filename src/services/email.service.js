@@ -8,7 +8,7 @@ const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { transformToNormalizeUdemyCourseUrl } = require('../utils/url.util');
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@khoahocgiare.info';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@getcourses.net';
 
 /**
  * Sends error alert email to admin
@@ -154,7 +154,7 @@ const sendBatchCompletionEmail = async (orderData, tasks) => {
     : '';
 
   const mailOptions = {
-    from: `"KhoaHocGiaRe Support" <${process.env.EMAIL_USER}>`,
+    from: `"GetCourses Support" <${process.env.EMAIL_USER}>`,
     to: orderData.user_email,
     subject: `📦 Đơn #${orderData.order_code} - ${failedCount === 0 ? 'Hoàn tất' : `${successCount}/${totalTasks} thành công`}`,
     html: `
@@ -512,7 +512,7 @@ const sendBatchCompletionEmail = async (orderData, tasks) => {
           <!-- Minimal Footer -->
           <div class="footer">
             Hỗ trợ: <a href="mailto:${ADMIN_EMAIL}">${ADMIN_EMAIL}</a>
-            <div style="margin-top: 4px;">© ${new Date().getFullYear()} KhoaHocGiaRe</div>
+            <div style="margin-top: 4px;">© ${new Date().getFullYear()} GetCourses</div>
           </div>
         </div>
       </body>
@@ -565,7 +565,7 @@ const sendPaymentSuccessEmail = async (orderData) => {
   });
 
   const mailOptions = {
-    from: `"KhoaHocGiaRe Support" <${process.env.EMAIL_USER}>`,
+    from: `"GetCourses Support" <${process.env.EMAIL_USER}>`,
     to: orderData.user_email,
     subject: `Xác nhận thanh toán thành công - Đơn hàng #${orderCode}`,
     html: `
@@ -768,7 +768,7 @@ const sendPaymentSuccessEmail = async (orderData) => {
           <!-- Minimal Footer -->
           <div class="footer">
             Hỗ trợ: <a href="mailto:${ADMIN_EMAIL}">${ADMIN_EMAIL}</a>
-            <div style="margin-top: 4px;">© ${new Date().getFullYear()} KhoaHocGiaRe</div>
+            <div style="margin-top: 4px;">© ${new Date().getFullYear()} GetCourses</div>
           </div>
         </div>
       </body>

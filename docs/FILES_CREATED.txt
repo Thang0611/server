@@ -25,15 +25,15 @@
 ├─────────────────────────────────────────────────────────────────────────┤
 │ ✅ nginx-config.conf                     [NEW FILE]                     │
 │    Production-ready Nginx configuration                                │
-│    • API: api.khoahocgiare.info → localhost:3000                       │
-│    • Frontend: khoahocgiare.info → localhost:4000                      │
-│    • WWW: www.khoahocgiare.info → localhost:4000                       │
+│    • API: api.getcourses.net → localhost:3000                       │
+│    • Frontend: getcourses.net → localhost:4000                      │
+│    • WWW: www.getcourses.net → localhost:4000                       │
 │    • Cloudflare Real IP restoration                                    │
 │    • Security headers configured                                       │
 │    • 50MB upload limit, 300s timeout                                   │
 │                                                                         │
-│    Installed to: /etc/nginx/sites-available/khoahocgiare.info         │
-│                 /etc/nginx/sites-enabled/khoahocgiare.info            │
+│    Installed to: /etc/nginx/sites-available/getcourses.net         │
+│                 /etc/nginx/sites-enabled/getcourses.net            │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -84,9 +84,9 @@ Deployment Time:     Successfully deployed in production
 ╚═══════════════════════════════════════════════════════════════════════════╝
 
 🌐 WEBSITES
-   ✅ http://khoahocgiare.info                  (Frontend - Next.js)
-   ✅ http://www.khoahocgiare.info              (Frontend - Next.js)
-   ✅ http://api.khoahocgiare.info              (Backend API - Express)
+   ✅ http://getcourses.net                  (Frontend - Next.js)
+   ✅ http://www.getcourses.net              (Frontend - Next.js)
+   ✅ http://api.getcourses.net              (Backend API - Express)
 
 📧 EMAIL SYSTEM
    ✅ Batch Notifications                        (1 email per order)
@@ -139,8 +139,8 @@ pm2 restart all
 sudo systemctl reload nginx
 
 # Test websites
-curl -I http://khoahocgiare.info
-curl -I http://api.khoahocgiare.info
+curl -I http://getcourses.net
+curl -I http://api.getcourses.net
 
 ╔═══════════════════════════════════════════════════════════════════════════╗
 ║                          📖 DOCUMENTATION INDEX                           ║
