@@ -15043,3 +15043,611 @@
 2026-01-17 13:51:14 +07:00: [32m[1m[INFO][0m  [90m13:51:14[0m [TaskRecovery] Found potentially stuck tasks [count=0]
 2026-01-17 13:51:14 +07:00: [32m[1m[INFO][0m  [90m13:51:14[0m [TaskRecovery] Tasks confirmed stuck (not in queue) [count=0]
 2026-01-17 13:51:14 +07:00: [32m[1m✓[0m [32m[SUCCESS][0m [90m13:51:14[0m Auto-recovery completed
+2026-01-17 14:07:33 +07:00: [32m[1m[INFO][0m  [90m14:07:33[0m SIGINT received, closing Redis client...
+2026-01-17 14:07:33 +07:00: [32m[1m[INFO][0m  [90m14:07:33[0m Redis client closed
+2026-01-17 14:07:33 +07:00: [32m[1m[INFO][0m  [90m14:07:33[0m Redis connections closed
+2026-01-17 14:07:37 +07:00: [32m[1m[INFO][0m  [90m14:07:36[0m SIGINT received, closing Redis client...
+2026-01-17 14:07:37 +07:00: [32m[1m[INFO][0m  [90m14:07:37[0m Redis client closed
+2026-01-17 14:07:37 +07:00: [32m[1m[INFO][0m  [90m14:07:37[0m Redis connections closed
+2026-01-17 14:07:39 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-17 14:07:40 +07:00: [32m[1m[INFO][0m  [90m14:07:40[0m [WebSocket] Client connected
+2026-01-17 14:07:42 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:07:39 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-17 14:07:40 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-17 14:07:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-17 14:07:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-17 14:07:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:10:45 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-17 14:10:47 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:10:45 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-17 14:10:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:10:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-17 14:10:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:10:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:10:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-17 14:10:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:10:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-17 14:12:19 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-17 14:12:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-17 14:12:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:12:22 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:12:22 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-17 14:12:25 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-17 14:12:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-17 14:12:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-17 14:12:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-17 14:12:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: listener is not a function
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: listener is not a function
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:23 +07:00: [0m[31MERROR[39M[0m [90m14:13:23[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:24 +07:00: [0m[31MERROR[39M[0m [90m14:13:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:25 +07:00: [0m[31MERROR[39M[0m [90m14:13:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:26 +07:00: [0m[31MERROR[39M[0m [90m14:13:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:13:56 +07:00: [0m[31MERROR[39M[0m [90m14:13:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:14:16 +07:00: [0m[31MERROR[39M[0m [90m14:14:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:45 +07:00: [0m[31MERROR[39M[0m [90m14:21:45[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:46 +07:00: [0m[31MERROR[39M[0m [90m14:21:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:21:47 +07:00: [0m[31MERROR[39M[0m [90m14:21:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:26 +07:00: [0m[31MERROR[39M[0m [90m14:23:26[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:27 +07:00: [0m[31MERROR[39M[0m [90m14:23:27[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:31 +07:00: [0m[31MERROR[39M[0m [90m14:23:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-17 14:23:32 +07:00: [0m[31MERROR[39M[0m [90m14:23:32[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 01:19:32 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 01:19:35 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 01:19:33 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 01:19:34 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 01:19:36 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 01:19:36 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 01:19:36 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 01:19:37 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 01:19:38 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 01:19:38 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 01:43:44 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-18 01:43:46 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 01:43:45 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 01:43:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 01:43:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 01:43:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 01:43:47 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 01:43:47 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 01:43:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 01:43:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 01:45:53 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 01:45:53 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 01:45:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 01:45:55 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 01:45:55 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 01:45:58 +07:00: [dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 01:45:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 01:45:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 01:46:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 01:46:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 01:47:17 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 01:47:17 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 01:47:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 01:47:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 01:47:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 01:47:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 01:47:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 01:47:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 01:47:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 01:47:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 01:52:20 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 01:52:20 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 01:52:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 01:52:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 01:52:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 01:52:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 01:52:20 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 01:52:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 01:52:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 01:52:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 01:55:58 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 01:55:58 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 01:55:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 01:56:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 01:56:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 01:56:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 01:55:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 01:56:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 01:56:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 01:56:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 01:58:05 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 01:58:05 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 01:58:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 01:58:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 01:58:07 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 01:58:07 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 01:58:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 01:58:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 01:58:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 01:58:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 02:03:15 +07:00: [0m[31MERROR[39M[0m [90m02:03:15[0m Redis Subscriber Error: listener is not a function
+2026-01-18 02:03:15 +07:00: [0m[31MERROR[39M[0m [90m02:03:15[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:15 +07:00: [0m[31MERROR[39M[0m [90m02:03:15[0m Redis Subscriber Error: listener is not a function
+2026-01-18 02:03:15 +07:00: [0m[31MERROR[39M[0m [90m02:03:15[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:16 +07:00: [0m[31MERROR[39M[0m [90m02:03:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:16 +07:00: [0m[31MERROR[39M[0m [90m02:03:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:16 +07:00: [0m[31MERROR[39M[0m [90m02:03:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:16 +07:00: [0m[31MERROR[39M[0m [90m02:03:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:16 +07:00: [0m[31MERROR[39M[0m [90m02:03:16[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:03:58 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 02:04:03 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 02:03:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 02:04:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 02:04:03 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 02:04:03 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 02:04:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 02:04:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 02:04:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-18 02:04:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: listener is not a function
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: listener is not a function
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:04:56 +07:00: [0m[31MERROR[39M[0m [90m02:04:56[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:29 +07:00: [0m[31MERROR[39M[0m [90m02:09:29[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:30 +07:00: [0m[31MERROR[39M[0m [90m02:09:30[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:46 +07:00: [0m[31MERROR[39M[0m [90m02:09:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:46 +07:00: [0m[31MERROR[39M[0m [90m02:09:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:46 +07:00: [0m[31MERROR[39M[0m [90m02:09:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:46 +07:00: [0m[31MERROR[39M[0m [90m02:09:46[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:47 +07:00: [0m[31MERROR[39M[0m [90m02:09:47[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:53 +07:00: [0m[31MERROR[39M[0m [90m02:09:53[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:54 +07:00: [0m[31MERROR[39M[0m [90m02:09:54[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:54 +07:00: [0m[31MERROR[39M[0m [90m02:09:54[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:54 +07:00: [0m[31MERROR[39M[0m [90m02:09:54[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:54 +07:00: [0m[31MERROR[39M[0m [90m02:09:54[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 02:09:54 +07:00: [0m[31MERROR[39M[0m [90m02:09:54[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 08:03:56 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 08:04:18 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 08:04:18 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 08:04:19 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 08:04:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 08:04:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 08:04:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 08:04:19 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 08:04:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 08:04:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 08:04:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 08:43:17 +07:00: [0m[31MERROR[39M[0m [90m08:43:17[0m Exception during course enrollment: task is not defined [taskId=66, email=test@example.com, courseUrl=https://samsungu.udemy.com/course/test-course/]
+2026-01-18 08:47:38 +07:00: [0m[31MERROR[39M[0m [90m08:47:38[0m [AUDIT] Log created successfully: Download failed: Drive folder not found after 10 retries
+2026-01-18 09:01:43 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:01:43 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:01:43 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:01:44 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 09:01:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 09:01:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 09:01:44 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 09:01:44 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 09:01:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 09:01:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: listener is not a function
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: listener is not a function
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:03:28 +07:00: [0m[31MERROR[39M[0m [90m09:03:28[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:15:31 +07:00: [0m[31MERROR[39M[0m [90m09:15:31[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:16:59 +07:00: [0m[31MERROR[39M[0m [90m09:16:59[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:24 +07:00: [0m[31MERROR[39M[0m [90m09:17:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:24 +07:00: [0m[31MERROR[39M[0m [90m09:17:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:24 +07:00: [0m[31MERROR[39M[0m [90m09:17:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:24 +07:00: [0m[31MERROR[39M[0m [90m09:17:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:24 +07:00: [0m[31MERROR[39M[0m [90m09:17:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:24 +07:00: [0m[31MERROR[39M[0m [90m09:17:24[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:25 +07:00: [0m[31MERROR[39M[0m [90m09:17:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:25 +07:00: [0m[31MERROR[39M[0m [90m09:17:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:17:25 +07:00: [0m[31MERROR[39M[0m [90m09:17:25[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:18:55 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 09:18:55 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:18:56 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:18:56 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 09:18:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 09:18:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:18:55 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:18:56 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 09:18:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 09:18:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: listener is not a function
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: listener is not a function
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:19:51 +07:00: [0m[31MERROR[39M[0m [90m09:19:51[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:23:10 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 09:23:10 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:23:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 09:23:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 09:23:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:23:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:23:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:23:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:23:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 09:23:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: listener is not a function
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: listener is not a function
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:24:07 +07:00: [0m[31MERROR[39M[0m [90m09:24:07[0m Redis Subscriber Error: Cannot read properties of undefined (reading 'value')
+2026-01-18 09:26:06 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:26:07 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 09:26:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 09:26:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:26:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:26:12 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:26:12 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 09:26:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 09:26:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 09:26:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 09:39:45 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:39:45 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 09:39:45 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 09:39:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:39:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:39:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 09:39:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 09:39:46 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 09:39:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:39:49 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 09:49:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:49:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 09:49:24 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 09:49:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:49:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:49:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 09:49:24 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 09:49:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 09:49:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 09:49:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 19:43:36 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 19:43:36 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 19:43:37 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 19:43:38 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 19:43:40 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 19:43:40 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 19:43:37 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 19:43:38 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 19:43:40 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 19:43:40 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 19:46:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 19:46:15 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 19:46:15 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 19:46:16 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 19:46:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 19:46:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 19:46:15 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 19:46:16 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 19:46:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 19:46:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 19:49:07 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 19:49:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 19:49:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 19:49:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 19:49:10 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-18 19:49:12 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 19:49:13 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 19:49:13 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 19:49:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 19:49:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 20:40:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 20:40:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 20:40:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 20:40:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 20:40:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 20:40:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 20:40:06 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 20:40:08 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 20:40:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 20:40:11 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 21:08:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 21:08:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 21:08:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 21:08:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 21:08:31 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 21:08:31 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 21:08:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 21:08:29 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 21:08:31 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 21:08:31 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 23:46:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-18 23:46:59 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-18 23:47:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-18 23:47:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 23:47:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 23:47:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-18 23:47:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-18 23:47:00 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 23:47:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 23:47:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-18 23:50:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 23:50:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 23:50:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 23:50:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 23:50:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 23:50:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-18 23:50:01 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 23:50:02 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-18 23:50:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-18 23:50:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-18 23:58:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 23:58:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-18 23:58:14 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-18 23:58:16 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-18 23:58:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-18 23:58:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-18 23:58:15 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-18 23:58:16 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-18 23:58:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-18 23:58:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-19 00:21:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-19 00:21:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-19 00:21:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-19 00:21:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-19 00:21:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-19 00:21:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-19 00:21:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-19 00:21:28 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-19 00:21:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-19 00:21:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-20 23:40:50 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-20 23:40:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-20 23:40:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-20 23:40:52 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-20 23:40:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-20 23:40:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-20 23:40:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-20 23:40:52 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-20 23:40:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-20 23:40:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-20 23:52:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-20 23:52:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-20 23:52:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-20 23:52:07 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-20 23:52:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-20 23:52:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-20 23:52:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-20 23:52:07 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-20 23:52:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-20 23:52:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-21 01:07:47 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-21 01:07:47 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-21 01:07:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-21 01:07:50 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-21 01:07:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-21 01:07:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-21 01:07:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-21 01:07:50 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:07:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-21 01:07:54 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-21 01:09:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-21 01:09:25 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-21 01:09:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-21 01:09:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:09:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-21 01:09:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-21 01:09:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-21 01:09:27 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-01-21 01:09:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-21 01:09:30 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-01-21 01:10:15 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-21 01:10:16 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-21 01:10:17 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-21 01:10:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-21 01:10:18 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-21 01:10:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-21 01:10:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:10:22 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:10:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-21 01:10:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-21 01:10:52 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:10:52 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-21 01:10:53 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-21 01:10:55 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-21 01:10:55 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+2026-01-21 01:14:03 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-21 01:14:03 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-21 01:14:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-21 01:14:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-21 01:14:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-21 01:14:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:14:04 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:14:05 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-21 01:14:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-01-21 01:14:09 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-01-21 01:14:46 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-01-21 01:14:46 +07:00: [dotenv@17.2.3] injecting env (32) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-21 01:14:47 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-21 01:14:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-21 01:14:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-21 01:14:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+2026-01-21 01:14:47 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-21 01:14:48 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+2026-01-21 01:14:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-01-21 01:14:51 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-22 13:59:19 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-01-22 13:59:19 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-22 13:59:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-22 13:59:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-01-22 13:59:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2026-01-22 13:59:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+2026-01-22 13:59:21 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-01-22 13:59:23 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-01-22 13:59:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+2026-01-22 13:59:26 +07:00: [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit

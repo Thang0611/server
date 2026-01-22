@@ -20,7 +20,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
     console.log("Đang gửi dữ liệu đi:", payload);
 
     // 4. Gửi lên Server
-    fetch('https://api.khoahocgiare.info/api/v1/get-course-info', {
+    fetch('https://api.getcourses.info/api/v1/get-course-info', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = "flex"; // Hiện modal ngay để người dùng biết đang chạ
 
         // 2. Gọi API
-        fetch('https://api.khoahocgiare.info/api/v1/get-course-info', { // Thay link server nodejs của bạn
+        fetch('https://api.getcourses.info/api/v1/get-course-info', { // Thay link server nodejs của bạn
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

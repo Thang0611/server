@@ -10,6 +10,8 @@ import os
 import shutil
 import sys
 import json
+import signal
+import traceback
 from datetime import datetime
 from dotenv import load_dotenv
 import requests
@@ -101,7 +103,9 @@ STAGING_DIR = "Staging_Download"
 RCLONE_REMOTE = "gdrive"
 RCLONE_DEST_PATH = "UdemyCourses/download_khoahoc"
 MAX_RETRIES = 3
-DOWNLOAD_TIMEOUT = 144000  # 40 hours
+# ✅ SECURITY: Reduced timeout from 40 hours to 30 minutes for better resource management
+# Can be overridden via environment variable PYTHON_DOWNLOAD_TIMEOUT
+DOWNLOAD_TIMEOUT = int(os.getenv('PYTHON_DOWNLOAD_TIMEOUT', 1800))  # 30 minutes (1800 seconds)
 
 # ================= 2. HELPER FUNCTIONS =================
 
@@ -200,7 +204,8 @@ def notify_node_webhook(task_id, folder_name_local):
     Call Node.js webhook to update drive_url and send email
     Uses HMAC-SHA256 for authentication + secret_key in body for compatibility
     """
-    api_url = "https://api.khoahocgiare.info/api/v1/webhook/finalize"
+    api_base_url = os.getenv('API_BASE_URL', 'https://api.getcourses.net')
+    api_url = f"{api_base_url}/api/v1/webhook/finalize"
     secret = os.getenv('API_SECRET_KEY') or "KEY_BAO_MAT_CUA_BAN_2025"
     folder_name_only = os.path.basename(folder_name_local)
     
@@ -232,15 +237,41 @@ def notify_node_webhook(task_id, folder_name_local):
     
     try:
         log(f"[API] Calling webhook with HMAC auth: {folder_name_only}")
+        log(f"[API] Webhook URL: {api_url}")
+        log(f"[API] Task ID: {task_id}, Folder: {folder_name_only}")
+        
         res = requests.post(api_url, json=payload, headers=headers, timeout=30)
+        
         if res.status_code == 200:
-            log(f"[API] Webhook successful: {folder_name_only}")
+            log(f"[API] ✓ Webhook successful: {folder_name_only}")
+            try:
+                response_data = res.json()
+                log(f"[API] Webhook response: {response_data}")
+            except:
+                pass
             return True
         else:
-            log(f"[API FAIL] Status: {res.status_code} - {res.text}")
+            error_text = res.text[:500] if res.text else "No response body"
+            log(f"[API FAIL] ❌ Webhook failed - Status: {res.status_code}")
+            log(f"[API FAIL] Response: {error_text}")
+            log(f"[API FAIL] Task ID: {task_id}, Folder: {folder_name_only}")
             return False
+    except requests.exceptions.Timeout:
+        log(f"[API ERR] ❌ Webhook timeout after 30s - Task ID: {task_id}, Folder: {folder_name_only}")
+        log(f"[API ERR] Webhook URL: {api_url}")
+        return False
+    except requests.exceptions.ConnectionError as e:
+        log(f"[API ERR] ❌ Webhook connection error - Task ID: {task_id}, Folder: {folder_name_only}")
+        log(f"[API ERR] Error: {e}")
+        log(f"[API ERR] Webhook URL: {api_url}")
+        return False
     except Exception as e:
-        log(f"[API ERR] {e}")
+        log(f"[API ERR] ❌ Webhook error - Task ID: {task_id}, Folder: {folder_name_only}")
+        log(f"[API ERR] Error type: {type(e).__name__}")
+        log(f"[API ERR] Error message: {str(e)}")
+        log(f"[API ERR] Webhook URL: {api_url}")
+        import traceback
+        log(f"[API ERR] Traceback: {traceback.format_exc()}")
         return False
 
 # ================= 3. MAIN PROCESSING FUNCTION =================
@@ -321,10 +352,86 @@ def check_enrollment_status(task_id, max_wait_seconds=15):
         log(f"[ENROLL CHECK] [CRITICAL] Enrollment check failed: {e}\n{traceback.format_exc()}")
         return (False, 'error', f'Enrollment check failed: {e}')
 
+def validate_and_sanitize_url(url):
+    """
+    ✅ SECURITY: Validate and sanitize course URL to prevent command injection
+    Only allows valid Udemy URLs
+    
+    Args:
+        url (str): Course URL to validate
+    
+    Returns:
+        tuple: (is_valid: bool, sanitized_url: str, error_message: str)
+    """
+    if not url or not isinstance(url, str):
+        return (False, None, 'URL không hợp lệ: phải là chuỗi không rỗng')
+    
+    # Check length (prevent buffer overflow)
+    if len(url) > 2048:
+        return (False, None, 'URL quá dài (tối đa 2048 ký tự)')
+    
+    # ✅ SECURITY: Only allow Udemy URLs
+    if 'udemy.com' not in url.lower():
+        return (False, None, 'Chỉ chấp nhận URL từ Udemy (udemy.com)')
+    
+    # ✅ SECURITY: Sanitize URL - remove dangerous characters
+    # Remove any shell metacharacters that could be used for injection
+    dangerous_chars = [';', '&', '|', '`', '$', '(', ')', '<', '>', '\n', '\r', '\t']
+    sanitized = url.strip()
+    
+    for char in dangerous_chars:
+        if char in sanitized:
+            return (False, None, f'URL chứa ký tự không hợp lệ: {char}')
+    
+    # Validate URL format using urllib.parse
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(sanitized)
+        
+        # Must have valid scheme (http/https)
+        if parsed.scheme not in ['http', 'https']:
+            return (False, None, 'URL phải bắt đầu bằng http:// hoặc https://')
+        
+        # Must have netloc (domain)
+        if not parsed.netloc:
+            return (False, None, 'URL không hợp lệ: thiếu domain')
+        
+        # Ensure it's a Udemy domain
+        if 'udemy.com' not in parsed.netloc.lower():
+            return (False, None, 'Chỉ chấp nhận URL từ Udemy (udemy.com)')
+        
+        return (True, sanitized, None)
+    except Exception as e:
+        return (False, None, f'Lỗi validate URL: {str(e)}')
+
+def output_error_json(task_id, error_code, error_message, error_details=None):
+    """
+    ✅ SECURITY: Output error in JSON format to stderr so Node.js can parse it
+    This ensures errors are properly logged and tracked
+    
+    Args:
+        task_id (int): Task ID
+        error_code (str): Error code (e.g., 'VALIDATION_ERROR', 'TIMEOUT_ERROR')
+        error_message (str): Human-readable error message
+        error_details (dict): Additional error details
+    """
+    error_output = {
+        'error': True,
+        'task_id': task_id,
+        'error_code': error_code,
+        'error_message': error_message,
+        'timestamp': datetime.now().isoformat(),
+        'details': error_details or {}
+    }
+    
+    # Write to stderr in JSON format (Node.js can read this)
+    print(json.dumps(error_output), file=sys.stderr, flush=True)
+
 def process_download(task_data):
     """
     Main function to process a download task
     ✅ IMPROVED: Task isolation + Smart retry with resume capability + Enrollment check
+    ✅ SECURITY: Input validation + JSON error output + Proper timeout handling
     
     Args:
         task_data (dict): Job data from Redis queue
@@ -346,14 +453,53 @@ def process_download(task_data):
     log(f"[*] URL: {course_url}")
     log("="*60)
     
-    # Validate inputs
-    if not all([task_id, email, course_url]):
-        log("[ERROR] Missing required job data")
+    # ✅ SECURITY: Validate inputs with type checking
+    if not task_id:
+        error_msg = 'Missing required field: taskId'
+        log(f"[ERROR] {error_msg}")
+        output_error_json(None, 'VALIDATION_ERROR', error_msg)
         return {
             'success': False,
-            'error': 'Missing required job data',
+            'error': error_msg,
+            'taskId': None
+        }
+    
+    if not email or not isinstance(email, str) or len(email) > 255:
+        error_msg = 'Missing or invalid email'
+        log(f"[ERROR] {error_msg}")
+        output_error_json(task_id, 'VALIDATION_ERROR', error_msg)
+        return {
+            'success': False,
+            'error': error_msg,
             'taskId': task_id
         }
+    
+    if not course_url:
+        error_msg = 'Missing required field: courseUrl'
+        log(f"[ERROR] {error_msg}")
+        output_error_json(task_id, 'VALIDATION_ERROR', error_msg)
+        return {
+            'success': False,
+            'error': error_msg,
+            'taskId': task_id
+        }
+    
+    # ✅ SECURITY: Validate and sanitize URL to prevent command injection
+    is_valid, sanitized_url, url_error = validate_and_sanitize_url(course_url)
+    if not is_valid:
+        error_msg = f'Invalid URL: {url_error}'
+        log(f"[ERROR] {error_msg}")
+        output_error_json(task_id, 'VALIDATION_ERROR', error_msg, {'original_url': course_url})
+        # Update task status to failed
+        update_task_status(task_id, 'failed', error_msg)
+        return {
+            'success': False,
+            'error': error_msg,
+            'taskId': task_id
+        }
+    
+    # Use sanitized URL for processing
+    course_url = sanitized_url
     
     # ✅ CRITICAL FIX: Check enrollment status before downloading
     log(f"[ENROLL CHECK] Verifying enrollment status for task {task_id}...")
@@ -431,10 +577,12 @@ def process_download(task_data):
                          percent=progress_percent, 
                          current_file=f"Download attempt {attempt}/{MAX_RETRIES}")
             
-            # ✅ FIX: Download into task-specific directory with bearer token
+            # ✅ SECURITY: Download into task-specific directory with bearer token
+            # ✅ SECURITY: Use subprocess with array (not shell=True) to prevent injection
+            # ✅ SECURITY: course_url is already validated and sanitized above
             cmd = [
                 sys.executable, "main.py",
-                "-c", course_url,
+                "-c", course_url,  # ← Already validated and sanitized
                 "-b", UDEMY_TOKEN,  # ← FIXED: Add bearer token for authentication
                 "-o", task_sandbox,  # ← Changed from STAGING_DIR
                 "-q", "720",
@@ -445,8 +593,11 @@ def process_download(task_data):
                 "--continue-lecture-numbers"
             ]
             
-            # Run download process
-            log(f"[DOWNLOAD] Command: {' '.join(cmd)}")
+            # ✅ SECURITY: Log command without token (for security)
+            cmd_safe = cmd.copy()
+            if len(cmd_safe) > 3 and cmd_safe[2] == "-b":
+                cmd_safe[3] = "***REDACTED***"
+            log(f"[DOWNLOAD] Command: {' '.join(cmd_safe)}")
             
             # ✅ FIX: Redirect stdout/stderr to task log file for progress parsing
             task_log_dir = os.path.join(os.path.dirname(__file__), '../logs/tasks')
@@ -473,27 +624,85 @@ def process_download(task_data):
                 header = f"\n{'='*60}\n[{datetime.now().isoformat()}] Starting download for task {task_id}\nCommand: {' '.join(cmd)}\n{'='*60}\n"
                 tee.write(header)
                 
-                # ✅ FIX: Run subprocess with output duplicated to both stdout and task log file
-                # Use subprocess.run() which supports timeout natively
+                # ✅ SECURITY: Run subprocess with output duplicated to both stdout and task log file
+                # ✅ SECURITY: Use subprocess.run() with timeout and proper error handling
+                # ✅ SECURITY: Process is killed automatically on timeout
+                process = None
                 try:
-                    result = subprocess.run(
+                    process = subprocess.Popen(
                         cmd,
                         stdout=tee,  # TeeWriter will duplicate to both stdout and file
                         stderr=subprocess.STDOUT,  # Merge stderr to stdout
                         text=True,
-                        timeout=DOWNLOAD_TIMEOUT,
-                        check=True,
                         cwd=os.path.dirname(__file__)  # Run from udemy_dl directory
                     )
-                except subprocess.TimeoutExpired as e:
-                    log(f"[TIMEOUT] Download exceeded {DOWNLOAD_TIMEOUT}s timeout")
-                    raise
+                    
+                    # Wait for process with timeout
+                    try:
+                        return_code = process.wait(timeout=DOWNLOAD_TIMEOUT)
+                        
+                        if return_code != 0:
+                            error_msg = f"Process failed with exit code {return_code}"
+                            log(f"[ERROR] {error_msg}")
+                            output_error_json(task_id, 'PROCESS_ERROR', error_msg, {
+                                'exit_code': return_code,
+                                'command': ' '.join(cmd_safe)
+                            })
+                            raise subprocess.CalledProcessError(return_code, cmd)
+                    
+                    except subprocess.TimeoutExpired:
+                        # ✅ SECURITY: Kill process on timeout to prevent resource leaks
+                        log(f"[TIMEOUT] Download exceeded {DOWNLOAD_TIMEOUT}s timeout, killing process...")
+                        output_error_json(task_id, 'TIMEOUT_ERROR', 
+                                        f'Download exceeded {DOWNLOAD_TIMEOUT}s timeout', {
+                                            'timeout_seconds': DOWNLOAD_TIMEOUT
+                                        })
+                        
+                        # ✅ SECURITY: Force kill process and its children
+                        try:
+                            process.kill()
+                            process.wait(timeout=5)
+                        except:
+                            try:
+                                # Kill process group to ensure all child processes are terminated
+                                if hasattr(os, 'getpgid') and hasattr(os, 'killpg'):
+                                    os.killpg(os.getpgid(process.pid), signal.SIGKILL)
+                                else:
+                                    # Fallback for Windows
+                                    process.kill()
+                            except:
+                                pass
+                        
+                        raise subprocess.TimeoutExpired(cmd, DOWNLOAD_TIMEOUT)
+                    
                 except subprocess.CalledProcessError as e:
-                    log(f"[ERROR] Process failed with exit code {e.returncode}")
+                    error_msg = f"Process failed with exit code {e.returncode}"
+                    log(f"[ERROR] {error_msg}")
+                    output_error_json(task_id, 'PROCESS_ERROR', error_msg, {
+                        'exit_code': e.returncode
+                    })
+                    raise
+                except subprocess.TimeoutExpired:
+                    # Already handled above, re-raise
                     raise
                 except Exception as e:
-                    log(f"[ERROR] Subprocess error: {e}")
+                    error_msg = f"Subprocess error: {str(e)}"
+                    log(f"[ERROR] {error_msg}")
+                    output_error_json(task_id, 'SUBPROCESS_ERROR', error_msg, {
+                        'exception_type': type(e).__name__
+                    })
                     raise
+                finally:
+                    # ✅ SECURITY: Ensure process is terminated
+                    if process and process.poll() is None:
+                        try:
+                            process.terminate()
+                            process.wait(timeout=5)
+                        except:
+                            try:
+                                process.kill()
+                            except:
+                                pass
             
             # ✅ EMIT: Download completed
             emit_progress(task_id, order_id, percent=70, current_file="Download completed, preparing upload...")
@@ -606,24 +815,30 @@ def process_download(task_data):
         
         # ✅ UNIFIED LOGGER: Log download completed
         if order_id:
-            log_progress(task_id, order_id, 100, "Task completed successfully!", {
+            log_progress(task_id, order_id, 100, "Upload completed, waiting for webhook confirmation...", {
                 'duration': download_duration,
                 'folderName': os.path.basename(final_folder)
             })
         
-        # Update database to 'completed'
-        update_task_status(task_id, 'completed')
-        emit_status_change(task_id, order_id, 'completed', 'uploading', 'Task completed successfully')
+        # ✅ FIX: DO NOT update status to 'completed' here
+        # Status should only be updated by webhook after drive_link is confirmed
+        # This prevents tasks from being marked 'completed' without drive_link
         
         # Notify Node.js to update drive_url and send email
         log(f"[WEBHOOK] Calling Node.js webhook...")
         webhook_success = notify_node_webhook(task_id, final_folder)
         
-        # ✅ ONLY clean if EVERYTHING succeeded (upload + webhook)
+        # ✅ Handle webhook result
         if webhook_success:
+            # Webhook succeeded - it will update status to 'completed' with drive_link
             clean_staging(task_id)
             log("[CLEANUP] Task sandbox removed (all steps completed)")
+            emit_status_change(task_id, order_id, 'completed', 'uploading', 'Task completed successfully')
         else:
+            # Webhook failed - rollback to 'enrolled' status so task can be retried
+            log("[WEBHOOK FAIL] Webhook call failed, rolling back status to 'enrolled' for retry")
+            update_task_status(task_id, 'enrolled', 'Webhook call failed after upload. Task can be retried.')
+            emit_status_change(task_id, order_id, 'enrolled', 'uploading', 'Webhook failed, task will be retried')
             log("[KEEP] Webhook failed, keeping files for manual inspection")
         
         log("[SUCCESS] Task completed successfully")
@@ -810,7 +1025,24 @@ if __name__ == "__main__":
         # Fallback for direct execution
         worker_id = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     
+    # ✅ SECURITY: Wrap main entry point in try-except to prevent crashes
     try:
         start_worker(worker_id)
     except KeyboardInterrupt:
-        print("\nWorker stopped by user.")
+        log("\n[STOP] Worker stopped by user (SIGINT)")
+        output_error_json(None, 'USER_INTERRUPT', 'Worker stopped by user')
+        sys.exit(0)
+    except Exception as e:
+        # ✅ SECURITY: Log unhandled exceptions to stderr in JSON format
+        error_msg = f"Unhandled exception in worker: {str(e)}"
+        error_trace = traceback.format_exc()
+        
+        log(f"[CRITICAL] {error_msg}")
+        log(f"[CRITICAL] Traceback:\n{error_trace}")
+        
+        output_error_json(None, 'UNHANDLED_EXCEPTION', error_msg, {
+            'exception_type': type(e).__name__,
+            'traceback': error_trace
+        })
+        
+        sys.exit(1)

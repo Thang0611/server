@@ -14,6 +14,13 @@ const { AppError } = require('./errorHandler.middleware');
  */
 const verifyToken = (req, res, next) => {
   try {
+    // Log incoming request for debugging
+    Logger.info('[Auth] Incoming request', {
+      method: req.method,
+      path: req.path,
+      hasAuthHeader: !!req.headers.authorization
+    });
+
     // Get token from Authorization header
     const authHeader = req.headers.authorization;
 
@@ -73,7 +80,10 @@ const verifyToken = (req, res, next) => {
     };
 
     // Log authenticated request (optional, for debugging)
-    Logger.debug(`Authenticated request from user: ${req.user.email} (${req.user.role})`);
+    Logger.info(`[Auth] Authenticated request from user: ${req.user.email} (${req.user.role})`, {
+      method: req.method,
+      path: req.path
+    });
 
     next();
   } catch (error) {
@@ -90,7 +100,18 @@ const verifyToken = (req, res, next) => {
  * Must be used after verifyToken middleware
  */
 const verifyAdmin = (req, res, next) => {
+  Logger.info('[Auth] Verifying admin access', {
+    method: req.method,
+    path: req.path,
+    hasUser: !!req.user,
+    userRole: req.user?.role
+  });
+
   if (!req.user) {
+    Logger.warn('[Auth] Admin verification failed: No user in request', {
+      method: req.method,
+      path: req.path
+    });
     return res.status(401).json({
       success: false,
       error: 'Unauthorized. Please authenticate first.',
@@ -98,12 +119,21 @@ const verifyAdmin = (req, res, next) => {
   }
 
   if (req.user.role !== 'admin') {
-    Logger.warn(`Unauthorized access attempt by user: ${req.user.email} (${req.user.role})`);
+    Logger.warn(`[Auth] Unauthorized access attempt by user: ${req.user.email} (${req.user.role})`, {
+      method: req.method,
+      path: req.path
+    });
     return res.status(403).json({
       success: false,
       error: 'Forbidden. Admin access required.',
     });
   }
+
+  Logger.info('[Auth] Admin access granted', {
+    method: req.method,
+    path: req.path,
+    userEmail: req.user.email
+  });
 
   next();
 };

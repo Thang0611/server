@@ -1,6 +1,6 @@
 # 📚 Documentation Index
 
-This folder contains all documentation for the KhoaHocGiaRe.info project.
+This folder contains all documentation for the GetCourses.info project.
 
 ---
 
@@ -127,8 +127,8 @@ Latest deployment: **2026-01-12**
 ## 🔗 Quick Links
 
 **System Status:**
-- Frontend: http://khoahocgiare.info
-- API: http://api.khoahocgiare.info
+- Frontend: http://getcourses.net
+- API: http://api.getcourses.net
 
 **Admin Tools:**
 - PM2 Dashboard: `pm2 monit`

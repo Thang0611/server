@@ -40,3 +40,16 @@
 [2026-01-17 10:28:03] [INFO] [EMAIL_SENT] [OrderId: 36] [To: nguyenhuuthanga3@gmail.com] [Type: completion] {"orderId":36,"email":"nguyenhuuthanga3@gmail.com","emailType":"completion"}
 [2026-01-17 10:28:04] [INFO] [EMAIL_SENT] [OrderId: 36] [To: nguyenhuuthanga3@gmail.com] [Type: completion] {"orderId":36,"email":"nguyenhuuthanga3@gmail.com","emailType":"completion"}
 [2026-01-17 10:56:15] [INFO] [EMAIL_SENT] [OrderId: 36] [To: nguyenhuuthanga3@gmail.com] [Type: completion] {"orderId":36,"email":"nguyenhuuthanga3@gmail.com","emailType":"completion"}
+[2026-01-17 14:12:58] [INFO] [ORDER_CREATED] [OrderId: 37] [Email: downloadudemyfull@gmail.com] [Total: 50000] [Status: pending] [GetInfo: 1/1 Success] {"orderId":37,"email":"downloadudemyfull@gmail.com","totalAmount":50000,"paymentStatus":"pending","validationDetails":{"successCount":1,"totalCount":1,"failedUrls":[]}}
+[2026-01-17 14:13:13] [INFO] [PAYMENT_RECEIVED] [OrderId: 37] [Amount: 50000] [Method: TPBank] {"orderId":37,"amount":50000,"paymentMethod":"TPBank"}
+[2026-01-17 14:13:16] [INFO] [EMAIL_SENT] [OrderId: 37] [To: downloadudemyfull@gmail.com] [Type: payment_success] {"orderId":37,"email":"downloadudemyfull@gmail.com","emailType":"payment_success"}
+[2026-01-17 14:13:19] [INFO] [ENROLL_SUCCESS] [OrderId: 37] [TaskId: 59] [Email: downloadudemyfull@gmail.com] {"orderId":37,"taskId":59,"email":"downloadudemyfull@gmail.com","courseUrl":"https://samsungu.udemy.com/course/java-tutorial/"}
+[2026-01-17 14:13:21] [INFO] [ENROLL_SUCCESS] [OrderId: 37] [TaskId: 59] [Email: downloadudemyfull@gmail.com] {"orderId":37,"taskId":59,"email":"downloadudemyfull@gmail.com","courseUrl":"https://samsungu.udemy.com/course/java-tutorial/"}
+[2026-01-17 14:23:26] [INFO] [UPLOAD_SUCCESS] [TaskId: 59] [DriveLink: Folder: java-tutorial] {"taskId":59,"driveLink":"Folder: java-tutorial","folderName":"java-tutorial","orderId":37}
+[2026-01-17 14:23:26] [INFO] [DOWNLOAD_SUCCESS] [TaskId: 59] [Duration: 600s] {"taskId":59,"duration":600,"folderName":"java-tutorial","orderId":37}
+[2026-01-17 14:23:30] [INFO] [UPLOAD_SUCCESS] [TaskId: 59] [DriveLink: https://drive.google.com/drive/folders/1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r] {"taskId":59,"driveLink":"https://drive.google.com/drive/folders/1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","folderName":"java-tutorial","orderId":37}
+[2026-01-17 14:23:31] [INFO] [UPLOAD_SUCCESS] [TaskId: 59] [DriveLink: Folder: java-tutorial] {"taskId":59,"driveLink":"Folder: java-tutorial","folderName":"java-tutorial","orderId":37}
+[2026-01-17 14:23:31] [INFO] [DOWNLOAD_SUCCESS] [TaskId: 59] [Duration: 607s] {"taskId":59,"duration":607,"folderName":"java-tutorial","orderId":37}
+[2026-01-17 14:23:32] [INFO] [EMAIL_SENT] [OrderId: 37] [To: downloadudemyfull@gmail.com] [Type: completion] {"orderId":37,"email":"downloadudemyfull@gmail.com","emailType":"completion"}
+[2026-01-17 14:23:35] [INFO] [UPLOAD_SUCCESS] [TaskId: 59] [DriveLink: https://drive.google.com/drive/folders/1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r] {"taskId":59,"driveLink":"https://drive.google.com/drive/folders/1lYg4QaeSd-sKuS0wzi-a4gnJFdt0eR2r","folderName":"java-tutorial","orderId":37}
+[2026-01-17 14:23:36] [INFO] [EMAIL_SENT] [OrderId: 37] [To: downloadudemyfull@gmail.com] [Type: completion] {"orderId":37,"email":"downloadudemyfull@gmail.com","emailType":"completion"}

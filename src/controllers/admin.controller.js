@@ -673,6 +673,8 @@ const resendOrderEmail = asyncHandler(async (req, res) => {
 const retryOrderDownload = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
+  Logger.info('[Admin] Retry download triggered', { orderId: id });
+
   // Step 1: Get order details
   const order = await Order.findOne({
     where: { 

@@ -1,8 +1,8 @@
 {
 	"info": {
 		"_postman_id": "khoahocgiare-api-collection",
-		"name": "KhoaHocGiaRe API",
-		"description": "Complete API collection for KhoaHocGiaRe backend services",
+		"name": "GetCourses API",
+		"description": "Complete API collection for GetCourses.net backend services",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -503,7 +503,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "https://api.khoahocgiare.info",
+			"value": "https://api.getcourses.net",
 			"type": "string"
 		},
 		{

@@ -343,7 +343,17 @@ const recoverOrderTasks = async (orderId) => {
     }
 
     // Get queue jobs
-    const queueJobs = await getAllJobs();
+    let queueJobs = [];
+    try {
+      queueJobs = await getAllJobs();
+      Logger.info('[TaskRecovery] Found jobs in queue for order recovery', { 
+        orderId, 
+        count: queueJobs.length 
+      });
+    } catch (error) {
+      Logger.warn('[TaskRecovery] Failed to get queue jobs, will recover all stuck tasks', error, { orderId });
+      // Continue anyway - worst case we re-queue tasks that are already queued
+    }
 
     // Filter stuck tasks
     const stuckTasks = order.tasks.filter(task => 

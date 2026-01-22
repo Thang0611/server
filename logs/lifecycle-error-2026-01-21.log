@@ -1,0 +1,1 @@
+[2026-01-21 22:26:28] [ERROR] [DOWNLOAD_ERROR] [TaskId: 112] [Reason: Download or upload failed after retries] {"taskId":112,"reason":"Download or upload failed after retries","orderId":77,"retriesAttempted":3,"duration":5441,"task_id":112,"order_id":77,"course_url":"https://samsungu.udemy.com/course/machinelearning/","retries_attempted":3}

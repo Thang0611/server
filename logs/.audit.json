@@ -1,0 +1,130 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/root/project/server/logs/.audit.json",
+    "files": [
+        {
+            "date": 1768633660275,
+            "name": "/root/project/server/logs/combined-2026-01-17.log",
+            "hash": "218a5c0f4d43f8976bd64468e5320608048f20c569e4db8bbb255d2cb1acac49"
+        },
+        {
+            "date": 1768633660281,
+            "name": "/root/project/server/logs/error-2026-01-17.log",
+            "hash": "30f1798f2728a7da07cc23529a1c8ecef9e840045dd32102d28d0d505cb21513"
+        },
+        {
+            "date": 1768633660285,
+            "name": "/root/project/server/logs/exceptions-2026-01-17.log",
+            "hash": "5f36ab66e7e1586f9dacb025f929c9230b56f06ebf4147276ea781faf21b79f4"
+        },
+        {
+            "date": 1768633660287,
+            "name": "/root/project/server/logs/rejections-2026-01-17.log",
+            "hash": "bca980d3e381bd2acf73bed16960d74a78bf8218734e5e430b4f6f2482a20471"
+        },
+        {
+            "date": 1768673970540,
+            "name": "/root/project/server/logs/combined-2026-01-18.log",
+            "hash": "a556b958422548c038a82e57405ae4e02a77c61dfc27a170f8b71b1515f67c5f"
+        },
+        {
+            "date": 1768673973688,
+            "name": "/root/project/server/logs/error-2026-01-18.log",
+            "hash": "6a28c7f7ac3896588dc929ce2f3d8c711eec2e10c392b7d7f444e49dfc2d0220"
+        },
+        {
+            "date": 1768673973695,
+            "name": "/root/project/server/logs/exceptions-2026-01-18.log",
+            "hash": "bc0464686d3d3fc0b1a05d1626b994cdc3706bbfc661d9f05e27a8e365efb6f6"
+        },
+        {
+            "date": 1768673973696,
+            "name": "/root/project/server/logs/rejections-2026-01-18.log",
+            "hash": "b35c647156061b49225fc4f3ff861f47effdbca462ea775ecfab85ef85325979"
+        },
+        {
+            "date": 1768755684764,
+            "name": "/root/project/server/logs/combined-2026-01-19.log",
+            "hash": "8e25d2dd7222eb6461155dfa824c46af82d48875bc50facb37fa395a73c83add"
+        },
+        {
+            "date": 1768756887807,
+            "name": "/root/project/server/logs/error-2026-01-19.log",
+            "hash": "bee6e7f4221505488e6c2c23a91fca872dbbad4967ff288ec18b93ee36b27a0e"
+        },
+        {
+            "date": 1768756887810,
+            "name": "/root/project/server/logs/exceptions-2026-01-19.log",
+            "hash": "19a6911b4a1cf2f4c6c14457ceda324c6937f380bc61d0957e638ebf25ab26e8"
+        },
+        {
+            "date": 1768756887811,
+            "name": "/root/project/server/logs/rejections-2026-01-19.log",
+            "hash": "613193664a87a0eb44bce5deafe0c20c737ccc6b24f477dbe4eaa2c1abba2c85"
+        },
+        {
+            "date": 1768844854834,
+            "name": "/root/project/server/logs/combined-2026-01-20.log",
+            "hash": "2230441a3e1968efbe98cc1d2bca3d033462b70dd80f29dbcd570dd2a6a51c70"
+        },
+        {
+            "date": 1768927251839,
+            "name": "/root/project/server/logs/error-2026-01-20.log",
+            "hash": "171de2a6d6a4d79455d78b492a577eba096c56bd803c88a3d5d5322b1afc9ece"
+        },
+        {
+            "date": 1768927251842,
+            "name": "/root/project/server/logs/exceptions-2026-01-20.log",
+            "hash": "df8879a2850ca525ca02bedbae05993c98d8b59cadf43bab8fbb46bf586a9134"
+        },
+        {
+            "date": 1768927251843,
+            "name": "/root/project/server/logs/rejections-2026-01-20.log",
+            "hash": "754a64824c12b27668248fda6d176f26db8c4c07845ec8011759b3e368033f3b"
+        },
+        {
+            "date": 1768928403430,
+            "name": "/root/project/server/logs/combined-2026-01-21.log",
+            "hash": "e756f410ebeb21f4cac87ce06da3616b894aadec370ddd09699690ee99f043f9"
+        },
+        {
+            "date": 1768932469187,
+            "name": "/root/project/server/logs/error-2026-01-21.log",
+            "hash": "06d72450698c96f6a90785f05f3479ad76e0da8ffe661da27d613e5f9d112fb7"
+        },
+        {
+            "date": 1768932469210,
+            "name": "/root/project/server/logs/exceptions-2026-01-21.log",
+            "hash": "40e5752c55e6067eab16dc96d183712ad2ff730f1b7638845036d418908b7612"
+        },
+        {
+            "date": 1768932469211,
+            "name": "/root/project/server/logs/rejections-2026-01-21.log",
+            "hash": "91b748c68ca836bef2732cb93ca98a67bf0cdbe55774ee2123812c7ec4e6ba32"
+        },
+        {
+            "date": 1769014817558,
+            "name": "/root/project/server/logs/combined-2026-01-22.log",
+            "hash": "fd324a8c08cd25d6903c741cf046c2ed4a8a8a7f0db55e33fb640f0e51983235"
+        },
+        {
+            "date": 1769065162870,
+            "name": "/root/project/server/logs/error-2026-01-22.log",
+            "hash": "68b6dae5d843173848e1a5f6a0a5e317382d7f6f5915da822b49e64f0c49d2f4"
+        },
+        {
+            "date": 1769065162883,
+            "name": "/root/project/server/logs/exceptions-2026-01-22.log",
+            "hash": "5b8e91016110e775f6c9d7b403b7274214776f290a13252d91d3fbb1e8a87b06"
+        },
+        {
+            "date": 1769065162901,
+            "name": "/root/project/server/logs/rejections-2026-01-22.log",
+            "hash": "1111b88e4ab4a5e7724ca6cafc59c28780deea5f2b1ba0d889856dd89927efc1"
+        }
+    ],
+    "hashType": "sha256"
+}

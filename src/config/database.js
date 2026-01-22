@@ -1,5 +1,21 @@
 const { Sequelize } = require('sequelize');
-require('dotenv').config();
+const path = require('path');
+const fs = require('fs');
+
+// Load environment variables
+// Priority: .env.development (if NODE_ENV=development) > .env
+const nodeEnv = process.env.NODE_ENV || 'development';
+const envFile = nodeEnv === 'development' 
+    ? path.join(__dirname, '../../.env.development')
+    : path.join(__dirname, '../../.env');
+
+// Load .env.development for development, .env for production
+if (fs.existsSync(envFile)) {
+    require('dotenv').config({ path: envFile });
+} else {
+    // Fallback to .env if .env.development doesn't exist
+    require('dotenv').config();
+}
 
 const sequelize = new Sequelize(
     process.env.DB_NAME,

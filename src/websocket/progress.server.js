@@ -20,10 +20,10 @@ const initializeWebSocket = (httpServer) => {
   // Get allowed origins from environment
   const allowedOrigins = [
     process.env.FRONTEND_URL,
-    'https://khoahocgiare.info',
-    'http://khoahocgiare.info',
-    'https://www.khoahocgiare.info',
-    'http://www.khoahocgiare.info'
+    'https://getcourses.net',
+    'http://getcourses.net',
+    'https://www.getcourses.net',
+    'http://www.getcourses.net'
   ].filter(Boolean);
 
   io = new Server(httpServer, {
