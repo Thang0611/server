@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Development - Get Course Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196F3;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 100px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .result pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .success {
+            border-left: 4px solid #4CAF50;
+        }
+        .error {
+            border-left: 4px solid #f44336;
+            background: #ffebee;
+        }
+        .example {
+            background: #fff3e0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test API Development Mode</h1>
+        
+        <div class="info">
+            <strong>📋 Thông tin:</strong><br>
+            • API Endpoint: <code>POST /api/v1/get-course-info</code><br>
+            • Development Server: <code>http://localhost:3001</code><br>
+            • Method: <strong>POST</strong> (không phải GET)<br>
+            • Content-Type: <code>application/json</code>
+        </div>
+
+        <form id="apiForm">
+            <label for="urls">Course URLs (JSON Array):</label>
+            <textarea id="urls" name="urls" placeholder='["https://www.udemy.com/course/example/"]' required>["https://www.udemy.com/course/test/"]</textarea>
+            
+            <div class="example">
+                <strong>Ví dụ:</strong><br>
+                <code>["https://www.udemy.com/course/example/"]</code><br>
+                <code>["https://www.udemy.com/course/example/", "https://www.udemy.com/course/another/"]</code>
+            </div>
+
+            <button type="submit" id="submitBtn">🚀 Test API</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;">
+            <h3>Kết quả:</h3>
+            <pre id="resultContent"></pre>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('apiForm');
+        const resultDiv = document.getElementById('result');
+        const resultContent = document.getElementById('resultContent');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Đang gửi request...';
+            resultDiv.style.display = 'none';
+
+            try {
+                // Parse URLs from textarea
+                const urlsText = document.getElementById('urls').value.trim();
+                let urls;
+                
+                try {
+                    urls = JSON.parse(urlsText);
+                    if (!Array.isArray(urls)) {
+                        throw new Error('URLs must be an array');
+                    }
+                } catch (parseError) {
+                    throw new Error('Invalid JSON format. Please provide a valid JSON array.');
+                }
+
+                // Make POST request
+                const response = await fetch('http://localhost:3001/api/v1/get-course-info', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ urls })
+                });
+
+                const data = await response.json();
+                
+                // Display result
+                resultDiv.style.display = 'block';
+                resultDiv.className = response.ok ? 'result success' : 'result error';
+                resultContent.textContent = JSON.stringify(data, null, 2);
+                
+            } catch (error) {
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result error';
+                resultContent.textContent = `Error: ${error.message}\n\n${error.stack || ''}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '🚀 Test API';
+            }
+        });
+    </script>
+</body>
+</html>

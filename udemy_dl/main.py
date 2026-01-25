@@ -722,7 +722,7 @@ class Udemy:
         return _temp
 
     def _extract_m3u8(self, url):
-        """extracts m3u8 streams"""
+        """extracts m3u8 streams with retry logic for 503/504 errors"""
         asset_id_re = re.compile(r"assets/(?P<id>\d+)/")
         _temp = []
 
@@ -737,51 +737,137 @@ class Udemy:
 
         m3u8_path = Path(temp_path, f"index_{asset_id}.m3u8")
 
-        try:
-            r = self.session._get(url)
-            r.raise_for_status()
-            raw_data = r.text
+        # ✅ FIX: Retry logic for m3u8 fetching (503/504 errors from CDN)
+        max_retries = 5
+        for attempt in range(max_retries):
+            try:
+                r = self.session._get(url)
+                if r is None:
+                    if attempt < max_retries - 1:
+                        delay = min(2 ** attempt, 30)
+                        logger.warning(f"m3u8 response is None, retrying in {delay}s (attempt {attempt + 1}/{max_retries})...")
+                        time.sleep(delay)
+                        continue
+                    else:
+                        logger.error(f"Failed to fetch m3u8 after {max_retries} retries (response is None)")
+                        return _temp
+                
+                # ✅ FIX: Check status code before raise_for_status
+                if r.status_code in [503, 504]:
+                    if attempt < max_retries - 1:
+                        delay = min(2 ** attempt, 30)  # Exponential backoff
+                        logger.warning(f"503/504 error fetching m3u8, retrying in {delay}s (attempt {attempt + 1}/{max_retries})...")
+                        time.sleep(delay)
+                        continue
+                    else:
+                        logger.error(f"Failed to fetch m3u8 after {max_retries} retries (status {r.status_code})")
+                        return _temp
+                
+                r.raise_for_status()
+                raw_data = r.text
 
-            # write to temp file for later
-            with open(m3u8_path, "w") as f:
-                f.write(r.text)
-
-            m3u8_object = m3u8.loads(raw_data)
-            playlists = m3u8_object.playlists
-            seen = set()
-            for pl in playlists:
-                resolution = pl.stream_info.resolution
-                codecs = pl.stream_info.codecs
-
-                if not resolution:
-                    continue
-                if not codecs:
-                    continue
-                width, height = resolution
-
-                if height in seen:
-                    continue
-
-                # we need to save the individual playlists to disk also
-                playlist_path = Path(temp_path, f"index_{asset_id}_{width}x{height}.m3u8")
-
-                with open(playlist_path, "w") as f:
-                    r = self.session._get(pl.uri)
-                    r.raise_for_status()
+                # write to temp file for later
+                with open(m3u8_path, "w") as f:
                     f.write(r.text)
 
-                seen.add(height)
-                _temp.append(
-                    {
-                        "type": "hls",
-                        "height": height,
-                        "width": width,
-                        "extension": "mp4",
-                        "download_url": playlist_path.as_uri(),
-                    }
-                )
-        except Exception as error:
-            logger.error(f"Udemy Says : '{error}' while fetching hls streams..")
+                m3u8_object = m3u8.loads(raw_data)
+                playlists = m3u8_object.playlists
+                seen = set()
+                for pl in playlists:
+                    resolution = pl.stream_info.resolution
+                    codecs = pl.stream_info.codecs
+
+                    if not resolution:
+                        continue
+                    if not codecs:
+                        continue
+                    width, height = resolution
+
+                    if height in seen:
+                        continue
+
+                    # we need to save the individual playlists to disk also
+                    playlist_path = Path(temp_path, f"index_{asset_id}_{width}x{height}.m3u8")
+
+                    # ✅ FIX: Retry logic for individual playlist fetching
+                    playlist_fetched = False
+                    for playlist_attempt in range(max_retries):
+                        try:
+                            pl_r = self.session._get(pl.uri)
+                            if pl_r is None:
+                                if playlist_attempt < max_retries - 1:
+                                    delay = min(2 ** playlist_attempt, 30)
+                                    logger.warning(f"Playlist response is None, retrying in {delay}s...")
+                                    time.sleep(delay)
+                                    continue
+                                else:
+                                    logger.error(f"Failed to fetch playlist after {max_retries} retries")
+                                    break
+                            
+                            if pl_r.status_code in [503, 504]:
+                                if playlist_attempt < max_retries - 1:
+                                    delay = min(2 ** playlist_attempt, 30)
+                                    logger.warning(f"503/504 error fetching playlist, retrying in {delay}s...")
+                                    time.sleep(delay)
+                                    continue
+                                else:
+                                    logger.error(f"Failed to fetch playlist after {max_retries} retries")
+                                    break
+                            
+                            pl_r.raise_for_status()
+                            with open(playlist_path, "w") as f:
+                                f.write(pl_r.text)
+                            playlist_fetched = True
+                            break
+                        except requests.exceptions.HTTPError as e:
+                            if e.response and e.response.status_code in [503, 504] and playlist_attempt < max_retries - 1:
+                                delay = min(2 ** playlist_attempt, 30)
+                                logger.warning(f"HTTP {e.response.status_code} error fetching playlist, retrying in {delay}s...")
+                                time.sleep(delay)
+                                continue
+                            raise
+                        except Exception as e:
+                            if playlist_attempt < max_retries - 1:
+                                delay = min(2 ** playlist_attempt, 30)
+                                logger.warning(f"Error fetching playlist: {e}, retrying in {delay}s...")
+                                time.sleep(delay)
+                                continue
+                            raise
+                    
+                    if not playlist_fetched:
+                        continue  # Skip this playlist if failed to fetch
+
+                    seen.add(height)
+                    _temp.append(
+                        {
+                            "type": "hls",
+                            "height": height,
+                            "width": width,
+                            "extension": "mp4",
+                            "download_url": playlist_path.as_uri(),
+                        }
+                    )
+                
+                # ✅ Success, exit retry loop
+                break
+                
+            except requests.exceptions.HTTPError as e:
+                if e.response and e.response.status_code in [503, 504] and attempt < max_retries - 1:
+                    delay = min(2 ** attempt, 30)
+                    logger.warning(f"HTTP {e.response.status_code} error fetching m3u8, retrying in {delay}s (attempt {attempt + 1}/{max_retries})...")
+                    time.sleep(delay)
+                    continue
+                logger.error(f"Udemy Says : '{e}' while fetching hls streams..")
+                return _temp
+            except Exception as error:
+                if attempt < max_retries - 1:
+                    delay = min(2 ** attempt, 30)
+                    logger.warning(f"Error fetching m3u8: {error}, retrying in {delay}s (attempt {attempt + 1}/{max_retries})...")
+                    time.sleep(delay)
+                    continue
+                logger.error(f"Udemy Says : '{error}' while fetching hls streams..")
+                return _temp
+        
         return _temp
 
     def _extract_mpd(self, url):
@@ -912,30 +998,69 @@ class Udemy:
 
             while _next:
                 logger.info(f"> Downloading data page {page + 1}/{est_page_count}")
-                try:
-                    resp = self.session._get(_next)
-                    # ✅ FIX: Check if response is None
-                    if resp is None:
-                        logger.error(f"Failed to fetch page {page + 1}, response is None")
-                        continue
-                    if not resp.ok:
-                        logger.error(f"Failed to fetch page {page + 1}, retrying...")
-                        continue
-                    resp = resp.json()
-                except conn_error as error:
-                    logger.fatal(f"Connection error: {error}")
-                    time.sleep(0.8)
-                    sys.exit(1)
-                except AttributeError as error:
-                    logger.error(f"Response is None on page {page + 1}: {error}")
-                    continue
-                else:
+                page_retry_count = 0
+                max_page_retries = 5  # ✅ FIX: Retry each page up to 5 times
+                page_fetched = False
+                
+                while page_retry_count < max_page_retries and not page_fetched:
+                    try:
+                        resp = self.session._get(_next)
+                        # ✅ FIX: Check if response is None
+                        if resp is None:
+                            page_retry_count += 1
+                            if page_retry_count < max_page_retries:
+                                logger.error(f"Failed to fetch page {page + 1}, response is None. Retrying ({page_retry_count}/{max_page_retries})...")
+                                time.sleep(min(2 ** page_retry_count, 30))  # Exponential backoff
+                                continue
+                            else:
+                                logger.error(f"Failed to fetch page {page + 1} after {max_page_retries} retries, skipping...")
+                                break  # Skip this page and continue
+                        
+                        if not resp.ok:
+                            page_retry_count += 1
+                            if page_retry_count < max_page_retries:
+                                logger.error(f"Failed to fetch page {page + 1}, status {resp.status_code}. Retrying ({page_retry_count}/{max_page_retries})...")
+                                time.sleep(min(2 ** page_retry_count, 30))  # Exponential backoff
+                                continue
+                            else:
+                                logger.error(f"Failed to fetch page {page + 1} after {max_page_retries} retries, skipping...")
+                                break  # Skip this page and continue
+                        
+                        # ✅ FIX: Successfully got response, parse JSON
+                        resp = resp.json()
+                        page_fetched = True
+                        
+                    except conn_error as error:
+                        logger.fatal(f"Connection error on page {page + 1}: {error}")
+                        time.sleep(0.8)
+                        sys.exit(1)
+                    except (AttributeError, ValueError, json.JSONDecodeError) as error:
+                        page_retry_count += 1
+                        if page_retry_count < max_page_retries:
+                            logger.error(f"Error parsing page {page + 1}: {error}. Retrying ({page_retry_count}/{max_page_retries})...")
+                            time.sleep(min(2 ** page_retry_count, 30))  # Exponential backoff
+                            continue
+                        else:
+                            logger.error(f"Failed to parse page {page + 1} after {max_page_retries} retries, skipping...")
+                            break  # Skip this page and continue
+                
+                # ✅ FIX: Only process if page was successfully fetched
+                if page_fetched and resp:
                     _next = resp.get("next")
                     results = resp.get("results")
                     if results and isinstance(results, list):
                         for item in resp["results"]:
                             data["results"].append(item)
                         page = page + 1
+                    else:
+                        # No more results or invalid response, break
+                        logger.warning(f"Page {page + 1} returned no results or invalid format, stopping pagination")
+                        break
+                else:
+                    # Failed to fetch page after retries, stop pagination
+                    logger.error(f"Stopping pagination due to repeated failures on page {page + 1}")
+                    break
+                    
             return data
 
     def _get_subscribed_courses(self, portal_name):
@@ -1210,21 +1335,62 @@ class Session(object):
     #     self._headers["X-Udemy-Authorization"] = "Bearer {}".format(bearer_token)
 
     def _get(self, url, params=None):
-        for i in range(10):
+        # ✅ FIX: Retryable status codes include 502, 503, 504 (Gateway Timeout)
+        # Note: 502 and 503 sometimes return valid responses, so we accept them
+        # But 504 Gateway Timeout should always be retried
+        retryable_status_codes = [502, 503, 504]
+        gateway_timeout_codes = [504]  # Always retry these
+        max_retries = 15  # ✅ FIX: Increased from 10 to 15 for persistent gateway timeouts
+        
+        # ✅ FIX: Dynamic timeout based on URL type
+        # Curriculum pages can be very large and need more time
+        if 'subscriber-curriculum-items' in url or 'curriculum' in url.lower():
+            base_timeout = 240  # 4 minutes for large curriculum pages
+        else:
+            base_timeout = 60  # 1 minute for regular requests
+        
+        for i in range(max_retries):
             try:
-                req = self._session.get(url, cookies=cj, params=params)
-                if req.ok or req.status_code in [502, 503]:
+                # ✅ FIX: Progressive timeout increase for retries (helps with slow servers)
+                # First attempt: base timeout, subsequent attempts: increase by 30s each time (max 5 minutes)
+                request_timeout = min(base_timeout + (i * 30), 300)  # Max 5 minutes
+                
+                req = self._session.get(url, cookies=cj, params=params, timeout=request_timeout)  # ✅ FIX: Progressive timeout
+                # ✅ FIX: Accept 200 OK or 502/503 (sometimes valid), but always retry 504
+                if req.ok:
                     return req
+                if req.status_code in [502, 503]:
+                    # 502/503 might have valid responses, accept them
+                    return req
+                if req.status_code in gateway_timeout_codes:
+                    # 504 Gateway Timeout - always retry
+                    logger.error("Failed request " + url)
+                    logger.error(f"{req.status_code} {req.reason}, retrying (attempt {i + 1}/{max_retries})...")
+                    # Exponential backoff: 1s, 2s, 4s, 8s, 16s (max 30s)
+                    delay = min(2 ** i, 30)
+                    logger.info(f"Waiting {delay}s before retry (exponential backoff)...")
+                    time.sleep(delay)
+                    continue
+                # Other error status codes
                 if not req.ok:
                     logger.error("Failed request " + url)
-                    logger.error(f"{req.status_code} {req.reason}, retrying (attempt {i} )...")
+                    logger.error(f"{req.status_code} {req.reason}, retrying (attempt {i + 1}/{max_retries})...")
+                    # For other errors, use shorter delay
                     time.sleep(0.8)
+            except requests.exceptions.Timeout:
+                next_timeout = min(base_timeout + ((i + 1) * 30), 300) if i < max_retries - 1 else request_timeout
+                logger.error(f"Request timeout ({request_timeout}s) for {url}, retrying (attempt {i + 1}/{max_retries}) with increased timeout ({next_timeout}s)...")
+                if i < max_retries - 1:
+                    delay = min(2 ** i, 30)  # Exponential backoff
+                    logger.info(f"Waiting {delay}s before retry (exponential backoff, next timeout: {next_timeout}s)...")
+                    time.sleep(delay)
             except Exception as e:
                 logger.error(f"Exception during request to {url}: {e}")
-                if i < 9:  # Don't sleep on last attempt
-                    time.sleep(0.8)
+                if i < max_retries - 1:  # Don't sleep on last attempt
+                    delay = min(2 ** i, 30)  # Exponential backoff
+                    time.sleep(delay)
         # ✅ FIX: Return None if all retries failed
-        logger.error(f"All retries failed for {url}")
+        logger.error(f"All {max_retries} retries failed for {url}")
         return None
 
     def _post(self, url, data, redirect=True):
@@ -1809,13 +1975,15 @@ def parse_new(udemy: Udemy, udemy_object: dict):
                 for subtitle in subtitles:
                     lang = subtitle.get("language")
                     if caption_locale == "all":
-                        # Nếu tham số là 'all', chỉ chấp nhận 'en' hoặc 'vi'
+                        # Download both English (en) and Vietnamese (vi) subtitles if available
+                        # If both exist, download both; if only one exists, download that one
                         if lang in ["en", "vi"]:
                             process_caption(subtitle, lecture_title, chapter_dir)
+                            logger.info(f"Downloaded {lang} subtitle for lecture: {lecture_title}")
                     elif lang == caption_locale:
-                        # Nếu chỉ định rõ 1 ngôn ngữ cụ thể (ví dụ -l vi) thì chạy bình thường
+                        # If specific language is requested (e.g., -l vi), download only that
                         process_caption(subtitle, lecture_title, chapter_dir)
-                    # --- KẾT THÚC ĐOẠN SỬA ---
+                        logger.info(f"Downloaded {lang} subtitle for lecture: {lecture_title}")
 
             if dl_assets:
                 assets = parsed_lecture.get("assets")

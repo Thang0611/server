@@ -15,13 +15,22 @@ const Logger = require('../utils/logger.util');
  * @returns {Promise<void>}
  */
 exports.processTask = async (task) => {
+  // Validate task parameter
+  if (!task) {
+    throw new Error('Task parameter is required but was not provided');
+  }
+  
+  if (!task.id) {
+    throw new Error('Task ID is required but was not found in task object');
+  }
+
   // Always reload task from database to ensure we have all fields including email
   // bulkCreate might not return all fields, so we reload to be safe
   let taskWithEmail;
   
   try {
     taskWithEmail = await DownloadTask.findByPk(task.id, {
-      attributes: ['id', 'email', 'course_url', 'status', 'order_id', 'phone_number']
+      attributes: ['id', 'email', 'course_url', 'status', 'order_id', 'phone_number', 'course_type']
     });
     
     if (!taskWithEmail) {
@@ -106,22 +115,37 @@ exports.processTask = async (task) => {
         throw new Error('Email is required for enrollment but not found in task');
       }
 
+      // Pass orderId if available (null for permanent downloads)
       const enrollResults = await enrollService.enrollCourses(
         [taskWithEmail.course_url],
-        taskWithEmail.email
+        taskWithEmail.email,
+        taskWithEmail.order_id || null
       );
       const result = enrollResults[0];
 
-      if (!result || !result.success) {
-        throw new Error(`Enroll thất bại: ${result ? result.message : 'Unknown error'}`);
+      // ✅ CRITICAL: Enrollment MUST succeed before download
+      // No exceptions - both admin and regular downloads require successful enrollment
+      if (!result || !result.success || result.status !== 'enrolled') {
+        const errorMessage = result ? result.message : 'Unknown error';
+        Logger.error('Enrollment failed - download cannot proceed', {
+          taskId: taskWithEmail.id,
+          error: errorMessage,
+          status: result ? result.status : 'unknown',
+          courseType: taskWithEmail.course_type,
+          orderId: taskWithEmail.order_id
+        });
+        throw new Error(`Enroll thất bại: ${errorMessage}`);
       }
 
       Logger.success('Enrollment successful', {
-        taskId: taskWithEmail.id
+        taskId: taskWithEmail.id,
+        courseId: result.courseId,
+        title: result.title
       });
     }
 
-    // Step 2: Update task status to enrolled
+    // Step 2: Update task status to enrolled (only if enrollment succeeded)
+    // ✅ CRITICAL: Only update to 'enrolled' if enrollment actually succeeded
     await DownloadTask.update(
       { status: 'enrolled' },
       {
@@ -132,36 +156,43 @@ exports.processTask = async (task) => {
 
     Logger.success('Task processing completed', { taskId: taskWithEmail.id });
   } catch (error) {
+    // Safely get task ID and other properties
+    const taskId = taskWithEmail?.id || null;
+    const courseUrl = taskWithEmail?.course_url || null;
+    const email = taskWithEmail?.email || null;
+
     Logger.error('Task processing failed', error, {
-      taskId: taskWithEmail?.id || task?.id,
-      courseUrl: taskWithEmail?.course_url || task?.course_url,
-      email: taskWithEmail?.email || task?.email
+      taskId: taskId,
+      courseUrl: courseUrl,
+      email: email
     });
 
-    const taskId = taskWithEmail?.id || task?.id;
-
-    // Update task status to failed
-    try {
-      await DownloadTask.update(
-        {
-          status: 'failed',
-          error_log: error.message
-        },
-        {
-          where: { id: taskId },
-          fields: ['status', 'error_log']
-        }
-      );
-    } catch (updateError) {
-      Logger.error('Failed to update task status', updateError, { taskId });
+    // ✅ CRITICAL: Update task status to failed for ALL downloads (including admin)
+    // Enrollment must succeed before download - no exceptions
+    if (taskId) {
+      try {
+        await DownloadTask.update(
+          {
+            status: 'failed',
+            error_log: error.message
+          },
+          {
+            where: { id: taskId },
+            fields: ['status', 'error_log']
+          }
+        );
+      } catch (updateError) {
+        Logger.error('Failed to update task status', updateError, { taskId });
+      }
     }
 
-    // Send error alert email
-    try {
-      const taskForEmail = taskWithEmail || task;
-      await emailService.sendErrorAlert(taskForEmail, error.message);
-    } catch (emailError) {
-      Logger.error('Failed to send error alert email', emailError, { taskId });
+    // Send error alert email (only if we have task data)
+    if (taskWithEmail) {
+      try {
+        await emailService.sendErrorAlert(taskWithEmail, error.message);
+      } catch (emailError) {
+        Logger.error('Failed to send error alert email', emailError, { taskId });
+      }
     }
   }
 };

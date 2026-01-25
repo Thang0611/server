@@ -7,6 +7,9 @@
 -- Drop existing tables if they exist (in reverse order of dependencies)
 DROP TABLE IF EXISTS order_audit_logs;
 DROP TABLE IF EXISTS download_tasks;
+DROP TABLE IF EXISTS curriculum_lectures;
+DROP TABLE IF EXISTS curriculum_sections;
+DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS orders;
 
 -- ============================================================================
@@ -47,6 +50,10 @@ CREATE TABLE download_tasks (
   drive_link TEXT NULL,
   retry_count INT NOT NULL DEFAULT 0,
   error_log TEXT NULL,
+  course_type ENUM('temporary', 'permanent') NOT NULL DEFAULT 'temporary' 
+    COMMENT 'Loại khóa học: temporary (trang chủ) hoặc permanent (trang courses)',
+  category VARCHAR(255) NULL 
+    COMMENT 'Category của khóa học (Lập trình, Thiết kế, Marketing, etc.)',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   
@@ -54,9 +61,92 @@ CREATE TABLE download_tasks (
   INDEX idx_order_id (order_id),
   INDEX idx_email (email),
   INDEX idx_status (status),
-  INDEX idx_created_at (created_at)
+  INDEX idx_created_at (created_at),
+  INDEX idx_course_url (course_url(255)),
+  INDEX idx_course_type (course_type),
+  INDEX idx_category (category)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 COMMENT='Download tasks - individual courses to download per order';
+
+-- ============================================================================
+-- TABLE: courses
+-- ============================================================================
+CREATE TABLE courses (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  course_url TEXT NOT NULL,
+  title VARCHAR(500) NOT NULL,
+  thumbnail TEXT NULL,
+  instructor VARCHAR(255) NULL,
+  rating DECIMAL(3,2) NULL,
+  students INT UNSIGNED NULL,
+  duration VARCHAR(50) NULL,
+  lectures INT UNSIGNED NULL,
+  category VARCHAR(255) NULL,
+  platform VARCHAR(50) NULL DEFAULT 'Udemy',
+  description TEXT NULL,
+  price DECIMAL(15, 0) NOT NULL DEFAULT 2000,
+  original_price DECIMAL(15, 0) NULL,
+  bestseller BOOLEAN DEFAULT FALSE,
+  drive_link TEXT NULL COMMENT 'Link drive nếu đã download (từ download_tasks)',
+  status ENUM('active', 'inactive') DEFAULT 'active',
+  total_sections INT UNSIGNED NULL COMMENT 'Tổng số sections trong curriculum',
+  total_lectures INT UNSIGNED NULL COMMENT 'Tổng số lectures trong curriculum',
+  total_duration_seconds INT UNSIGNED NULL COMMENT 'Tổng thời lượng curriculum (giây)',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+  UNIQUE KEY unique_course_url (course_url(500)),
+  INDEX idx_category (category),
+  INDEX idx_platform (platform),
+  INDEX idx_status (status),
+  INDEX idx_created_at (created_at),
+  INDEX idx_bestseller (bestseller)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='Danh sách khóa học permanent từ trang courses';
+
+-- ============================================================================
+-- TABLE: curriculum_sections
+-- ============================================================================
+CREATE TABLE curriculum_sections (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  course_id INT UNSIGNED NOT NULL,
+  section_id VARCHAR(100) NULL COMMENT 'ID từ Udemy (có thể là string)',
+  section_index INT UNSIGNED NOT NULL COMMENT 'Thứ tự section trong khóa học',
+  title VARCHAR(500) NOT NULL,
+  lecture_count INT UNSIGNED DEFAULT 0,
+  duration_seconds INT UNSIGNED DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+  FOREIGN KEY (course_id) REFERENCES courses(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  INDEX idx_course_id (course_id),
+  INDEX idx_section_index (section_index),
+  UNIQUE KEY unique_course_section (course_id, section_index)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='Sections trong curriculum của khóa học';
+
+-- ============================================================================
+-- TABLE: curriculum_lectures
+-- ============================================================================
+CREATE TABLE curriculum_lectures (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  section_id INT UNSIGNED NOT NULL,
+  lecture_id VARCHAR(100) NULL COMMENT 'ID từ Udemy (có thể là string)',
+  lecture_index INT UNSIGNED NOT NULL COMMENT 'Thứ tự lecture trong section',
+  title VARCHAR(500) NOT NULL,
+  type VARCHAR(50) NOT NULL DEFAULT 'VIDEO_LECTURE' COMMENT 'VIDEO_LECTURE, ARTICLE_LECTURE, QUIZ, etc.',
+  duration_seconds INT UNSIGNED DEFAULT 0,
+  is_previewable BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+  FOREIGN KEY (section_id) REFERENCES curriculum_sections(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  INDEX idx_section_id (section_id),
+  INDEX idx_lecture_index (lecture_index),
+  INDEX idx_type (type),
+  UNIQUE KEY unique_section_lecture (section_id, lecture_index)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='Lectures trong mỗi section của curriculum';
 
 -- ============================================================================
 -- TABLE: order_audit_logs
@@ -202,11 +292,13 @@ SHOW TABLES;
 -- Show table structures
 DESCRIBE orders;
 DESCRIBE download_tasks;
+DESCRIBE courses;
 DESCRIBE order_audit_logs;
 
 -- Show indexes
 SHOW INDEX FROM orders;
 SHOW INDEX FROM download_tasks;
+SHOW INDEX FROM courses;
 SHOW INDEX FROM order_audit_logs;
 
 SELECT '✅ Database schema created successfully!' AS status;

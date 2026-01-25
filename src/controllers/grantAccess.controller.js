@@ -9,16 +9,16 @@ const Logger = require('../utils/logger.util');
 
 /**
  * Handles grant access request
- * Responds immediately to prevent WordPress timeout, then processes in background
+ * Responds immediately, then processes in background
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
  * @param {Function} next - Express next function
  */
 const grantAccess = asyncHandler(async (req, res, next) => {
-  // Respond immediately to prevent WordPress timeout
+  // Respond immediately to allow async processing
   res.json({
     status: 'received',
-    message: 'Node.js đang xử lý ngầm...'
+    message: 'Đang xử lý cấp quyền...'
   });
 
   const { order_id, email, courses } = req.body;

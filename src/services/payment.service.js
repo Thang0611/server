@@ -13,8 +13,10 @@ const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 const { addDownloadJob } = require('../queues/download.queue');
-const { calculateOrderPrice, getComboUnitPrice, getComboPriceDistribution, pricingConfig } = require('../utils/pricing.util');
+const { calculateOrderPrice, getComboUnitPrice, getComboPriceDistribution, pricingConfig, filterValidCourses } = require('../utils/pricing.util');
 const { sendPaymentSuccessEmail } = require('./email.service');
+const { checkExistingDownload } = require('./checkExistingDownload.service');
+const grantAccessService = require('./grantAccess.service');
 
 /**
  * Generates a sequential order code based on order ID
@@ -43,15 +45,47 @@ const createOrder = async (email, courses) => {
       throw new AppError('Email và danh sách khóa học là bắt buộc', 400);
     }
 
-    // Filter valid courses and calculate total price using pricing utility
-    const { validCourses, validCount, totalPrice } = calculateOrderPrice(courses);
+    // Filter valid courses
+    const validCourses = filterValidCourses(courses);
+    const validCount = validCourses.length;
 
     if (validCourses.length === 0) {
       throw new AppError('Không có khóa học hợp lệ', 400);
     }
 
-    // Use calculated total price
-    const totalAmount = totalPrice;
+    // Calculate total price
+    // If courses have courseId (from courses page), use their prices from database
+    // Otherwise, use dynamic pricing (combo/per-course)
+    const hasCourseIds = validCourses.some(c => c.courseId);
+    let totalAmount;
+    
+    if (hasCourseIds) {
+      // Courses from database - use their prices
+      totalAmount = validCourses.reduce((sum, course) => {
+        const coursePrice = course.price !== undefined && course.price !== null 
+          ? parseFloat(course.price) 
+          : pricingConfig.PRICE_PER_COURSE;
+        return sum + coursePrice;
+      }, 0);
+      
+      Logger.info('Using database prices for courses', {
+        courseCount: validCount,
+        totalAmount,
+        prices: validCourses.map(c => ({
+          courseId: c.courseId,
+          price: c.price || pricingConfig.PRICE_PER_COURSE
+        }))
+      });
+    } else {
+      // URL-based courses - use dynamic pricing
+      const { totalPrice } = calculateOrderPrice(courses);
+      totalAmount = totalPrice;
+      
+      Logger.info('Using dynamic pricing for URL courses', {
+        courseCount: validCount,
+        totalAmount
+      });
+    }
 
     // Check if combo applies and calculate unit price
     const comboUnitPrice = getComboUnitPrice(validCount, totalAmount);
@@ -241,17 +275,26 @@ const createOrder = async (email, courses) => {
     
     const coursesInfo = validCourses.map((course, index) => {
       let coursePrice;
-      if (priceDistribution && priceDistribution.length > index) {
-        // Use distributed price for combo orders
-        coursePrice = priceDistribution[index];
-      } else if (comboUnitPrice !== null) {
-        // Fallback to base unit price if distribution not available
-        coursePrice = comboUnitPrice;
-      } else {
-        // Use course price or default per-course price
+      
+      // If courses have courseId (from database), always use their prices
+      if (hasCourseIds) {
         coursePrice = course.price !== undefined && course.price !== null 
           ? parseFloat(course.price) 
           : pricingConfig.PRICE_PER_COURSE;
+      } else {
+        // URL-based courses - use combo distribution or per-course pricing
+        if (priceDistribution && priceDistribution.length > index) {
+          // Use distributed price for combo orders
+          coursePrice = priceDistribution[index];
+        } else if (comboUnitPrice !== null) {
+          // Fallback to base unit price if distribution not available
+          coursePrice = comboUnitPrice;
+        } else {
+          // Use course price or default per-course price
+          coursePrice = course.price !== undefined && course.price !== null 
+            ? parseFloat(course.price) 
+            : pricingConfig.PRICE_PER_COURSE;
+        }
       }
       
       return {
@@ -476,23 +519,141 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
             order_id: order.id,
             status: 'processing'
           },
-          attributes: ['id', 'email', 'course_url', 'title']
+          attributes: ['id', 'email', 'course_url', 'title', 'course_type', 'category']
         });
 
-        Logger.info('Starting enrollment and queue push', {
+        Logger.info('Processing tasks after payment', {
           orderId: order.id,
-          taskCount: tasks.length,
-          workflow: 'Enroll → Queue → Download'
+          taskCount: tasks.length
         });
 
         // ================================================================
-        // STEP 1: ENROLL ALL COURSES
+        // STEP 0: CHECK EXISTING DOWNLOADS (PERMANENT COURSES ONLY)
+        // ================================================================
+        // Chỉ kiểm tra existing download cho PERMANENT courses
+        // Temporary courses luôn phải download lại
+        const tasksWithDriveLink = [];
+        const tasksNeedDownload = [];
+
+        for (const task of tasks) {
+          const courseType = task.course_type || 'temporary'; // Default to temporary for backward compatibility
+          
+          // Chỉ check existing download cho permanent courses
+          if (courseType === 'permanent') {
+            Logger.info('[Existing Download Check] Checking for existing permanent course', {
+              taskId: task.id,
+              orderId: order.id,
+              courseUrl: task.course_url,
+              email: task.email,
+              courseType
+            });
+
+            const existingTask = await checkExistingDownload(task.course_url, courseType);
+            
+            if (existingTask && existingTask.drive_link) {
+              Logger.info('[Existing Download Found] Permanent course already downloaded', {
+                taskId: task.id,
+                orderId: order.id,
+                courseUrl: task.course_url,
+                existingDriveLink: existingTask.drive_link,
+                existingTaskId: existingTask.id,
+                email: task.email
+              });
+
+              // Khóa học permanent đã được download rồi
+              // Update task với drive_link và grant access ngay
+              try {
+                Logger.info('[Task Update] Updating task with existing drive_link', {
+                  taskId: task.id,
+                  orderId: order.id,
+                  driveLink: existingTask.drive_link,
+                  previousStatus: task.status
+                });
+
+                await task.update({
+                  drive_link: existingTask.drive_link,
+                  status: 'completed'
+                });
+
+                Logger.success('[Task Updated] Task marked as completed with existing drive_link', {
+                  taskId: task.id,
+                  orderId: order.id,
+                  driveLink: existingTask.drive_link,
+                  email: task.email
+                });
+
+                // Grant access ngay lập tức
+                Logger.info('[Grant Access] Starting grant access for existing permanent course', {
+                  taskId: task.id,
+                  orderId: order.id,
+                  email: task.email,
+                  driveLink: existingTask.drive_link,
+                  courseName: task.title || 'Khóa học'
+                });
+
+                const grantResult = await grantAccessService.grantAccess(
+                  order.id.toString(),
+                  task.email,
+                  [{
+                    drive_link: existingTask.drive_link,
+                    course_name: task.title || 'Khóa học'
+                  }]
+                );
+
+                Logger.success('[Grant Access Completed] Access granted and email sent for existing permanent course', {
+                  taskId: task.id,
+                  orderId: order.id,
+                  email: task.email,
+                  driveLink: existingTask.drive_link,
+                  grantSuccess: grantResult.success,
+                  successCount: grantResult.successList?.length || 0,
+                  failedCount: grantResult.failedList?.length || 0
+                });
+
+                tasksWithDriveLink.push(task);
+                continue; // Skip enrollment and download
+              } catch (grantError) {
+                Logger.error('[Grant Access Failed] Failed to grant access to existing download', grantError, {
+                  taskId: task.id,
+                  orderId: order.id,
+                  courseUrl: task.course_url,
+                  email: task.email,
+                  driveLink: existingTask.drive_link,
+                  errorMessage: grantError.message,
+                  errorStack: grantError.stack
+                });
+                // Fall through to download if grant fails
+              }
+            } else {
+              Logger.debug('[Existing Download Not Found] No existing download found for permanent course', {
+                taskId: task.id,
+                orderId: order.id,
+                courseUrl: task.course_url,
+                courseType
+              });
+            }
+          }
+
+          // Khóa học chưa có drive_link hoặc là temporary → cần download
+          tasksNeedDownload.push(task);
+        }
+
+        Logger.info('Task classification after payment', {
+          orderId: order.id,
+          total: tasks.length,
+          withDriveLink: tasksWithDriveLink.length,
+          needDownload: tasksNeedDownload.length
+        });
+
+        // ================================================================
+        // STEP 1: ENROLL COURSES THAT NEED DOWNLOAD
         // ================================================================
         let enrolledCount = 0;
         let enrollFailedCount = 0;
         const enrolledTasks = [];
         
-        for (const task of tasks) {
+        // Chỉ enroll những tasks cần download
+        for (const task of tasksNeedDownload) {
           try {
             Logger.info('Enrolling course', {
               taskId: task.id,

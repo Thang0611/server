@@ -9,12 +9,14 @@ const redis = require('redis');
 const Logger = require('../utils/logger.util');
 
 // Redis client for publishing progress events
+// ✅ Support database separation: REDIS_DB=0 (production), REDIS_DB=1 (development)
 const redisPublisher = redis.createClient({
   socket: {
     host: process.env.REDIS_HOST || 'localhost',
     port: parseInt(process.env.REDIS_PORT || '6379', 10),
   },
   password: process.env.REDIS_PASSWORD || undefined,
+  database: parseInt(process.env.REDIS_DB || '0', 10),
 });
 
 // Redis client for subscribing to progress events
@@ -24,6 +26,7 @@ const redisSubscriber = redis.createClient({
     port: parseInt(process.env.REDIS_PORT || '6379', 10),
   },
   password: process.env.REDIS_PASSWORD || undefined,
+  database: parseInt(process.env.REDIS_DB || '0', 10),
 });
 
 // Connection handlers - with extra safe error handling for node-redis v4
