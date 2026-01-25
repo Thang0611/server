@@ -98,4 +98,19 @@ router.get('/tasks/:id/logs/raw', adminController.getTaskLogsRaw);
  */
 router.get('/dashboard/stats', adminController.getDashboardStats);
 
+/**
+ * @route   POST /api/admin/courses/:id/download
+ * @desc    Trigger download for a course (permanent download)
+ * @access  Admin
+ */
+router.post('/courses/:id/download', adminController.triggerCourseDownload);
+
+/**
+ * @route   GET /api/admin/system/check-cookie
+ * @desc    Check Udemy cookie validity
+ * @access  Admin
+ * @query   skipValidation (optional, boolean) - Skip actual validation, just check file
+ */
+router.get('/system/check-cookie', adminController.checkCookie);
+
 module.exports = router;

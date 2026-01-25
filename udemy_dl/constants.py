@@ -111,7 +111,8 @@ CURRICULUM_ITEMS_PARAMS = {
     "fields[chapter]": "title,object_index",
     "fields[asset]": "title,filename,asset_type,status,is_external,media_license_token,course_is_drmed,media_sources,captions,slides,slide_urls,download_urls,external_url,stream_urls,@min,status,delayed_asset_message,processing_errors,body",
     "caching_intent": True,
-    "page_size": "100",
+    # ✅ OPTIMIZED: Reduced page_size from 100 to 50 to reduce response size and prevent timeouts
+    "page_size": "50",
 }
 
 COURSE_URL_PARAMS = {

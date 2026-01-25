@@ -30,7 +30,9 @@ const normalizeCourses = (inputCourses) => {
     normalizedCourses.push({
       course_url: cleanUrl,
       title: item.title || null,
-      price: item.price !== undefined && item.price !== null ? parseFloat(item.price) : 0
+      price: item.price !== undefined && item.price !== null ? parseFloat(item.price) : 0,
+      courseType: item.courseType || 'temporary', // Lưu courseType từ original course
+      category: item.category || null // Lưu category từ original course
     });
   }
 
@@ -64,7 +66,9 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
           return {
             url: item.url,
             title: item.title || null,
-            price: item.price !== undefined && item.price !== null ? parseFloat(item.price) : 0
+            price: item.price !== undefined && item.price !== null ? parseFloat(item.price) : 0,
+            courseType: item.courseType || 'temporary', // Giữ courseType
+            category: item.category || null // Giữ category
           };
         }
         // Nếu là string → convert sang object
@@ -131,16 +135,20 @@ const createDownloadTasks = async (orderId, email, courses, phoneNumber = null) 
     // Set common fields: Đảm bảo tất cả fields bắt buộc đều có
     // Status ban đầu là 'pending', sẽ được đổi thành 'processing' khi payment webhook xác nhận thanh toán
     // Status flow: pending → processing → enrolled → downloading → completed
-    const tasksToCreate = normalizedCourses.map(task => ({
-      course_url: task.course_url,  // URL khóa học đã được normalize
-      title: task.title || null,     // Tiêu đề (có thể null, sẽ được update sau khi enroll)
-      price: task.price || 0,        // Giá khóa học
-      email: email,                 // Email khách hàng (bắt buộc)
-      order_id: resolvedOrderId,     // Order ID (có thể null nếu chưa có order)
-      phone_number: phoneNumber || null, // Số điện thoại (tùy chọn)
-      status: 'pending',             // Status ban đầu: pending (chờ thanh toán)
-      retry_count: 0                 // Số lần retry (dùng cho error handling)
-    }));
+    const tasksToCreate = normalizedCourses.map((task) => {
+      return {
+        course_url: task.course_url,  // URL khóa học đã được normalize
+        title: task.title || null,     // Tiêu đề (có thể null, sẽ được update sau khi enroll)
+        price: task.price || 0,        // Giá khóa học
+        email: email,                 // Email khách hàng (bắt buộc)
+        order_id: resolvedOrderId,     // Order ID (có thể null nếu chưa có order)
+        phone_number: phoneNumber || null, // Số điện thoại (tùy chọn)
+        course_type: task.courseType || 'temporary', // Loại khóa học: temporary hoặc permanent (đã được lưu trong normalizedCourses)
+        category: task.category || null, // Category của khóa học (đã được lưu trong normalizedCourses)
+        status: 'pending',             // Status ban đầu: pending (chờ thanh toán)
+        retry_count: 0                 // Số lần retry (dùng cho error handling)
+      };
+    });
 
     // Bulk create tasks: Tạo tất cả tasks cùng lúc (hiệu quả hơn create từng cái)
     // individualHooks: false → Không chạy hooks (beforeCreate, afterCreate) cho từng task

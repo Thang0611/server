@@ -84,4 +84,53 @@ function transformToSamsungUdemy(rawUrl) {
 
 
 
-module.exports = { transformToSamsungUdemy ,transformToNormalizeUdemyCourseUrl};
+/**
+ * Extract slug from Udemy course URL
+ * @param {string} url - Course URL
+ * @returns {string|null} - Course slug or null if invalid
+ */
+function extractSlugFromUrl(url) {
+  try {
+    if (!url) return null;
+    
+    const urlObj = new URL(
+      /^https?:\/\//i.test(url) ? url.trim() : `https://${url.trim()}`
+    );
+
+    // Extract slug from /course/<slug>/
+    const match = urlObj.pathname.match(/^\/course\/([a-zA-Z0-9-_]+)(?:\/.*)?$/);
+    if (match && match[1]) {
+      return match[1];
+    }
+    
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Generate slug from title (fallback if URL doesn't have slug)
+ * @param {string} title - Course title
+ * @returns {string} - Generated slug
+ */
+function generateSlugFromTitle(title) {
+  if (!title) return '';
+  
+  return title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .trim()
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .substring(0, 200); // Limit length
+}
+
+module.exports = { 
+  transformToSamsungUdemy,
+  transformToNormalizeUdemyCourseUrl,
+  extractSlugFromUrl,
+  generateSlugFromTitle
+};

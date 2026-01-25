@@ -8,7 +8,7 @@ const axios = require('axios');
 const { Order, DownloadTask } = require('../src/models');
 const Logger = require('../src/utils/logger.util');
 
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000';
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3001';
 const TEST_EMAIL = process.env.TEST_EMAIL || 'test@example.com';
 const TEST_COURSE_URL = process.env.TEST_COURSE_URL || 'https://samsungu.udemy.com/course/creative-css-hover-and-animation-effects-in-hindi/';
 

@@ -3,7 +3,24 @@
  * @module server
  */
 
-require('dotenv').config();
+// ✅ Load environment based on NODE_ENV
+// Priority: .env.development (if NODE_ENV=development) > .env
+const path = require('path');
+const fs = require('fs');
+
+const nodeEnv = process.env.NODE_ENV || 'development';
+const envFile = nodeEnv === 'development' 
+    ? path.join(__dirname, '.env.development')
+    : path.join(__dirname, '.env');
+
+if (fs.existsSync(envFile)) {
+    require('dotenv').config({ path: envFile });
+    console.log(`✓ Loaded environment from: ${path.basename(envFile)}`);
+} else {
+    require('dotenv').config();
+    console.log(`✓ Loaded environment from: .env (fallback)`);
+}
+
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
@@ -23,6 +40,7 @@ const enrollRoutes = require('./src/routes/enroll.routes');
 const paymentRoutes = require('./src/routes/payment.routes');
 const adminRoutes = require('./src/routes/admin.routes');
 const internalRoutes = require('./src/routes/internal.routes');
+const coursesRoutes = require('./src/routes/courses.routes');
 
 // Configuration
 const PORT = process.env.PORT || 3000;
@@ -47,43 +65,71 @@ const corsOptions = {
       return callback(null, true); // Cho phép luôn
     }
     
-    // Production: Bắt buộc phải có whitelist, không cho phép wildcard
-    if (NODE_ENV === 'production' && allowedOrigins.length === 0) {
-      Logger.error('CORS_ORIGIN not configured for production! Please set CORS_ORIGIN in .env');
-      return callback(new Error('CORS: Configuration error'));
+    // ✅ ALWAYS ALLOW: Cho phép tất cả localhost và IP origins (cho development/testing)
+    // Cho phép localhost với bất kỳ port nào (http://localhost:*)
+    // Cho phép IP addresses (http://103.178.234.132:*)
+    if (origin.startsWith('http://localhost:') || 
+        origin.startsWith('http://127.0.0.1:') ||
+        origin.startsWith('https://localhost:') ||
+        origin.startsWith('https://127.0.0.1:') ||
+        /^https?:\/\/(\d{1,3}\.){3}\d{1,3}:\d+$/.test(origin)) { // IP address pattern
+      Logger.debug(`CORS: Allowing localhost/IP origin: ${origin}`);
+      return callback(null, true);
     }
     
-    // Development: Cho phép localhost với bất kỳ port nào
+    // ✅ DEVELOPMENT MODE: Cho phép tất cả localhost origins
     if (NODE_ENV === 'development') {
-      // Cho phép localhost:3000, localhost:4000, etc.
-      if (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) {
+      // Cho phép wildcard trong development
+      if (allowedOrigins.includes('*')) {
+        Logger.debug(`CORS: Allowing wildcard origin in development: ${origin}`);
         return callback(null, true);
       }
       
-      // Cho phép wildcard trong development
-      if (allowedOrigins.includes('*')) {
+      // Kiểm tra origin có trong whitelist không (nếu có config cụ thể)
+      if (allowedOrigins.length > 0 && allowedOrigins.includes(origin)) {
+        Logger.debug(`CORS: Allowing whitelisted origin in development: ${origin}`);
         return callback(null, true);
       }
+      
+      // Development mode: Cho phép tất cả để dễ test
+      Logger.debug(`CORS: Allowing origin in development mode: ${origin}`);
+      return callback(null, true);
     }
     
-    // Kiểm tra wildcard (chỉ nên dùng trong development, đã xử lý ở trên)
-    if (allowedOrigins.includes('*')) {
-      Logger.warn(`CORS wildcard not allowed in production, blocking origin: ${origin}`);
-      return callback(new Error('CORS: Origin not allowed'));
-    }
-    
-    // Kiểm tra origin có trong whitelist không
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true); // Cho phép
+    // ✅ PRODUCTION MODE: Strict whitelist only
+    if (NODE_ENV === 'production') {
+      // Production: Bắt buộc phải có whitelist, không cho phép wildcard
+      if (allowedOrigins.length === 0) {
+        Logger.error('CORS_ORIGIN not configured for production! Please set CORS_ORIGIN in .env');
+        return callback(new Error('CORS: Configuration error'));
+      }
+      
+      // Kiểm tra wildcard (không cho phép trong production)
+      if (allowedOrigins.includes('*')) {
+        Logger.warn(`CORS wildcard not allowed in production, blocking origin: ${origin}`);
+        return callback(new Error('CORS: Origin not allowed'));
+      }
+      
+      // Kiểm tra origin có trong whitelist không
+      if (allowedOrigins.includes(origin)) {
+        Logger.debug(`CORS: Allowing whitelisted origin in production: ${origin}`);
+        callback(null, true); // Cho phép
+      } else {
+        Logger.warn(`CORS blocked origin in production: ${origin} (not in whitelist)`);
+        callback(new Error('CORS: Origin not allowed')); // Chặn
+      }
     } else {
-      Logger.warn(`CORS blocked origin: ${origin} (not in whitelist)`);
-      callback(new Error('CORS: Origin not allowed')); // Chặn
+      // Fallback: Cho phép nếu không phải production
+      callback(null, true);
     }
   },
   optionsSuccessStatus: 200,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'x-device-id'],
+  exposedHeaders: ['Content-Length', 'Content-Type'],
   credentials: true,
-  maxAge: 86400 // 24 hours
+  preflightContinue: false, // Don't pass preflight to next handler
+  maxAge: 86400 // 24 hours - cache preflight for 24 hours
 };
 
 // Initialize Express app
@@ -113,6 +159,7 @@ if (process.env.TRUST_PROXY === 'true' || process.env.NODE_ENV === 'production')
 }
 
 // ✅ SECURITY: Helmet - Protect HTTP Headers
+// Note: CORS must be applied AFTER helmet to ensure CORS headers are not blocked
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -123,6 +170,7 @@ app.use(helmet({
     },
   },
   crossOriginEmbedderPolicy: false, // Allow external resources if needed
+  crossOriginResourcePolicy: { policy: "cross-origin" }, // Allow cross-origin requests
   hsts: {
     maxAge: 31536000, // 1 year
     includeSubDomains: true,
@@ -178,12 +226,20 @@ const downloadLimiter = rateLimit({
 });
 
 // Middleware
+// ✅ CORS must be applied BEFORE other middleware to handle preflight requests
 app.use(cors(corsOptions));
+
 app.use(bodyParser.json({ limit: '10mb' })); // Limit body size
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-// Apply general rate limiting to all routes
-app.use('/api', generalLimiter);
+// Apply general rate limiting to all routes (but skip OPTIONS requests)
+app.use('/api', (req, res, next) => {
+  // Skip rate limiting for OPTIONS requests (preflight)
+  if (req.method === 'OPTIONS') {
+    return next();
+  }
+  generalLimiter(req, res, next);
+});
 
 // Health check endpoint
 app.get('/', (req, res) => {
@@ -207,6 +263,7 @@ app.use('/api/v1', grantAccessRoutes);
 app.use('/api/v1/payment', paymentRoutes);
 app.use('/api/admin', adminRoutes);  // Admin dashboard routes
 app.use('/api/v1/internal', internalRoutes);  // Internal API routes (for inter-service communication)
+app.use('/api/courses', coursesRoutes);  // Courses API routes (for permanent courses)
 
 // Error handling middleware (must be last)
 app.use(errorHandler);

@@ -18,13 +18,28 @@ let io = null;
  */
 const initializeWebSocket = (httpServer) => {
   // Get allowed origins from environment
-  const allowedOrigins = [
+  const NODE_ENV = process.env.NODE_ENV || 'development';
+  
+  let allowedOrigins = [
     process.env.FRONTEND_URL,
     'https://getcourses.net',
     'http://getcourses.net',
     'https://www.getcourses.net',
     'http://www.getcourses.net'
   ].filter(Boolean);
+
+  // ✅ DEVELOPMENT MODE: Allow all localhost origins
+  if (NODE_ENV === 'development') {
+    // Add localhost patterns for development
+    allowedOrigins = [
+      ...allowedOrigins,
+      /^http:\/\/localhost:\d+$/,
+      /^http:\/\/127\.0\.0\.1:\d+$/,
+      /^https:\/\/localhost:\d+$/,
+      /^https:\/\/127\.0\.0\.1:\d+$/
+    ];
+    Logger.info('[WebSocket] Development mode: Allowing all localhost origins');
+  }
 
   io = new Server(httpServer, {
     cors: {

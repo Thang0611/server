@@ -75,12 +75,41 @@ const DownloadTask = sequelize.define('DownloadTask', {
   error_log: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+
+  // Loại khóa học: temporary (trang chủ) hoặc permanent (trang courses)
+  course_type: {
+    type: DataTypes.ENUM('temporary', 'permanent'),
+    allowNull: false,
+    defaultValue: 'temporary',
+    comment: 'Loại khóa học: temporary (trang chủ) hoặc permanent (trang courses)'
+  },
+
+  // Category của khóa học
+  category: {
+    type: DataTypes.STRING(255),
+    allowNull: true,
+    comment: 'Category của khóa học (Lập trình, Thiết kế, Marketing, etc.)'
   }
 }, {
   tableName: 'download_tasks',
   timestamps: true,
   underscored: true,
-  engine: 'InnoDB'
+  engine: 'InnoDB',
+  indexes: [
+    {
+      name: 'idx_course_url',
+      fields: [{ attribute: 'course_url', length: 255 }]
+    },
+    {
+      name: 'idx_course_type',
+      fields: ['course_type']
+    },
+    {
+      name: 'idx_category',
+      fields: ['category']
+    }
+  ]
 });
 
 module.exports = DownloadTask;

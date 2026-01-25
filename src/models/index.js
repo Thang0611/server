@@ -29,6 +29,9 @@ const Order = require('./order.model');
 const DownloadTask = require('./downloadTask.model');
 const OrderAuditLog = require('./orderAuditLog.model');
 const TaskLog = require('./taskLog.model');
+const Course = require('./course.model');
+const CurriculumSection = require('./curriculumSection.model');
+const CurriculumLecture = require('./curriculumLecture.model');
 
 // === ASSOCIATIONS ===
 
@@ -97,10 +100,39 @@ TaskLog.belongsTo(DownloadTask, {
   as: 'task'
 });
 
+// === CURRICULUM ASSOCIATIONS ===
+
+// Course has many CurriculumSections
+Course.hasMany(CurriculumSection, {
+  foreignKey: 'course_id',
+  as: 'sections'
+});
+
+// CurriculumSection belongs to Course
+CurriculumSection.belongsTo(Course, {
+  foreignKey: 'course_id',
+  as: 'course'
+});
+
+// CurriculumSection has many CurriculumLectures
+CurriculumSection.hasMany(CurriculumLecture, {
+  foreignKey: 'section_id',
+  as: 'lectures'
+});
+
+// CurriculumLecture belongs to CurriculumSection
+CurriculumLecture.belongsTo(CurriculumSection, {
+  foreignKey: 'section_id',
+  as: 'section'
+});
+
 module.exports = {
   sequelize,
   Order,
   DownloadTask,
   OrderAuditLog,
-  TaskLog
+  TaskLog,
+  Course,
+  CurriculumSection,
+  CurriculumLecture
 };

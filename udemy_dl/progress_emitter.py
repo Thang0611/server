@@ -26,12 +26,15 @@ class ProgressEmitter:
         self.redis_host = os.getenv('REDIS_HOST', 'localhost')
         self.redis_port = int(os.getenv('REDIS_PORT', 6379))
         self.redis_password = os.getenv('REDIS_PASSWORD', None)
+        # ✅ Support database separation: REDIS_DB=0 (production), REDIS_DB=1 (development)
+        self.redis_db = int(os.getenv('REDIS_DB', 0))
         
         try:
             self.redis_client = redis.Redis(
                 host=self.redis_host,
                 port=self.redis_port,
                 password=self.redis_password if self.redis_password else None,
+                db=self.redis_db,  # Database selection for dev/prod separation
                 decode_responses=True,
                 socket_connect_timeout=5
             )

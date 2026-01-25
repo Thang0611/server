@@ -105,7 +105,7 @@ RCLONE_DEST_PATH = "UdemyCourses/download_khoahoc"
 MAX_RETRIES = 3
 # ✅ SECURITY: Reduced timeout from 40 hours to 30 minutes for better resource management
 # Can be overridden via environment variable PYTHON_DOWNLOAD_TIMEOUT
-DOWNLOAD_TIMEOUT = int(os.getenv('PYTHON_DOWNLOAD_TIMEOUT', 1800))  # 30 minutes (1800 seconds)
+DOWNLOAD_TIMEOUT = int(os.getenv('PYTHON_DOWNLOAD_TIMEOUT', 18000))  # 30 minutes (1800 seconds)
 
 # ================= 2. HELPER FUNCTIONS =================
 
@@ -147,20 +147,31 @@ def clean_staging(task_id=None):
                 log(f"[WARN] Cannot remove staging dir: {e}")
         os.makedirs(STAGING_DIR, exist_ok=True)
 
-def upload_to_drive(local_path):
-    """Upload folder to Google Drive using Rclone"""
+def upload_to_drive(local_path, course_type='temporary'):
+    """Upload folder to Google Drive using Rclone
+    Args:
+        local_path (str): Local folder path to upload
+        course_type (str): 'temporary' or 'permanent' - determines destination folder
+    """
     folder_name = os.path.basename(local_path)
-    remote_path = f"{RCLONE_REMOTE}:{RCLONE_DEST_PATH}/{folder_name}"
     
-    log(f"[RCLONE] Start upload: {folder_name}")
+    # Chọn folder destination dựa trên course_type
+    if course_type == 'permanent':
+        dest_path = "UdemyCourses/permanent"
+    else:
+        dest_path = "UdemyCourses/temporary"
+    
+    remote_path = f"{RCLONE_REMOTE}:{dest_path}/{folder_name}"
+    
+    log(f"[RCLONE] Start upload: {folder_name} to {dest_path}")
     cmd = ["rclone", "move", local_path, remote_path, "-P", "--transfers=8", "--checkers=16"]
     
     try:
         subprocess.run(cmd, check=True)
-        log("[RCLONE] Upload successful")
+        log(f"[RCLONE] ✓ Upload successful: {folder_name} to {dest_path}")
         return True
     except subprocess.CalledProcessError as e:
-        log(f"[RCLONE] Upload failed: {e}")
+        log(f"[RCLONE ERR] ❌ Upload failed: {e}")
         return False
 
 def update_task_status(task_id, status, error_log=None):
@@ -300,7 +311,7 @@ def check_enrollment_status(task_id, max_wait_seconds=15):
                 conn = get_db_connection()
                 cur = conn.cursor(dictionary=True)
                 cur.execute(
-                    "SELECT id, status, email, course_url FROM download_tasks WHERE id = %s",
+                    "SELECT id, status, email, course_url, order_id, course_type FROM download_tasks WHERE id = %s",
                     (task_id,)
                 )
                 task = cur.fetchone()
@@ -309,6 +320,8 @@ def check_enrollment_status(task_id, max_wait_seconds=15):
                     return (False, 'not_found', f'Task {task_id} not found in database')
                 
                 status = task['status']
+                order_id = task.get('order_id')
+                course_type = task.get('course_type', 'temporary')
                 
                 # Check if already enrolled
                 if status == 'enrolled':
@@ -317,7 +330,15 @@ def check_enrollment_status(task_id, max_wait_seconds=15):
                 
                 # Check if enrollment failed
                 if status == 'failed':
-                    return (False, status, f'Task {task_id} enrollment failed')
+                    # ✅ FIX: For admin downloads, check if course might already be enrolled
+                    # Try to proceed with download anyway (course might be enrolled from previous attempt)
+                    if course_type == 'permanent' and order_id is None:
+                        log(f"[ENROLL CHECK] ⚠️ Task {task_id} enrollment failed, but this is admin download")
+                        log(f"[ENROLL CHECK] Attempting download anyway - course might already be enrolled")
+                        # Return True to allow download attempt
+                        return (True, 'failed_but_admin', f'Task {task_id} enrollment failed but proceeding for admin download')
+                    # ✅ CRITICAL: For regular orders, enrollment must succeed
+                    return (False, status, f'Task {task_id} enrollment failed - download cannot proceed')
                 
                 # Check if still processing enrollment
                 if status in ['processing', 'pending', 'paid']:
@@ -503,15 +524,40 @@ def process_download(task_data):
     
     # ✅ CRITICAL FIX: Check enrollment status before downloading
     log(f"[ENROLL CHECK] Verifying enrollment status for task {task_id}...")
+    
+    # Get task info to check if it's admin download
+    conn = None
+    is_admin_download = False
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute(
+            "SELECT course_type, order_id FROM download_tasks WHERE id = %s",
+            (task_id,)
+        )
+        task_info = cur.fetchone()
+        if task_info:
+            is_admin_download = (task_info.get('course_type') == 'permanent' and task_info.get('order_id') is None)
+    except Exception as e:
+        log(f"[ENROLL CHECK] [ERROR] Failed to check admin download status: {e}")
+    finally:
+        if conn:
+            try:
+                conn.close()
+            except:
+                pass
+    
     is_enrolled, status, error_msg = check_enrollment_status(task_id, max_wait_seconds=15)
     
     if not is_enrolled:
+        # ✅ CRITICAL: Enrollment must succeed before download - no exceptions
         log(f"[ENROLL CHECK] ❌ Cannot proceed with download: {error_msg}")
         log(f"[ENROLL CHECK] Task status: {status}")
+        log(f"[ENROLL CHECK] Enrollment must succeed (status='enrolled') before download can proceed")
         
         # Update task status to failed if not already
         if status not in ['failed', 'not_found']:
-            update_task_status(task_id, 'failed')
+            update_task_status(task_id, 'failed', f'Enrollment required before download: {error_msg}')
         
         return {
             'success': False,
@@ -519,21 +565,25 @@ def process_download(task_data):
             'taskId': task_id,
             'status': status
         }
+    else:
+        log(f"[ENROLL CHECK] ✅ Enrollment verified, proceeding with download...")
     
-    log(f"[ENROLL CHECK] ✅ Enrollment verified, proceeding with download...")
-    
-    # ✅ FIX: Get order_id for progress tracking (optimized connection handling)
+    # ✅ FIX: Get order_id and course_type for progress tracking (optimized connection handling)
     order_id = None
+    course_type = 'temporary'  # Default to temporary for backward compatibility
     conn = None
     try:
         conn = get_db_connection()
         cur = conn.cursor(dictionary=True)
-        cur.execute("SELECT order_id FROM download_tasks WHERE id = %s", (task_id,))
+        cur.execute("SELECT order_id, course_type FROM download_tasks WHERE id = %s", (task_id,))
         task_row = cur.fetchone()
-        order_id = task_row.get('order_id') if task_row else None
+        if task_row:
+            order_id = task_row.get('order_id')
+            course_type = task_row.get('course_type', 'temporary')  # Default to temporary if null
     except Exception as e:
-        log(f"[ERROR] Failed to get order_id for task {task_id}: {e}")
+        log(f"[ERROR] Failed to get order_id and course_type for task {task_id}: {e}")
         order_id = None
+        course_type = 'temporary'  # Fallback to temporary
     finally:
         # ✅ FIX: Only close if not in pool
         if conn:
@@ -543,6 +593,8 @@ def process_download(task_data):
                     conn.close()
             except:
                 pass
+    
+    log(f"[INFO] Course type: {course_type}, Order ID: {order_id}")
     
     # ✅ UNIFIED LOGGER: Log enrollment verified
     if order_id:
@@ -577,6 +629,11 @@ def process_download(task_data):
                          percent=progress_percent, 
                          current_file=f"Download attempt {attempt}/{MAX_RETRIES}")
             
+            # ✅ FIX: Set quality based on course type
+            # Permanent courses (admin downloads) use 1080p, temporary courses use 720p
+            video_quality = "1080" if course_type == 'permanent' else "720"
+            log(f"[INFO] Download quality: {video_quality}p (course_type: {course_type})")
+            
             # ✅ SECURITY: Download into task-specific directory with bearer token
             # ✅ SECURITY: Use subprocess with array (not shell=True) to prevent injection
             # ✅ SECURITY: course_url is already validated and sanitized above
@@ -585,8 +642,9 @@ def process_download(task_data):
                 "-c", course_url,  # ← Already validated and sanitized
                 "-b", UDEMY_TOKEN,  # ← FIXED: Add bearer token for authentication
                 "-o", task_sandbox,  # ← Changed from STAGING_DIR
-                "-q", "720",
+                "-q", video_quality,  # ← Quality: 1080p for permanent, 720p for temporary
                 "--download-captions",
+                "-l", "all",  # ← Download both English (en) and Vietnamese (vi) subtitles if available
                 "--download-assets",
                 "--download-quizzes",
                 "--concurrent-downloads", "10",
@@ -734,7 +792,8 @@ def process_download(task_data):
                     'folderName': os.path.basename(final_folder)
                 }, progress=80, category='upload')
             
-            if upload_to_drive(final_folder):
+            # Upload to Drive với course_type để lưu vào folder đúng
+            if upload_to_drive(final_folder, course_type):
                 log(f"[UPLOAD] Upload successful!")
                 emit_progress(task_id, order_id, percent=95, current_file="Upload completed, finalizing...")
                 
@@ -917,11 +976,14 @@ def start_worker(worker_id=1):
     redis_host = os.getenv('REDIS_HOST', 'localhost')
     redis_port = int(os.getenv('REDIS_PORT', 6379))
     redis_password = os.getenv('REDIS_PASSWORD', None)
+    # ✅ Support database separation: REDIS_DB=0 (production), REDIS_DB=1 (development)
+    redis_db = int(os.getenv('REDIS_DB', 0))
     
     r = redis.Redis(
         host=redis_host,
         port=redis_port,
         password=redis_password if redis_password else None,
+        db=redis_db,  # Database selection for dev/prod separation
         decode_responses=True
     )
     

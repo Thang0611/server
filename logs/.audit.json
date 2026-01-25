@@ -124,6 +124,51 @@
             "date": 1769065162901,
             "name": "/root/project/server/logs/rejections-2026-01-22.log",
             "hash": "1111b88e4ab4a5e7724ca6cafc59c28780deea5f2b1ba0d889856dd89927efc1"
+        },
+        {
+            "date": 1769103373987,
+            "name": "/root/project/server/logs/combined-2026-01-23.log",
+            "hash": "31a8a3440e165c6fb6c9a8b7d69bdd54913355725047d309d8e5d9cd2011e9a8"
+        },
+        {
+            "date": 1769103653742,
+            "name": "/root/project/server/logs/error-2026-01-23.log",
+            "hash": "885b0ee1595fde87e59da60a17221447084ce3aea66821f3cba2441de388bbe7"
+        },
+        {
+            "date": 1769103653750,
+            "name": "/root/project/server/logs/exceptions-2026-01-23.log",
+            "hash": "e1d1b811544138f686de56626fc56a10511127f10458a6d7f7f0d22f4c4aa10b"
+        },
+        {
+            "date": 1769103653752,
+            "name": "/root/project/server/logs/rejections-2026-01-23.log",
+            "hash": "31dbb384d8d72a9020b64552fe3502a273ee9e8aedfb628d861578f76759872d"
+        },
+        {
+            "date": 1769187689703,
+            "name": "/root/project/server/logs/combined-2026-01-24.log",
+            "hash": "fa7190f4a9ef260a07ddbc3611ad4a7c4f26daed0bdf3f9d966819541b3fc176"
+        },
+        {
+            "date": 1769188142937,
+            "name": "/root/project/server/logs/error-2026-01-24.log",
+            "hash": "57bc89b66c970f8b45c01b4b7d4fbfb9e2c68e7eb54ac8c292ba2cbfc70b8e36"
+        },
+        {
+            "date": 1769188142941,
+            "name": "/root/project/server/logs/exceptions-2026-01-24.log",
+            "hash": "28c6c565071abf6f7cd43777701908950df8e4727f93c22a301123db020a8ca4"
+        },
+        {
+            "date": 1769188142942,
+            "name": "/root/project/server/logs/rejections-2026-01-24.log",
+            "hash": "eb6e93223dd2cc7a149a41d0560e628227855600a90cb10f9616111515794c0e"
+        },
+        {
+            "date": 1769307102255,
+            "name": "/root/project/server/logs/combined-2026-01-25.log",
+            "hash": "9ce19155287742e8ccd0b9598018f93878574a8b493dd393ff731db51b48e7bb"
         }
     ],
     "hashType": "sha256"

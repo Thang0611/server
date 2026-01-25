@@ -3,7 +3,7 @@
  * @module controllers/admin
  */
 
-const { Order, DownloadTask, OrderAuditLog, TaskLog } = require('../models');
+const { Order, DownloadTask, OrderAuditLog, TaskLog, Course } = require('../models');
 const auditService = require('../services/audit.service');
 const { asyncHandler } = require('../middleware/errorHandler.middleware');
 const { AppError } = require('../middleware/errorHandler.middleware');
@@ -13,6 +13,7 @@ const { sendBatchCompletionEmail } = require('../services/email.service');
 const { addDownloadJob } = require('../queues/download.queue');
 const { TASK_STATUS, IN_PROGRESS_STATUSES } = require('../constants/taskStatus');
 const enrollService = require('../services/enroll.service');
+const downloadWorker = require('../workers/download.worker');
 
 /**
  * Get all paid orders with their tasks (Hierarchical View)
@@ -1029,6 +1030,89 @@ const recoverOrderTasks = asyncHandler(async (req, res) => {
   }
 });
 
+/**
+ * Trigger download for a course (permanent download)
+ * @route POST /api/admin/courses/:id/download
+ * @access Admin only
+ * @body {string} [email] - Optional email for enrollment (defaults to ADMIN_EMAIL)
+ */
+const triggerCourseDownload = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { email: requestEmail } = req.body;
+  
+  // ✅ FIX: Always use getcourses.net@gmail.com for admin downloads (required for enrollment)
+  // Override ADMIN_EMAIL env var to ensure correct email is used
+  const email = requestEmail || 'getcourses.net@gmail.com';
+
+  Logger.info('[Admin] Trigger course download', { 
+    courseId: id,
+    email: email
+  });
+
+  // Validate email format if provided
+  if (requestEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(requestEmail)) {
+    throw new AppError('Email không hợp lệ', 400);
+  }
+
+  // Find course by ID
+  const course = await Course.findByPk(id, {
+    attributes: ['id', 'title', 'course_url', 'drive_link']
+  });
+
+  if (!course) {
+    throw new AppError('Course not found', 404);
+  }
+
+  // Check if course already has drive_link
+  if (course.drive_link) {
+    throw new AppError('Course already has drive link', 400);
+  }
+
+  if (!course.course_url) {
+    throw new AppError('Course does not have course_url', 400);
+  }
+
+  try {
+    // Use dedicated admin download service
+    const adminDownloadService = require('../services/adminDownload.service');
+    const result = await adminDownloadService.triggerAdminDownload(id, email);
+
+    res.json({
+      success: true,
+      message: 'Download task created and processing started',
+      data: result
+    });
+  } catch (error) {
+    Logger.error('[Admin] Failed to trigger course download', error, {
+      courseId: id
+    });
+    throw new AppError(`Failed to trigger download: ${error.message}`, 500);
+  }
+});
+
+/**
+ * Check cookie validity for Udemy downloads
+ *
+ * @route GET /api/admin/system/check-cookie
+ * @access Admin only
+ */
+const checkCookie = asyncHandler(async (req, res) => {
+  const { skipValidation } = req.query;
+  
+  try {
+    const { getCookieStatus } = require('../utils/cookieValidator.util');
+    const status = await getCookieStatus(skipValidation === 'true');
+    
+    res.json({
+      success: true,
+      data: status
+    });
+  } catch (error) {
+    Logger.error('[Admin] Failed to check cookie', error);
+    throw new AppError(`Failed to check cookie: ${error.message}`, 500);
+  }
+});
+
 module.exports = {
   getPaidOrders,
   getOrderDetails,
@@ -1039,5 +1123,7 @@ module.exports = {
   resendOrderEmail,
   retryOrderDownload,
   recoverAllStuckTasks,
-  recoverOrderTasks
+  recoverOrderTasks,
+  triggerCourseDownload,
+  checkCookie
 };

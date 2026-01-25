@@ -5,12 +5,14 @@
 
 const DownloadTask = require('../models/downloadTask.model');
 const Order = require('../models/order.model');
+const Course = require('../models/course.model');
 const { findFolderByName, grantReadAccess } = require('../utils/drive.util');
 const { sendBatchCompletionEmail } = require('./email.service');
 const auditService = require('./audit.service');
 const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
+const { Op } = require('sequelize');
 
 const MAX_RETRY_ATTEMPTS = 10;
 const RETRY_DELAY_MS = 3000;
@@ -166,9 +168,9 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
     throw new AppError('Forbidden: Wrong Key', 403);
   }
 
-  // Find task with order_id
+  // Find task with order_id and course_type
   const task = await DownloadTask.findByPk(taskId, {
-    attributes: ['id', 'email', 'course_url', 'title', 'status', 'drive_link', 'order_id']
+    attributes: ['id', 'email', 'course_url', 'title', 'status', 'drive_link', 'order_id', 'course_type']
   });
 
   if (!task) {
@@ -217,6 +219,38 @@ const finalizeDownload = async (taskId, folderName, secretKey) => {
     status: updateData.status,
     hasDriveLink: !!driveLink
   });
+
+  // ===== STEP 2.5: UPDATE COURSES TABLE FOR PERMANENT COURSES (ADMIN DOWNLOADS) =====
+  // Nếu là permanent course và có drive_link, update vào bảng courses
+  // Đặc biệt quan trọng cho admin downloads (order_id = null)
+  if (updateData.status === 'completed' && driveLink && task.course_type === 'permanent') {
+    try {
+      // Use adminDownload service for cleaner separation
+      const adminDownloadService = require('./adminDownload.service');
+      const updateResult = await adminDownloadService.updateCourseDriveLink(taskId, driveLink);
+      
+      if (updateResult.updated) {
+        Logger.success('[Webhook] Updated courses.drive_link via adminDownload service', {
+          taskId,
+          courseId: updateResult.courseId,
+          courseTitle: updateResult.courseTitle,
+          driveLink
+        });
+      } else {
+        Logger.debug('[Webhook] Course update skipped', {
+          taskId,
+          reason: updateResult.reason
+        });
+      }
+    } catch (courseUpdateError) {
+      // Log error nhưng không fail webhook
+      Logger.error('[Webhook] Failed to update courses.drive_link', courseUpdateError, {
+        taskId,
+        courseUrl: task.course_url,
+        driveLink
+      });
+    }
+  }
 
   // ✅ LIFECYCLE LOG: Download/Upload Outcome
   if (updateData.status === 'completed' && driveLink) {

@@ -11,8 +11,9 @@ const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 
-const WORDPRESS_URL = process.env.WORDPRESS_URL || 'https://getcourses.net';
-const SECRET_KEY = process.env.SECRET_KEY;
+// WordPress integration removed - no longer used
+// const WORDPRESS_URL = process.env.WORDPRESS_URL || 'https://getcourses.net';
+// const SECRET_KEY = process.env.SECRET_KEY;
 const EMAIL_USER = process.env.EMAIL_USER;
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@getcourses.net';
 
@@ -69,9 +70,19 @@ const sendAdminAlert = async (orderId, customerEmail, failedList, errorMessage) 
  * @returns {Promise<void>}
  */
 const sendSuccessEmail = async (email, orderId, successList) => {
+  Logger.info('[Email] Preparing to send success email', {
+    orderId,
+    email,
+    courseCount: successList.length,
+    courses: successList.map(c => c.name)
+  });
+
   try {
     if (!EMAIL_USER) {
-      Logger.warn('Email not configured, cannot send success email');
+      Logger.warn('[Email] Email not configured, cannot send success email', {
+        orderId,
+        email
+      });
       return;
     }
 
@@ -99,47 +110,33 @@ const sendSuccessEmail = async (email, orderId, successList) => {
       `
     });
 
-    Logger.success('Success email sent', { email, orderId });
+    Logger.success('[Email] Success email sent successfully to customer', { 
+      email, 
+      orderId,
+      courseCount: successList.length
+    });
   } catch (error) {
-    Logger.error('Failed to send success email', error, { email, orderId });
+    Logger.error('[Email] Failed to send success email', error, { 
+      email, 
+      orderId,
+      errorMessage: error.message,
+      errorStack: error.stack
+    });
     throw error;
   }
 };
 
 /**
  * Notifies WordPress about order completion
+ * @deprecated WordPress integration has been removed
  * @param {string} orderId - Order ID
  * @param {number} successCount - Number of successful grants
  * @returns {Promise<void>}
  */
 const notifyWordPress = async (orderId, successCount) => {
-  if (!SECRET_KEY) {
-    Logger.warn('SECRET_KEY not configured, cannot notify WordPress');
-    return;
-  }
-
-  try {
-    const agent = new https.Agent({ rejectUnauthorized: false });
-
-    const response = await axios.post(
-      `${WORDPRESS_URL}/wp-json/nht-app/v1/complete-order`,
-      {
-        order_id: orderId,
-        success: true,
-        message: `✅ Auto Drive: Đã cấp quyền ${successCount} khóa.`
-      },
-      {
-        headers: { 'x-callback-secret': SECRET_KEY },
-        httpsAgent: agent,
-        timeout: 10000
-      }
-    );
-
-    Logger.success('WordPress notified', { orderId });
-  } catch (error) {
-    Logger.error('Failed to notify WordPress', error, { orderId });
-    // Don't throw - order is already processed
-  }
+  // WordPress integration has been removed - no longer used
+  Logger.debug('WordPress notification skipped (deprecated)', { orderId, successCount });
+  return;
 };
 
 /**
@@ -152,7 +149,12 @@ const notifyWordPress = async (orderId, successCount) => {
 const grantAccess = async (orderId, email, courses) => {
   const startTime = Date.now();
 
-    Logger.info('Starting grant access', { orderId, email, count: courses?.length || 0 });
+  Logger.info('[Grant Access] Starting grant access process', { 
+    orderId, 
+    email, 
+    count: courses?.length || 0,
+    courses: courses?.map(c => ({ name: c.course_name, driveLink: c.drive_link })) || []
+  });
 
   // Validate input
   if (!email || !courses || !Array.isArray(courses)) {
@@ -187,10 +189,24 @@ const grantAccess = async (orderId, email, courses) => {
     }
 
     try {
+      Logger.info('[Grant Access] Attempting to grant Drive access', {
+        orderId,
+        email,
+        courseName,
+        fileId,
+        driveLink: finalUrl
+      });
+
       const isGranted = await grantReadAccess(fileId, email);
 
       if (isGranted) {
-        Logger.success('Access granted', { fileId, orderId });
+        Logger.success('[Grant Access] Drive access granted successfully', { 
+          orderId,
+          email,
+          courseName,
+          fileId, 
+          driveLink: finalUrl
+        });
         successList.push({ name: courseName, url: finalUrl });
         
         // ✅ LIFECYCLE LOG: Permission Granted
@@ -279,21 +295,40 @@ const grantAccess = async (orderId, email, courses) => {
 
   // Handle success
   if (successList.length > 0 && failedList.length === 0) {
-    Logger.success('Grant access completed', {
+    Logger.success('[Grant Access] All access grants completed successfully', {
       orderId,
-      count: successList.length
+      email,
+      count: successList.length,
+      duration: `${duration.toFixed(2)}s`,
+      courses: successList.map(c => c.name)
     });
 
     // Send success email
+    Logger.info('[Email] Preparing to send success email', {
+      orderId,
+      email,
+      courseCount: successList.length
+    });
+
     try {
       await sendSuccessEmail(email, orderId, successList);
+      Logger.success('[Email] Success email sent to customer', {
+        orderId,
+        email,
+        courseCount: successList.length
+      });
     } catch (error) {
-      Logger.error('Failed to send success email', error, { orderId, email });
+      Logger.error('[Email] Failed to send success email', error, { 
+        orderId, 
+        email,
+        errorMessage: error.message,
+        errorStack: error.stack
+      });
       // Continue even if email fails
     }
 
-    // Notify WordPress
-    await notifyWordPress(orderId, successList.length);
+    // WordPress notification removed - no longer used
+    // await notifyWordPress(orderId, successList.length);
 
     return { success: true, successList, failedList };
   }

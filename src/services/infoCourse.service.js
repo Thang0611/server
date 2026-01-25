@@ -82,7 +82,7 @@ const crawlSingleCourse = async (formattedUrl, retryCount = 0) => {
       minVersion: 'TLSv1.2',
       keepAlive: true
     }),
-    timeout: 15000, // Increased to 15s
+    timeout: 30000, // Tăng lên 30s để đảm bảo lấy đầy đủ lecture
     maxRedirects: 5
   };
 
