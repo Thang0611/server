@@ -37,12 +37,12 @@ const calculateTotalPrice = (validCourseCount) => {
 
   // For other quantities, use per-course pricing
   const totalPrice = validCourseCount * PRICE_PER_COURSE;
-  Logger.debug('Applying per-course pricing', { 
-    count: validCourseCount, 
+  Logger.debug('Applying per-course pricing', {
+    count: validCourseCount,
     pricePerCourse: PRICE_PER_COURSE,
-    totalPrice 
+    totalPrice
   });
-  
+
   return totalPrice;
 };
 
@@ -60,11 +60,11 @@ const filterValidCourses = (courses) => {
 
   return courses.filter(course => {
     // Course is valid if it has a url property (non-empty string)
-    return course && 
-           typeof course === 'object' && 
-           course.url && 
-           typeof course.url === 'string' && 
-           course.url.trim().length > 0;
+    return course &&
+      typeof course === 'object' &&
+      course.url &&
+      typeof course.url === 'string' &&
+      course.url.trim().length > 0;
   });
 };
 
@@ -102,15 +102,15 @@ const calculateComboUnitPrice = (totalPrice, courseCount = 5) => {
   if (!totalPrice || !courseCount || courseCount <= 0) {
     return 0;
   }
-  
+
   const unitPrice = totalPrice / courseCount;
-  
+
   Logger.debug('Calculated combo exact unit price', {
     totalPrice,
     courseCount,
     unitPrice
   });
-  
+
   return unitPrice;
 };
 
@@ -134,14 +134,14 @@ const distributeComboPrices = (totalPrice, courseCount) => {
 
   // Calculate exact unit price (no rounding)
   const exactUnitPrice = totalPrice / courseCount;
-  
+
   // Check if price is evenly divisible
   const isEvenlyDivisible = (totalPrice % courseCount) === 0;
-  
+
   if (isEvenlyDivisible) {
     // All courses get the same exact price
     const prices = new Array(courseCount).fill(exactUnitPrice);
-    
+
     Logger.debug('Distributed combo prices (evenly divisible)', {
       totalPrice,
       courseCount,
@@ -149,7 +149,7 @@ const distributeComboPrices = (totalPrice, courseCount) => {
       prices,
       sum: prices.reduce((sum, price) => sum + price, 0)
     });
-    
+
     return prices;
   } else {
     // Not evenly divisible: first N-1 courses get exact unit price (rounded down if needed)
@@ -159,11 +159,11 @@ const distributeComboPrices = (totalPrice, courseCount) => {
     const basePrice = Math.floor(exactUnitPrice);
     const basePriceTotal = basePrice * coursesWithBasePrice;
     const lastCoursePrice = totalPrice - basePriceTotal;
-    
+
     // Build array: first N-1 courses get basePrice, last course gets remainder
     const prices = new Array(courseCount).fill(basePrice);
     prices[courseCount - 1] = lastCoursePrice;
-    
+
     // Verify sum equals totalPrice (safety check)
     const calculatedTotal = prices.reduce((sum, price) => sum + price, 0);
     if (calculatedTotal !== totalPrice) {
@@ -174,7 +174,7 @@ const distributeComboPrices = (totalPrice, courseCount) => {
         prices
       });
     }
-    
+
     Logger.debug('Distributed combo prices (with remainder)', {
       totalPrice,
       courseCount,
@@ -184,7 +184,7 @@ const distributeComboPrices = (totalPrice, courseCount) => {
       prices,
       sum: calculatedTotal
     });
-    
+
     return prices;
   }
 };
@@ -201,16 +201,16 @@ const distributeComboPrices = (totalPrice, courseCount) => {
  */
 const getComboUnitPrice = (validCourseCount, totalPrice) => {
   const { PRICE_PER_COURSE, PRICE_COMBO_5, PRICE_COMBO_10 } = pricingConfig;
-  
+
   // Check if combo applies
   if (validCourseCount === 5 && totalPrice === PRICE_COMBO_5) {
     return calculateComboUnitPrice(PRICE_COMBO_5, 5);
   }
-  
+
   if (validCourseCount === 10 && totalPrice === PRICE_COMBO_10) {
     return calculateComboUnitPrice(PRICE_COMBO_10, 10);
   }
-  
+
   // No combo applies
   return null;
 };
@@ -225,18 +225,40 @@ const getComboUnitPrice = (validCourseCount, totalPrice) => {
  */
 const getComboPriceDistribution = (validCourseCount, totalPrice) => {
   const { PRICE_COMBO_5, PRICE_COMBO_10 } = pricingConfig;
-  
+
   // Check if combo applies
   if (validCourseCount === 5 && totalPrice === PRICE_COMBO_5) {
     return distributeComboPrices(PRICE_COMBO_5, 5);
   }
-  
+
   if (validCourseCount === 10 && totalPrice === PRICE_COMBO_10) {
     return distributeComboPrices(PRICE_COMBO_10, 10);
   }
-  
+
   // No combo applies
   return null;
+};
+
+/**
+ * Calculates total price for Premium All-Courses Offer
+ * Fixed 199k price regardless of course count
+ * 
+ * @param {number} validCourseCount - Number of valid courses (unused, kept for API compatibility)
+ * @returns {number} - Total price in VND (always PREMIUM_PRICE)
+ */
+const calculateAllCoursesOfferPrice = (validCourseCount) => {
+  if (!validCourseCount || validCourseCount <= 0) {
+    return 0;
+  }
+
+  const { PREMIUM_PRICE } = pricingConfig;
+
+  Logger.debug('Premium All-Courses Offer', {
+    courseCount: validCourseCount,
+    price: PREMIUM_PRICE
+  });
+
+  return PREMIUM_PRICE;
 };
 
 module.exports = {
@@ -247,5 +269,6 @@ module.exports = {
   distributeComboPrices,
   getComboUnitPrice,
   getComboPriceDistribution,
+  calculateAllCoursesOfferPrice,
   pricingConfig
 };

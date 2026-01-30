@@ -98,6 +98,17 @@ const Order = sequelize.define('Order', {
   note: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+
+  // User who created this order (required for authenticated purchases)
+  user_id: {
+    type: DataTypes.INTEGER.UNSIGNED,
+    allowNull: true,  // null for legacy orders before auth implementation
+    references: {
+      model: 'users',
+      key: 'id'
+    },
+    comment: 'Authenticated user who created this order'
   }
 }, {
   tableName: 'orders',

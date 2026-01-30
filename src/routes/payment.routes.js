@@ -14,6 +14,9 @@ const {
 // POST: Create order
 router.post('/create-order', validateCreateOrder, paymentController.createOrder);
 
+// POST: Create order with All-Courses Offer (new pricing)
+router.post('/create-order-all-courses', validateCreateOrder, paymentController.createOrderAllCourses);
+
 // POST: Payment webhook from gateway
 router.post('/webhook', validateWebhook, paymentController.handleWebhook);
 

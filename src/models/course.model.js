@@ -92,7 +92,7 @@ const Course = sequelize.define('Course', {
   price: {
     type: DataTypes.DECIMAL(15, 0),
     allowNull: false,
-    defaultValue: 2000,
+    defaultValue: 50000,
     comment: 'Giá bán (VND)'
   },
 

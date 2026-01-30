@@ -28,23 +28,23 @@ module.exports = {
       },
       // Environment variables from .env file
       env_file: './.env',
-      
+
       // Advanced configurations
       max_memory_restart: '500M',  // Restart if memory exceeds 500MB
       error_file: './logs/backend-error.log',
       out_file: './logs/backend-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       merge_logs: true,
-      
+
       // Auto restart on crash
       autorestart: true,
       max_restarts: 10,
       min_uptime: '10s',
-      
+
       // Graceful shutdown
       kill_timeout: 5000,
       listen_timeout: 3000,
-      
+
       // Watch (disable in production for performance)
       watch: false,
       ignore_watch: ['node_modules', 'logs', 'Staging_Download']
@@ -62,17 +62,17 @@ module.exports = {
         NODE_ENV: 'production',
         PORT: 4000  // Frontend port
       },
-      
+
       // Logs
       error_file: '/root/project/server/logs/nextjs-error.log',
       out_file: '/root/project/server/logs/nextjs-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       merge_logs: true,
-      
+
       // Auto restart
       autorestart: true,
       max_memory_restart: '800M',
-      
+
       watch: false
     },
 
@@ -81,35 +81,35 @@ module.exports = {
       name: 'workers',
       script: 'worker_rq.py',  // Script name only (cwd is udemy_dl)
       interpreter: 'python3',  // Use Python 3 interpreter
-      instances: 2,  // Run 2 parallel workers for concurrent downloads
+      instances: 1,  // Run 1 worker for sequential downloads
       exec_mode: 'fork',  // Python uses fork mode (not Node cluster)
-      
+
       // Environment variables
       env_file: '../.env',  // Relative to cwd (udemy_dl)
-      
+
       // Working directory (important for Python imports)
       cwd: './udemy_dl',
-      
+
       // Logs
       error_file: '../logs/worker-error.log',
       out_file: '../logs/worker-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       merge_logs: true,
-      
+
       // Auto restart settings
       autorestart: true,
       max_restarts: 10,
       min_uptime: '30s',  // Workers should stay up at least 30s
       restart_delay: 5000,  // Wait 5s before restart
-      
+
       // Memory limits (workers can use more memory for downloads)
       max_memory_restart: '2G',
-      
+
       // Graceful shutdown (give workers time to finish current job)
       kill_timeout: 30000,  // 30 seconds to finish current download
-      
+
       watch: false,
-      
+
       // ⚠️ IMPORTANT: Each instance will get unique INSTANCE_ID env var (0, 1)
       instance_var: 'INSTANCE_ID'
     }

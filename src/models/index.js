@@ -32,6 +32,8 @@ const TaskLog = require('./taskLog.model');
 const Course = require('./course.model');
 const CurriculumSection = require('./curriculumSection.model');
 const CurriculumLecture = require('./curriculumLecture.model');
+const User = require('./user.model');
+const UserEnrollment = require('./userEnrollment.model');
 
 // === ASSOCIATIONS ===
 
@@ -126,6 +128,56 @@ CurriculumLecture.belongsTo(CurriculumSection, {
   as: 'section'
 });
 
+// === USER ASSOCIATIONS ===
+
+// User has many Orders
+User.hasMany(Order, {
+  foreignKey: 'user_id',
+  as: 'orders'
+});
+
+// Order belongs to User
+Order.belongsTo(User, {
+  foreignKey: 'user_id',
+  as: 'user'
+});
+
+// User has many UserEnrollments
+User.hasMany(UserEnrollment, {
+  foreignKey: 'user_id',
+  as: 'enrollments'
+});
+
+// UserEnrollment belongs to User
+UserEnrollment.belongsTo(User, {
+  foreignKey: 'user_id',
+  as: 'user'
+});
+
+// Course has many UserEnrollments
+Course.hasMany(UserEnrollment, {
+  foreignKey: 'course_id',
+  as: 'enrollments'
+});
+
+// UserEnrollment belongs to Course
+UserEnrollment.belongsTo(Course, {
+  foreignKey: 'course_id',
+  as: 'course'
+});
+
+// UserEnrollment belongs to Order
+UserEnrollment.belongsTo(Order, {
+  foreignKey: 'order_id',
+  as: 'order'
+});
+
+// Order has many UserEnrollments
+Order.hasMany(UserEnrollment, {
+  foreignKey: 'order_id',
+  as: 'enrollments'
+});
+
 module.exports = {
   sequelize,
   Order,
@@ -134,5 +186,8 @@ module.exports = {
   TaskLog,
   Course,
   CurriculumSection,
-  CurriculumLecture
+  CurriculumLecture,
+  User,
+  UserEnrollment
 };
+

@@ -97,7 +97,7 @@ async function testCheckExistingDownload() {
     const testOrder = await Order.create({
       order_code: 'TEST' + Date.now(),
       user_email: TEST_EMAIL,
-      total_amount: 2000,
+      total_amount: 50000,
       payment_status: 'paid',
       order_status: 'completed'
     });
@@ -107,7 +107,7 @@ async function testCheckExistingDownload() {
       email: TEST_EMAIL,
       course_url: TEST_COURSE_URL,
       title: 'Test Permanent Course',
-      price: 2000,
+      price: 50000,
       status: 'completed',
       course_type: 'permanent',
       category: 'Lập trình',
@@ -151,7 +151,7 @@ async function testCreateOrderWithCourseType() {
     const tempCourses = [{
       url: TEST_COURSE_URL_TEMPORARY,
       title: 'Test Temporary Course',
-      price: 2000,
+      price: 50000,
       courseType: 'temporary',
       category: 'Test'
     }];
@@ -177,7 +177,7 @@ async function testCreateOrderWithCourseType() {
     const permCourses = [{
       url: TEST_COURSE_URL,
       title: 'Test Permanent Course',
-      price: 2000,
+      price: 50000,
       courseType: 'permanent',
       category: 'Lập trình'
     }];
@@ -238,7 +238,7 @@ async function testPaymentWebhookWithExistingDownload() {
     const existingOrder = await Order.create({
       order_code: 'EXIST' + Date.now(),
       user_email: TEST_EMAIL,
-      total_amount: 2000,
+      total_amount: 50000,
       payment_status: 'paid',
       order_status: 'completed'
     });
@@ -248,7 +248,7 @@ async function testPaymentWebhookWithExistingDownload() {
       email: TEST_EMAIL,
       course_url: TEST_COURSE_URL,
       title: 'Existing Permanent Course',
-      price: 2000,
+      price: 50000,
       status: 'completed',
       course_type: 'permanent',
       category: 'Lập trình',
@@ -262,7 +262,7 @@ async function testPaymentWebhookWithExistingDownload() {
     const newCourses = [{
       url: TEST_COURSE_URL,
       title: 'Existing Permanent Course',
-      price: 2000,
+      price: 50000,
       courseType: 'permanent',
       category: 'Lập trình'
     }];
@@ -330,7 +330,7 @@ async function testPaymentWebhookPermanentExists() {
     const existingOrder = await Order.create({
       order_code: 'EXIST' + Date.now(),
       user_email: TEST_EMAIL,
-      total_amount: 2000,
+      total_amount: 50000,
       payment_status: 'paid',
       order_status: 'completed'
     });
@@ -340,7 +340,7 @@ async function testPaymentWebhookPermanentExists() {
       email: TEST_EMAIL,
       course_url: TEST_COURSE_URL,
       title: 'Existing Permanent Course',
-      price: 2000,
+      price: 50000,
       status: 'completed',
       course_type: 'permanent',
       category: 'Lập trình',
@@ -354,7 +354,7 @@ async function testPaymentWebhookPermanentExists() {
     const newCourses = [{
       url: TEST_COURSE_URL,
       title: 'Existing Permanent Course',
-      price: 2000,
+      price: 50000,
       courseType: 'permanent',
       category: 'Lập trình'
     }];
@@ -424,7 +424,7 @@ async function testPaymentWebhookPermanentNotExists() {
     const newCourses = [{
       url: newCourseUrl,
       title: 'New Permanent Course',
-      price: 2000,
+      price: 50000,
       courseType: 'permanent',
       category: 'Thiết kế'
     }];

@@ -16,9 +16,10 @@ const { Order } = require('../models');
  * @param {Function} next - Express next function
  */
 const createOrder = asyncHandler(async (req, res, next) => {
-  const { email, courses } = req.body;
+  const { email, courses, userId } = req.body;
 
-  const result = await paymentService.createOrder(email, courses);
+  // userId is passed from frontend when user is authenticated via Google OAuth
+  const result = await paymentService.createOrder(email, courses, userId || null);
 
   res.json({
     success: true,
@@ -43,22 +44,22 @@ const handleWebhook = asyncHandler(async (req, res, next) => {
   // Security Check: Verify Authorization header
   const authHeader = req.headers.authorization;
   const expectedAuth = `Apikey ${process.env.SEPAY_API_KEY}`;
-  
+
   if (!authHeader || authHeader !== expectedAuth) {
     Logger.warn('Invalid or missing Authorization header', {
       received: authHeader ? 'Present' : 'Missing',
       expected: expectedAuth ? 'Present' : 'Missing (SEPAY_API_KEY not set)'
     });
-    return res.status(403).json({ 
-      success: false, 
-      message: 'Unauthorized' 
+    return res.status(403).json({
+      success: false,
+      message: 'Unauthorized'
     });
   }
 
   // Extract order code from payload
   // First, try req.body.code (if it exists and starts with 'DH')
   let orderCode = null;
-  
+
   if (req.body.code && typeof req.body.code === 'string' && req.body.code.toUpperCase().startsWith('DH')) {
     orderCode = req.body.code.toUpperCase();
     Logger.info('Order code extracted from req.body.code', { orderCode });
@@ -73,26 +74,26 @@ const handleWebhook = asyncHandler(async (req, res, next) => {
 
   // Validate required fields
   if (!orderCode) {
-    Logger.warn('Order code not found in payload', { 
+    Logger.warn('Order code not found in payload', {
       body: req.body,
       code: req.body.code,
-      content: req.body.content 
+      content: req.body.content
     });
     // Return success to stop SePay retries
-    return res.json({ 
-      success: true, 
-      message: 'Order code not found in payload' 
+    return res.json({
+      success: true,
+      message: 'Order code not found in payload'
     });
   }
 
   if (!req.body.transferAmount || isNaN(parseFloat(req.body.transferAmount))) {
-    Logger.warn('Invalid transferAmount in payload', { 
-      transferAmount: req.body.transferAmount 
+    Logger.warn('Invalid transferAmount in payload', {
+      transferAmount: req.body.transferAmount
     });
     // Return success to stop SePay retries
-    return res.json({ 
-      success: true, 
-      message: 'Invalid transfer amount' 
+    return res.json({
+      success: true,
+      message: 'Invalid transfer amount'
     });
   }
 
@@ -107,7 +108,7 @@ const handleWebhook = asyncHandler(async (req, res, next) => {
 
     // Always return success to prevent SePay from retrying
     // The service handles all error cases and returns success for invalid cases
-    res.json({ 
+    res.json({
       success: true,
       message: 'Payment processed',
       ...result
@@ -121,10 +122,10 @@ const handleWebhook = asyncHandler(async (req, res, next) => {
 
     // Always return success to prevent SePay retries
     // Log error for manual investigation
-    res.json({ 
-      success: true, 
+    res.json({
+      success: true,
       message: 'Webhook processed (errors logged)',
-      error: error.message 
+      error: error.message
     });
   }
 });
@@ -186,7 +187,7 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
     ];
 
     const isMalformed = malformedPatterns.some(pattern => pattern.test(orderCode));
-    
+
     if (isMalformed) {
       Logger.warn('Malformed order code detected - likely client-side template issue', {
         orderCode: orderCode,
@@ -194,7 +195,7 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
         path: req.path,
         method: req.method
       });
-      
+
       return res.status(400).json({
         success: false,
         message: 'Invalid order code format. The order code appears to be a template variable that was not replaced. Please ensure the order code is properly interpolated on the client side.',
@@ -209,7 +210,7 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
         orderCode: orderCode,
         expectedFormat: 'DH followed by digits (e.g., DH123456)'
       });
-      
+
       return res.status(400).json({
         success: false,
         message: 'Invalid order code format. Order code must start with "DH" followed by digits (e.g., DH123456)',
@@ -232,7 +233,7 @@ const checkOrderStatus = asyncHandler(async (req, res, next) => {
         orderCode: normalizedOrderCode,
         searched: orderCode
       });
-      
+
       return res.status(404).json({
         success: false,
         message: 'Order not found',
@@ -313,8 +314,30 @@ const lookupOrders = asyncHandler(async (req, res, next) => {
   });
 });
 
+/**
+ * Creates a new order with All-Courses Offer pricing
+ * First course = 199k (includes all-courses access), additional = 39k each
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next function
+ */
+const createOrderAllCourses = asyncHandler(async (req, res, next) => {
+  const { email, courses, userId } = req.body;
+
+  Logger.info('Creating All-Courses Offer order', { email, courseCount: courses?.length, userId: userId || 'anonymous' });
+
+  // userId is passed from frontend when user is authenticated via Google OAuth
+  const result = await paymentService.createOrderAllCourses(email, courses, userId || null);
+
+  res.json({
+    success: true,
+    ...result
+  });
+});
+
 module.exports = {
   createOrder,
+  createOrderAllCourses,
   handleWebhook,
   checkStatus,
   checkOrderStatus,

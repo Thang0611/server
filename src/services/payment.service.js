@@ -13,7 +13,7 @@ const Logger = require('../utils/logger.util');
 const lifecycleLogger = require('./lifecycleLogger.service');
 const { AppError } = require('../middleware/errorHandler.middleware');
 const { addDownloadJob } = require('../queues/download.queue');
-const { calculateOrderPrice, getComboUnitPrice, getComboPriceDistribution, pricingConfig, filterValidCourses } = require('../utils/pricing.util');
+const { calculateOrderPrice, getComboUnitPrice, getComboPriceDistribution, pricingConfig, filterValidCourses, calculateAllCoursesOfferPrice } = require('../utils/pricing.util');
 const { sendPaymentSuccessEmail } = require('./email.service');
 const { checkExistingDownload } = require('./checkExistingDownload.service');
 const grantAccessService = require('./grantAccess.service');
@@ -35,10 +35,11 @@ const generateOrderCode = (orderId) => {
  * Creates a new order
  * @param {string} email - Customer email
  * @param {Array} courses - Array of course objects with url, title, price, courseId properties
+ * @param {number|null} userId - Optional authenticated user ID
  * @returns {Promise<Object>} - Created order with orderCode, QR code, courses, and download tasks
  * @throws {AppError} - If validation fails or creation fails
  */
-const createOrder = async (email, courses) => {
+const createOrder = async (email, courses, userId = null) => {
   try {
     // Validate input
     if (!email || !courses || !Array.isArray(courses) || courses.length === 0) {
@@ -58,16 +59,16 @@ const createOrder = async (email, courses) => {
     // Otherwise, use dynamic pricing (combo/per-course)
     const hasCourseIds = validCourses.some(c => c.courseId);
     let totalAmount;
-    
+
     if (hasCourseIds) {
       // Courses from database - use their prices
       totalAmount = validCourses.reduce((sum, course) => {
-        const coursePrice = course.price !== undefined && course.price !== null 
-          ? parseFloat(course.price) 
+        const coursePrice = course.price !== undefined && course.price !== null
+          ? parseFloat(course.price)
           : pricingConfig.PRICE_PER_COURSE;
         return sum + coursePrice;
       }, 0);
-      
+
       Logger.info('Using database prices for courses', {
         courseCount: validCount,
         totalAmount,
@@ -80,7 +81,7 @@ const createOrder = async (email, courses) => {
       // URL-based courses - use dynamic pricing
       const { totalPrice } = calculateOrderPrice(courses);
       totalAmount = totalPrice;
-      
+
       Logger.info('Using dynamic pricing for URL courses', {
         courseCount: validCount,
         totalAmount
@@ -89,7 +90,7 @@ const createOrder = async (email, courses) => {
 
     // Check if combo applies and calculate unit price
     const comboUnitPrice = getComboUnitPrice(validCount, totalAmount);
-    
+
     if (comboUnitPrice !== null) {
       const comboType = validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : 'Unknown';
       Logger.info(`${comboType} order detected`, {
@@ -105,12 +106,13 @@ const createOrder = async (email, courses) => {
       order_code: 'TEMP', // Temporary placeholder
       user_email: email,
       total_amount: totalAmount,
-      payment_status: 'pending' // Order is created as pending, waiting for payment confirmation
+      payment_status: 'pending', // Order is created as pending, waiting for payment confirmation
+      user_id: userId // Link to authenticated user (null for anonymous/legacy orders)
     });
 
     // Generate sequential order code using the auto-incremented ID
     const orderCode = generateOrderCode(order.id);
-    
+
     // Update order with the sequential order code
     await order.update({ order_code: orderCode });
 
@@ -129,7 +131,7 @@ const createOrder = async (email, courses) => {
       const validationResults = await infoCourseService.getCourseInfo(validCourses.map(c => c.url));
       const successCount = validationResults.filter(r => r.success).length;
       const failedUrls = validationResults.filter(r => !r.success).map(r => r.url);
-      
+
       lifecycleLogger.logOrderCreated(
         order.id,
         email,
@@ -167,7 +169,7 @@ const createOrder = async (email, courses) => {
         null // phoneNumber - optional
       );
       downloadTasks = tasksResult.tasks || [];
-      
+
       Logger.success('Download tasks created for order', {
         orderId: order.id,
         taskCount: downloadTasks.length
@@ -177,10 +179,10 @@ const createOrder = async (email, courses) => {
       if (comboUnitPrice !== null && downloadTasks.length > 0) {
         try {
           const comboType = validCount === 5 ? 'Combo 5' : validCount === 10 ? 'Combo 10' : 'Unknown';
-          
+
           // Get accurate price distribution for each course
           const priceDistribution = getComboPriceDistribution(validCount, totalAmount);
-          
+
           if (priceDistribution && priceDistribution.length === downloadTasks.length) {
             // Update each task with its specific price
             const updatePromises = downloadTasks.map((task, index) => {
@@ -195,12 +197,12 @@ const createOrder = async (email, courses) => {
                 }
               );
             });
-            
+
             await Promise.all(updatePromises);
 
             // Verify total
             const calculatedTotal = priceDistribution.reduce((sum, price) => sum + price, 0);
-            
+
             Logger.success(`Updated ${comboType} task prices with accurate distribution`, {
               orderId: order.id,
               taskCount: downloadTasks.length,
@@ -225,7 +227,7 @@ const createOrder = async (email, courses) => {
               distributionLength: priceDistribution?.length,
               fallback: 'Using base unit price for all tasks'
             });
-            
+
             // Fallback: use base unit price for all tasks
             const taskIds = downloadTasks.map(task => task.id);
             await DownloadTask.update(
@@ -237,7 +239,7 @@ const createOrder = async (email, courses) => {
                 }
               }
             );
-            
+
             downloadTasks = await DownloadTask.findAll({
               where: {
                 id: taskIds,
@@ -269,17 +271,17 @@ const createOrder = async (email, courses) => {
 
     // Format courses info for response (ensure all have price)
     // For combo orders, use accurate price distribution
-    const priceDistribution = comboUnitPrice !== null 
+    const priceDistribution = comboUnitPrice !== null
       ? getComboPriceDistribution(validCount, totalAmount)
       : null;
-    
+
     const coursesInfo = validCourses.map((course, index) => {
       let coursePrice;
-      
+
       // If courses have courseId (from database), always use their prices
       if (hasCourseIds) {
-        coursePrice = course.price !== undefined && course.price !== null 
-          ? parseFloat(course.price) 
+        coursePrice = course.price !== undefined && course.price !== null
+          ? parseFloat(course.price)
           : pricingConfig.PRICE_PER_COURSE;
       } else {
         // URL-based courses - use combo distribution or per-course pricing
@@ -291,12 +293,12 @@ const createOrder = async (email, courses) => {
           coursePrice = comboUnitPrice;
         } else {
           // Use course price or default per-course price
-          coursePrice = course.price !== undefined && course.price !== null 
-            ? parseFloat(course.price) 
+          coursePrice = course.price !== undefined && course.price !== null
+            ? parseFloat(course.price)
             : pricingConfig.PRICE_PER_COURSE;
         }
       }
-      
+
       return {
         url: course.url,
         title: course.title || null,
@@ -336,9 +338,9 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
   const sequelize = require('../config/database');
   const DownloadTask = require('../models/downloadTask.model');
   const downloadService = require('./download.service');
-  
+
   const transaction = await sequelize.transaction();
-  
+
   try {
     Logger.info('Processing SePay webhook', {
       orderCode,
@@ -376,13 +378,13 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
 
     // Check if already paid - return success immediately to stop retries
     if (order.payment_status === 'paid') {
-      Logger.info('Order already paid, skipping processing', { 
-        orderCode: normalizedOrderCode, 
-        orderId: order.id 
+      Logger.info('Order already paid, skipping processing', {
+        orderCode: normalizedOrderCode,
+        orderId: order.id
       });
       await transaction.rollback();
-      return { 
-        success: true, 
+      return {
+        success: true,
         message: 'Already paid',
         orderId: order.id,
         orderCode: order.order_code,
@@ -406,8 +408,8 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
       });
       await transaction.rollback();
       // Return success but log warning - don't process payment
-      return { 
-        success: true, 
+      return {
+        success: true,
         message: 'Số tiền thanh toán không đủ',
         expectedAmount,
         receivedAmount
@@ -510,7 +512,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
     // - Redis down: Jobs stay in DB as 'enrolled', can be re-queued manually
     // - Worker down: Jobs queue up in Redis, workers process when back online
     // ================================================================
-    
+
     if (updatedCount > 0) {
       try {
         // Fetch all tasks that were just updated to 'processing'
@@ -537,7 +539,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
 
         for (const task of tasks) {
           const courseType = task.course_type || 'temporary'; // Default to temporary for backward compatibility
-          
+
           // Chỉ check existing download cho permanent courses
           if (courseType === 'permanent') {
             Logger.info('[Existing Download Check] Checking for existing permanent course', {
@@ -549,7 +551,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
             });
 
             const existingTask = await checkExistingDownload(task.course_url, courseType);
-            
+
             if (existingTask && existingTask.drive_link) {
               Logger.info('[Existing Download Found] Permanent course already downloaded', {
                 taskId: task.id,
@@ -651,7 +653,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
         let enrolledCount = 0;
         let enrollFailedCount = 0;
         const enrolledTasks = [];
-        
+
         // Chỉ enroll những tasks cần download
         for (const task of tasksNeedDownload) {
           try {
@@ -677,26 +679,26 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
               let isStatusVerified = false;
               let retryCount = 0;
               const maxRetries = 10; // 10 retries = 5 seconds max wait
-              
+
               while (retryCount < maxRetries && !isStatusVerified) {
                 const taskInDb = await DownloadTask.findByPk(task.id, {
                   attributes: ['id', 'status']
                 });
-                
+
                 if (taskInDb && taskInDb.status === 'enrolled') {
                   isStatusVerified = true;
                   break;
                 }
-                
+
                 // Wait 500ms before retry
                 await new Promise(resolve => setTimeout(resolve, 500));
                 retryCount++;
               }
-              
+
               if (isStatusVerified) {
                 enrolledCount++;
                 enrolledTasks.push(task);
-                
+
                 Logger.success('Course enrolled successfully', {
                   taskId: task.id,
                   courseId: enrollResult.courseId,
@@ -711,7 +713,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
                 const finalTaskCheck = await DownloadTask.findByPk(task.id, {
                   attributes: ['id', 'status', 'order_id']
                 });
-                
+
                 // Skip logging here - enroll.service.js already logs it
                 // This prevents duplicate ENROLL_SUCCESS logs
                 Logger.debug('Enrollment verified in payment service', {
@@ -721,11 +723,11 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
                 });
               } else {
                 enrollFailedCount++;
-                
+
                 const taskInDb = await DownloadTask.findByPk(task.id, {
                   attributes: ['id', 'status']
                 });
-                
+
                 Logger.error('Enrollment status verification failed', new Error('Status not updated in DB'), {
                   taskId: task.id,
                   expectedStatus: 'enrolled',
@@ -736,7 +738,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
               }
             } else {
               enrollFailedCount++;
-              
+
               Logger.error('Course enrollment failed', new Error(enrollResult?.message || 'Unknown error'), {
                 taskId: task.id,
                 courseUrl: task.course_url,
@@ -747,7 +749,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
             }
           } catch (enrollError) {
             enrollFailedCount++;
-            
+
             Logger.error('Exception during course enrollment', enrollError, {
               taskId: task.id,
               courseUrl: task.course_url,
@@ -756,7 +758,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
             });
           }
         }
-        
+
         Logger.info('Enrollment summary', {
           orderId: order.id,
           total: tasks.length,
@@ -775,7 +777,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
 
           let queueSuccessCount = 0;
           let queueFailCount = 0;
-          
+
           for (const task of enrolledTasks) {
             try {
               await addDownloadJob({
@@ -785,7 +787,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
               });
 
               queueSuccessCount++;
-              
+
               Logger.success('Task pushed to Redis queue', {
                 taskId: task.id,
                 orderId: order.id,
@@ -793,7 +795,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
               });
             } catch (queueError) {
               queueFailCount++;
-              
+
               // Log error but continue with other tasks
               // Task remains in DB with status='enrolled' for manual recovery
               Logger.error('Failed to push task to Redis queue', queueError, {
@@ -804,7 +806,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
               });
             }
           }
-          
+
           Logger.info('Queue push summary', {
             orderId: order.id,
             enrolled: enrolledTasks.length,
@@ -818,7 +820,7 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
             enrollFailed: enrollFailedCount
           });
         }
-        
+
       } catch (processError) {
         // Log error but don't fail webhook - payment is already confirmed
         // Customer has paid, so we must not return an error to payment gateway
@@ -840,23 +842,23 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
   } catch (error) {
     // Rollback transaction on error
     await transaction.rollback();
-    
+
     if (error instanceof AppError) {
       throw error;
     }
-    
+
     Logger.error('Failed to process payment webhook', error, {
       orderCode,
       transferAmount,
       stack: error.stack
     });
-    
+
     // Return success to prevent SePay from retrying indefinitely
     // But log the error for manual investigation
-    return { 
-      success: true, 
+    return {
+      success: true,
       message: 'Lỗi xử lý webhook (đã ghi log)',
-      error: error.message 
+      error: error.message
     };
   }
 };
@@ -951,8 +953,140 @@ const getOrdersByEmail = async (email) => {
   }
 };
 
+/**
+ * Creates a new order with All-Courses Offer pricing
+ * First course = 199k (includes all-courses access), additional = 39k each
+ * @param {string} email - Customer email
+ * @param {Array} courses - Array of course objects with url, title, price, courseId properties
+ * @param {number|null} userId - Optional authenticated user ID
+ * @returns {Promise<Object>} - Created order with orderCode, QR code, courses, and download tasks
+ * @throws {AppError} - If validation fails or creation fails
+ */
+const createOrderAllCourses = async (email, courses, userId = null) => {
+  try {
+    // Validate input
+    if (!email || !courses || !Array.isArray(courses) || courses.length === 0) {
+      throw new AppError('Email và danh sách khóa học là bắt buộc', 400);
+    }
+
+    // Filter valid courses
+    const validCourses = filterValidCourses(courses);
+    const validCount = validCourses.length;
+
+    if (validCourses.length === 0) {
+      throw new AppError('Không có khóa học hợp lệ', 400);
+    }
+
+    // Calculate total price using All-Courses Offer pricing
+    const totalAmount = calculateAllCoursesOfferPrice(validCount);
+
+    Logger.info('All-Courses Offer order', {
+      email,
+      courseCount: validCount,
+      totalAmount,
+      userId: userId || 'anonymous',
+      pricing: {
+        firstCourse: pricingConfig.ALL_COURSES_FIRST_PRICE,
+        additionalCourse: pricingConfig.ALL_COURSES_ADDITIONAL_PRICE
+      }
+    });
+
+    // Create order in database
+    const order = await Order.create({
+      order_code: 'TEMP',
+      user_email: email,
+      total_amount: totalAmount,
+      payment_status: 'pending',
+      order_type: 'all_courses_offer', // Mark as All-Courses Offer
+      user_id: userId // Link to authenticated user (null for anonymous/legacy orders)
+    });
+
+    // Generate sequential order code
+    const orderCode = generateOrderCode(order.id);
+    await order.update({ order_code: orderCode });
+
+    Logger.success('All-Courses Offer order created', {
+      orderId: order.id,
+      orderCode: order.order_code,
+      email: order.user_email,
+      totalAmount: order.total_amount
+    });
+
+    // Lifecycle log
+    lifecycleLogger.logOrderCreated(
+      order.id,
+      email,
+      totalAmount,
+      order.payment_status,
+      {
+        successCount: validCount,
+        totalCount: validCount,
+        failedUrls: [],
+        orderType: 'all_courses_offer'
+      }
+    );
+
+    // Create download tasks
+    let downloadTasks = [];
+    try {
+      const tasksResult = await downloadService.createDownloadTasks(
+        order.id,
+        email,
+        validCourses,
+        null
+      );
+      downloadTasks = tasksResult.tasks || [];
+
+      Logger.success('Download tasks created for All-Courses offer', {
+        orderId: order.id,
+        taskCount: downloadTasks.length
+      });
+    } catch (taskError) {
+      Logger.error('Failed to create download tasks for All-Courses order', taskError, {
+        orderId: order.id,
+        email
+      });
+    }
+
+    // Generate QR code URL
+    const qrCodeUrl = generateVietQR(totalAmount, orderCode);
+
+    // Distribute prices for response (first course gets ALL_COURSES_FIRST_PRICE, rest get ADDITIONAL)
+    const coursesInfo = validCourses.map((course, index) => {
+      const coursePrice = index === 0
+        ? pricingConfig.ALL_COURSES_FIRST_PRICE
+        : pricingConfig.ALL_COURSES_ADDITIONAL_PRICE;
+
+      return {
+        url: course.url,
+        title: course.title || null,
+        price: coursePrice,
+        courseId: course.courseId || null
+      };
+    });
+
+    return {
+      orderId: order.id,
+      orderCode: order.order_code,
+      totalAmount: order.total_amount,
+      paymentStatus: order.payment_status,
+      qrCodeUrl: qrCodeUrl,
+      courses: coursesInfo,
+      orderType: 'all_courses_offer',
+      allCoursesDriveFolder: pricingConfig.ALL_COURSES_DRIVE_FOLDER
+    };
+  } catch (error) {
+    if (error instanceof AppError) {
+      throw error;
+    }
+    Logger.error('Failed to create All-Courses offer order', error, { email, coursesCount: courses?.length });
+    throw new AppError('Lỗi server nội bộ khi tạo đơn hàng All-Courses Offer', 500);
+  }
+};
+
 module.exports = {
   createOrder,
+  createOrderAllCourses,
   processPaymentWebhook,
   getOrderStatus,
   getOrdersByEmail
