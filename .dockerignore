@@ -1,0 +1,63 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Environment files (mounted at runtime)
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode
+.cursor
+.idea
+
+# Archive (unused files)
+_archive
+_deprecated_backup
+backups
+docs
+postman
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Dev files
+*.md
+!README.md
+*.txt
+*.html
+cookies.txt
+
+# Test files
+test-*
+*.test.*
+__tests__
+coverage
+
+# Scripts (except migrations)
+scripts/*
+!scripts/migrations
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+.eggs
+*.egg
+.pytest_cache
+
+# Misc
+.server-dev.pid
+Staging_Download/temp

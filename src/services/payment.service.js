@@ -17,6 +17,7 @@ const { calculateOrderPrice, getComboUnitPrice, getComboPriceDistribution, prici
 const { sendPaymentSuccessEmail } = require('./email.service');
 const { checkExistingDownload } = require('./checkExistingDownload.service');
 const grantAccessService = require('./grantAccess.service');
+const userEnrollmentService = require('./userEnrollment.service');
 
 /**
  * Generates a sequential order code based on order ID
@@ -491,6 +492,26 @@ const processPaymentWebhook = async (orderCode, transferAmount, webhookData) => 
         orderId: order.id,
         orderCode: order.order_code,
         impact: 'Payment confirmed but email notification failed'
+      });
+    }
+
+    // ✅ CREATE USER ENROLLMENTS
+    // Link authenticated user to purchased courses
+    // This enables /my-courses page functionality
+    try {
+      const enrollmentResult = await userEnrollmentService.createEnrollmentsForOrder(order.id);
+      if (enrollmentResult.enrollmentsCreated > 0) {
+        Logger.success('[Enrollment] Created user enrollments for order', {
+          orderId: order.id,
+          userId: order.user_id,
+          enrollmentsCreated: enrollmentResult.enrollmentsCreated
+        });
+      }
+    } catch (enrollmentError) {
+      // Log error but don't fail webhook - payment is already confirmed
+      Logger.error('Failed to create user enrollments', enrollmentError, {
+        orderId: order.id,
+        impact: 'Payment confirmed but enrollments not created'
       });
     }
 

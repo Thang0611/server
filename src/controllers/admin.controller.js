@@ -95,12 +95,12 @@ const getPaidOrders = asyncHandler(async (req, res) => {
     const totalTasks = tasks.length;
     const completedTasks = tasks.filter(t => t.status === 'completed').length;
     const failedTasks = tasks.filter(t => t.status === 'failed').length;
-    const processingTasks = tasks.filter(t => 
+    const processingTasks = tasks.filter(t =>
       ['processing', 'enrolled', 'pending'].includes(t.status)
     ).length;
 
     // Calculate overall progress percentage
-    const progressPercentage = totalTasks > 0 
+    const progressPercentage = totalTasks > 0
       ? Math.round((completedTasks / totalTasks) * 100)
       : 0;
 
@@ -138,7 +138,7 @@ const getOrderDetails = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
   const order = await Order.findOne({
-    where: { 
+    where: {
       id,
       payment_status: 'paid' // CRITICAL: Only paid orders
     },
@@ -193,7 +193,7 @@ const getOrderAuditLogs = asyncHandler(async (req, res) => {
 
   // Verify order exists and is paid
   const order = await Order.findOne({
-    where: { 
+    where: {
       id,
       payment_status: 'paid'
     },
@@ -268,10 +268,10 @@ const getOrderAuditLogs = asyncHandler(async (req, res) => {
     // Transform audit logs
     ...auditLogs.map(log => {
       // Ensure timestamp is in ISO string format
-      const timestamp = log.created_at instanceof Date 
-        ? log.created_at.toISOString() 
+      const timestamp = log.created_at instanceof Date
+        ? log.created_at.toISOString()
         : (log.created_at ? new Date(log.created_at).toISOString() : new Date().toISOString());
-      
+
       return {
         id: log.id,
         type: 'audit',
@@ -293,10 +293,10 @@ const getOrderAuditLogs = asyncHandler(async (req, res) => {
     // Transform task logs
     ...taskLogs.map(log => {
       // Ensure timestamp is in ISO string format
-      const timestamp = log.created_at instanceof Date 
-        ? log.created_at.toISOString() 
+      const timestamp = log.created_at instanceof Date
+        ? log.created_at.toISOString()
         : (log.created_at ? new Date(log.created_at).toISOString() : new Date().toISOString());
-      
+
       return {
         id: log.id,
         type: 'task',
@@ -320,7 +320,7 @@ const getOrderAuditLogs = asyncHandler(async (req, res) => {
     try {
       const dateA = new Date(a.timestamp).getTime();
       const dateB = new Date(b.timestamp).getTime();
-      
+
       // Handle invalid dates
       if (isNaN(dateA) || isNaN(dateB)) {
         // If either date is invalid, put invalid dates at the end
@@ -328,14 +328,14 @@ const getOrderAuditLogs = asyncHandler(async (req, res) => {
         if (isNaN(dateA)) return 1;
         if (isNaN(dateB)) return -1;
       }
-      
+
       return dateB - dateA; // Descending order (newest first)
     } catch (error) {
       // If date parsing fails, maintain original order
       return 0;
     }
   })
-   .slice(0, parseInt(limit)); // Final limit after merge
+    .slice(0, parseInt(limit)); // Final limit after merge
 
   // Calculate summary
   const summary = {
@@ -524,21 +524,21 @@ const getDashboardStats = asyncHandler(async (req, res) => {
   });
 
   const processingOrders = await Order.count({
-    where: { 
+    where: {
       payment_status: 'paid',
       order_status: 'processing'
     }
   });
 
   const completedOrders = await Order.count({
-    where: { 
+    where: {
       payment_status: 'paid',
       order_status: 'completed'
     }
   });
 
   const failedOrders = await Order.count({
-    where: { 
+    where: {
       payment_status: 'paid',
       order_status: 'failed'
     }
@@ -606,7 +606,7 @@ const resendOrderEmail = asyncHandler(async (req, res) => {
 
   // Verify order exists and is paid
   const order = await Order.findOne({
-    where: { 
+    where: {
       id,
       payment_status: 'paid'
     },
@@ -637,7 +637,7 @@ const resendOrderEmail = asyncHandler(async (req, res) => {
   // Send batch completion email
   try {
     await sendBatchCompletionEmail(order, tasks);
-    
+
     Logger.info('[Admin] Resent order completion email', {
       orderId: order.id,
       orderCode: order.order_code,
@@ -673,12 +673,13 @@ const resendOrderEmail = asyncHandler(async (req, res) => {
  */
 const retryOrderDownload = asyncHandler(async (req, res) => {
   const { id } = req.params;
+  const { forceRedownload = true } = req.body; // ✅ Default: Always allow re-download of completed tasks
 
-  Logger.info('[Admin] Retry download triggered', { orderId: id });
+  Logger.info('[Admin] Retry download triggered', { orderId: id, forceRedownload });
 
   // Step 1: Get order details
   const order = await Order.findOne({
-    where: { 
+    where: {
       id,
       payment_status: 'paid'
     },
@@ -707,17 +708,17 @@ const retryOrderDownload = asyncHandler(async (req, res) => {
     throw new AppError('No tasks found for this order', 404);
   }
 
-  // Filter tasks: skip only 'completed', retry all other statuses
-  const tasksToRetry = allTasks.filter(task => {
-    return task.status !== TASK_STATUS.COMPLETED;
-  });
+  // ✅ MODIFIED: If forceRedownload, include completed tasks too
+  const tasksToRetry = forceRedownload
+    ? allTasks  // Re-download ALL tasks including completed
+    : allTasks.filter(task => task.status !== TASK_STATUS.COMPLETED);
 
   const completedTasks = allTasks.filter(task => task.status === TASK_STATUS.COMPLETED);
 
   if (tasksToRetry.length === 0) {
     return res.json({
       success: true,
-      message: 'No tasks need retry - all tasks are already completed',
+      message: 'No tasks need retry - all tasks are already completed. Set forceRedownload=true to re-download.',
       data: {
         orderId: order.id,
         orderCode: order.order_code,
@@ -745,9 +746,9 @@ const retryOrderDownload = asyncHandler(async (req, res) => {
       // This allows re-enrollment for failed/pending tasks
       if (task.status !== TASK_STATUS.PROCESSING) {
         await DownloadTask.update(
-          { 
+          {
             status: TASK_STATUS.PROCESSING,
-            error_log: null 
+            error_log: null
           },
           {
             where: { id: task.id },
@@ -832,7 +833,7 @@ const retryOrderDownload = asyncHandler(async (req, res) => {
   // This will monitor tasks and send email when all are completed
   startOrderCompletionTracking(order.id, order.order_code, order.user_email);
 
-      const message = tasksNeedingEnrollment.length > 0
+  const message = tasksNeedingEnrollment.length > 0
     ? `Re-enrolled ${enrolledCount} task(s), queued ${queuedCount} task(s) for download. ${enrollFailedCount > 0 ? `${enrollFailedCount} enrollment(s) failed.` : ''}`
     : `Queued ${queuedCount} task(s) for download`;
 
@@ -909,7 +910,7 @@ const startOrderCompletionTracking = (orderId, orderCode, userEmail) => {
 
       // Check if all tasks are completed
       const allCompleted = tasks.every(task => task.status === TASK_STATUS.COMPLETED);
-      const inProgressCount = tasks.filter(task => 
+      const inProgressCount = tasks.filter(task =>
         IN_PROGRESS_STATUSES.includes(task.status)
       ).length;
 
@@ -925,7 +926,7 @@ const startOrderCompletionTracking = (orderId, orderCode, userEmail) => {
 
           if (order) {
             await sendBatchCompletionEmail(order, tasks);
-            
+
             Logger.success('[Admin] Order completion email sent automatically', {
               orderId,
               orderCode,
@@ -1039,12 +1040,12 @@ const recoverOrderTasks = asyncHandler(async (req, res) => {
 const triggerCourseDownload = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { email: requestEmail } = req.body;
-  
+
   // ✅ FIX: Always use getcourses.net@gmail.com for admin downloads (required for enrollment)
   // Override ADMIN_EMAIL env var to ensure correct email is used
   const email = requestEmail || 'getcourses.net@gmail.com';
 
-  Logger.info('[Admin] Trigger course download', { 
+  Logger.info('[Admin] Trigger course download', {
     courseId: id,
     email: email
   });
@@ -1098,11 +1099,11 @@ const triggerCourseDownload = asyncHandler(async (req, res) => {
  */
 const checkCookie = asyncHandler(async (req, res) => {
   const { skipValidation } = req.query;
-  
+
   try {
     const { getCookieStatus } = require('../utils/cookieValidator.util');
     const status = await getCookieStatus(skipValidation === 'true');
-    
+
     res.json({
       success: true,
       data: status
@@ -1110,6 +1111,59 @@ const checkCookie = asyncHandler(async (req, res) => {
   } catch (error) {
     Logger.error('[Admin] Failed to check cookie', error);
     throw new AppError(`Failed to check cookie: ${error.message}`, 500);
+  }
+});
+
+/**
+ * Extract and save course metadata from VPS storage
+ * Called by worker after copying course to VPS
+ *
+ * @route POST /api/admin/courses/:id/extract-metadata
+ * @access Admin or Internal Worker
+ */
+const extractCourseMetadata = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { vps_path, secret_key, task_id } = req.body;
+
+  // Verify internal secret for worker calls
+  const expectedSecret = process.env.API_SECRET_KEY || 'KEY_BAO_MAT_CUA_BAN_2025';
+  if (secret_key !== expectedSecret) {
+    throw new AppError('Unauthorized', 401);
+  }
+
+  Logger.info('[Admin] Extract course metadata', {
+    courseId: id,
+    vpsPath: vps_path,
+    taskId: task_id
+  });
+
+  // Verify course exists
+  const course = await Course.findByPk(id);
+  if (!course) {
+    throw new AppError('Course not found', 404);
+  }
+
+  try {
+    const courseMetadataService = require('../services/courseMetadata.service');
+    const result = await courseMetadataService.extractAndSaveMetadata(parseInt(id), vps_path);
+
+    Logger.success('[Admin] Course metadata extracted', {
+      courseId: id,
+      sections: result.sections,
+      lectures: result.lectures
+    });
+
+    res.json({
+      success: true,
+      message: 'Metadata extracted successfully',
+      data: result
+    });
+  } catch (error) {
+    Logger.error('[Admin] Failed to extract metadata', error, {
+      courseId: id,
+      vpsPath: vps_path
+    });
+    throw new AppError(`Failed to extract metadata: ${error.message}`, 500);
   }
 });
 
@@ -1125,5 +1179,6 @@ module.exports = {
   recoverAllStuckTasks,
   recoverOrderTasks,
   triggerCourseDownload,
-  checkCookie
+  checkCookie,
+  extractCourseMetadata
 };

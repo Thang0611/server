@@ -113,4 +113,11 @@ router.post('/courses/:id/download', adminController.triggerCourseDownload);
  */
 router.get('/system/check-cookie', adminController.checkCookie);
 
+/**
+ * @route   POST /api/admin/courses/:id/extract-metadata
+ * @desc    Extract and save course metadata from VPS storage
+ * @access  Admin or Internal Worker
+ */
+router.post('/courses/:id/extract-metadata', adminController.extractCourseMetadata);
+
 module.exports = router;

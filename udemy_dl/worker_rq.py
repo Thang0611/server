@@ -107,6 +107,10 @@ MAX_RETRIES = 3
 # Can be overridden via environment variable PYTHON_DOWNLOAD_TIMEOUT
 DOWNLOAD_TIMEOUT = int(os.getenv('PYTHON_DOWNLOAD_TIMEOUT', 18000))  # 30 minutes (1800 seconds)
 
+# VPS Storage configuration
+VPS_STORAGE_PATH = os.getenv('VPS_STORAGE_PATH', '/data/courses')
+API_BASE_URL = os.getenv('API_BASE_URL', 'https://api.getcourses.net')
+
 # ================= 2. HELPER FUNCTIONS =================
 
 def get_db_connection():
@@ -172,6 +176,71 @@ def upload_to_drive(local_path, course_type='temporary'):
         return True
     except subprocess.CalledProcessError as e:
         log(f"[RCLONE ERR] ❌ Upload failed: {e}")
+        return False
+
+def copy_to_vps_storage(local_path, course_slug, course_type='permanent'):
+    """Copy course folder to VPS storage
+    Args:
+        local_path (str): Source folder path
+        course_slug (str): Course slug for destination folder name
+        course_type (str): 'temporary' or 'permanent' - determines destination folder
+    Returns:
+        tuple: (success: bool, dest_path: str)
+    """
+    # Build destination path
+    dest_base = os.path.join(VPS_STORAGE_PATH, course_type)
+    dest_path = os.path.join(dest_base, course_slug)
+    
+    # Ensure destination directories exist
+    os.makedirs(dest_base, exist_ok=True)
+    
+    log(f"[VPS STORAGE] Copying to: {dest_path}")
+    
+    try:
+        # Use rsync for efficient copy
+        cmd = ["rsync", "-av", "--progress", f"{local_path}/", f"{dest_path}/"]
+        result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+        
+        log(f"[VPS STORAGE] ✓ Copy successful: {course_slug}")
+        return True, dest_path
+    except subprocess.CalledProcessError as e:
+        log(f"[VPS STORAGE ERR] ❌ Copy failed: {e}")
+        log(f"[VPS STORAGE ERR] stderr: {e.stderr}")
+        return False, None
+    except Exception as e:
+        log(f"[VPS STORAGE ERR] ❌ Unexpected error: {e}")
+        return False, None
+
+def notify_metadata_extraction(task_id, course_id, vps_path):
+    """Call Node.js API to extract and save course metadata
+    Args:
+        task_id (int): Download task ID
+        course_id (int): Course ID in database
+        vps_path (str): Path to course folder on VPS
+    Returns:
+        bool: Success status
+    """
+    api_url = f"{API_BASE_URL}/api/v1/admin/courses/{course_id}/extract-metadata"
+    secret = os.getenv('API_SECRET_KEY') or "KEY_BAO_MAT_CUA_BAN_2025"
+    
+    payload = {
+        "secret_key": secret,
+        "task_id": task_id,
+        "vps_path": vps_path
+    }
+    
+    try:
+        log(f"[METADATA] Requesting metadata extraction for course {course_id}")
+        res = requests.post(api_url, json=payload, timeout=60)
+        
+        if res.status_code == 200:
+            log(f"[METADATA] ✓ Metadata extraction successful")
+            return True
+        else:
+            log(f"[METADATA] ⚠️ Metadata extraction failed: {res.status_code}")
+            return False
+    except Exception as e:
+        log(f"[METADATA ERR] Metadata extraction error: {e}")
         return False
 
 def update_task_status(task_id, status, error_log=None):
@@ -631,8 +700,8 @@ def process_download(task_data):
             
             # ✅ FIX: Set quality based on course type
             # Permanent courses (admin downloads) use 1080p, temporary courses use 720p
-            video_quality = "1080" if course_type == 'permanent' else "720"
-            log(f"[INFO] Download quality: {video_quality}p (course_type: {course_type})")
+            video_quality = "1080"  # ✅ Always use 1080p for best quality
+            log(f"[INFO] Download quality: {video_quality}p (all courses use 1080p)")
             
             # ✅ SECURITY: Download into task-specific directory with bearer token
             # ✅ SECURITY: Use subprocess with array (not shell=True) to prevent injection
@@ -779,9 +848,32 @@ def process_download(task_data):
                 raise Exception("No output folder found after download")
             
             final_folder = subdirs[0]
-            log(f"[CHECK] Downloaded: {os.path.basename(final_folder)}")
+            folder_name = os.path.basename(final_folder)
+            log(f"[CHECK] Downloaded: {folder_name}")
             
-            # Upload to Google Drive
+            # Generate course slug from folder name
+            course_slug = folder_name.lower().replace(' ', '-').replace('_', '-')
+            course_slug = ''.join(c for c in course_slug if c.isalnum() or c == '-')[:100]
+            
+            # ✅ NEW: Copy to VPS Storage first (for streaming)
+            vps_copy_success = False
+            vps_path = None
+            if course_type == 'permanent':  # Only copy permanent courses to VPS
+                log(f"[VPS STORAGE] Copying to VPS storage...")
+                emit_progress(task_id, order_id, percent=75, current_file="Copying to VPS storage...")
+                
+                vps_copy_success, vps_path = copy_to_vps_storage(final_folder, course_slug, course_type)
+                
+                if vps_copy_success:
+                    log(f"[VPS STORAGE] ✓ VPS copy successful: {vps_path}")
+                    if order_id:
+                        log_info(task_id, order_id, 'VPS storage copy successful', {
+                            'vpsPath': vps_path
+                        }, progress=78, category='storage')
+                else:
+                    log(f"[VPS STORAGE] ⚠️ VPS copy failed, continuing with Drive upload...")
+            
+            # Upload to Google Drive (backup)
             log(f"[UPLOAD] Starting upload to Google Drive...")
             emit_progress(task_id, order_id, percent=80, current_file="Uploading to Google Drive...")
             emit_status_change(task_id, order_id, 'uploading', 'downloading', 'Starting upload to Google Drive')
@@ -789,7 +881,7 @@ def process_download(task_data):
             # ✅ UNIFIED LOGGER: Log upload started
             if order_id:
                 log_info(task_id, order_id, 'Upload started', {
-                    'folderName': os.path.basename(final_folder)
+                    'folderName': folder_name
                 }, progress=80, category='upload')
             
             # Upload to Drive với course_type để lưu vào folder đúng

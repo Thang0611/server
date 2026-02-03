@@ -53,6 +53,18 @@ const UserEnrollment = sequelize.define('UserEnrollment', {
         comment: 'Bunny CDN video/library ID for streaming'
     },
 
+    bunny_collection_id: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+        comment: 'Bunny CDN collection ID (for course with multiple videos)'
+    },
+
+    can_stream: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        comment: 'Whether user can stream videos from Bunny CDN'
+    },
+
     access_type: {
         type: DataTypes.ENUM('purchased', 'premium'),
         defaultValue: 'purchased',

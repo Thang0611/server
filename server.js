@@ -266,6 +266,7 @@ app.use('/api/admin', adminRoutes);  // Admin dashboard routes
 app.use('/api/v1/internal', internalRoutes);  // Internal API routes (for inter-service communication)
 app.use('/api/courses', coursesRoutes);  // Courses API routes (for permanent courses)
 app.use('/api/v1/users', userRoutes);  // User OAuth and enrollment routes
+app.use('/api/v1/videos', require('./src/routes/video.routes'));  // Video streaming routes
 
 // Error handling middleware (must be last)
 app.use(errorHandler);
